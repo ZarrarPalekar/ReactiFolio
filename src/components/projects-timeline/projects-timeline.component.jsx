@@ -38,12 +38,18 @@ const TimeLine = () => {
               </h4>
               <Button
                 className="mt-2 mr-2"
+                target="_blank"
                 variant="success"
                 href={project.appUrl}
               >
                 View Website
               </Button>
-              <Button className="mt-2" variant="warning" href={project.gitUrl}>
+              <Button
+                className="mt-2"
+                target="_blank"
+                variant="warning"
+                href={project.gitUrl}
+              >
                 Source Code
               </Button>
             </VerticalTimelineElement>
