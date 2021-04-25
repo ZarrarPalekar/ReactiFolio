@@ -1,0 +1,11 @@
+after any new json addition
+
+git add .
+git commit -m "Desc"
+git push -u origin main
+npm run deploy
+
+go to github and that portfolio settings github pages 
+keep branch as gh-pages and root
+choose a cayman theme
+and then custom domain www.zarrarpalekar.com save

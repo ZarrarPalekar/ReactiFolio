@@ -27,6 +27,7 @@ const MyNavbar = () => {
         expanded={expanded}
         id="navbar"
         fixed="top"
+        style={{ width: "100vw" }}
         expand="md"
         variant="dark"
         className="animate-navbar nav-theme justify-content-between"
