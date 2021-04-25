@@ -1,0 +1,43 @@
+.logo {
+  width: 6rem;
+  height: 6rem;
+}
+
+.nav-theme {
+  background-color: #101018f8;
+  font-size: 20px;
+}
+
+.animate-navbar {
+  box-shadow: 1px 1px 1px #222;
+  animation: moveDown 1s ease-in-out;
+}
+
+.navToggler {
+  padding: 0%;
+  border: none;
+}
+@keyframes moveDown {
+  from {
+    transform: translateY(-5rem);
+  }
+  to {
+    transform: translateY(0rem);
+  }
+}
+
+/* header.smaller {
+  height: 75px;
+}
+
+header.smaller #logo {
+  width: 150px;
+  height: 75px;
+  line-height: 55px;
+  font-size: 55px;
+  margin: 0;
+}
+
+header.smaller Nav.navlinks {
+  line-height: 75px;
+} */
