@@ -17,6 +17,7 @@ const TimeLine = () => {
   // const history = useHistory();
   return (
     <div id="projects">
+      <h1 className="pt-3 text-center font-details-b pb-3">PROJECTS</h1>
       <VerticalTimeline>
         <VerticalTimelineElement
           iconStyle={{ background: "rgb(16, 204, 82)", color: "#fff" }}
