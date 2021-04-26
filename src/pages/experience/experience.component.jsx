@@ -126,7 +126,7 @@ const Experience = () => {
                   src={
                     require(`../../assets/img/experience/${exp.image}`).default
                   }
-                  alt="TI logo"
+                  alt={exp.image}
                 />
               </a>
               <h3 className="vertical-timeline-element-title mt-3">
