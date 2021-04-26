@@ -5,13 +5,22 @@ import Card from "react-bootstrap/Card";
 import Tilt from "react-tilt";
 import "./experience.styles.css";
 import { myExperience } from "../../data/myExperience";
+import useWindowDimensions from "../../functionality/checkViewPort";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
+
+import WorkIcon from "@material-ui/icons/Work";
 
 const Experience = () => {
+  const { width } = useWindowDimensions();
   return (
     <div id="experience">
       <h1 className="pt-3 text-center font-details-b pb-3">EXPERIENCE</h1>
       {myExperience.map((exp) => {
-        return (
+        return width > 768 ? (
           <Jumbotron className="jumbo-style">
             <Container>
               <Tilt options={{ max: 25 }}>
@@ -97,6 +106,31 @@ const Experience = () => {
               </Tilt>
             </Container>
           </Jumbotron>
+        ) : (
+          <VerticalTimeline>
+            <VerticalTimelineElement
+              className="vertical-timeline-element--work"
+              iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+              icon={<WorkIcon />}
+              date={exp.duration}
+              dateClassName="mr-2 ml-1 font-weight-bold"
+            >
+              <Card.Img
+                variant="top"
+                className="img-resize"
+                src={
+                  require(`../../assets/img/experience/${exp.image}`).default
+                }
+                alt="TI logo"
+              />
+              <h3 className="vertical-timeline-element-title mt-3">
+                {exp.profile}
+              </h3>
+              <h4 className="vertical-timeline-element-subtitle mt-3">
+                {exp.subProfile}
+              </h4>
+            </VerticalTimelineElement>
+          </VerticalTimeline>
         );
       })}
     </div>

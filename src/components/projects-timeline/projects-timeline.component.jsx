@@ -30,7 +30,7 @@ const TimeLine = () => {
               iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
               icon={<WorkIcon />}
               date={project.date}
-              dateClassName="mr-2 ml-1"
+              dateClassName="mr-2 ml-1  font-weight-bold"
             >
               <h3 className="vertical-timeline-element-title">
                 {project.projectName}
