@@ -115,14 +115,20 @@ const Experience = () => {
               date={exp.duration}
               dateClassName="mr-2 ml-1 font-weight-bold"
             >
-              <Card.Img
-                variant="top"
-                className="img-resize"
-                src={
-                  require(`../../assets/img/experience/${exp.image}`).default
-                }
-                alt="TI logo"
-              />
+              <a
+                href={exp.companyURL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Card.Img
+                  variant="top"
+                  className="img-resize"
+                  src={
+                    require(`../../assets/img/experience/${exp.image}`).default
+                  }
+                  alt="TI logo"
+                />
+              </a>
               <h3 className="vertical-timeline-element-title mt-3">
                 {exp.profile}
               </h3>
