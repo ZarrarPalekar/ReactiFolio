@@ -4,7 +4,7 @@ export const myExperience = [
     companyURL: "http://www.javarndcorp.com/",
     profile: "Senior Software Engineer",
     subProfile: "MERN Full Stack Developer",
-    technology: "MERN Stach, Redux",
+    technology: "MERN Stack, Redux",
     duration: "Mar 2021 - Till Now",
     description: {
       desc1:
