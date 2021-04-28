@@ -18,6 +18,20 @@ export const myExperience = [
     },
   },
   {
+    image: "typ.jpg",
+    companyURL: "https://theyouthproject.in/",
+    profile: "Fellow",
+    subProfile: "MERN Full Stack Fellow",
+    technology: "MERN Stack, Redux",
+    duration: "Nov 2020 - Till Now",
+    description: {
+      desc1: "<strong>Learned</strong> developed of MERN stack apps.",
+      desc2:
+        "<strong>First</strong> Fellowship/Community based learning experience.",
+      desc3: "<strong>Not</strong> your typical classroom type setup.",
+    },
+  },
+  {
     image: "ti.jpg",
     companyURL: "https://www.tendersinfo.com/",
     profile: "Senior Software Developer",
