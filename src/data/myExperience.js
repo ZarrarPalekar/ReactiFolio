@@ -25,7 +25,7 @@ export const myExperience = [
     technology: "MERN Stack, Redux",
     duration: "Nov 2020 - Till Now",
     description: {
-      desc1: "<strong>Learned</strong> developed of MERN stack apps.",
+      desc1: "<strong>Learned</strong> development of MERN stack apps.",
       desc2:
         "<strong>First</strong> Fellowship/Community based learning experience.",
       desc3: "<strong>Not</strong> your typical classroom type setup.",
