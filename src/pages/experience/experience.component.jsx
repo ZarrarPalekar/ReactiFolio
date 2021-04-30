@@ -14,6 +14,34 @@ import "react-vertical-timeline-component/style.min.css";
 
 import WorkIcon from "@material-ui/icons/Work";
 
+function diff_months(dt2, dt1) {
+  var diff = (dt2.getTime() - dt1.getTime()) / 1000;
+  diff /= 60 * 60 * 24 * 7 * 4;
+  return Math.abs(Math.round(diff));
+}
+
+// dt1 = new Date("Mar 2017");
+// dt2 = new Date("Apr 2019");
+// console.log(diff_months(dt1, dt2));
+
+function getWords(monthCount) {
+  function getPlural(number, word) {
+    return (number === 1 && word.one) || word.other;
+  }
+
+  var months = { one: "month", other: "months" },
+    years = { one: "year", other: "years" },
+    m = monthCount % 12,
+    y = Math.floor(monthCount / 12),
+    result = [];
+
+  y && result.push(y + " " + getPlural(y, years));
+  m && result.push(m + " " + getPlural(m, months));
+  return result.join(" and ");
+}
+
+// console.log(getWords(27));
+
 const Experience = () => {
   const { width } = useWindowDimensions();
   return (
@@ -59,7 +87,22 @@ const Experience = () => {
                         <br />
                         <strong>Technology:</strong> {exp.technology}
                         <br />
-                        <strong>Duration:</strong> {exp.duration}
+                        <strong>Period:</strong> {exp.duration}
+                        <br />
+                        <strong>Duration:</strong>{" "}
+                        {exp.duration.includes("Till Now")
+                          ? getWords(
+                              diff_months(
+                                new Date(exp.duration.split(" - ")[0]),
+                                new Date(Date.now())
+                              )
+                            )
+                          : getWords(
+                              diff_months(
+                                new Date(exp.duration.split(" - ")[0]),
+                                new Date(exp.duration.split(" - ")[1])
+                              )
+                            )}
                         <br />
                         <strong> Description </strong>
                         <ul className="text-left">
@@ -135,6 +178,21 @@ const Experience = () => {
               <h4 className="vertical-timeline-element-subtitle mt-3">
                 {exp.subProfile}
               </h4>
+              <h6 className="vertical-timeline-element-subtitle mt-3 ml-1">
+                {exp.duration.includes("Till Now")
+                  ? getWords(
+                      diff_months(
+                        new Date(exp.duration.split(" - ")[0]),
+                        new Date(Date.now())
+                      )
+                    )
+                  : getWords(
+                      diff_months(
+                        new Date(exp.duration.split(" - ")[0]),
+                        new Date(exp.duration.split(" - ")[1])
+                      )
+                    )}
+              </h6>
             </VerticalTimelineElement>
           </VerticalTimeline>
         );
