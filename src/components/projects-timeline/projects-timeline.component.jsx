@@ -46,14 +46,16 @@ const TimeLine = () => {
               >
                 View Website
               </Button>
-              <Button
-                className="mt-2"
-                target="_blank"
-                variant="warning"
-                href={project.gitUrl}
-              >
-                Source Code
-              </Button>
+              {project.gitUrl && (
+                <Button
+                  className="mt-2"
+                  target="_blank"
+                  variant="warning"
+                  href={project.gitUrl}
+                >
+                  Source Code
+                </Button>
+              )}
             </VerticalTimelineElement>
           );
         })}
