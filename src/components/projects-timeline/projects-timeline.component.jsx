@@ -32,7 +32,10 @@ const TimeLine = () => {
               date={project.date}
               dateClassName="mr-2 ml-1  font-weight-bold"
             >
-              <h3 className="vertical-timeline-element-title">
+              <h3
+                style={{ textDecoration: "underline" }}
+                className="vertical-timeline-element-title"
+              >
                 {project.projectName}
               </h3>
               <h4 className="vertical-timeline-element-subtitle">
