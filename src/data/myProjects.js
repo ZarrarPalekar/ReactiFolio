@@ -14,7 +14,7 @@ export const myProjects = [
     date: "Nov-2020",
   },
   {
-    projectName: "Dev Conn App",
+    projectName: "Shopping List App",
     techUsed: "MERN, JWT",
     appUrl: "http://shoppinglist.zarrarpalekar.com/",
     date: "Oct-2020",
