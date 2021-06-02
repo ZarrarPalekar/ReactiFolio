@@ -1,11 +1,23 @@
 export const myExperience = [
   {
+    image: "fp.jpg",
+    companyURL: "https://firstprinciples.io/",
+    profile: "Software Engineer L2",
+    subProfile: "MERN Full Stack Developer",
+    technology: "MERN Stack, Redux, GraphQL, Apollo",
+    duration: "Jun 2021 - Till Now",
+    description: {
+      desc1:
+        "<strong>Learning &amp; Implementing</strong> React based applications with Apollo GraphQL",
+    },
+  },
+  {
     image: "java.png",
     companyURL: "http://www.javarndcorp.com/",
     profile: "Senior Software Engineer",
     subProfile: "MERN Full Stack Developer",
     technology: "MERN Stack, Redux",
-    duration: "Mar 2021 - Till Now",
+    duration: "Mar 2021 - Jun 2021",
     description: {
       desc1:
         "<strong>Designed &amp; Developed</strong> multiple features for the client's MERN stack apps",
@@ -23,7 +35,7 @@ export const myExperience = [
     profile: "Fellow",
     subProfile: "MERN Full Stack Fellow",
     technology: "MERN Stack, Redux",
-    duration: "Nov 2020 - Till Now",
+    duration: "Nov 2020 - Jun 2021",
     description: {
       desc1: "<strong>Learned</strong> development of MERN stack apps.",
       desc2:

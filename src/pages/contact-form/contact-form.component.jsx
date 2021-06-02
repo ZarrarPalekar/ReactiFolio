@@ -55,7 +55,7 @@ const ContactForm = () => {
                 rel="noopener noreferrer"
               >
                 <Button variant="outline-warning" title="My Other Passion">
-                  <i class="fab fa-instagram"></i> Instagram
+                  <i className="fab fa-instagram"></i> Instagram
                 </Button>
               </a>
             </div>
@@ -66,7 +66,7 @@ const ContactForm = () => {
                 rel="noopener noreferrer"
               >
                 <Button variant="outline-danger" title="Ring Me">
-                  <i class="fas fa-phone-alt"></i> Give me a call
+                  <i className="fas fa-phone-alt"></i> Give me a call
                 </Button>
               </a>
             </div>

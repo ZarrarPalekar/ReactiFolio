@@ -26,6 +26,7 @@ const TimeLine = () => {
         {myProjects.map((project) => {
           return (
             <VerticalTimelineElement
+              key={Math.random()}
               className="vertical-timeline-element--work"
               iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
               icon={<WorkIcon />}

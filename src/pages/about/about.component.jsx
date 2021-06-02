@@ -21,7 +21,7 @@ const About = () => {
                   alt="Zarrar Profile Pic"
                   thumbnail
                   fluid
-                  spin
+                  spin="true"
                 />
               </Row>
             </Col>
@@ -59,7 +59,7 @@ const About = () => {
                   <div>
                     <a href="#contact">
                       <Button className="m-2" variant="outline-info">
-                        <i class="far fa-envelope" />
+                        <i className="far fa-envelope" />
                         &nbsp;Let's talk
                       </Button>
                     </a>
@@ -71,7 +71,7 @@ const About = () => {
                       rel="noopener noreferrer"
                     >
                       <Button className="m-2" variant="outline-success">
-                        <i class="far fa-file"></i>&nbsp;My Resume
+                        <i className="far fa-file"></i>&nbsp;My Resume
                       </Button>
                     </a>
                   </div>
@@ -82,7 +82,7 @@ const About = () => {
                       rel="noopener noreferrer"
                     >
                       <Button className="m-2" variant="outline-dark">
-                        <i class="fab fa-github"></i>&nbsp;GitHub
+                        <i className="fab fa-github"></i>&nbsp;GitHub
                       </Button>
                     </a>
                   </div>
@@ -93,7 +93,7 @@ const About = () => {
                       rel="noopener noreferrer"
                     >
                       <Button className="m-2" variant="outline-primary">
-                        <i class="fab fa-linkedin-in"></i>&nbsp;LinkedIn
+                        <i className="fab fa-linkedin-in"></i>&nbsp;LinkedIn
                       </Button>
                     </a>
                   </div>

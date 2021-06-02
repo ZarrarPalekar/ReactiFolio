@@ -49,7 +49,7 @@ const Experience = () => {
       <h1 className="pt-3 text-center font-details-b pb-3">EXPERIENCE</h1>
       {myExperience.map((exp) => {
         return width > 768 ? (
-          <Jumbotron className="jumbo-style">
+          <Jumbotron className="jumbo-style" key={Math.random()}>
             <Container>
               <Tilt options={{ max: 25 }}>
                 <Card>
@@ -152,6 +152,7 @@ const Experience = () => {
         ) : (
           <VerticalTimeline>
             <VerticalTimelineElement
+              key={Math.random()}
               className="vertical-timeline-element--work"
               iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
               icon={<WorkIcon />}
