@@ -48,7 +48,7 @@ const Experience = () => {
     <div id="experience">
       <h1 className="pt-3 text-center font-details-b pb-3">EXPERIENCE</h1>
       {myExperience.map((exp) => {
-        return width > 768 ? (
+        return width > 10000 ? (
           <Jumbotron className="jumbo-style" key={Math.random()}>
             <Container>
               <Tilt options={{ max: 25 }}>
