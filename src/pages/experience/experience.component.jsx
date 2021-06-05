@@ -48,7 +48,7 @@ const Experience = () => {
     <div id="experience">
       <h1 className="pt-3 text-center font-details-b pb-3">EXPERIENCE</h1>
       {myExperience.map((exp) => {
-        return width > 10000 ? (
+        return width > 768 ? (
           <Jumbotron className="jumbo-style" key={Math.random()}>
             <Container>
               <Tilt options={{ max: 25 }}>
@@ -89,20 +89,29 @@ const Experience = () => {
                         <br />
                         <strong>Period:</strong> {exp.duration}
                         <br />
-                        <strong>Duration:</strong>{" "}
-                        {exp.duration.includes("Till Now")
-                          ? getWords(
-                              diff_months(
-                                new Date(exp.duration.split(" - ")[0]),
-                                new Date(Date.now())
-                              )
-                            )
-                          : getWords(
-                              diff_months(
-                                new Date(exp.duration.split(" - ")[0]),
-                                new Date(exp.duration.split(" - ")[1])
-                              )
-                            )}
+                        {getWords(
+                          diff_months(
+                            new Date(exp.duration.split(" - ")[0]),
+                            new Date(Date.now())
+                          )
+                        ) !== "" && (
+                          <>
+                            <strong>Duration:</strong>{" "}
+                            {exp.duration.includes("Till Now")
+                              ? getWords(
+                                  diff_months(
+                                    new Date(exp.duration.split(" - ")[0]),
+                                    new Date(Date.now())
+                                  )
+                                )
+                              : getWords(
+                                  diff_months(
+                                    new Date(exp.duration.split(" - ")[0]),
+                                    new Date(exp.duration.split(" - ")[1])
+                                  )
+                                )}{" "}
+                          </>
+                        )}
                         <br />
                         <strong> Description </strong>
                         <ul className="text-left">
