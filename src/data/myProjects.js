@@ -69,7 +69,7 @@ export const myProjects = [
     projectImg: "2ToDoApp.webp",
     techUsed: "React JS, Node JS, Express JS, MongoDB, EJS",
     appUrl: "http://todo.zarrarpalekar.com/",
-    date: "Aug-2020",
+    date: "Sep-2020",
     desc: "This app is based on EJS and is used to maintain a todo list.",
     features: {
       feat1: "Add To List",
