@@ -20,7 +20,7 @@ export const myExperience = [
     duration: "Jun 2021 - Till Now",
     description: {
       desc1:
-        "<strong>Learning &amp; Developing</strong>Syndication Pro product which is a React based applications with Apollo GraphQL",
+        "Working on <strong>Syndication Pro</strong> product which is a React based applications with Apollo GraphQL",
     },
   },
   {

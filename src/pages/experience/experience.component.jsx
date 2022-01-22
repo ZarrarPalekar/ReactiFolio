@@ -85,35 +85,45 @@ const Experience = () => {
                           {exp.subProfile}
                         </strong>
                         <br />
-                        <strong>Technology:</strong> {exp.technology}
                         <br />
-                        <strong>Period:</strong> {exp.duration}
-                        <br />
-                        {getWords(
-                          diff_months(
-                            new Date(exp.duration.split(" - ")[0]),
-                            new Date(Date.now())
-                          )
-                        ) !== "" && (
-                          <>
-                            <strong>Duration:</strong>{" "}
-                            {exp.duration.includes("Till Now")
-                              ? getWords(
-                                  diff_months(
-                                    new Date(exp.duration.split(" - ")[0]),
-                                    new Date(Date.now())
-                                  )
-                                )
-                              : getWords(
-                                  diff_months(
-                                    new Date(exp.duration.split(" - ")[0]),
-                                    new Date(exp.duration.split(" - ")[1])
-                                  )
-                                )}{" "}
-                          </>
-                        )}
-                        <br />
-                        <strong> Description </strong>
+                        <div className="ml-0">
+                          <div>
+                            <strong>Technology:</strong> {exp.technology}
+                          </div>
+                          <div>
+                            <strong>Period:</strong> {exp.duration}
+                          </div>
+                          <div>
+                            {getWords(
+                              diff_months(
+                                new Date(exp.duration.split(" - ")[0]),
+                                new Date(Date.now())
+                              )
+                            ) !== "" && (
+                              <>
+                                <strong>Duration:</strong>{" "}
+                                {exp.duration.includes("Till Now")
+                                  ? getWords(
+                                      diff_months(
+                                        new Date(exp.duration.split(" - ")[0]),
+                                        new Date(Date.now())
+                                      )
+                                    )
+                                  : getWords(
+                                      diff_months(
+                                        new Date(exp.duration.split(" - ")[0]),
+                                        new Date(exp.duration.split(" - ")[1])
+                                      )
+                                    )}{" "}
+                              </>
+                            )}
+                          </div>
+                          <br />
+                          <div>
+                            <strong>Description: </strong>
+                          </div>
+                        </div>
+
                         <ul className="text-left">
                           {exp.description.desc1 && (
                             <li

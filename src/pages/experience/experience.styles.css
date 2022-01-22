@@ -19,3 +19,14 @@
   font-size: 25px;
   font-weight: 800;
 }
+
+.ml-0 {
+  display: flex;
+  flex-direction: column;
+  padding-left: 2%;
+  /* padding-left: 30%; */
+  /* align-items: center; */
+  /* justify-content: center;
+  align-content: start; */
+  text-align: left;
+}
