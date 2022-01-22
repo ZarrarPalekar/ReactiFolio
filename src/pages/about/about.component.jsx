@@ -37,7 +37,7 @@ const About = () => {
                   am a Full Stack Web Developer with{" "}
                   <strong className="boldest">
                     {getWords(
-                      diff_months(new Date("Mar 2017"), new Date(Date.now()))
+                      diff_months(new Date("Aug 2017"), new Date(Date.now()))
                     )}{" "}
                   </strong>
                   of experience in React.js, Redux, Express.js, Node.js, MongoDB
