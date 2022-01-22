@@ -30,7 +30,7 @@ const About = () => {
               <Row className="custom-bold8 align-items-start p-2 my-details rounded">
                 <p>
                   Hi there! I am{" "}
-                  <strong className="boldest">ZARRAR PALEKAR</strong>
+                  <strong className="boldest">ZARRAR PALEKAR</strong>.
                 </p>
                 <p>
                   A passionate developer, born and brought up in Mumbai, IN. I
@@ -43,10 +43,10 @@ const About = () => {
                   of experience in React.js, Redux, Express.js, Node.js, MongoDB
                   as my current tech stack.
                 </p>
-                <p>Earlier I was working as a .Net Full Stack Developer</p>
+                <p>Earlier I was working as a .Net Full Stack Developer.</p>
                 <p>
                   I am Post Graduate Diploma Holder from{" "}
-                  <strong className="boldest">CDAC</strong> Institute
+                  <strong className="boldest">CDAC</strong> Institute.
                 </p>
                 <p>
                   Working with the stakeholders, I always strive to understand
