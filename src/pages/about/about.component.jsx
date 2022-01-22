@@ -4,6 +4,7 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import ProfilePic from "../../assets/img/profile/profile.webp";
+import { diff_months, getWords } from "../experience/experience.component";
 import "./about.style.css";
 
 const About = () => {
@@ -33,9 +34,16 @@ const About = () => {
                 </p>
                 <p>
                   A passionate developer, born and brought up in Mumbai, IN. I
-                  am a Full Stack Web Developer with React.js, Redux,
-                  Express.js, Node.js, and MongoDB as my tech stack.
+                  am a Full Stack Web Developer with{" "}
+                  <strong className="boldest">
+                    {getWords(
+                      diff_months(new Date("Mar 2017"), new Date(Date.now()))
+                    )}{" "}
+                  </strong>
+                  of experience in React.js, Redux, Express.js, Node.js, MongoDB
+                  as my current tech stack.
                 </p>
+                <p>Earlier I was working as a .Net Full Stack Developer</p>
                 <p>
                   I am Post Graduate Diploma Holder from{" "}
                   <strong className="boldest">CDAC</strong> Institute
@@ -66,7 +74,7 @@ const About = () => {
                   </div>
                   <div>
                     <a
-                      href="https://drive.google.com/file/d/14jjed14IlLAmMaSxngoB3gjd6xZnXV6e/view?usp=sharing"
+                      href="https://drive.google.com/file/d/192b3fDbA7bUnrfS4YamCyBVy-qCHl3hI/view?usp=sharing"
                       target="_blank"
                       rel="noopener noreferrer"
                     >

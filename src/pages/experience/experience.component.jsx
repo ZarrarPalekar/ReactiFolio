@@ -14,7 +14,7 @@ import "react-vertical-timeline-component/style.min.css";
 
 import WorkIcon from "@material-ui/icons/Work";
 
-function diff_months(dt2, dt1) {
+export function diff_months(dt2, dt1) {
   var diff = (dt2.getTime() - dt1.getTime()) / 1000;
   diff /= 60 * 60 * 24 * 7 * 4;
   return Math.abs(Math.round(diff));
@@ -24,7 +24,7 @@ function diff_months(dt2, dt1) {
 // dt2 = new Date("Apr 2019");
 // console.log(diff_months(dt1, dt2));
 
-function getWords(monthCount) {
+export function getWords(monthCount) {
   function getPlural(number, word) {
     return (number === 1 && word.one) || word.other;
   }

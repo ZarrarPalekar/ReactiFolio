@@ -1,5 +1,17 @@
 export const myExperience = [
   {
+    image: "sp.jpg",
+    companyURL: "https://syndicationpro.com/",
+    profile: "Software Engineer L2",
+    subProfile: "MERN Full Stack Developer",
+    technology: "MERN Stack, Redux, GraphQL, Apollo",
+    duration: "Jul 2021 - Till Now",
+    description: {
+      desc1:
+        "<strong>Learning &amp; Implementing</strong> React based applications with Apollo GraphQL",
+    },
+  },
+  {
     image: "fp.jpg",
     companyURL: "https://firstprinciples.io/",
     profile: "Software Engineer L2",
@@ -8,25 +20,7 @@ export const myExperience = [
     duration: "Jun 2021 - Till Now",
     description: {
       desc1:
-        "<strong>Learning &amp; Implementing</strong> React based applications with Apollo GraphQL",
-    },
-  },
-  {
-    image: "java.png",
-    companyURL: "http://www.javarndcorp.com/",
-    profile: "Senior Software Engineer",
-    subProfile: "MERN Full Stack Developer",
-    technology: "MERN Stack, Redux",
-    duration: "Mar 2021 - Jun 2021",
-    description: {
-      desc1:
-        "<strong>Designed &amp; Developed</strong> multiple features for the client's MERN stack apps",
-      desc2:
-        "<strong>Developed</strong> some features from the scratch for the clients using <strong>MERN</strong> as my tech stack and <strong>Redux</strong> for application state management.",
-      desc3:
-        "<strong>Created from scratch</strong> many MERN stack apps as per clients need.",
-      desc4:
-        "<strong>Client facing role</strong> where in we used to have daily stand-ups and scrum calls.",
+        "<strong>Learning &amp; Developing</strong>Syndication Pro product which is a React based applications with Apollo GraphQL",
     },
   },
   {
@@ -49,7 +43,7 @@ export const myExperience = [
     profile: "Senior Software Developer",
     subProfile: ".Net Full Stack Developer",
     technology: ".NET, C#, MS-SQL",
-    duration: "Oct 2019 - Mar 2021",
+    duration: "Oct 2019 - Jun 2021",
     description: {
       desc1:
         "<strong>Developed &amp; enhanced</strong> multiple features for our web based CRM &amp; CMS Systems.",
