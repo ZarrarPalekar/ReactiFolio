@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.6f0dbe01.chunk.css",
-    "main.js": "/static/js/main.0f574611.chunk.js",
-    "main.js.map": "/static/js/main.0f574611.chunk.js.map",
+    "main.css": "/static/css/main.1c497bb6.chunk.css",
+    "main.js": "/static/js/main.f2116e7a.chunk.js",
+    "main.js.map": "/static/js/main.f2116e7a.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.46ecc82c.js",
     "runtime-main.js.map": "/static/js/runtime-main.46ecc82c.js.map",
     "static/css/2.2aa38b9c.chunk.css": "/static/css/2.2aa38b9c.chunk.css",
-    "static/js/2.af2892da.chunk.js": "/static/js/2.af2892da.chunk.js",
-    "static/js/2.af2892da.chunk.js.map": "/static/js/2.af2892da.chunk.js.map",
+    "static/js/2.00ac1131.chunk.js": "/static/js/2.00ac1131.chunk.js",
+    "static/js/2.00ac1131.chunk.js.map": "/static/js/2.00ac1131.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.2aa38b9c.chunk.css.map": "/static/css/2.2aa38b9c.chunk.css.map",
-    "static/css/main.6f0dbe01.chunk.css.map": "/static/css/main.6f0dbe01.chunk.css.map",
-    "static/js/2.af2892da.chunk.js.LICENSE.txt": "/static/js/2.af2892da.chunk.js.LICENSE.txt",
+    "static/css/main.1c497bb6.chunk.css.map": "/static/css/main.1c497bb6.chunk.css.map",
+    "static/js/2.00ac1131.chunk.js.LICENSE.txt": "/static/js/2.00ac1131.chunk.js.LICENSE.txt",
     "static/media/1DevConnApp.webp": "/static/media/1DevConnApp.1b5a68c6.webp",
     "static/media/2ToDoApp.webp": "/static/media/2ToDoApp.77626173.webp",
     "static/media/3Secrets.webp": "/static/media/3Secrets.87e6e44e.webp",
@@ -21,7 +21,7 @@
     "static/media/7MernShopList.webp": "/static/media/7MernShopList.72c16920.webp",
     "static/media/8OldCV.webp": "/static/media/8OldCV.cae946f1.webp",
     "static/media/JWT.svg": "/static/media/JWT.d33657fb.svg",
-    "static/media/MERN.svg": "/static/media/MERN.2b07fc0f.svg",
+    "static/media/MERN.svg": "/static/media/MERN.6f5f5a0a.svg",
     "static/media/OAuth.svg": "/static/media/OAuth.f314880f.svg",
     "static/media/React_ToDo_List.webp": "/static/media/React_ToDo_List.1767548b.webp",
     "static/media/Robofriends.webp": "/static/media/Robofriends.1852c702.webp",
@@ -43,7 +43,7 @@
     "static/media/git-icon.svg": "/static/media/git-icon.c60b7e5a.svg",
     "static/media/github-api.svg": "/static/media/github-api.3a5ccf39.svg",
     "static/media/github.svg": "/static/media/github.740db6be.svg",
-    "static/media/githubpages.svg": "/static/media/githubpages.c9f26db7.svg",
+    "static/media/githubpages.svg": "/static/media/githubpages.4706fdbe.svg",
     "static/media/go-6.svg": "/static/media/go-6.4c88fbf9.svg",
     "static/media/heroku.svg": "/static/media/heroku.73be03b3.svg",
     "static/media/html-5.svg": "/static/media/html-5.821ba738.svg",
@@ -75,6 +75,7 @@
     "static/media/slide1.73e7c243.webp": "/static/media/slide1.73e7c243.webp",
     "static/media/slide2.92489f52.webp": "/static/media/slide2.92489f52.webp",
     "static/media/slide3.c53be614.webp": "/static/media/slide3.c53be614.webp",
+    "static/media/sp.jpg": "/static/media/sp.81615c35.jpg",
     "static/media/styled-components-svgrepo-com.svg": "/static/media/styled-components-svgrepo-com.eb9a849b.svg",
     "static/media/styled-components.svg": "/static/media/styled-components.a5fa325c.svg",
     "static/media/techmahindra.svg": "/static/media/techmahindra.da108ea0.svg",
@@ -87,8 +88,8 @@
   "entrypoints": [
     "static/js/runtime-main.46ecc82c.js",
     "static/css/2.2aa38b9c.chunk.css",
-    "static/js/2.af2892da.chunk.js",
-    "static/css/main.6f0dbe01.chunk.css",
-    "static/js/main.0f574611.chunk.js"
+    "static/js/2.00ac1131.chunk.js",
+    "static/css/main.1c497bb6.chunk.css",
+    "static/js/main.f2116e7a.chunk.js"
   ]
 }
