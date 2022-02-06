@@ -2,6 +2,7 @@ export const myExperience = [
   {
     image: "sp.jpg",
     companyURL: "https://syndicationpro.com/",
+    companyName: "Syndication Pro",
     profile: "Software Engineer L2",
     subProfile: "MERN Full Stack Developer",
     technology: "MERN Stack, Redux, GraphQL, Apollo",
@@ -14,6 +15,7 @@ export const myExperience = [
   {
     image: "fp.jpg",
     companyURL: "https://firstprinciples.io/",
+    companyName: "First Principles",
     profile: "Software Engineer L2",
     subProfile: "MERN Full Stack Developer",
     technology: "MERN Stack, Redux, GraphQL, Apollo",
@@ -26,6 +28,7 @@ export const myExperience = [
   {
     image: "typ.jpg",
     companyURL: "https://theyouthproject.in/",
+    companyName: "The Youth Project",
     profile: "Fellow",
     subProfile: "MERN Full Stack Fellow",
     technology: "MERN Stack, Redux",
@@ -40,6 +43,7 @@ export const myExperience = [
   {
     image: "ti.jpg",
     companyURL: "https://www.tendersinfo.com/",
+    companyName: "Euclid - Tenders Info",
     profile: "Senior Software Developer",
     subProfile: ".Net Full Stack Developer",
     technology: ".NET, C#, MS-SQL",
@@ -56,6 +60,7 @@ export const myExperience = [
   {
     image: "newgen.svg",
     companyURL: "https://newgensoft.com/",
+    companyName: "Newgen",
     profile: "Software Engineer",
     subProfile: ".Net Full Stack Developer",
     technology: ".NET, C#, MS-SQL",
@@ -70,6 +75,7 @@ export const myExperience = [
   {
     image: "techmahindra.svg",
     companyURL: "https://www.techmahindra.com/",
+    companyName: "Tech Mahindra",
     profile: "Software Engineer",
     subProfile: ".Net Full Stack Developer",
     technology: ".NET, C#, Oracle PL/SQL",

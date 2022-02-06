@@ -76,6 +76,11 @@ const Experience = () => {
                   <Card.Body className="d-flex justify-content-center flex-column">
                     <div>
                       <Card.Title className="text-center">
+                        {exp.companyName}
+                      </Card.Title>
+                    </div>
+                    <div>
+                      <Card.Title className="text-center">
                         {exp.profile}
                       </Card.Title>
                     </div>
@@ -192,6 +197,9 @@ const Experience = () => {
                   alt={exp.image}
                 />
               </a>
+              <h2 className="vertical-timeline-element-title mt-3">
+                {exp.companyName}
+              </h2>
               <h3 className="vertical-timeline-element-title mt-3">
                 {exp.profile}
               </h3>
