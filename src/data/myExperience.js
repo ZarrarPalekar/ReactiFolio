@@ -1,15 +1,29 @@
 export const myExperience = [
   {
+    image: "aa.webp",
+    companyURL: "https://azularc.com/",
+    companyName: "Azul Arc",
+    profile: "Sr. Software Developer",
+    subProfile: "MERN Full Stack Developer",
+    technology: "MERN Stack, Context API",
+    duration: "Nov 2022 - Till Now",
+    description: {
+      desc1:
+        "<strong>Developing</strong> various React based applications with Context API.",
+      desc2: "<strong>Interacting</strong> with the clients directly.",
+    },
+  },
+  {
     image: "sp.jpg",
     companyURL: "https://syndicationpro.com/",
     companyName: "Syndication Pro",
     profile: "Software Engineer L2",
     subProfile: "MERN Full Stack Developer",
     technology: "MERN Stack, Redux, GraphQL, Apollo",
-    duration: "Jul 2021 - Till Now",
+    duration: "Jul 2021 - Oct 2022",
     description: {
       desc1:
-        "<strong>Learning &amp; Implementing</strong> React based applications with Apollo GraphQL",
+        "<strong>Learning &amp; Implementing</strong> React based applications with Apollo GraphQL.",
     },
   },
   {
@@ -19,10 +33,10 @@ export const myExperience = [
     profile: "Software Engineer L2",
     subProfile: "MERN Full Stack Developer",
     technology: "MERN Stack, Redux, GraphQL, Apollo",
-    duration: "Jun 2021 - Till Now",
+    duration: "Jun 2021 - Oct 2022",
     description: {
       desc1:
-        "Working on <strong>Syndication Pro</strong> product which is a React based applications with Apollo GraphQL",
+        "Working on <strong>Syndication Pro</strong> product which is a React based applications with Apollo GraphQL.",
     },
   },
   {
