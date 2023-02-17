@@ -47,7 +47,6 @@ export const myProjects = [
     projectName: "Shopping List App",
     projectImg: "7MernShopList.webp",
     techUsed: "React JS, Node JS, Express JS, MongoDB, Redux, JWT",
-    appUrl: "https://shoppinglist.zarrarpalekar.com/",
     date: "Oct-2020",
     desc: "This is a Shopping List App.",
     features: {
@@ -68,7 +67,6 @@ export const myProjects = [
     projectName: "EJS Todo App",
     projectImg: "2ToDoApp.webp",
     techUsed: "React JS, Node JS, Express JS, MongoDB, EJS",
-    appUrl: "https://todo.zarrarpalekar.com/",
     date: "Sep-2020",
     desc: "This app is based on EJS and is used to maintain a todo list.",
     features: {
@@ -89,7 +87,6 @@ export const myProjects = [
     projectName: "My Blogs",
     projectImg: "5Blogs.webp",
     techUsed: "HTML, CSS, Bootstrap, EJS, MongoDB",
-    appUrl: "https://blog.zarrarpalekar.com/",
     date: "Sep-2020",
     desc: "An app that allows users to see my blog posts.",
     features: {
@@ -108,7 +105,6 @@ export const myProjects = [
     projectName: "My Newsletter",
     projectImg: "4SignUpNewsLetter.webp",
     techUsed: "EJS, Node JS, Express JS, Mailchimp API",
-    appUrl: "https://newsletter.zarrarpalekar.com/",
     date: "Sep-2020",
     desc: "An app that signs you up for my newsletter.",
     features: {
@@ -127,7 +123,6 @@ export const myProjects = [
     projectName: "Secrets App",
     projectImg: "3Secrets.webp",
     techUsed: "HTML, CSS, React JS, MongoDB, Google OAuth",
-    appUrl: "https://secrets.zarrarpalekar.com/",
     date: "Aug-2020",
     desc: "An app that posts secrets anonymously.",
     features: {
