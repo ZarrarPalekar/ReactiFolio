@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import "./contact-form.styles.css";
+import { PopupButton } from "react-calendly";
 
 const ContactForm = () => {
   return (
@@ -69,6 +70,17 @@ const ContactForm = () => {
                   <i className="fas fa-phone-alt"></i> Give me a call
                 </Button>
               </a>
+            </div>
+            <div className="m-2">
+              <PopupButton
+                className="btn calendly-btn"
+                url="https://calendly.com/meetzarrar"
+                rootElement={document.getElementById("root")}
+                text={[
+                  <i class="fa fa-calendar" aria-hidden="true"></i>,
+                  " Connect via Calendly",
+                ]}
+              />
             </div>
           </Col>
         </Row>

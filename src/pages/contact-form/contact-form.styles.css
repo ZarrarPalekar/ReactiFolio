@@ -12,3 +12,12 @@
   background-color: #f83f37;
   color: #ffffff;
 }
+
+.calendly-btn {
+  border-color: rgb(0, 107, 255);
+  color: rgb(0, 107, 255);
+}
+.calendly-btn:hover {
+  background-color: rgb(0, 107, 255);
+  color: #ffffff;
+}

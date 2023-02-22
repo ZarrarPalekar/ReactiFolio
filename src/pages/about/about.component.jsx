@@ -6,6 +6,7 @@ import Row from "react-bootstrap/Row";
 import ProfilePic from "../../assets/img/profile/profile.webp";
 import { diff_months, getWords } from "../experience/experience.component";
 import "./about.style.css";
+import { PopupButton } from "react-calendly";
 
 const About = () => {
   return (
@@ -104,6 +105,17 @@ const About = () => {
                         <i className="fab fa-linkedin-in"></i>&nbsp;LinkedIn
                       </Button>
                     </a>
+                  </div>
+                  <div>
+                    <PopupButton
+                      className="btn calendly-btn"
+                      url="https://calendly.com/meetzarrar"
+                      rootElement={document.getElementById("root")}
+                      text={[
+                        <i class="fa fa-calendar" aria-hidden="true"></i>,
+                        " Connect via Calendly",
+                      ]}
+                    />
                   </div>
                 </Col>
               </Row>

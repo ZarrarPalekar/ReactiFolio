@@ -8,6 +8,7 @@ import "./mynavbar.style.css";
 import useWindowDimensions from "../../functionality/checkViewPort";
 
 import { HamburgerVortex } from "react-animated-burgers";
+import { PopupButton } from "react-calendly";
 
 const MyNavbar = () => {
   const { width } = useWindowDimensions();
@@ -97,6 +98,22 @@ const MyNavbar = () => {
               href="#contact"
             >
               Contact
+            </Nav.Link>
+            <Nav.Link
+              onClick={() => {
+                setExpanded(false);
+                width < 768 && toggleButton();
+              }}
+            >
+              <PopupButton
+                className="btn calendly-btn"
+                url="https://calendly.com/meetzarrar"
+                rootElement={document.getElementById("root")}
+                text={[
+                  <i class="fa fa-calendar" aria-hidden="true"></i>,
+                  " Connect via Calendly",
+                ]}
+              />
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
