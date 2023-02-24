@@ -104,6 +104,7 @@ const MyNavbar = () => {
                 setExpanded(false);
                 width < 768 && toggleButton();
               }}
+              title="Let's catchup over a Google Meet call"
             >
               <PopupButton
                 className="btn calendly-btn"
