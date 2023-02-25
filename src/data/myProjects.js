@@ -22,7 +22,7 @@ export const myProjects = [
     },
   },
   {
-    projectName: "Dev Conn App",
+    projectName: "Dev Social App",
     projectImg: "1DevConnApp.webp",
     techUsed: "React JS, Node JS, Express JS, MongoDB, Redux, JWT",
     appUrl: "https://devconn.zarrarpalekar.com/",
