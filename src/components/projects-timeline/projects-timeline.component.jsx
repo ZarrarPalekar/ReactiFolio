@@ -1,5 +1,5 @@
 import React from "react";
-import { Timeline, Events, UrlButton, ImageEvent } from "@merc/react-timeline";
+import { Timeline, Events, Button, ImageEvent } from "@merc/react-timeline";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
@@ -159,9 +159,14 @@ const TimeLine = () => {
                   </div>
                   <div className="d-flex justify-content-center flex-nowrap text-center">
                     {project.appUrl && (
-                      <UrlButton href={project.appUrl} target="_blank">
+                      <Button
+                        onClick={() => {
+                          window.open(project.appUrl, "_blank");
+                        }}
+                        style={{ width: "100%" }}
+                      >
                         SEE LIVE
-                      </UrlButton>
+                      </Button>
                     )}
 
                     {/* {project.gitUrl && (
