@@ -40,6 +40,20 @@ export function getWords(monthCount) {
   return result.join(" and ");
 }
 
+export function getWordsWithoutMonths(monthCount) {
+  function getPlural(number, word) {
+    return (number === 1 && word.one) || word.other;
+  }
+
+  var years = { one: "year", other: "years" },
+    y = Math.floor(monthCount / 12),
+    result = [];
+
+  y && result.push(y + " " + getPlural(y, years));
+
+  return result.join(" and ");
+}
+
 // console.log(getWords(27));
 
 const Experience = () => {
