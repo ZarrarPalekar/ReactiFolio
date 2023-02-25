@@ -74,84 +74,78 @@ const TimeLine = () => {
                                   return (
                                     <li className="py-2">
                                       <span className="p-2">
-                                        {index === 0 &&
-                                          project.techImages && (
-                                            <Image
-                                              // src={`${eachTech.trim()}`}
-                                              src={
-                                                require(`../../assets/img/skills/${project.techImages.img0}`)
-                                                  .default
-                                              }
-                                              alt={eachTech}
-                                              rounded
-                                              className="image-style m-1"
-                                            ></Image>
-                                          )}{" "}
-                                        {index === 1 &&
-                                          project.techImages && (
-                                            <Image
-                                              // src={`${eachTech.trim()}`}
-                                              src={
-                                                require(`../../assets/img/skills/${project.techImages.img1}`)
-                                                  .default
-                                              }
-                                              alt={eachTech}
-                                              rounded
-                                              className="image-style m-1"
-                                            ></Image>
-                                          )}{" "}
-                                        {index === 2 &&
-                                          project.techImages && (
-                                            <Image
-                                              // src={`${eachTech.trim()}`}
-                                              src={
-                                                require(`../../assets/img/skills/${project.techImages.img2}`)
-                                                  .default
-                                              }
-                                              alt={eachTech}
-                                              rounded
-                                              className="image-style m-1"
-                                            ></Image>
-                                          )}{" "}
-                                        {index === 3 &&
-                                          project.techImages && (
-                                            <Image
-                                              // src={`${eachTech.trim()}`}
-                                              src={
-                                                require(`../../assets/img/skills/${project.techImages.img3}`)
-                                                  .default
-                                              }
-                                              alt={eachTech}
-                                              rounded
-                                              className="image-style m-1"
-                                            ></Image>
-                                          )}{" "}
-                                        {index === 4 &&
-                                          project.techImages && (
-                                            <Image
-                                              // src={`${eachTech.trim()}`}
-                                              src={
-                                                require(`../../assets/img/skills/${project.techImages.img4}`)
-                                                  .default
-                                              }
-                                              alt={eachTech}
-                                              rounded
-                                              className="image-style m-1"
-                                            ></Image>
-                                          )}{" "}
-                                        {index === 5 &&
-                                          project.techImages && (
-                                            <Image
-                                              // src={`${eachTech.trim()}`}
-                                              src={
-                                                require(`../../assets/img/skills/${project.techImages.img5}`)
-                                                  .default
-                                              }
-                                              alt={eachTech}
-                                              rounded
-                                              className="image-style m-1"
-                                            ></Image>
-                                          )}{" "}
+                                        {index === 0 && project.techImages && (
+                                          <Image
+                                            // src={`${eachTech.trim()}`}
+                                            src={
+                                              require(`../../assets/img/skills/${project.techImages.img0}`)
+                                                .default
+                                            }
+                                            alt={eachTech}
+                                            rounded
+                                            className="image-style m-1"
+                                          ></Image>
+                                        )}{" "}
+                                        {index === 1 && project.techImages && (
+                                          <Image
+                                            // src={`${eachTech.trim()}`}
+                                            src={
+                                              require(`../../assets/img/skills/${project.techImages.img1}`)
+                                                .default
+                                            }
+                                            alt={eachTech}
+                                            rounded
+                                            className="image-style m-1"
+                                          ></Image>
+                                        )}{" "}
+                                        {index === 2 && project.techImages && (
+                                          <Image
+                                            // src={`${eachTech.trim()}`}
+                                            src={
+                                              require(`../../assets/img/skills/${project.techImages.img2}`)
+                                                .default
+                                            }
+                                            alt={eachTech}
+                                            rounded
+                                            className="image-style m-1"
+                                          ></Image>
+                                        )}{" "}
+                                        {index === 3 && project.techImages && (
+                                          <Image
+                                            // src={`${eachTech.trim()}`}
+                                            src={
+                                              require(`../../assets/img/skills/${project.techImages.img3}`)
+                                                .default
+                                            }
+                                            alt={eachTech}
+                                            rounded
+                                            className="image-style m-1"
+                                          ></Image>
+                                        )}{" "}
+                                        {index === 4 && project.techImages && (
+                                          <Image
+                                            // src={`${eachTech.trim()}`}
+                                            src={
+                                              require(`../../assets/img/skills/${project.techImages.img4}`)
+                                                .default
+                                            }
+                                            alt={eachTech}
+                                            rounded
+                                            className="image-style m-1"
+                                          ></Image>
+                                        )}{" "}
+                                        {index === 5 && project.techImages && (
+                                          <Image
+                                            // src={`${eachTech.trim()}`}
+                                            src={
+                                              require(`../../assets/img/skills/${project.techImages.img5}`)
+                                                .default
+                                            }
+                                            alt={eachTech}
+                                            rounded
+                                            className="image-style m-1"
+                                          ></Image>
+                                        )}{" "}
                                         {eachTech}
                                       </span>
                                     </li>
@@ -163,18 +157,18 @@ const TimeLine = () => {
                       </Card>
                     </Accordion>
                   </div>
-                  <div className="d-flex justify-content-between flex-nowrap text-center">
+                  <div className="d-flex justify-content-center flex-nowrap text-center">
                     {project.appUrl && (
                       <UrlButton href={project.appUrl} target="_blank">
                         SEE LIVE
                       </UrlButton>
                     )}
 
-                    {project.gitUrl && (
+                    {/* {project.gitUrl && (
                       <UrlButton href={project.gitUrl} target="_blank">
                         SOURCE CODE
                       </UrlButton>
-                    )}
+                    )} */}
                   </div>
                 </div>
               </ImageEvent>
