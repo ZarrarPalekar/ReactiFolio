@@ -25,7 +25,7 @@ export const myProjects = [
     projectName: "Dev Social App",
     projectImg: "1DevConnApp.webp",
     techUsed: "React JS, Node JS, Express JS, MongoDB, Redux, JWT",
-    appUrl: "https://devconn.zarrarpalekar.com/",
+    appUrl: "https://devsocial.zarrarpalekar.com/",
     gitUrl: "https://github.com/ZarrarPalekar/SocialDevApp",
     date: "Nov-2020",
     desc: "This is a Social Media App created with React and Redux that is basically a social media app for developers with almost all social media functionalities.",
