@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.d9b61944.chunk.css",
-    "main.js": "/static/js/main.03275298.chunk.js",
-    "main.js.map": "/static/js/main.03275298.chunk.js.map",
+    "main.js": "/static/js/main.0332a5a1.chunk.js",
+    "main.js.map": "/static/js/main.0332a5a1.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.46ecc82c.js",
     "runtime-main.js.map": "/static/js/runtime-main.46ecc82c.js.map",
     "static/css/2.2aa38b9c.chunk.css": "/static/css/2.2aa38b9c.chunk.css",
@@ -12,7 +12,7 @@
     "static/css/2.2aa38b9c.chunk.css.map": "/static/css/2.2aa38b9c.chunk.css.map",
     "static/css/main.d9b61944.chunk.css.map": "/static/css/main.d9b61944.chunk.css.map",
     "static/js/2.a8799c7f.chunk.js.LICENSE.txt": "/static/js/2.a8799c7f.chunk.js.LICENSE.txt",
-    "static/media/1DevConnApp.webp": "/static/media/1DevConnApp.1b5a68c6.webp",
+    "static/media/1DevConnApp.webp": "/static/media/1DevConnApp.9db3d896.webp",
     "static/media/2ToDoApp.webp": "/static/media/2ToDoApp.77626173.webp",
     "static/media/3Secrets.webp": "/static/media/3Secrets.87e6e44e.webp",
     "static/media/4SignUpNewsLetter.webp": "/static/media/4SignUpNewsLetter.d3b8ed7d.webp",
@@ -91,6 +91,6 @@
     "static/css/2.2aa38b9c.chunk.css",
     "static/js/2.a8799c7f.chunk.js",
     "static/css/main.d9b61944.chunk.css",
-    "static/js/main.03275298.chunk.js"
+    "static/js/main.0332a5a1.chunk.js"
   ]
 }
