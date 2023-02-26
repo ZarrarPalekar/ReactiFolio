@@ -34,7 +34,7 @@ const App = () => {
   };
 
   if (isLoading) {
-    return <MyCarousel loaderStop={loaderStop} />;
+    return <MyCarousel loaderStop={loaderStop} hideAll={true} />;
   }
 
   return (
