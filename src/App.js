@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import { Parallax } from "react-parallax";
 import Fade from "react-reveal/Fade";
@@ -22,6 +22,23 @@ import Whatsapp from "./components/whatsapp-me/whatsapp.component";
 
 const App = () => {
   // const { height, width } = useWindowDimensions();
+  const [isLoading, setLoading] = useState(true);
+  function someRequest() {
+    //Simulates a request; makes a "promise" that'll run for 1.5 seconds
+    return new Promise((resolve) => setTimeout(() => resolve(), 1500));
+  }
+  useEffect(() => {
+    someRequest().then(() => {
+      const loaderElement = document.querySelector(".overlay");
+      if (loaderElement) {
+        loaderElement.remove();
+        setLoading(!isLoading);
+      }
+    });
+  });
+  if (isLoading) {
+    return null;
+  }
 
   return (
     <div className="App">
