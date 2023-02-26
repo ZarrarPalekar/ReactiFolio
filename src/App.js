@@ -25,7 +25,7 @@ const App = () => {
   const [isLoading, setLoading] = useState(true);
   function someRequest() {
     //Simulates a request; makes a "promise" that'll run for 1.5 seconds
-    return new Promise((resolve) => setTimeout(() => resolve(), 1500));
+    return new Promise((resolve) => setTimeout(() => resolve(), 2500));
   }
   useEffect(() => {
     someRequest().then(() => {
