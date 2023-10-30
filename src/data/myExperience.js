@@ -6,7 +6,7 @@ export const myExperience = [
     profile: "Sr. Software Developer",
     subProfile: "MERN Full Stack Developer",
     technology: "MERN Stack, Context API",
-    duration: "Nov 2022 - Till Now",
+    duration: "Oct 2022 - Till Now",
     description: {
       desc1:
         "<strong>Developing</strong> various React based applications with Context API.",
@@ -20,38 +20,10 @@ export const myExperience = [
     profile: "Software Engineer L2",
     subProfile: "MERN Full Stack Developer",
     technology: "MERN Stack, Redux, GraphQL, Apollo",
-    duration: "Jul 2021 - Oct 2022",
-    description: {
-      desc1:
-        "<strong>Learning &amp; Implementing</strong> React based applications with Apollo GraphQL.",
-    },
-  },
-  {
-    image: "fp.jpg",
-    companyURL: "https://firstprinciples.io/",
-    companyName: "First Principles",
-    profile: "Software Engineer L2",
-    subProfile: "MERN Full Stack Developer",
-    technology: "MERN Stack, Redux, GraphQL, Apollo",
     duration: "Jun 2021 - Oct 2022",
     description: {
       desc1:
-        "Working on <strong>Syndication Pro</strong> product which is a React based applications with Apollo GraphQL.",
-    },
-  },
-  {
-    image: "typ.jpg",
-    companyURL: "https://theyouthproject.in/",
-    companyName: "The Youth Project",
-    profile: "Fellow",
-    subProfile: "MERN Full Stack Fellow",
-    technology: "MERN Stack, Redux",
-    duration: "Nov 2020 - Jun 2021",
-    description: {
-      desc1: "<strong>Learned</strong> development of MERN stack apps.",
-      desc2:
-        "<strong>First</strong> Fellowship/Community based learning experience.",
-      desc3: "<strong>Not</strong> your typical classroom type setup.",
+        "<strong>Learning &amp; Implementing</strong> React based applications with Apollo GraphQL.",
     },
   },
   {
