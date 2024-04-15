@@ -6,7 +6,7 @@ export const myExperience = [
     profile: "Sr. Software Developer",
     subProfile: "MERN Full Stack Developer",
     technology: "MERN Stack, Context API",
-    duration: "Oct 2022 - Till Now",
+    duration: "Nov 2022 - Till Now",
     description: {
       desc1:
         "<strong>Developing</strong> various React based applications with Context API.",
