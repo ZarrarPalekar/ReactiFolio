@@ -6,7 +6,6 @@ import Row from "react-bootstrap/Row";
 import ProfilePic from "../../assets/img/profile/profile.webp";
 import {
   diff_months,
-  getWords,
   getWordsWithoutMonths,
 } from "../experience/experience.component";
 import "./about.style.css";
@@ -41,17 +40,6 @@ const About = () => {
                     &#128075; Hi there! I am{" "}
                     <strong className="boldest">ZARRAR PALEKAR</strong>.
                   </p>
-                  {/* <p>
-                  A passionate developer, born and brought up in Mumbai, IN. I
-                  am a Full Stack Web Developer with{" "}
-                  <strong className="boldest">
-                    {getWords(
-                      diff_months(new Date("Aug 2017"), new Date(Date.now()))
-                    )}{" "}
-                  </strong>
-                  of experience in React.js, Redux, Express.js, Node.js, MongoDB
-                  as my current tech stack.
-                </p> */}
                   <p>
                     With over{" "}
                     <strong className="boldest">
@@ -83,7 +71,10 @@ const About = () => {
                     expand my expertise to remain at the forefront of this
                     dynamic industry.
                   </p>
-                  <p>Let's build something exceptional together!</p>
+                  <p>
+                    Let's collaborate to turn your vision to reality and create
+                    something truly exceptional together!
+                  </p>
                   <br /> <br />
                   <Col className="d-flex justify-content-center flex-wrap">
                     <div>
