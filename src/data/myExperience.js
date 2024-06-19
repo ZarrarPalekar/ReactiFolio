@@ -33,7 +33,7 @@ export const myExperience = [
     profile: "Senior Software Developer",
     subProfile: ".Net Full Stack Developer",
     technology: ".NET, C#, MS-SQL",
-    duration: "Oct 2019 - Jun 2021",
+    duration: "Apr 2019 - Jun 2021",
     description: {
       desc1:
         "<strong>Developed &amp; enhanced</strong> multiple features for our web based CRM &amp; CMS Systems.",
@@ -41,21 +41,6 @@ export const myExperience = [
         "<strong>Developed</strong> automated mailer applications as well as JSON based Web APIs for the clients.",
       desc3:
         "<strong>Created from scratch</strong> many small modules which used to come to us as manual tasks daily so as to reduce our manual task load.",
-    },
-  },
-  {
-    image: "newgen.svg",
-    companyURL: "https://newgensoft.com/",
-    companyName: "Newgen",
-    profile: "Software Engineer",
-    subProfile: ".Net Full Stack Developer",
-    technology: ".NET, C#, MS-SQL",
-    duration: "Apr 2019 - Oct 2019",
-    description: {
-      desc1:
-        "<strong>Developed &amp; enhanced</strong> products like OmniDocs.",
-      desc2:
-        "<strong>Developed</strong> automated mailer applications for the clients.",
     },
   },
   {
