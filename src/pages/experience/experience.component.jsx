@@ -14,39 +14,45 @@ import "react-vertical-timeline-component/style.min.css";
 
 import WorkIcon from "@material-ui/icons/Work";
 
-export function diff_months(dt2, dt1) {
-  var diff = (dt2.getTime() - dt1.getTime()) / 1000;
-  diff /= 60 * 60 * 24 * 7 * 4;
-  return Math.abs(Math.round(diff));
-}
+// Function to calculate the difference in years and months
+export function diff_months(date1, date2) {
+  let years = date2.getFullYear() - date1.getFullYear();
+  let months = date2.getMonth() - date1.getMonth();
 
-// dt1 = new Date("Mar 2017");
-// dt2 = new Date("Apr 2019");
-// console.log(diff_months(dt1, dt2));
-
-export function getWords(monthCount) {
-  function getPlural(number, word) {
-    return (number === 1 && word.one) || word.other;
+  if (months < 0) {
+    years--;
+    months += 12;
   }
 
-  var months = { one: "month", other: "months" },
-    years = { one: "year", other: "years" },
-    m = monthCount % 12,
-    y = Math.floor(monthCount / 12),
-    result = [];
-
-  y && result.push(y + " " + getPlural(y, years));
-  m && result.push(m + " " + getPlural(m, months));
-  return result.join(" and ");
+  return { years, months };
 }
 
-export function getWordsWithoutMonths(monthCount) {
+// Function to convert the difference into words
+export function getWords(duration) {
+  const { years, months } = duration;
+  let words = "";
+
+  if (years > 0) {
+    words += `${years} year${years > 1 ? "s" : ""}`;
+  }
+
+  if (months > 0) {
+    if (years > 0) {
+      words += " and ";
+    }
+    words += `${months} month${months > 1 ? "s" : ""}`;
+  }
+
+  return words;
+}
+
+export function getWordsWithoutMonths(duration) {
   function getPlural(number, word) {
     return (number === 1 && word.one) || word.other;
   }
 
   var years = { one: "year", other: "years" },
-    y = Math.floor(monthCount / 12),
+    y = duration.years,
     result = [];
 
   y && result.push(y + " " + getPlural(y, years));

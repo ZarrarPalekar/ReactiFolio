@@ -44,7 +44,7 @@ const About = () => {
                     With over{" "}
                     <strong className="boldest">
                       {getWordsWithoutMonths(
-                        diff_months(new Date("Aug 2017"), new Date(Date.now()))
+                        diff_months(new Date("Mar 2017"), new Date(Date.now()))
                       )}{" "}
                     </strong>{" "}
                     of dedicated experience in Full Stack Web Development, my
