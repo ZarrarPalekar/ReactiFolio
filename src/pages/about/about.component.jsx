@@ -144,7 +144,7 @@ const About = () => {
                     </div>
                     <div title="Let's catchup over a Google Meet call">
                       <PopupButton
-                        className="btn calendly-btn"
+                        className="btn calendly-btn m-2"
                         url="https://calendly.com/meetzarrar"
                         rootElement={document.getElementById("root")}
                         text={[

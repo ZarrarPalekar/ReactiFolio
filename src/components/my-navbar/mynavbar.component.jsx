@@ -100,7 +100,8 @@ const MyNavbar = () => {
             >
               Contact
             </Nav.Link>
-            <Nav.Link
+            <div
+              className="nav-link"
               onClick={() => {
                 setExpanded(false);
                 width < 768 && setIsOpen(false);
@@ -116,7 +117,7 @@ const MyNavbar = () => {
                   " Connect via Calendly",
                 ]}
               />
-            </Nav.Link>
+            </div>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

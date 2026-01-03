@@ -105,6 +105,14 @@
   box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
 }
 
+/* Navbar Calendly wrapper alignment */
+.nav-link:has(.calendly-btn) {
+  padding: 0 !important;
+  margin: 0 var(--space-2);
+  display: flex;
+  align-items: center;
+}
+
 /* Hamburger Menu */
 .navToggler {
   padding: 0;
