@@ -1,8 +1,5 @@
-import React from "react";
 import Container from "react-bootstrap/Container";
-import Jumbotron from "react-bootstrap/Jumbotron";
 import Card from "react-bootstrap/Card";
-import Tilt from "react-tilt";
 import "./experience.styles.css";
 import { myExperience } from "../../data/myExperience";
 import useWindowDimensions from "../../functionality/checkViewPort";
@@ -11,8 +8,9 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+import TiltWrapper from "../../components/tilt-wrapper/TiltWrapper";
 
-import WorkIcon from "@material-ui/icons/Work";
+import WorkIcon from "@mui/icons-material/Work";
 
 // Function to calculate the difference in years and months
 export function diff_months(date1, date2) {
@@ -65,13 +63,13 @@ export function getWordsWithoutMonths(duration) {
 const Experience = () => {
   const { width } = useWindowDimensions();
   return (
-    <div id="experience">
+    <div id="experience" className="experience-section">
       <h1 className="pt-3 text-center font-details-b pb-3">EXPERIENCE</h1>
       {myExperience.map((exp) => {
         return width > 768 ? (
-          <Jumbotron className="jumbo-style" key={Math.random()}>
+          <div className="jumbo-style p-4 mb-4" key={Math.random()}>
             <Container>
-              <Tilt options={{ max: 25 }}>
+              <TiltWrapper options={{ max: 25 }}>
                 <Card>
                   <Card.Header
                     as="h5"
@@ -85,10 +83,7 @@ const Experience = () => {
                       <Card.Img
                         variant="top"
                         className="img-resize"
-                        src={
-                          require(`../../assets/img/experience/${exp.image}`)
-                            .default
-                        }
+                        src={require(`../../assets/img/experience/${exp.image}`)}
                         alt="TI logo"
                       />
                     </a>
@@ -190,9 +185,9 @@ const Experience = () => {
                     </div>
                   </Card.Body>
                 </Card>
-              </Tilt>
+              </TiltWrapper>
             </Container>
-          </Jumbotron>
+          </div>
         ) : (
           <VerticalTimeline>
             <VerticalTimelineElement
@@ -211,9 +206,7 @@ const Experience = () => {
                 <Card.Img
                   variant="top"
                   className="img-resize"
-                  src={
-                    require(`../../assets/img/experience/${exp.image}`).default
-                  }
+                  src={require(`../../assets/img/experience/${exp.image}`)}
                   alt={exp.image}
                 />
               </a>

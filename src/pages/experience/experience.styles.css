@@ -1,32 +1,144 @@
+/* ========================================
+   MODERN EXPERIENCE SECTION STYLES
+   ======================================== */
+
+.experience-section {
+  padding: var(--space-12) 0;
+}
+
 .img-resize {
-  width: 10em;
+  width: 12em;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all var(--transition-base);
+  border: 3px solid var(--glass-border);
+}
+
+.img-resize:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
 }
 
 .style {
-  font-size: 20px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--color-text-primary);
 }
 
 .jumbo-style {
-  background-image: linear-gradient(
-    -225deg,
-    #2cd8d5 0%,
-    #6b8dd6 48%,
-    #8e37d7 100%
-  );
+  background: var(--glass-bg-dark);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--glass-shadow);
+  padding: var(--space-8);
+  margin-bottom: var(--space-6);
+  transition: all var(--transition-base);
+}
+
+.jumbo-style:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
 }
 
 .body-title-style {
-  font-size: 25px;
+  font-size: 1.75rem;
   font-weight: 800;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-light),
+    var(--color-secondary-light)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--space-3);
 }
 
 .ml-0 {
   display: flex;
   flex-direction: column;
   padding-left: 2%;
-  /* padding-left: 30%; */
-  /* align-items: center; */
-  /* justify-content: center;
-  align-content: start; */
   text-align: left;
+}
+
+/* Experience Card Enhancements */
+.experience-section .jumbotron {
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-section .jumbotron::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  border-radius: var(--radius-full);
+}
+
+/* Card Styling */
+#experience .card {
+  background: var(--glass-bg-dark);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--glass-shadow);
+  color: var(--color-text-primary);
+}
+
+#experience .card-header {
+  background: transparent;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+#experience .card-title {
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+#experience .card-text {
+  color: var(--color-text-primary);
+}
+
+#experience .card-text strong {
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+#experience ul {
+  color: var(--color-text-primary);
+}
+
+#experience ul li {
+  margin-bottom: var(--space-2);
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .experience-section {
+    padding: var(--space-8) 0;
+  }
+
+  .img-resize {
+    width: 8em;
+  }
+
+  .jumbo-style {
+    padding: var(--space-6);
+  }
+
+  .body-title-style {
+    font-size: 1.5rem;
+  }
 }

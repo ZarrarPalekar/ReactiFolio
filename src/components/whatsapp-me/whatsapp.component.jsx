@@ -1,4 +1,3 @@
-import React from "react";
 import "./whatsapp.styles.css";
 
 const Whatsapp = () => {

@@ -1,21 +1,73 @@
-hr {
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.75),
-    rgba(0, 0, 0, 0)
-  );
+/* ========================================
+   APP LAYOUT STYLES
+   ======================================== */
+
+.App {
+  position: relative;
+  min-height: 100vh;
 }
 
+/* Hero Section Wrapper */
+.hero-wrapper {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Modern Section Divider */
+hr {
+  border: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-primary-light) 20%,
+    var(--color-secondary-light) 50%,
+    var(--color-primary-light) 80%,
+    transparent 100%
+  );
+  margin: var(--space-16) 0;
+  opacity: 0.5;
+}
+
+/* Container Styles */
 .container-box {
-  width: 80%;
+  width: 85%;
+  max-width: 1400px;
   background-color: transparent;
   position: relative;
   z-index: 9;
+  padding: var(--space-12) 0;
 }
 
+/* Parallax Section */
+.my-parallax {
+  position: relative;
+  overflow: hidden;
+}
+
+.my-parallax::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.3) 0%,
+    rgba(15, 23, 42, 0.7) 100%
+  );
+  z-index: 1;
+}
+
+.my-parallax .container-box {
+  position: relative;
+  z-index: 2;
+}
+
+/* Particles Background */
 .particles-box {
   position: absolute;
   top: 0;
@@ -23,11 +75,45 @@ hr {
   width: 100%;
   height: 100%;
   z-index: 1;
+  opacity: 0.6;
 }
 
-@media screen and (max-width: 600px) {
+/* Section Spacing */
+section {
+  padding: var(--space-20) 0;
+  position: relative;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 992px) {
+  .container-box {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container-box {
+    width: 95%;
+    padding: var(--space-8) 0;
+  }
+
   .my-parallax {
     height: 100%;
     width: 100%;
+  }
+
+  section {
+    padding: var(--space-12) 0;
+  }
+
+  hr {
+    margin: var(--space-8) 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container-box {
+    width: 100%;
+    padding: var(--space-6) var(--space-4);
   }
 }

@@ -1,7 +1,89 @@
+/* ========================================
+   MODERN FOOTER STYLES
+   ======================================== */
+
 .footer-style {
-  background-color: #101018f8;
-  color: #fff;
-  font-size: 1.5em;
-  border: 2px solid #101018f8;
-  border-top-left-radius: 3px;
+  background: var(--glass-bg-dark);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 2px solid var(--glass-border);
+  color: var(--color-white);
+  font-size: 1.2rem;
+  padding: var(--space-10) 0;
+  margin-top: var(--space-16);
+  position: relative;
+}
+
+.footer-style::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-primary),
+    var(--color-secondary),
+    transparent
+  );
+}
+
+/* Footer Links */
+.footer-style a {
+  color: var(--color-gray-light);
+  text-decoration: none;
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.footer-style a:hover {
+  color: var(--color-primary-light);
+  transform: translateY(-2px);
+}
+
+/* Social Icons */
+.footer-style .social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid var(--glass-border);
+  margin: 0 var(--space-2);
+  transition: all var(--transition-base);
+}
+
+.footer-style .social-icon:hover {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  border-color: transparent;
+  transform: translateY(-5px) rotate(5deg);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+}
+
+/* Copyright Text */
+.footer-style .copyright {
+  color: var(--color-gray-light);
+  font-size: 0.95rem;
+  margin-top: var(--space-6);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-style {
+    font-size: 1rem;
+    padding: var(--space-8) 0;
+  }
+
+  .footer-style .social-icon {
+    width: 45px;
+    height: 45px;
+  }
 }

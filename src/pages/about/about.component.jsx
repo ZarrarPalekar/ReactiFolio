@@ -1,4 +1,3 @@
-import React from "react";
 import { Button, Image } from "react-bootstrap";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
@@ -10,18 +9,18 @@ import {
 } from "../experience/experience.component";
 import "./about.style.css";
 import { PopupButton } from "react-calendly";
-import Tilt from "react-tilt";
+import TiltWrapper from "../../components/tilt-wrapper/TiltWrapper";
 
 const About = () => {
   return (
-    <div id="about">
+    <div id="about" className="about-section">
       <div className="about">
-        <h1 className="pt-3 text-center font-details pb-3">ABOUT ME</h1>
+        <h1 className="pt-3 text-center font-details-b pb-3">ABOUT ME</h1>
         <Container>
           <Row className="pt-3 pb-5 align-items-center">
             <Col xs={12} md={6}>
               <Row className="justify-content-center mb-2 mr-2">
-                <Tilt options={{ max: 100 }}>
+                <TiltWrapper options={{ max: 100 }}>
                   <Image
                     className="profile justify-content-end"
                     src={ProfilePic}
@@ -30,11 +29,11 @@ const About = () => {
                     fluid
                     spin="true"
                   />
-                </Tilt>
+                </TiltWrapper>
               </Row>
             </Col>
             <Col xs={12} md={6}>
-              <Tilt options={{ max: 1 }}>
+              <TiltWrapper options={{ max: 1 }}>
                 <Row className="custom-bold8 align-items-start p-2 my-details rounded">
                   <p>
                     &#128075; Hi there! I am{" "}
@@ -131,7 +130,7 @@ const About = () => {
                     </div>
                   </Col>
                 </Row>
-              </Tilt>
+              </TiltWrapper>
             </Col>
           </Row>
         </Container>

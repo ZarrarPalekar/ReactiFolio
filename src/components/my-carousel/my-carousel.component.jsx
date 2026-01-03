@@ -1,4 +1,3 @@
-import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import "./my-carousel.style.css";
 import Slide1 from "../../assets/img/carousal/slide1.webp";

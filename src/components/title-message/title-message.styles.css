@@ -1,0 +1,190 @@
+/* ========================================
+   MODERN HERO SECTION STYLES
+   ======================================== */
+
+.hero-content {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Hero Greeting */
+.hero-greeting {
+  font-size: var(--text-xl);
+  font-weight: 500;
+  color: var(--color-gray-light);
+  margin-bottom: var(--space-4);
+  letter-spacing: 1px;
+}
+
+/* Hero Name */
+.hero-name {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 800;
+  font-family: var(--font-heading);
+  margin-bottom: var(--space-6);
+  line-height: 1.1;
+  letter-spacing: -2px;
+}
+
+.hero-name .gradient-text {
+  display: inline-block;
+  animation: gradientShift 3s ease infinite;
+}
+
+/* Hero Subtitle */
+.hero-subtitle {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 600;
+  color: var(--color-primary-light);
+  margin-bottom: var(--space-6);
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hero Description */
+.hero-description {
+  font-size: var(--text-xl);
+  color: var(--color-gray-light);
+  margin-bottom: var(--space-10);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* CTA Buttons */
+.hero-cta {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-full);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.cta-button:hover::before {
+  left: 100%;
+}
+
+.cta-button.primary {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+}
+
+.cta-button.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 30px rgba(99, 102, 241, 0.6);
+  color: white;
+}
+
+.cta-button.secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid var(--color-primary-light);
+}
+
+.cta-button.secondary:hover {
+  background: var(--color-primary-light);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 30px rgba(99, 102, 241, 0.4);
+  color: white;
+}
+
+/* Floating Elements */
+.floating-element {
+  position: absolute;
+  font-size: 3rem;
+  opacity: 0.15;
+  pointer-events: none;
+  color: var(--color-primary-light);
+}
+
+.element-1 {
+  top: 10%;
+  left: 10%;
+}
+
+.element-2 {
+  top: 20%;
+  right: 15%;
+}
+
+.element-3 {
+  bottom: 15%;
+  left: 15%;
+}
+
+/* Animations */
+@keyframes gradientShift {
+  0%, 100% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(20deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-greeting {
+    font-size: var(--text-lg);
+  }
+  
+  .hero-subtitle {
+    min-height: 60px;
+  }
+  
+  .hero-description {
+    font-size: var(--text-base);
+  }
+  
+  .cta-button {
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--text-base);
+  }
+  
+  .floating-element {
+    font-size: 2rem;
+    opacity: 0.1;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .cta-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
