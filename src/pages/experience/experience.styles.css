@@ -124,6 +124,7 @@
 
 #experience ul {
   color: var(--color-gray-light);
+  padding-left: 50px;
 }
 
 #experience ul li {
