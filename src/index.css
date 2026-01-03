@@ -202,6 +202,78 @@ code {
   transform: translateY(-5px);
 }
 
+/* ========================================
+   RESPONSIVE UTILITIES
+   ======================================== */
+
+/* Hide/Show utilities for different screen sizes */
+.mobile-only {
+  display: none !important;
+}
+
+.desktop-only {
+  display: block !important;
+}
+
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block !important;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  /* Disable hover effects on mobile */
+  .hover-lift:hover {
+    transform: none;
+  }
+
+  /* Reduce animations on mobile for better performance */
+  * {
+    animation-duration: 0.5s !important;
+  }
+}
+
+/* Tablet-specific styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container-box {
+    width: 90%;
+  }
+
+  /* Reduce spacing on tablets */
+  section {
+    padding: var(--space-16) 0;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  /* Smaller font sizes for very small screens */
+  html {
+    font-size: 14px;
+  }
+
+  /* Ensure buttons are touch-friendly */
+  .btn,
+  button,
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Landscape mobile */
+@media (max-width: 896px) and (orientation: landscape) {
+  section {
+    padding: var(--space-8) 0;
+  }
+
+  .container-box {
+    padding: var(--space-6) 0;
+  }
+}
+
 .hover-glow {
   transition: box-shadow var(--transition-base);
 }

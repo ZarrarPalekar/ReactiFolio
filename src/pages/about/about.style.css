@@ -197,6 +197,32 @@
 }
 
 /* Responsive */
+
+/* Tablet styles (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .about-section {
+    padding: var(--space-10) 0;
+  }
+
+  .profile {
+    max-width: 18em;
+  }
+
+  .my-details {
+    padding: var(--space-8);
+  }
+
+  .my-details p {
+    font-size: 1rem;
+  }
+
+  .my-details .btn {
+    margin: var(--space-2) var(--space-1) !important;
+    padding: var(--space-3) var(--space-5);
+  }
+}
+
+/* Mobile styles (max-width: 768px) */
 @media (max-width: 768px) {
   .about-section {
     padding: var(--space-8) 0;
@@ -207,7 +233,7 @@
   }
 
   .profile {
-    max-width: 16em;
+    max-width: 14em;
     margin-bottom: var(--space-6);
   }
 
@@ -226,34 +252,30 @@
 
   .my-details p {
     color: var(--color-gray-light) !important;
-    /* Ensure text is always visible on mobile */
     -webkit-text-fill-color: var(--color-gray-light) !important;
+    font-size: 0.95rem;
+    line-height: 1.7;
   }
 
   .my-details .boldest,
   .my-details strong.boldest,
   p .boldest,
   p strong.boldest {
-    /* Disable gradient on mobile for better visibility */
     background: none !important;
     -webkit-background-clip: unset !important;
     -webkit-text-fill-color: var(--color-primary-light) !important;
     background-clip: unset !important;
     color: var(--color-primary-light) !important;
-    /* Force visibility on iOS */
     opacity: 1 !important;
     display: inline !important;
     visibility: visible !important;
-    /* Additional iOS Safari fixes */
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     font-weight: 900 !important;
-    /* Ensure text is not hidden */
     min-height: 1em;
     min-width: 1px;
   }
 
-  /* Ensure strong tags are visible */
   .my-details strong,
   .my-details strong.boldest {
     -webkit-text-fill-color: var(--color-primary-light) !important;
@@ -267,5 +289,33 @@
   .my-details .btn {
     width: 100%;
     margin: var(--space-2) 0 !important;
+    padding: var(--space-3) var(--space-4);
+    font-size: 0.95rem;
+  }
+}
+
+/* Small mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .about-section {
+    padding: var(--space-6) 0;
+  }
+
+  .profile {
+    max-width: 12em;
+    margin-bottom: var(--space-4);
+  }
+
+  .my-details {
+    padding: var(--space-4);
+  }
+
+  .my-details p {
+    font-size: 0.9rem;
+    margin-bottom: var(--space-3);
+  }
+
+  .my-details .btn {
+    padding: var(--space-3);
+    font-size: 0.9rem;
   }
 }

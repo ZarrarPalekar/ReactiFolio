@@ -330,6 +330,39 @@
 }
 
 /* Responsive Design */
+
+/* Tablet styles (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .projects-section {
+    padding: var(--space-12) var(--space-4);
+  }
+
+  .timeline-wrapper {
+    padding: var(--space-8) 0;
+  }
+
+  .timeline-item {
+    margin-bottom: var(--space-16);
+  }
+
+  .project-image-container {
+    height: 220px;
+  }
+
+  .project-content {
+    padding: var(--space-6);
+  }
+
+  .project-title {
+    font-size: 1.4rem;
+  }
+
+  .project-description {
+    font-size: 0.95rem;
+  }
+}
+
+/* Large tablet (max-width: 992px) */
 @media (max-width: 992px) {
   .timeline-line {
     left: 30px;
@@ -358,6 +391,7 @@
   }
 }
 
+/* Mobile styles (max-width: 768px) */
 @media (max-width: 768px) {
   .projects-section {
     padding: var(--space-8) 0;
@@ -392,18 +426,63 @@
     padding: var(--space-5);
   }
 
+  .project-title {
+    font-size: 1.3rem;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+  }
+
   .project-actions .btn {
     min-width: 100%;
+    margin: var(--space-2) 0 !important;
+  }
+
+  /* Disable hover effects on mobile */
+  .project-card:hover {
+    transform: none;
+  }
+
+  .project-card:hover .project-image {
+    transform: none;
+  }
+
+  .tech-item:hover {
+    transform: none;
   }
 }
 
+/* Small mobile (max-width: 480px) */
 @media (max-width: 480px) {
   .projects-section {
-    padding: var(--space-10) var(--space-3);
+    padding: var(--space-8) var(--space-3);
+  }
+
+  .timeline-wrapper {
+    padding: var(--space-4) 0;
+  }
+
+  .timeline-item {
+    margin-bottom: var(--space-12);
   }
 
   .project-title {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
+  }
+
+  .project-description {
+    font-size: 0.85rem;
+    margin-bottom: var(--space-4);
+  }
+
+  .project-date {
+    font-size: 0.85rem;
+  }
+
+  .timeline-date {
+    font-size: 0.95rem;
+    padding: var(--space-2) var(--space-3);
   }
 
   .timeline-item-left,
@@ -419,6 +498,29 @@
     left: -35px !important;
     width: 16px;
     height: 16px;
+  }
+
+  .project-image-container {
+    height: 180px;
+  }
+
+  .project-content {
+    padding: var(--space-4);
+  }
+
+  .features-list li {
+    font-size: 0.85rem;
+    padding: var(--space-2) 0;
+  }
+
+  .tech-item {
+    padding: var(--space-2) var(--space-3);
+    font-size: 0.85rem;
+  }
+
+  .tech-icon {
+    width: 20px;
+    height: 20px;
   }
 }
 

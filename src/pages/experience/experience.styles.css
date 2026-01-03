@@ -132,13 +132,38 @@
 }
 
 /* Responsive */
+
+/* Tablet styles (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .experience-section {
+    padding: var(--space-10) 0;
+  }
+
+  .img-resize {
+    width: 10em;
+  }
+
+  .jumbo-style {
+    padding: var(--space-8);
+  }
+
+  .body-title-style {
+    font-size: 1.6rem;
+  }
+
+  .description-style {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile styles (max-width: 768px) */
 @media (max-width: 768px) {
   .experience-section {
     padding: var(--space-8) 0;
   }
 
   .img-resize {
-    width: 8em;
+    width: 7em;
   }
 
   .jumbo-style {
@@ -146,8 +171,7 @@
   }
 
   .body-title-style {
-    font-size: 1.5rem;
-    /* Disable gradient on mobile */
+    font-size: 1.4rem;
     background: none !important;
     -webkit-background-clip: unset !important;
     -webkit-text-fill-color: var(--color-white) !important;
@@ -155,7 +179,6 @@
     color: var(--color-white) !important;
   }
 
-  /* Fix section header visibility on mobile */
   .font-details-b {
     background: none !important;
     -webkit-background-clip: unset !important;
@@ -172,6 +195,7 @@
   #experience .card-text {
     color: var(--color-gray-light) !important;
     -webkit-text-fill-color: var(--color-gray-light) !important;
+    font-size: 0.9rem;
   }
 
   #experience ul {
@@ -188,21 +212,21 @@
     -webkit-text-fill-color: var(--color-gray-light) !important;
   }
 
-  /* Fix vertical timeline text visibility on mobile */
+  /* Vertical timeline mobile styles */
   .vertical-timeline-element-title {
     color: var(--color-white) !important;
     -webkit-text-fill-color: var(--color-white) !important;
+    font-size: 1.1rem !important;
   }
 
   .vertical-timeline-element-subtitle {
     color: var(--color-gray-light) !important;
     -webkit-text-fill-color: var(--color-gray-light) !important;
-    /* Force visibility on iOS */
     opacity: 1 !important;
     display: block !important;
+    font-size: 0.9rem !important;
   }
 
-  /* Specifically target h6 subtitle for duration */
   .vertical-timeline-element-subtitle.mt-3.ml-1,
   h6.vertical-timeline-element-subtitle,
   .vertical-timeline-element h6 {
@@ -220,6 +244,7 @@
   .vertical-timeline-element-content {
     background: var(--glass-bg-dark) !important;
     color: var(--color-gray-light) !important;
+    padding: var(--space-4) !important;
   }
 
   .vertical-timeline-element-content h2,
@@ -233,5 +258,51 @@
     -webkit-background-clip: unset !important;
     background-clip: unset !important;
     visibility: visible !important;
+  }
+
+  /* Reduce icon size on mobile */
+  .vertical-timeline-element-icon {
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
+
+/* Small mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .experience-section {
+    padding: var(--space-6) 0;
+  }
+
+  .img-resize {
+    width: 6em;
+  }
+
+  .jumbo-style {
+    padding: var(--space-4);
+  }
+
+  .body-title-style {
+    font-size: 1.25rem;
+  }
+
+  #experience .card-text {
+    font-size: 0.85rem;
+  }
+
+  .vertical-timeline-element-content {
+    padding: var(--space-3) !important;
+  }
+
+  .vertical-timeline-element-title {
+    font-size: 1rem !important;
+  }
+
+  .vertical-timeline-element-subtitle {
+    font-size: 0.85rem !important;
+  }
+
+  .vertical-timeline-element-icon {
+    width: 35px !important;
+    height: 35px !important;
   }
 }
