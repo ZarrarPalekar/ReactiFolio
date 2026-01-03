@@ -1,204 +1,105 @@
-import React from "react";
-import { Card, CardDeck, Col, Image, Row } from "react-bootstrap";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { Card, Col, Image, Row } from "react-bootstrap";
 import "./skills.style.css";
-// skills
 import { skills } from "./skills-data";
 
 const Skills = () => {
+  const SkillCard = ({ title, skillsList, delay = 0 }) => {
+    const [ref, inView] = useInView({
+      triggerOnce: true,
+      threshold: 0.1,
+    });
+
+    return (
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 50 }}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.6, delay }}
+      >
+        <Card className="skill-card glass-card hover-lift">
+          <Card.Body>
+            <Card.Title className="skill-card-title">
+              <span className="gradient-text">{title}</span>
+            </Card.Title>
+            <div className="skill-divider"></div>
+            <Card.Text className="skill-list">
+              {skillsList.map((skill, index) => (
+                <motion.a
+                  key={index}
+                  href={skill.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="skill-item"
+                  whileHover={{ scale: 1.05, x: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div className="skill-icon-wrapper">
+                    <Image
+                      src={skill.imgSrc}
+                      alt={skill.imgAltText}
+                      className="skill-icon"
+                    />
+                  </div>
+                  <span className="skill-name">{skill.skillName}</span>
+                  <i className="fas fa-arrow-right skill-arrow"></i>
+                </motion.a>
+              ))}
+            </Card.Text>
+          </Card.Body>
+        </Card>
+      </motion.div>
+    );
+  };
+
   return (
-    <div className="pt-3 pb-3" id="skills">
-      <h1 className="text-center font-details-b pb-4">TECH SKILLS</h1>
-      <CardDeck>
-        <Row className="custom-bold d-flex justify-content-around">
-          {/* Frontend */}
-          <Col md={4}>
-            <Card className="focus mt-2 mb-2">
-              <Card.Body>
-                {/* Frontend */}
-                <Card.Title className="text-center  card-title">
-                  Frontend
-                </Card.Title>
-                <hr />
-                <Card.Text className="card-text d-flex justify-content-start flex-column">
-                  {skills.frontend.map((skill, index) => (
-                    <span className="p-2" key={index}>
-                      <a
-                        className="text-dark text-decoration-none"
-                        href={skill.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Image
-                          src={skill.imgSrc}
-                          alt={skill.imgAltText}
-                          rounded
-                          className="image-style m-1"
-                        ></Image>{" "}
-                        {skill.skillName}
-                      </a>
-                    </span>
-                  ))}
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
+    <div className="skills-section" id="skills">
+      <motion.h1
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-center font-details-b pb-5"
+      >
+        TECH SKILLS
+      </motion.h1>
+      <Row className="g-4 d-flex justify-content-around">
+        <Col md={4}>
+          <SkillCard
+            title="Frontend"
+            skillsList={skills.frontend}
+            delay={0.1}
+          />
+        </Col>
 
-          {/* Backend */}
-          <Col md={4}>
-            <Card className="focus mt-2 mb-2">
-              <Card.Body>
-                <Card.Title className="text-center  card-title">
-                  Backend
-                </Card.Title>
-                <hr />
-                <Card.Text className="card-text d-flex justify-content-start flex-column">
-                  {skills.backend.map((skill, index) => (
-                    <span className="p-2" key={index}>
-                      <a
-                        className="text-dark text-decoration-none"
-                        href={skill.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Image
-                          src={skill.imgSrc}
-                          alt={skill.imgAltText}
-                          rounded
-                          className="image-style m-1"
-                        ></Image>{" "}
-                        {skill.skillName}
-                      </a>
-                    </span>
-                  ))}
-                </Card.Text>
-              </Card.Body>
-            </Card>
+        <Col md={4}>
+          <SkillCard title="Backend" skillsList={skills.backend} delay={0.2} />
+          <SkillCard
+            title="Hosting Platforms"
+            skillsList={skills.hostingPlatforms}
+            delay={0.3}
+          />
+        </Col>
 
-            {/* Hosting Platforms */}
-            <Card className="focus mt-2 mb-2 ">
-              <Card.Body>
-                <Card.Title className="text-center  card-title">
-                  Hosting Platforms
-                </Card.Title>
-                <hr />
-                <Card.Text className="card-text d-flex justify-content-start flex-column">
-                  {skills.hostingPlatforms.map((skill, index) => (
-                    <span className="p-2" key={index}>
-                      <a
-                        className="text-dark text-decoration-none"
-                        href={skill.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Image
-                          src={skill.imgSrc}
-                          alt={skill.imgAltText}
-                          rounded
-                          className="image-style m-1"
-                        ></Image>{" "}
-                        {skill.skillName}
-                      </a>
-                    </span>
-                  ))}
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-
-          {/* Programming Languages */}
-          <Col md={4}>
-            <Card className="focus mt-2 mb-2">
-              <Card.Body>
-                <Card.Title className="text-center  card-title">
-                  Programming Languages
-                </Card.Title>
-                <hr />
-                <Card.Text className="card-text d-flex justify-content-start flex-column">
-                  {skills.programmingLanguages.map((skill, index) => (
-                    <span className="p-2" key={index}>
-                      <a
-                        className="text-dark text-decoration-none"
-                        href={skill.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Image
-                          src={skill.imgSrc}
-                          alt={skill.imgAltText}
-                          rounded
-                          className="image-style m-1"
-                        ></Image>{" "}
-                        {skill.skillName}
-                      </a>
-                    </span>
-                  ))}
-                </Card.Text>
-              </Card.Body>
-            </Card>
-
-            {/* Database */}
-
-            <Card className="focus mt-2 mb-2">
-              <Card.Body>
-                <Card.Title className="text-center  card-title">
-                  Database
-                </Card.Title>
-                <hr />
-                <Card.Text className="card-text d-flex justify-content-start flex-column">
-                  {skills.databases.map((skill, index) => (
-                    <span className="p-2" key={index}>
-                      <a
-                        className="text-dark text-decoration-none"
-                        href={skill.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Image
-                          src={skill.imgSrc}
-                          alt={skill.imgAltText}
-                          rounded
-                          className="image-style m-1"
-                        ></Image>{" "}
-                        {skill.skillName}
-                      </a>
-                    </span>
-                  ))}
-                </Card.Text>
-              </Card.Body>
-            </Card>
-            {/* Version Control */}
-
-            <Card className="focus mt-2 mb-2">
-              <Card.Body>
-                <Card.Title className="text-center  card-title">
-                  Version Control
-                </Card.Title>
-                <hr />
-                <Card.Text className="card-text d-flex justify-content-start flex-column">
-                  {skills.versionControl.map((skill, index) => (
-                    <span className="p-2" key={index}>
-                      <a
-                        className="text-dark text-decoration-none"
-                        href={skill.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Image
-                          src={skill.imgSrc}
-                          alt={skill.imgAltText}
-                          rounded
-                          className="image-style m-1"
-                        ></Image>{" "}
-                        {skill.skillName}
-                      </a>
-                    </span>
-                  ))}
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-      </CardDeck>
+        <Col md={4}>
+          <SkillCard
+            title="Programming Languages"
+            skillsList={skills.programmingLanguages}
+            delay={0.4}
+          />
+          <SkillCard
+            title="Database"
+            skillsList={skills.databases}
+            delay={0.5}
+          />
+          <SkillCard
+            title="Version Control"
+            skillsList={skills.versionControl}
+            delay={0.6}
+          />
+        </Col>
+      </Row>
     </div>
   );
 };

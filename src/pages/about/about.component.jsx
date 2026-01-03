@@ -1,4 +1,3 @@
-import React from "react";
 import { Button, Image } from "react-bootstrap";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
@@ -10,18 +9,31 @@ import {
 } from "../experience/experience.component";
 import "./about.style.css";
 import { PopupButton } from "react-calendly";
-import Tilt from "react-tilt";
+import TiltWrapper from "../../components/tilt-wrapper/TiltWrapper";
 
 const About = () => {
+  // Use ISO format for better cross-browser compatibility (March 2017 = 2017-03-01)
+  const startDate = new Date("2017-03-01");
+  const currentDate = new Date();
+
+  console.log("Start date:", startDate);
+  console.log("Current date:", currentDate);
+
+  const yearsOfExperience = getWordsWithoutMonths(
+    diff_months(startDate, currentDate)
+  );
+
+  console.log("Years of experience:", yearsOfExperience);
+
   return (
-    <div id="about">
+    <div id="about" className="about-section">
       <div className="about">
-        <h1 className="pt-3 text-center font-details pb-3">ABOUT ME</h1>
+        <h1 className="pt-3 text-center font-details-b pb-3">ABOUT ME</h1>
         <Container>
           <Row className="pt-3 pb-5 align-items-center">
             <Col xs={12} md={6}>
               <Row className="justify-content-center mb-2 mr-2">
-                <Tilt options={{ max: 100 }}>
+                <TiltWrapper options={{ max: 100 }}>
                   <Image
                     className="profile justify-content-end"
                     src={ProfilePic}
@@ -30,11 +42,11 @@ const About = () => {
                     fluid
                     spin="true"
                   />
-                </Tilt>
+                </TiltWrapper>
               </Row>
             </Col>
             <Col xs={12} md={6}>
-              <Tilt options={{ max: 1 }}>
+              <TiltWrapper options={{ max: 1 }}>
                 <Row className="custom-bold8 align-items-start p-2 my-details rounded">
                   <p>
                     &#128075; Hi there! I am{" "}
@@ -42,10 +54,22 @@ const About = () => {
                   </p>
                   <p>
                     With over{" "}
-                    <strong className="boldest">
-                      {getWordsWithoutMonths(
-                        diff_months(new Date("Mar 2017"), new Date(Date.now()))
-                      )}{" "}
+                    <strong
+                      className="boldest"
+                      style={{
+                        color: "#818cf8",
+                        WebkitTextFillColor: "#818cf8",
+                        background: "none",
+                        backgroundImage: "none",
+                        WebkitBackgroundClip: "unset",
+                        backgroundClip: "unset",
+                        opacity: 1,
+                        visibility: "visible",
+                        display: "inline",
+                        fontWeight: 900,
+                      }}
+                    >
+                      {yearsOfExperience || "8+ years"}{" "}
                     </strong>{" "}
                     of dedicated experience in Full Stack Web Development, my
                     passion lies in crafting elegant and intuitive web
@@ -120,7 +144,7 @@ const About = () => {
                     </div>
                     <div title="Let's catchup over a Google Meet call">
                       <PopupButton
-                        className="btn calendly-btn"
+                        className="btn calendly-btn m-2"
                         url="https://calendly.com/meetzarrar"
                         rootElement={document.getElementById("root")}
                         text={[
@@ -131,7 +155,7 @@ const About = () => {
                     </div>
                   </Col>
                 </Row>
-              </Tilt>
+              </TiltWrapper>
             </Col>
           </Row>
         </Container>

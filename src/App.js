@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Container } from "react-bootstrap";
 import { Parallax } from "react-parallax";
-import Fade from "react-reveal/Fade";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import "./App.css";
 import MyCarousel from "./components/my-carousel/my-carousel.component";
 //Components
@@ -9,20 +10,50 @@ import MyNavbar from "./components/my-navbar/mynavbar.component";
 import TitleMessage from "./components/title-message/title-message.component";
 import About from "./pages/about/about.component";
 import BgImage from "./assets/img/parallex/background.webp";
-// import useWindowDimensions from "./functionality/checkViewPort";
-// import BgImageSmall from "./assets/img/parallex/background_reverse.webp";
 import Skills from "./pages/skills/skills.component";
 import Experience from "./pages/experience/experience.component";
-import TimeLine from "./components/projects-timeline/projects-timeline.component";
+import ProjectsTimeline from "./components/projects-timeline/ProjectsTimeline";
 import ContactForm from "./pages/contact-form/contact-form.component";
 import FooterPanel from "./components/footer/footer.component";
 import Whatsapp from "./components/whatsapp-me/whatsapp.component";
-// import Particles from "react-particles-js";
-// import { particlesOptions } from "./particlesOptions";
+
+// Animated Section Component
+const AnimatedSection = ({ children, direction = "up" }) => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const variants = {
+    hidden: {
+      opacity: 0,
+      y: direction === "up" ? 50 : direction === "down" ? -50 : 0,
+      x: direction === "left" ? 50 : direction === "right" ? -50 : 0,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      x: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={variants}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 const App = () => {
-  // const { height, width } = useWindowDimensions();
-
   const [isLoading, setLoading] = useState(true);
 
   const loaderStop = () => {
@@ -41,15 +72,12 @@ const App = () => {
     <div className="App">
       <Whatsapp />
       <MyNavbar />
-      {/* <Particles
-        className="particles particles-box"
-        params={particlesOptions}
-      /> */}
-      <MyCarousel />
-      <TitleMessage />
-      <div>
-        {/* <a href='https://www.freepik.com/vectors/background'>Background vector created by vectorpouch - www.freepik.com</a> */}
+      <div className="hero-wrapper">
+        <MyCarousel />
+        <TitleMessage />
+      </div>
 
+      <div>
         <Parallax
           className="my-parallax"
           blur={{ min: -20, max: 20 }}
@@ -59,73 +87,44 @@ const App = () => {
         >
           <div>
             <Container className="container-box rounded">
-              <Fade left duration={500}>
+              <AnimatedSection direction="left">
                 <About />
-              </Fade>
+              </AnimatedSection>
             </Container>
           </div>
         </Parallax>
-
-        {/* {width > 600 ? (
-          <Parallax
-            className="my-parallax"
-            blur={{ min: -20, max: 20 }}
-            bgImage={BgImage}
-            bgImageAlt=""
-            strength={-200}
-          >
-            <div>
-              <Container className="container-box rounded">
-                <Fade left>
-                  <About />
-                </Fade>
-              </Container>
-            </div>
-          </Parallax>
-        ) : (
-          <Parallax
-            className="my-parallax"
-            blur={{ min: -30, max: 30 }}
-            bgImage={BgImage}
-            bgImageAlt=""
-            strength={-200}
-          >
-            <div>
-              <Container className="container-box rounded">
-                <Fade left>
-                  <About />
-                </Fade>
-              </Container>
-            </div>
-          </Parallax>
-        )} */}
       </div>
+
       <Container className="container-box rounded">
-        <Fade right duration={500}>
+        <AnimatedSection direction="right">
           <hr />
           <Skills />
-        </Fade>
+        </AnimatedSection>
       </Container>
+
       <div>
         <Container className="container-box rounded">
-          {/* <Fade left duration={500}> */}
-          <hr />
-          <Experience />
-          {/* </Fade> */}
+          <AnimatedSection direction="up">
+            <hr />
+            <Experience />
+          </AnimatedSection>
         </Container>
       </div>
+
       <Container className="container-box rounded">
-        {/* <Fade right duration={500}> */}
-        <hr />
-        <TimeLine />
-        {/* </Fade> */}
+        <AnimatedSection direction="up">
+          <hr />
+          <ProjectsTimeline />
+        </AnimatedSection>
       </Container>
+
       <Container className="container-box rounded">
-        <Fade left duration={500}>
+        <AnimatedSection direction="left">
           <hr />
           <ContactForm />
-        </Fade>
+        </AnimatedSection>
       </Container>
+
       <hr />
       <FooterPanel />
     </div>

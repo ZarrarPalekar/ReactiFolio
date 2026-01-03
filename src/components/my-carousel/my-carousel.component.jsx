@@ -1,4 +1,3 @@
-import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import "./my-carousel.style.css";
 import Slide1 from "../../assets/img/carousal/slide1.webp";
@@ -16,7 +15,12 @@ const MyCarousel = ({ loaderStop, hideAll }) => {
     />
   ) : (
     <div id="home">
-      <Carousel controls={false} indicators interval={2500} pause={false}>
+      <Carousel
+        controls={false}
+        indicators={false}
+        interval={2500}
+        pause={false}
+      >
         <Carousel.Item>
           <img
             className="d-block w-100 custom-img"
