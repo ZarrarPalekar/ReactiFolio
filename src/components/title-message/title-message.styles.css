@@ -14,7 +14,8 @@
   font-weight: 500;
   color: var(--color-gray-light);
   margin-bottom: var(--space-4);
-  letter-spacing: 1px;
+  letter-spacing: var(--tracking-wide);
+  font-family: var(--font-primary);
 }
 
 /* Hero Name */
@@ -23,8 +24,8 @@
   font-weight: 800;
   font-family: var(--font-heading);
   margin-bottom: var(--space-6);
-  line-height: 1.1;
-  letter-spacing: -2px;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tighter);
 }
 
 .hero-name .gradient-text {
@@ -36,12 +37,14 @@
 .hero-subtitle {
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   font-weight: 600;
+  font-family: var(--font-heading);
   color: var(--color-primary-light);
   margin-bottom: var(--space-6);
   min-height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
+  letter-spacing: var(--tracking-tight);
 }
 
 /* Hero Description */
@@ -52,7 +55,9 @@
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.6;
+  line-height: var(--leading-relaxed);
+  letter-spacing: var(--tracking-normal);
+  font-weight: 400;
 }
 
 /* CTA Buttons */

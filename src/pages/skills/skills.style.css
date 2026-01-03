@@ -14,6 +14,8 @@
   color: var(--color-white);
   position: relative;
   display: inline-block;
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
 }
 
 /* Only apply gradient on desktop */
@@ -65,6 +67,8 @@
   text-align: center;
   margin-bottom: var(--space-4);
   font-family: var(--font-heading);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-snug);
 }
 
 .skill-divider {
@@ -156,6 +160,7 @@
   flex: 1;
   font-weight: 600;
   font-size: 1.05rem;
+  letter-spacing: var(--tracking-normal);
 }
 
 .skill-arrow {

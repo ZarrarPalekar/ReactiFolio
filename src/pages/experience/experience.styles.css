@@ -20,9 +20,10 @@
 }
 
 .style {
-  font-size: 1.1rem;
-  line-height: 1.8;
+  font-size: 1.0625rem;
+  line-height: var(--leading-relaxed);
   color: var(--color-gray-light);
+  letter-spacing: 0.01em;
 }
 
 .jumbo-style {
@@ -44,9 +45,12 @@
 
 .body-title-style {
   font-size: 1.75rem;
-  font-weight: 800;
+  font-weight: 700;
+  font-family: var(--font-heading);
   color: var(--color-white);
   margin-bottom: var(--space-3);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
 }
 
 /* Only apply gradient on desktop */
@@ -111,10 +115,15 @@
   color: var(--color-white);
   font-weight: 600;
   font-size: 1.3rem;
+  font-family: var(--font-heading);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-snug);
 }
 
 #experience .card-text {
   color: var(--color-gray-light);
+  line-height: var(--leading-relaxed);
+  letter-spacing: 0.01em;
 }
 
 #experience .card-text strong {
@@ -129,7 +138,8 @@
 
 #experience ul li {
   margin-bottom: var(--space-2);
-  line-height: 1.6;
+  line-height: var(--leading-relaxed);
+  letter-spacing: 0.01em;
 }
 
 /* Responsive */

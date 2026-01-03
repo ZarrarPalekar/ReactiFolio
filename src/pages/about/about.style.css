@@ -20,6 +20,8 @@
   margin-bottom: var(--space-12);
   position: relative;
   display: inline-block;
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
 }
 
 /* Only apply gradient on desktop */
@@ -102,9 +104,11 @@
 }
 
 .my-details p {
-  margin-bottom: var(--space-4);
-  font-size: 1.05rem;
+  margin-bottom: var(--space-5);
+  font-size: 1.0625rem;
   color: var(--color-gray-light);
+  line-height: var(--leading-relaxed);
+  letter-spacing: 0.01em;
   /* Force text to be visible */
   -webkit-text-fill-color: var(--color-gray-light);
 }
@@ -174,11 +178,13 @@
 /* Text Styles */
 .custom-bold8 {
   font-weight: 500;
+  letter-spacing: 0.01em;
 }
 
 .boldest {
-  font-weight: 900;
+  font-weight: 800;
   color: var(--color-primary-light); /* Fallback color */
+  letter-spacing: -0.01em;
 }
 
 /* Only apply gradient on desktop */
