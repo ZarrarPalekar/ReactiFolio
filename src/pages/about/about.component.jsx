@@ -12,6 +12,19 @@ import { PopupButton } from "react-calendly";
 import TiltWrapper from "../../components/tilt-wrapper/TiltWrapper";
 
 const About = () => {
+  // Use ISO format for better cross-browser compatibility (March 2017 = 2017-03-01)
+  const startDate = new Date("2017-03-01");
+  const currentDate = new Date();
+
+  console.log("Start date:", startDate);
+  console.log("Current date:", currentDate);
+
+  const yearsOfExperience = getWordsWithoutMonths(
+    diff_months(startDate, currentDate)
+  );
+
+  console.log("Years of experience:", yearsOfExperience);
+
   return (
     <div id="about" className="about-section">
       <div className="about">
@@ -41,10 +54,22 @@ const About = () => {
                   </p>
                   <p>
                     With over{" "}
-                    <strong className="boldest">
-                      {getWordsWithoutMonths(
-                        diff_months(new Date("Mar 2017"), new Date(Date.now()))
-                      )}{" "}
+                    <strong
+                      className="boldest"
+                      style={{
+                        color: "#818cf8",
+                        WebkitTextFillColor: "#818cf8",
+                        background: "none",
+                        backgroundImage: "none",
+                        WebkitBackgroundClip: "unset",
+                        backgroundClip: "unset",
+                        opacity: 1,
+                        visibility: "visible",
+                        display: "inline",
+                        fontWeight: 900,
+                      }}
+                    >
+                      {yearsOfExperience || "8+ years"}{" "}
                     </strong>{" "}
                     of dedicated experience in Full Stack Web Development, my
                     passion lies in crafting elegant and intuitive web

@@ -22,7 +22,7 @@
 .style {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: var(--color-text-primary);
+  color: var(--color-gray-light);
 }
 
 .jumbo-style {
@@ -45,15 +45,22 @@
 .body-title-style {
   font-size: 1.75rem;
   font-weight: 800;
-  background: linear-gradient(
-    135deg,
-    var(--color-primary-light),
-    var(--color-secondary-light)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-white);
   margin-bottom: var(--space-3);
+}
+
+/* Only apply gradient on desktop */
+@media (min-width: 769px) {
+  .body-title-style {
+    background: linear-gradient(
+      135deg,
+      var(--color-primary-light),
+      var(--color-secondary-light)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 }
 
 .ml-0 {
@@ -92,7 +99,7 @@
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-xl);
   box-shadow: var(--glass-shadow);
-  color: var(--color-text-primary);
+  color: var(--color-gray-light);
 }
 
 #experience .card-header {
@@ -107,7 +114,7 @@
 }
 
 #experience .card-text {
-  color: var(--color-text-primary);
+  color: var(--color-gray-light);
 }
 
 #experience .card-text strong {
@@ -116,7 +123,7 @@
 }
 
 #experience ul {
-  color: var(--color-text-primary);
+  color: var(--color-gray-light);
 }
 
 #experience ul li {
@@ -140,5 +147,91 @@
 
   .body-title-style {
     font-size: 1.5rem;
+    /* Disable gradient on mobile */
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: var(--color-white) !important;
+    background-clip: unset !important;
+    color: var(--color-white) !important;
+  }
+
+  /* Fix section header visibility on mobile */
+  .font-details-b {
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: var(--color-white) !important;
+    background-clip: unset !important;
+    color: var(--color-white) !important;
+  }
+
+  /* Ensure text visibility on mobile */
+  #experience .card {
+    color: var(--color-gray-light) !important;
+  }
+
+  #experience .card-text {
+    color: var(--color-gray-light) !important;
+    -webkit-text-fill-color: var(--color-gray-light) !important;
+  }
+
+  #experience ul {
+    color: var(--color-gray-light) !important;
+  }
+
+  #experience ul li {
+    color: var(--color-gray-light) !important;
+    -webkit-text-fill-color: var(--color-gray-light) !important;
+  }
+
+  .style {
+    color: var(--color-gray-light) !important;
+    -webkit-text-fill-color: var(--color-gray-light) !important;
+  }
+
+  /* Fix vertical timeline text visibility on mobile */
+  .vertical-timeline-element-title {
+    color: var(--color-white) !important;
+    -webkit-text-fill-color: var(--color-white) !important;
+  }
+
+  .vertical-timeline-element-subtitle {
+    color: var(--color-gray-light) !important;
+    -webkit-text-fill-color: var(--color-gray-light) !important;
+    /* Force visibility on iOS */
+    opacity: 1 !important;
+    display: block !important;
+  }
+
+  /* Specifically target h6 subtitle for duration */
+  .vertical-timeline-element-subtitle.mt-3.ml-1,
+  h6.vertical-timeline-element-subtitle,
+  .vertical-timeline-element h6 {
+    color: var(--color-white) !important;
+    -webkit-text-fill-color: var(--color-white) !important;
+    font-weight: 600 !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+  }
+
+  .vertical-timeline-element-content {
+    background: var(--glass-bg-dark) !important;
+    color: var(--color-gray-light) !important;
+  }
+
+  .vertical-timeline-element-content h2,
+  .vertical-timeline-element-content h3,
+  .vertical-timeline-element-content h4,
+  .vertical-timeline-element-content h5,
+  .vertical-timeline-element-content h6 {
+    color: var(--color-white) !important;
+    -webkit-text-fill-color: var(--color-white) !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    visibility: visible !important;
   }
 }

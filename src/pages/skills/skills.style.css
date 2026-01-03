@@ -11,16 +11,23 @@
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 700;
   font-family: var(--font-heading);
-  background: linear-gradient(
-    135deg,
-    var(--color-primary-light),
-    var(--color-secondary-light)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-white);
   position: relative;
   display: inline-block;
+}
+
+/* Only apply gradient on desktop */
+@media (min-width: 769px) {
+  .font-details-b {
+    background: linear-gradient(
+      135deg,
+      var(--color-primary-light),
+      var(--color-secondary-light)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 }
 
 .font-details-b::after {

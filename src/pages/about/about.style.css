@@ -16,17 +16,24 @@
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 700;
   font-family: var(--font-heading);
-  background: linear-gradient(
-    135deg,
-    var(--color-primary-light),
-    var(--color-secondary-light)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-white);
   margin-bottom: var(--space-12);
   position: relative;
   display: inline-block;
+}
+
+/* Only apply gradient on desktop */
+@media (min-width: 769px) {
+  .font-details {
+    background: linear-gradient(
+      135deg,
+      var(--color-primary-light),
+      var(--color-secondary-light)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 }
 
 .font-details::after {
@@ -98,6 +105,8 @@
   margin-bottom: var(--space-4);
   font-size: 1.05rem;
   color: var(--color-gray-light);
+  /* Force text to be visible */
+  -webkit-text-fill-color: var(--color-gray-light);
 }
 
 /* Buttons */
@@ -169,14 +178,22 @@
 
 .boldest {
   font-weight: 900;
-  background: linear-gradient(
-    135deg,
-    var(--color-primary-light),
-    var(--color-secondary-light)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-primary-light); /* Fallback color */
+}
+
+/* Only apply gradient on desktop */
+@media (min-width: 769px) {
+  .boldest {
+    background: linear-gradient(
+      135deg,
+      var(--color-primary-light),
+      var(--color-secondary-light)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline;
+  }
 }
 
 /* Responsive */
@@ -196,6 +213,55 @@
 
   .my-details {
     padding: var(--space-6);
+  }
+
+  /* Fix section header visibility on mobile */
+  .font-details-b {
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: var(--color-white) !important;
+    background-clip: unset !important;
+    color: var(--color-white) !important;
+  }
+
+  .my-details p {
+    color: var(--color-gray-light) !important;
+    /* Ensure text is always visible on mobile */
+    -webkit-text-fill-color: var(--color-gray-light) !important;
+  }
+
+  .my-details .boldest,
+  .my-details strong.boldest,
+  p .boldest,
+  p strong.boldest {
+    /* Disable gradient on mobile for better visibility */
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: var(--color-primary-light) !important;
+    background-clip: unset !important;
+    color: var(--color-primary-light) !important;
+    /* Force visibility on iOS */
+    opacity: 1 !important;
+    display: inline !important;
+    visibility: visible !important;
+    /* Additional iOS Safari fixes */
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-weight: 900 !important;
+    /* Ensure text is not hidden */
+    min-height: 1em;
+    min-width: 1px;
+  }
+
+  /* Ensure strong tags are visible */
+  .my-details strong,
+  .my-details strong.boldest {
+    -webkit-text-fill-color: var(--color-primary-light) !important;
+    color: var(--color-primary-light) !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    visibility: visible !important;
   }
 
   .my-details .btn {
