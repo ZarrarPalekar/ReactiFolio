@@ -85,12 +85,38 @@ section {
 }
 
 /* Responsive Adjustments */
+
+/* Large desktop */
+@media screen and (min-width: 1440px) {
+  .container-box {
+    max-width: 1600px;
+  }
+}
+
+/* Desktop to tablet */
 @media screen and (max-width: 992px) {
   .container-box {
     width: 90%;
   }
+
+  section {
+    padding: var(--space-16) 0;
+  }
 }
 
+/* Tablet */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .container-box {
+    width: 88%;
+    padding: var(--space-10) 0;
+  }
+
+  hr {
+    margin: var(--space-10) 0;
+  }
+}
+
+/* Mobile */
 @media screen and (max-width: 768px) {
   .container-box {
     width: 95%;
@@ -109,11 +135,41 @@ section {
   hr {
     margin: var(--space-8) 0;
   }
+
+  /* Improve touch targets */
+  a,
+  button {
+    min-height: 44px;
+  }
 }
 
+/* Small mobile */
 @media screen and (max-width: 480px) {
   .container-box {
     width: 100%;
     padding: var(--space-6) var(--space-4);
+  }
+
+  section {
+    padding: var(--space-10) 0;
+  }
+
+  hr {
+    margin: var(--space-6) 0;
+  }
+}
+
+/* Landscape mobile */
+@media screen and (max-width: 896px) and (orientation: landscape) {
+  .hero-wrapper {
+    min-height: 100vh;
+  }
+
+  section {
+    padding: var(--space-8) 0;
+  }
+
+  .container-box {
+    padding: var(--space-6) 0;
   }
 }

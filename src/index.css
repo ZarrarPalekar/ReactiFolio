@@ -259,7 +259,18 @@ code {
   button,
   a {
     min-height: 44px;
-    min-width: 44px;
+  }
+
+  /* Improve readability on small screens */
+  body {
+    line-height: 1.7;
+  }
+
+  /* Reduce spacing variables for small screens */
+  :root {
+    --space-20: 3.5rem;
+    --space-16: 3rem;
+    --space-12: 2.5rem;
   }
 }
 

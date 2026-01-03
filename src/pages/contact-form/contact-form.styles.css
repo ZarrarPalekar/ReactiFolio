@@ -110,6 +110,28 @@
 }
 
 /* Responsive */
+
+/* Tablet styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .contact-section {
+    padding: var(--space-10) 0;
+  }
+
+  .contact-jumbotron {
+    padding: var(--space-8);
+  }
+
+  .contact-jumbotron .form-control {
+    font-size: 1rem;
+  }
+
+  #youtube-btn,
+  .calendly-btn {
+    padding: var(--space-3) var(--space-5);
+  }
+}
+
+/* Mobile styles */
 @media (max-width: 768px) {
   .contact-section {
     padding: var(--space-8) 0;
@@ -117,9 +139,51 @@
 
   .contact-jumbotron {
     padding: var(--space-6);
+    border-radius: var(--radius-xl);
   }
 
   .contact-jumbotron .form-control {
     padding: var(--space-3);
+    font-size: 1rem;
+  }
+
+  .contact-jumbotron .btn-primary {
+    width: 100%;
+    padding: var(--space-4) var(--space-6);
+    font-size: 1rem;
+  }
+
+  #youtube-btn,
+  .calendly-btn {
+    width: 100%;
+    margin: var(--space-2) 0 !important;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .contact-section {
+    padding: var(--space-6) 0;
+  }
+
+  .contact-jumbotron {
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+  }
+
+  .contact-jumbotron .form-control {
+    padding: var(--space-3);
+    font-size: 0.95rem;
+  }
+
+  .contact-jumbotron .btn-primary {
+    padding: var(--space-3) var(--space-5);
+    font-size: 0.95rem;
+  }
+
+  #youtube-btn,
+  .calendly-btn {
+    padding: var(--space-3) var(--space-4);
+    font-size: 0.95rem;
   }
 }

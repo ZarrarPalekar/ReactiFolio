@@ -78,13 +78,18 @@
 }
 
 .cta-button::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
   transition: left 0.5s;
 }
 
@@ -93,7 +98,11 @@
 }
 
 .cta-button.primary {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
   color: white;
   box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
 }
@@ -143,7 +152,8 @@
 
 /* Animations */
 @keyframes gradientShift {
-  0%, 100% {
+  0%,
+  100% {
     filter: hue-rotate(0deg);
   }
   50% {
@@ -152,39 +162,106 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+
+/* Tablet styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-content {
+    max-width: 800px;
+  }
+
   .hero-greeting {
     font-size: var(--text-lg);
   }
-  
+
+  .hero-subtitle {
+    min-height: 70px;
+  }
+
+  .hero-description {
+    font-size: var(--text-lg);
+  }
+
+  .cta-button {
+    padding: var(--space-3) var(--space-7);
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .hero-content {
+    max-width: 100%;
+    padding: 0 var(--space-4);
+  }
+
+  .hero-greeting {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-3);
+  }
+
   .hero-subtitle {
     min-height: 60px;
   }
-  
+
   .hero-description {
     font-size: var(--text-base);
+    margin-bottom: var(--space-8);
   }
-  
+
   .cta-button {
     padding: var(--space-3) var(--space-6);
     font-size: var(--text-base);
   }
-  
+
   .floating-element {
     font-size: 2rem;
     opacity: 0.1;
   }
 }
 
+/* Small mobile styles */
 @media (max-width: 480px) {
+  .hero-greeting {
+    font-size: 0.9rem;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+    margin-bottom: var(--space-6);
+  }
+
   .hero-cta {
     flex-direction: column;
     width: 100%;
+    gap: var(--space-3);
   }
-  
+
   .cta-button {
     width: 100%;
     justify-content: center;
+    padding: var(--space-3) var(--space-5);
+  }
+
+  .floating-element {
+    display: none;
   }
 }
 
+/* Landscape mobile */
+@media (max-width: 896px) and (orientation: landscape) {
+  .hero-content {
+    padding: 0 var(--space-6);
+  }
+
+  .hero-name {
+    margin-bottom: var(--space-4);
+  }
+
+  .hero-subtitle {
+    min-height: 50px;
+    margin-bottom: var(--space-4);
+  }
+
+  .hero-description {
+    margin-bottom: var(--space-6);
+  }
+}

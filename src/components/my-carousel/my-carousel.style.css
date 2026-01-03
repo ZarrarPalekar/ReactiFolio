@@ -63,8 +63,38 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  #home {
+    min-height: 100vh;
+    height: auto;
+  }
+
   .custom-img {
     height: 100vh;
     object-position: center;
+  }
+
+  /* Disable carousel controls on mobile */
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-img {
+    object-position: 60% center;
+  }
+}
+
+/* Landscape mobile optimization */
+@media (max-width: 896px) and (orientation: landscape) {
+  #home {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .custom-img {
+    height: 100vh;
+    min-height: 600px;
   }
 }

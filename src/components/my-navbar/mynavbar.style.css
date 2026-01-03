@@ -151,23 +151,54 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .logo {
-    width: 4rem;
-    height: 4rem;
-  }
-
-  .nav-theme {
-    padding: var(--space-3) var(--space-4) !important;
-  }
-
+@media (max-width: 991px) {
   .nav-theme .nav-link {
     margin: var(--space-2) 0;
     text-align: center;
   }
 
+  .nav-theme .nav-link::before {
+    display: none;
+  }
+
   .calendly-btn {
     width: 100%;
-    margin-top: var(--space-2) !important;
+    margin-top: var(--space-3) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.1rem;
+  }
+
+  .nav-theme {
+    padding: var(--space-2) var(--space-4) !important;
+  }
+
+  .nav-theme .nav-link {
+    padding: var(--space-3) var(--space-4) !important;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .navbar-brand {
+    font-size: 1rem;
+    gap: var(--space-2);
+  }
+
+  .nav-theme {
+    padding: var(--space-2) var(--space-3) !important;
   }
 }
