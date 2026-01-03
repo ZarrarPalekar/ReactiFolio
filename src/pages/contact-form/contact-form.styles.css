@@ -1,18 +1,18 @@
 /* ========================================
-   MODERN CONTACT FORM STYLES
+   AURORA CONTACT FORM STYLES
    ======================================== */
 
 .contact-section {
-  padding: var(--space-12) 0;
+  padding: var(--space-16) 0;
 }
 
 .contact-jumbotron {
-  background: var(--glass-bg-dark);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--glass-border);
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(79, 255, 176, 0.1);
   border-radius: var(--radius-2xl);
-  box-shadow: var(--glass-shadow);
+  box-shadow: var(--shadow-card);
   padding: var(--space-10);
   position: relative;
   overflow: hidden;
@@ -25,17 +25,18 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("../../assets/img/background/background.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-  opacity: 0.1;
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    rgba(79, 255, 176, 0.05) 0%,
+    transparent 50%
+  );
   z-index: -1;
 }
 
-/* Form Inputs */
+/* Form Inputs - Aurora Style */
 .contact-jumbotron .form-control {
-  background: rgba(255, 255, 255, 0.05);
-  border: 2px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(79, 255, 176, 0.15);
   border-radius: var(--radius-lg);
   color: var(--color-white);
   padding: var(--space-4);
@@ -44,9 +45,9 @@
 }
 
 .contact-jumbotron .form-control:focus {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: var(--color-primary-light);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+  background: rgba(79, 255, 176, 0.05);
+  border-color: var(--aurora-mint);
+  box-shadow: 0 0 0 3px rgba(79, 255, 176, 0.15);
   color: var(--color-white);
 }
 
@@ -54,7 +55,7 @@
   color: var(--color-gray-light);
 }
 
-/* Buttons */
+/* Buttons - Aurora Style */
 #youtube-btn {
   border: 2px solid #f83f37;
   color: #f83f37;
@@ -73,8 +74,8 @@
 }
 
 .calendly-btn {
-  border: 2px solid var(--color-primary);
-  color: var(--color-primary-light);
+  border: 2px solid var(--aurora-mint);
+  color: var(--aurora-mint);
   background: transparent;
   border-radius: var(--radius-full);
   padding: var(--space-3) var(--space-6);
@@ -83,19 +84,16 @@
 }
 
 .calendly-btn:hover {
-  background: var(--color-primary);
-  color: #ffffff;
+  background: var(--aurora-mint);
+  color: var(--color-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+  box-shadow: 0 6px 20px rgba(79, 255, 176, 0.4);
 }
 
-/* Submit Button */
+/* Submit Button - Aurora Gradient */
 .contact-jumbotron .btn-primary {
-  background: linear-gradient(
-    135deg,
-    var(--color-primary),
-    var(--color-secondary)
-  );
+  background: var(--gradient-aurora-1);
+  background-size: 200% 200%;
   border: none;
   border-radius: var(--radius-full);
   padding: var(--space-4) var(--space-8);
@@ -106,7 +104,7 @@
 
 .contact-jumbotron .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+  box-shadow: 0 0 30px rgba(79, 255, 176, 0.5);
 }
 
 /* Responsive */

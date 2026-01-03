@@ -1,91 +1,170 @@
 /* ========================================
-   MODERN DESIGN SYSTEM - CSS VARIABLES
+   AURORA DESIGN SYSTEM 2024
+   Gradient Mesh / Flowing Aurora Aesthetic
    ======================================== */
 
 :root {
-  /* Primary Colors - Modern Purple/Blue Gradient */
-  --color-primary: #6366f1;
-  --color-primary-light: #818cf8;
-  --color-primary-dark: #4f46e5;
+  /* Aurora Color Palette */
+  --aurora-mint: #4fffb0;
+  --aurora-cyan: #00d4ff;
+  --aurora-blue: #4a9eff;
+  --aurora-purple: #c084fc;
+  --aurora-pink: #f472b6;
+  --aurora-rose: #fb7185;
+  --aurora-orange: #fb923c;
+  --aurora-yellow: #facc15;
+
+  /* Primary - Soft Violet */
+  --color-primary: #a855f7;
+  --color-primary-light: #c084fc;
+  --color-primary-dark: #9333ea;
+
+  /* Secondary - Ocean Teal */
   --color-secondary: #06b6d4;
   --color-secondary-light: #22d3ee;
   --color-secondary-dark: #0891b2;
 
-  /* Accent Colors */
-  --color-accent: #f59e0b;
-  --color-accent-light: #fbbf24;
-  --color-success: #10b981;
+  /* Accent - Coral Rose */
+  --color-accent: #fb7185;
+  --color-accent-light: #fda4af;
+  --color-accent-dark: #f43f5e;
+
+  /* Tertiary - Mint */
+  --color-tertiary: #34d399;
+  --color-tertiary-light: #6ee7b7;
+
+  /* Status Colors */
+  --color-success: #22c55e;
+  --color-info: #3b82f6;
   --color-warning: #f59e0b;
   --color-error: #ef4444;
 
-  /* Neutral Colors */
-  --color-dark: #0f172a;
-  --color-dark-light: #1e293b;
-  --color-dark-lighter: #334155;
+  /* Base Colors - Deep Space */
+  --color-dark: #030712;
+  --color-dark-light: #0f172a;
+  --color-dark-lighter: #1e293b;
+  --color-dark-surface: #334155;
   --color-gray: #64748b;
   --color-gray-light: #94a3b8;
+  --color-gray-lighter: #cbd5e1;
   --color-light: #f1f5f9;
   --color-white: #ffffff;
 
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  --gradient-dark: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  --gradient-hero: linear-gradient(
+  /* Aurora Gradients */
+  --gradient-aurora-1: linear-gradient(
     135deg,
-    #667eea 0%,
-    #764ba2 50%,
-    #f093fb 100%
+    #4fffb0 0%,
+    #00d4ff 25%,
+    #4a9eff 50%,
+    #c084fc 75%,
+    #f472b6 100%
+  );
+  --gradient-aurora-2: linear-gradient(
+    45deg,
+    #00d4ff 0%,
+    #a855f7 50%,
+    #fb7185 100%
+  );
+  --gradient-aurora-3: linear-gradient(
+    180deg,
+    rgba(3, 7, 18, 1) 0%,
+    rgba(15, 23, 42, 1) 50%,
+    rgba(30, 41, 59, 0.8) 100%
+  );
+  --gradient-primary: linear-gradient(135deg, #a855f7 0%, #06b6d4 100%);
+  --gradient-secondary: linear-gradient(135deg, #fb7185 0%, #c084fc 100%);
+  --gradient-accent: linear-gradient(135deg, #34d399 0%, #06b6d4 100%);
+  --gradient-text: linear-gradient(
+    90deg,
+    #4fffb0 0%,
+    #00d4ff 30%,
+    #c084fc 60%,
+    #f472b6 100%
   );
 
-  /* Glassmorphism */
-  --glass-bg: rgba(255, 255, 255, 0.1);
-  --glass-bg-light: rgba(255, 255, 255, 0.15);
-  --glass-bg-dark: rgba(15, 23, 42, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.2);
-  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  /* Aurora Mesh Background */
+  --gradient-mesh: radial-gradient(
+      ellipse 80% 50% at 20% 40%,
+      rgba(79, 255, 176, 0.15) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 60% 40% at 80% 20%,
+      rgba(0, 212, 255, 0.12) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 50% 60% at 60% 80%,
+      rgba(192, 132, 252, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 40% 50% at 10% 90%,
+      rgba(244, 114, 182, 0.08) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 70% 40% at 90% 60%,
+      rgba(52, 211, 153, 0.06) 0%,
+      transparent 50%
+    );
 
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  --shadow-glow: 0 0 20px rgba(102, 126, 234, 0.5);
+  /* Card & Surface Styles */
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-bg-light: rgba(255, 255, 255, 0.06);
+  --glass-bg-dark: rgba(3, 7, 18, 0.85);
+  --glass-bg-card: rgba(15, 23, 42, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-light: rgba(255, 255, 255, 0.12);
+  --glass-border-aurora: rgba(79, 255, 176, 0.2);
+
+  /* Aurora Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 24px 48px rgba(0, 0, 0, 0.35);
+  --shadow-2xl: 0 32px 64px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 40px rgba(79, 255, 176, 0.2),
+    0 0 80px rgba(0, 212, 255, 0.1);
+  --shadow-glow-purple: 0 0 40px rgba(192, 132, 252, 0.25);
+  --shadow-glow-pink: 0 0 40px rgba(244, 114, 182, 0.2);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 1px rgba(255, 255, 255, 0.1);
+  --shadow-aurora: 0 0 60px rgba(79, 255, 176, 0.15),
+    0 0 100px rgba(0, 212, 255, 0.1), 0 0 140px rgba(192, 132, 252, 0.05);
 
   /* Typography */
-  --font-primary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "Roboto", sans-serif;
+  --font-primary: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-heading: "Poppins", "Inter", sans-serif;
-  --font-mono: "Fira Code", "Courier New", monospace;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
 
-  /* Font Sizes - Refined scale */
+  /* Font Sizes */
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
   --text-base: 1rem;
   --text-lg: 1.125rem;
   --text-xl: 1.25rem;
   --text-2xl: 1.5rem;
-  --text-3xl: 1.875rem;
-  --text-4xl: 2.25rem;
-  --text-5xl: 3rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.5rem;
+  --text-5xl: 3.5rem;
+  --text-6xl: 4.5rem;
+  --text-7xl: 6rem;
 
-  /* Line Heights - Optimized for readability */
-  --leading-tight: 1.25;
-  --leading-snug: 1.375;
+  /* Line Heights */
+  --leading-none: 1;
+  --leading-tight: 1.15;
+  --leading-snug: 1.35;
   --leading-normal: 1.5;
-  --leading-relaxed: 1.625;
+  --leading-relaxed: 1.7;
   --leading-loose: 2;
 
   /* Letter Spacing */
   --tracking-tighter: -0.05em;
-  --tracking-tight: -0.025em;
+  --tracking-tight: -0.02em;
   --tracking-normal: 0;
-  --tracking-wide: 0.025em;
+  --tracking-wide: 0.02em;
   --tracking-wider: 0.05em;
   --tracking-widest: 0.1em;
-  --text-6xl: 3.75rem;
 
   /* Spacing */
   --space-1: 0.25rem;
@@ -94,11 +173,15 @@
   --space-4: 1rem;
   --space-5: 1.25rem;
   --space-6: 1.5rem;
+  --space-7: 1.75rem;
   --space-8: 2rem;
   --space-10: 2.5rem;
   --space-12: 3rem;
+  --space-15: 3.75rem;
   --space-16: 4rem;
   --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
 
   /* Border Radius */
   --radius-sm: 0.375rem;
@@ -106,12 +189,14 @@
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
   --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
   --radius-full: 9999px;
 
   /* Transitions */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 600ms cubic-bezier(0.34, 1.56, 0.64, 1);
 
   /* Z-index */
   --z-dropdown: 1000;
@@ -124,7 +209,7 @@
 }
 
 /* ========================================
-   GLOBAL STYLES
+   GLOBAL STYLES - Aurora Theme
    ======================================== */
 
 * {
@@ -136,6 +221,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -143,8 +229,7 @@ body {
   font-family: var(--font-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: var(--gradient-hero);
-  background-attachment: fixed;
+  background: var(--color-dark);
   color: var(--color-white);
   line-height: var(--leading-relaxed);
   overflow-x: hidden;
@@ -152,10 +237,73 @@ body {
   max-width: 100vw;
   font-size: var(--text-base);
   letter-spacing: var(--tracking-normal);
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Aurora Background - Animated Mesh Gradient */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-mesh);
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* Animated Aurora Orbs */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+      ellipse 100% 80% at 10% 20%,
+      rgba(79, 255, 176, 0.08) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      ellipse 80% 60% at 90% 10%,
+      rgba(0, 212, 255, 0.06) 0%,
+      transparent 35%
+    ),
+    radial-gradient(
+      ellipse 60% 80% at 50% 90%,
+      rgba(192, 132, 252, 0.07) 0%,
+      transparent 40%
+    );
+  pointer-events: none;
+  z-index: -1;
+  animation: auroraFloat 20s ease-in-out infinite;
+}
+
+@keyframes auroraFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  33% {
+    transform: translateY(-20px) scale(1.02);
+    opacity: 0.8;
+  }
+  66% {
+    transform: translateY(10px) scale(0.98);
+    opacity: 0.9;
+  }
 }
 
 code {
   font-family: var(--font-mono);
+  background: var(--glass-bg);
+  padding: 0.2em 0.4em;
+  border-radius: var(--radius-sm);
+  font-size: 0.9em;
 }
 
 /* ========================================
@@ -281,35 +429,102 @@ li {
 }
 
 /* ========================================
-   UTILITY CLASSES
+   UTILITY CLASSES - Enhanced
    ======================================== */
 
+/* Modern Glass Card */
 .glass-card {
-  background: var(--glass-bg-dark);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: var(--glass-bg-card);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   border: 1px solid var(--glass-border);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--glass-shadow);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-base);
 }
 
+.glass-card:hover {
+  border-color: var(--glass-border-light);
+  box-shadow: var(--shadow-card), var(--shadow-glow);
+}
+
+/* Vibrant Gradient Text */
 .gradient-text {
-  background: linear-gradient(
-    135deg,
-    var(--color-primary-light),
-    var(--color-secondary-light)
-  );
+  background: var(--gradient-text);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  background-size: 200% 200%;
+  animation: shimmer 3s ease infinite;
 }
 
+@keyframes shimmer {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Hover Effects */
 .hover-lift {
-  transition: transform var(--transition-base);
+  transition: transform var(--transition-base),
+    box-shadow var(--transition-base);
 }
 
 .hover-lift:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Glow Effect */
+.glow-border {
+  position: relative;
+}
+
+.glow-border::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: var(--gradient-primary);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  filter: blur(8px);
+}
+
+.glow-border:hover::before {
+  opacity: 0.6;
+}
+
+/* Section Title Style */
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: var(--space-12);
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.section-title .gradient-text {
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
 }
 
 /* ========================================

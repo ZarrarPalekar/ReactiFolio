@@ -39,8 +39,11 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Senior MERN Full Stack Developer" />
+    <meta name="theme-color" content="#0a0a0f" />
+    <meta
+      name="description"
+      content="Senior MERN Full Stack Developer - Building Modern Web Experiences"
+    />
 
     <meta
       name="keywords"
@@ -76,7 +79,7 @@
       crossorigin="anonymous"
     ></script>
     <title>Zarrar Palekar | Senior Software Developer</title>
-    <!-- Loading Spinner Styling -->
+    <!-- Modern Loading Spinner Styling -->
     <style>
       .overlay {
         left: 0;
@@ -84,7 +87,8 @@
         width: 100%;
         height: 100%;
         position: fixed;
-        background: #222;
+        background: linear-gradient(135deg, #0a0a0f 0%, #12121a 100%);
+        z-index: 9999;
       }
 
       .overlay__inner {
@@ -93,107 +97,66 @@
         width: 100%;
         height: 100%;
         position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .overlay__content {
-        left: 50%;
-        position: absolute;
-        top: 50%;
-        transform: translate(-50%, -50%);
+        text-align: center;
       }
 
-      .lds-spinner {
-        color: official;
-        display: inline-block;
+      /* Modern Gradient Spinner */
+      .modern-spinner {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: conic-gradient(
+          from 0deg,
+          transparent 0deg,
+          #8b5cf6 90deg,
+          #14b8a6 180deg,
+          #f472b6 270deg,
+          transparent 360deg
+        );
+        animation: spin 1s linear infinite;
         position: relative;
-        width: 80px;
-        height: 80px;
       }
 
-      .lds-spinner div {
-        transform-origin: 40px 40px;
-        animation: lds-spinner 1.2s linear infinite;
-      }
-
-      .lds-spinner div:after {
-        content: " ";
-        display: block;
+      .modern-spinner::before {
+        content: "";
         position: absolute;
-        top: 3px;
-        left: 37px;
-        width: 6px;
-        height: 18px;
-        border-radius: 20%;
-        background: #fed;
+        inset: 4px;
+        background: #0a0a0f;
+        border-radius: 50%;
       }
 
-      .lds-spinner div:nth-child(1) {
-        transform: rotate(0deg);
-        animation-delay: -1.1s;
+      .loading-text {
+        margin-top: 20px;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        background: linear-gradient(135deg, #a78bfa, #2dd4bf, #f9a8d4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: 0.1em;
+        animation: pulse 1.5s ease-in-out infinite;
       }
 
-      .lds-spinner div:nth-child(2) {
-        transform: rotate(30deg);
-        animation-delay: -1s;
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
       }
 
-      .lds-spinner div:nth-child(3) {
-        transform: rotate(60deg);
-        animation-delay: -0.9s;
-      }
-
-      .lds-spinner div:nth-child(4) {
-        transform: rotate(90deg);
-        animation-delay: -0.8s;
-      }
-
-      .lds-spinner div:nth-child(5) {
-        transform: rotate(120deg);
-        animation-delay: -0.7s;
-      }
-
-      .lds-spinner div:nth-child(6) {
-        transform: rotate(150deg);
-        animation-delay: -0.6s;
-      }
-
-      .lds-spinner div:nth-child(7) {
-        transform: rotate(180deg);
-        animation-delay: -0.5s;
-      }
-
-      .lds-spinner div:nth-child(8) {
-        transform: rotate(210deg);
-        animation-delay: -0.4s;
-      }
-
-      .lds-spinner div:nth-child(9) {
-        transform: rotate(240deg);
-        animation-delay: -0.3s;
-      }
-
-      .lds-spinner div:nth-child(10) {
-        transform: rotate(270deg);
-        animation-delay: -0.2s;
-      }
-
-      .lds-spinner div:nth-child(11) {
-        transform: rotate(300deg);
-        animation-delay: -0.1s;
-      }
-
-      .lds-spinner div:nth-child(12) {
-        transform: rotate(330deg);
-        animation-delay: 0s;
-      }
-
-      @keyframes lds-spinner {
-        0% {
+      @keyframes pulse {
+        0%,
+        100% {
           opacity: 1;
         }
-
-        100% {
-          opacity: 0;
+        50% {
+          opacity: 0.5;
         }
       }
     </style>
@@ -212,24 +175,12 @@
     <!-- End Google Tag Manager (noscript) -->
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!-- Loading Spinner Div -->
+    <!-- Modern Loading Spinner -->
     <div class="overlay">
       <div class="overlay__inner">
         <div class="overlay__content">
-          <div class="lds-spinner">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
+          <div class="modern-spinner"></div>
+          <div class="loading-text">LOADING</div>
         </div>
       </div>
     </div>

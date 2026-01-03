@@ -1,24 +1,24 @@
 /* ========================================
-   MODERN NAVBAR STYLES
+   AURORA NAVBAR STYLES
    ======================================== */
 
 .logo {
-  width: 4.5rem;
-  height: 4.5rem;
-  transition: transform var(--transition-base);
-  filter: drop-shadow(0 0 15px rgba(99, 102, 241, 0.5));
+  width: 3.5rem;
+  height: 3.5rem;
+  transition: all var(--transition-base);
+  filter: drop-shadow(0 0 20px rgba(79, 255, 176, 0.4));
 }
 
 .logo:hover {
-  transform: scale(1.08) rotate(5deg);
-  filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.7));
+  transform: scale(1.1) rotate(5deg);
+  filter: drop-shadow(0 0 30px rgba(79, 255, 176, 0.6));
 }
 
 .navbar-brand {
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 700;
   font-family: var(--font-heading);
   letter-spacing: var(--tracking-tight);
@@ -27,85 +27,93 @@
 }
 
 .navbar-brand:hover {
-  color: var(--color-primary-light) !important;
+  color: var(--aurora-mint) !important;
 }
 
-/* Glassmorphism Navbar */
+/* Aurora Glass Navbar */
 .nav-theme {
-  background: rgba(10, 10, 30, 0.85) !important;
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid rgba(99, 102, 241, 0.3);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-  font-size: 1.05rem;
+  background: rgba(3, 7, 18, 0.8) !important;
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  border-bottom: 1px solid rgba(79, 255, 176, 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  font-size: 0.95rem;
   font-weight: 500;
-  padding: var(--space-3) var(--space-6) !important;
+  padding: var(--space-3) var(--space-8) !important;
   transition: all var(--transition-base);
 }
 
 .animate-navbar {
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-  animation: slideDown 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.4), 0 0 60px rgba(79, 255, 176, 0.05);
+  animation: slideDown 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Nav Links */
+/* Nav Links - Aurora Style */
 .nav-theme .nav-link {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
   padding: var(--space-2) var(--space-4) !important;
-  margin: 0 var(--space-2);
-  border-radius: var(--radius-md);
+  margin: 0 var(--space-1);
+  border-radius: var(--radius-full);
   transition: all var(--transition-base);
   position: relative;
   font-weight: 500;
-  letter-spacing: var(--tracking-wide);
-  font-size: 1rem;
+  letter-spacing: 0.02em;
+  font-size: 0.9rem;
 }
 
+/* Aurora gradient underline */
 .nav-theme .nav-link::before {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: 4px;
   left: 50%;
   width: 0;
   height: 2px;
-  background: linear-gradient(
-    90deg,
-    var(--color-primary-light),
-    var(--color-secondary-light)
-  );
+  background: var(--gradient-aurora-1);
   transform: translateX(-50%);
   transition: width var(--transition-base);
+  border-radius: var(--radius-full);
 }
 
 .nav-theme .nav-link:hover {
-  color: var(--color-primary-light) !important;
-  background: rgba(255, 255, 255, 0.05);
-  transform: translateY(-2px);
+  color: var(--aurora-mint) !important;
+  background: rgba(79, 255, 176, 0.08);
 }
 
 .nav-theme .nav-link:hover::before {
-  width: 80%;
+  width: 60%;
 }
 
-/* Calendly Button */
+/* Calendly Button - Aurora */
 .calendly-btn {
-  background: linear-gradient(
-    135deg,
-    var(--color-primary),
-    var(--color-secondary)
-  ) !important;
+  background: var(--gradient-aurora-1) !important;
+  background-size: 200% 200% !important;
   border: none !important;
   padding: var(--space-2) var(--space-5) !important;
   border-radius: var(--radius-full) !important;
   font-weight: 600 !important;
-  color: white !important;
+  font-size: 0.85rem !important;
+  color: var(--color-dark) !important;
   transition: all var(--transition-base) !important;
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 0 20px rgba(79, 255, 176, 0.3);
+  animation: auroraBtn 6s ease infinite;
+}
+
+@keyframes auroraBtn {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .calendly-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 30px rgba(79, 255, 176, 0.5), 0 0 60px rgba(0, 212, 255, 0.2);
 }
 
 /* Navbar Calendly wrapper alignment */
@@ -116,18 +124,24 @@
   align-items: center;
 }
 
-/* Hamburger Menu */
+/* Hamburger Menu - Modern Style */
 .navToggler {
-  padding: 0;
+  padding: var(--space-2);
   border: none !important;
-  background: transparent !important;
+  background: var(--glass-bg) !important;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+}
+
+.navToggler:hover {
+  background: var(--glass-bg-light) !important;
 }
 
 .navToggler:focus {
   box-shadow: none !important;
 }
 
-/* Mobile Menu */
+/* Mobile Menu - Glass Panel */
 .navbar-collapse {
   background: transparent;
   backdrop-filter: none;
@@ -139,13 +153,14 @@
 
 @media (max-width: 991px) {
   .navbar-collapse {
-    background: rgba(10, 10, 30, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: var(--radius-lg);
+    background: var(--glass-bg-card);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-radius: var(--radius-xl);
     margin-top: var(--space-4);
-    padding: var(--space-4);
-    border: 1px solid rgba(99, 102, 241, 0.2);
+    padding: var(--space-5);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-card);
   }
 }
 
@@ -164,28 +179,34 @@
 /* Responsive */
 @media (max-width: 991px) {
   .nav-theme .nav-link {
-    margin: var(--space-2) 0;
+    margin: var(--space-1) 0;
     text-align: center;
+    padding: var(--space-3) var(--space-4) !important;
   }
 
   .nav-theme .nav-link::before {
     display: none;
   }
 
+  .nav-theme .nav-link:hover {
+    background: var(--glass-bg-light);
+  }
+
   .calendly-btn {
     width: 100%;
-    margin-top: var(--space-3) !important;
+    margin-top: var(--space-4) !important;
+    padding: var(--space-3) var(--space-5) !important;
   }
 }
 
 @media (max-width: 768px) {
   .logo {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 3rem;
+    height: 3rem;
   }
 
   .navbar-brand {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .nav-theme {
@@ -194,18 +215,18 @@
 
   .nav-theme .nav-link {
     padding: var(--space-3) var(--space-4) !important;
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 }
 
 @media (max-width: 480px) {
   .logo {
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 
   .navbar-brand {
-    font-size: 1rem;
+    font-size: 0.95rem;
     gap: var(--space-2);
   }
 

@@ -1,12 +1,12 @@
 /* ========================================
-   MODERN FOOTER STYLES
+   AURORA FOOTER STYLES
    ======================================== */
 
 .footer-style {
-  background: var(--glass-bg-dark);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-top: 2px solid var(--glass-border);
+  background: rgba(3, 7, 18, 0.9);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-top: 1px solid rgba(79, 255, 176, 0.15);
   color: var(--color-white);
   font-size: 1.2rem;
   padding: var(--space-10) 0;
@@ -20,17 +20,18 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 2px;
+  height: 1px;
   background: linear-gradient(
     90deg,
     transparent,
-    var(--color-primary),
-    var(--color-secondary),
+    var(--aurora-mint),
+    var(--aurora-cyan),
+    var(--aurora-purple),
     transparent
   );
 }
 
-/* Footer Links */
+/* Footer Links - Aurora */
 .footer-style a {
   color: var(--color-gray-light);
   text-decoration: none;
@@ -39,11 +40,11 @@
 }
 
 .footer-style a:hover {
-  color: var(--color-primary-light);
+  color: var(--aurora-mint);
   transform: translateY(-2px);
 }
 
-/* Social Icons */
+/* Social Icons - Aurora Glow */
 .footer-style .social-icon {
   display: inline-flex;
   align-items: center;
@@ -51,21 +52,22 @@
   width: 50px;
   height: 50px;
   border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.05);
-  border: 2px solid var(--glass-border);
+  background: rgba(79, 255, 176, 0.05);
+  border: 1px solid rgba(79, 255, 176, 0.2);
   margin: 0 var(--space-2);
   transition: all var(--transition-base);
 }
 
 .footer-style .social-icon:hover {
-  background: linear-gradient(
-    135deg,
-    var(--color-primary),
-    var(--color-secondary)
-  );
+  background: var(--gradient-aurora-1);
   border-color: transparent;
   transform: translateY(-5px) rotate(5deg);
-  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+  box-shadow: 0 0 30px rgba(79, 255, 176, 0.4);
+}
+
+.footer-style .social-icon:hover svg,
+.footer-style .social-icon:hover i {
+  color: var(--color-dark);
 }
 
 /* Copyright Text */

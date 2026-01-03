@@ -1,66 +1,99 @@
 /* ========================================
-   MODERN HERO SECTION STYLES
+   AURORA HERO SECTION STYLES
    ======================================== */
 
 .hero-content {
   position: relative;
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
+  padding: 0 var(--space-6);
 }
 
-/* Hero Greeting */
+/* Hero Badge/Greeting - Aurora Glow */
 .hero-greeting {
-  font-size: var(--text-xl);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
   font-weight: 500;
-  color: var(--color-gray-light);
-  margin-bottom: var(--space-4);
-  letter-spacing: var(--tracking-wide);
-  font-family: var(--font-primary);
+  color: var(--aurora-mint);
+  margin-bottom: var(--space-8);
+  letter-spacing: var(--tracking-wider);
+  font-family: var(--font-mono);
+  padding: var(--space-2) var(--space-5);
+  background: rgba(79, 255, 176, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(79, 255, 176, 0.2);
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
 }
 
-/* Hero Name */
+/* Hero Name - Aurora Gradient */
 .hero-name {
-  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-size: clamp(3.5rem, 12vw, var(--text-7xl));
   font-weight: 800;
   font-family: var(--font-heading);
   margin-bottom: var(--space-6);
-  line-height: var(--leading-tight);
-  letter-spacing: var(--tracking-tighter);
+  line-height: 1;
+  letter-spacing: -0.03em;
 }
 
 .hero-name .gradient-text {
   display: inline-block;
-  animation: gradientShift 3s ease infinite;
+  background: var(--gradient-aurora-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 300% 300%;
+  animation: auroraGradient 8s ease infinite;
+  filter: drop-shadow(0 0 40px rgba(79, 255, 176, 0.3));
 }
 
-/* Hero Subtitle */
+/* Hero Subtitle - Typewriter */
 .hero-subtitle {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-  font-weight: 600;
-  font-family: var(--font-heading);
-  color: var(--color-primary-light);
+  font-size: clamp(1.1rem, 2.5vw, var(--text-2xl));
+  font-weight: 400;
+  font-family: var(--font-mono);
+  color: var(--aurora-cyan);
   margin-bottom: var(--space-6);
-  min-height: 80px;
+  min-height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  letter-spacing: var(--tracking-tight);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* Typewriter cursor */
+.hero-subtitle .Typewriter__cursor {
+  color: var(--aurora-pink);
+  font-weight: 300;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 /* Hero Description */
 .hero-description {
-  font-size: var(--text-xl);
-  color: var(--color-gray-light);
-  margin-bottom: var(--space-10);
+  font-size: var(--text-lg);
+  color: var(--color-gray-lighter);
+  margin-bottom: var(--space-12);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   line-height: var(--leading-relaxed);
-  letter-spacing: var(--tracking-normal);
+  letter-spacing: 0.01em;
   font-weight: 400;
 }
 
-/* CTA Buttons */
+/* CTA Buttons - Aurora Style */
 .hero-cta {
   display: flex;
   gap: var(--space-4);
@@ -74,95 +107,101 @@
   gap: var(--space-3);
   padding: var(--space-4) var(--space-8);
   border-radius: var(--radius-full);
-  font-size: var(--text-lg);
+  font-size: var(--text-sm);
   font-weight: 600;
   text-decoration: none;
   transition: all var(--transition-base);
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+  letter-spacing: var(--tracking-wide);
 }
 
-.cta-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: left 0.5s;
-}
-
-.cta-button:hover::before {
-  left: 100%;
-}
-
+/* Primary CTA - Aurora Gradient */
 .cta-button.primary {
-  background: linear-gradient(
-    135deg,
-    var(--color-primary),
-    var(--color-secondary)
-  );
-  color: white;
-  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+  background: var(--gradient-aurora-1);
+  background-size: 200% 200%;
+  color: var(--color-dark);
+  box-shadow: var(--shadow-glow);
+  border: none;
+  animation: auroraBtn 6s ease infinite;
 }
 
 .cta-button.primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 30px rgba(99, 102, 241, 0.6);
-  color: white;
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 0 50px rgba(79, 255, 176, 0.4), 0 0 80px rgba(0, 212, 255, 0.2);
+  color: var(--color-dark);
 }
 
+/* Secondary CTA - Glass Aurora Border */
 .cta-button.secondary {
-  background: transparent;
-  color: white;
-  border: 2px solid var(--color-primary-light);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  color: var(--color-white);
+  border: 1px solid rgba(79, 255, 176, 0.3);
 }
 
 .cta-button.secondary:hover {
-  background: var(--color-primary-light);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 30px rgba(99, 102, 241, 0.4);
-  color: white;
+  background: rgba(79, 255, 176, 0.1);
+  border-color: var(--aurora-mint);
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px rgba(79, 255, 176, 0.2);
+  color: var(--aurora-mint);
 }
 
-/* Floating Elements */
+/* Floating Tech Icons - Aurora */
 .floating-element {
   position: absolute;
-  font-size: 3rem;
+  font-size: 2.5rem;
   opacity: 0.15;
   pointer-events: none;
-  color: var(--color-primary-light);
+  background: var(--gradient-aurora-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: blur(0.5px);
 }
 
 .element-1 {
-  top: 10%;
-  left: 10%;
+  top: 5%;
+  left: 5%;
+  color: var(--aurora-mint);
 }
 
 .element-2 {
-  top: 20%;
-  right: 15%;
+  top: 15%;
+  right: 10%;
+  color: var(--aurora-cyan);
 }
 
 .element-3 {
-  bottom: 15%;
-  left: 15%;
+  bottom: 20%;
+  left: 8%;
+  color: var(--aurora-purple);
 }
 
-/* Animations */
-@keyframes gradientShift {
-  0%,
-  100% {
-    filter: hue-rotate(0deg);
+/* Aurora Animations */
+@keyframes auroraGradient {
+  0% {
+    background-position: 0% 50%;
   }
   50% {
-    filter: hue-rotate(20deg);
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes auroraBtn {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
@@ -175,19 +214,20 @@
   }
 
   .hero-greeting {
-    font-size: var(--text-lg);
+    font-size: var(--text-sm);
+    padding: var(--space-2) var(--space-3);
   }
 
   .hero-subtitle {
-    min-height: 70px;
+    min-height: 55px;
   }
 
   .hero-description {
-    font-size: var(--text-lg);
+    font-size: var(--text-base);
   }
 
   .cta-button {
-    padding: var(--space-3) var(--space-7);
+    padding: var(--space-3) var(--space-6);
   }
 }
 
@@ -199,39 +239,46 @@
   }
 
   .hero-greeting {
-    font-size: var(--text-base);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-4);
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .hero-name {
     margin-bottom: var(--space-3);
   }
 
   .hero-subtitle {
-    min-height: 60px;
+    min-height: 50px;
+    margin-bottom: var(--space-4);
   }
 
   .hero-description {
     font-size: var(--text-base);
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-6);
   }
 
   .cta-button {
-    padding: var(--space-3) var(--space-6);
-    font-size: var(--text-base);
+    padding: var(--space-3) var(--space-5);
+    font-size: var(--text-sm);
+    border-radius: var(--radius-lg);
   }
 
   .floating-element {
-    font-size: 2rem;
-    opacity: 0.1;
+    font-size: 1.75rem;
+    opacity: 0.15;
   }
 }
 
 /* Small mobile styles */
 @media (max-width: 480px) {
   .hero-greeting {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   .hero-description {
-    font-size: 0.95rem;
-    margin-bottom: var(--space-6);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-5);
   }
 
   .hero-cta {
@@ -243,7 +290,7 @@
   .cta-button {
     width: 100%;
     justify-content: center;
-    padding: var(--space-3) var(--space-5);
+    padding: var(--space-3) var(--space-4);
   }
 
   .floating-element {
