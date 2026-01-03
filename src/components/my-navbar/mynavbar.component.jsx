@@ -1,24 +1,18 @@
-import React, { useState, useCallback } from "react";
+import { useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Logo from "../../assets/icons/logow.webp";
 import "./mynavbar.style.css";
-// import Hamburger from "hamburger-react";
+import { Spiral as Hamburger } from "hamburger-react";
 
 import useWindowDimensions from "../../functionality/checkViewPort";
 
-import { HamburgerVortex } from "react-animated-burgers";
 import { PopupButton } from "react-calendly";
 
 const MyNavbar = () => {
   const { width } = useWindowDimensions();
 
-  const [isActive, setIsActive] = useState(false);
-
-  const toggleButton = useCallback(
-    () => setIsActive((prevState) => !prevState),
-    []
-  );
+  const [isOpen, setIsOpen] = useState(false);
 
   const [expanded, setExpanded] = useState(false);
 
@@ -37,18 +31,25 @@ const MyNavbar = () => {
           <img className="logo" src={Logo} alt="PZJ-Logo" />
         </Navbar.Brand>
         <Navbar.Toggle
-          onClick={() => setExpanded(expanded ? false : "expanded")}
+          onClick={() => {
+            setExpanded(expanded ? false : "expanded");
+            setIsOpen(!isOpen);
+          }}
           className="navToggler"
         >
-          {/* <Hamburger color="white" size="100" /> */}
-          <HamburgerVortex barColor="white" {...{ isActive, toggleButton }} />
+          <Hamburger
+            toggled={isOpen}
+            toggle={setIsOpen}
+            color="white"
+            size={24}
+          />
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto">
             <Nav.Link
               onClick={() => {
                 setExpanded(false);
-                width < 768 && toggleButton();
+                width < 768 && setIsOpen(false);
               }}
               href="#home"
             >
@@ -57,7 +58,7 @@ const MyNavbar = () => {
             <Nav.Link
               onClick={() => {
                 setExpanded(false);
-                width < 768 && toggleButton();
+                width < 768 && setIsOpen(false);
               }}
               href="#about"
             >
@@ -66,7 +67,7 @@ const MyNavbar = () => {
             <Nav.Link
               onClick={() => {
                 setExpanded(false);
-                width < 768 && toggleButton();
+                width < 768 && setIsOpen(false);
               }}
               href="#skills"
             >
@@ -75,7 +76,7 @@ const MyNavbar = () => {
             <Nav.Link
               onClick={() => {
                 setExpanded(false);
-                width < 768 && toggleButton();
+                width < 768 && setIsOpen(false);
               }}
               href="#experience"
             >
@@ -84,7 +85,7 @@ const MyNavbar = () => {
             <Nav.Link
               onClick={() => {
                 setExpanded(false);
-                width < 768 && toggleButton();
+                width < 768 && setIsOpen(false);
               }}
               href="#projects"
             >
@@ -93,16 +94,17 @@ const MyNavbar = () => {
             <Nav.Link
               onClick={() => {
                 setExpanded(false);
-                width < 768 && toggleButton();
+                width < 768 && setIsOpen(false);
               }}
               href="#contact"
             >
               Contact
             </Nav.Link>
-            <Nav.Link
+            <div
+              className="nav-link"
               onClick={() => {
                 setExpanded(false);
-                width < 768 && toggleButton();
+                width < 768 && setIsOpen(false);
               }}
               title="Let's catchup over a Google Meet call"
             >
@@ -115,7 +117,7 @@ const MyNavbar = () => {
                   " Connect via Calendly",
                 ]}
               />
-            </Nav.Link>
+            </div>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

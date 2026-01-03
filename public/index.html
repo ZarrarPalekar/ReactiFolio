@@ -1,201 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          "gtm.start": new Date().getTime(),
+          event: "gtm.js",
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-KRZFWJJ");
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-V61B8F91DT"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-<head>
-  <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-KRZFWJJ');</script>
-  <!-- End Google Tag Manager -->
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V61B8F91DT"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+      gtag("config", "G-V61B8F91DT");
+    </script>
+    <meta
+      name="google-site-verification"
+      content="DfHS84mXWDNxl_H7Oyvl-UE06mDwKCO42B72Jm84jkE"
+    />
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Senior MERN Full Stack Developer" />
 
-    gtag('config', 'G-V61B8F91DT');
-  </script>
-  <meta name="google-site-verification" content="DfHS84mXWDNxl_H7Oyvl-UE06mDwKCO42B72Jm84jkE" />
-  <meta charset="utf-8" />
-  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Senior MERN Full Stack Developer" />
+    <meta
+      name="keywords"
+      content="web design, website design, website builder, web developer, web designer, webdesign, ecommerce website, Zarrar Palekar"
+    />
 
-  <meta name="keywords"
-    content="web design, website design, website builder, web developer, web designer, webdesign, ecommerce website, Zarrar Palekar" />
+    <meta name="author" content="@zarrarpalekar" />
+    <meta property="og:url" content="https://zarrarpalekar.com/" />
+    <meta property="og:site_name" content="Zarrar Palekar" />
+    <meta
+      property="og:description"
+      content="A seasoned MERN full stack developer"
+    />
+    <meta property="og:title" content="Full Stack | MERN Stack | Developer" />
+    <link rel="canonical" href="https://www.zarrarpalekar.com" />
 
-  <meta name="author" content="@zarrarpalekar" />
-  <meta property="og:url" content="https://zarrarpalekar.com/" />
-  <meta property="og:site_name" content="Zarrar Palekar" />
-  <meta property="og:description" content="A seasoned MERN full stack developer" />
-  <meta property="og:title" content="Full Stack | MERN Stack | Developer" />
-  <link rel="canonical" href="https://www.zarrarpalekar.com" />
-
-  <!-- Google fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Karla&display=swap" rel="stylesheet" />
-  <!-- React bootstrap link -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-  <script src="https://kit.fontawesome.com/440c4dadc2.js" crossorigin="anonymous"></script>
-  <title>Zarrar Palekar | Senior Software Developer</title>
-  <!-- Loading Spinner Styling -->
-  <style>
-    .overlay {
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      position: fixed;
-      background: #222;
-    }
-
-    .overlay__inner {
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-    }
-
-    .overlay__content {
-      left: 50%;
-      position: absolute;
-      top: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .lds-spinner {
-      color: official;
-      display: inline-block;
-      position: relative;
-      width: 80px;
-      height: 80px;
-    }
-
-    .lds-spinner div {
-      transform-origin: 40px 40px;
-      animation: lds-spinner 1.2s linear infinite;
-    }
-
-    .lds-spinner div:after {
-      content: " ";
-      display: block;
-      position: absolute;
-      top: 3px;
-      left: 37px;
-      width: 6px;
-      height: 18px;
-      border-radius: 20%;
-      background: #fed;
-    }
-
-    .lds-spinner div:nth-child(1) {
-      transform: rotate(0deg);
-      animation-delay: -1.1s;
-    }
-
-    .lds-spinner div:nth-child(2) {
-      transform: rotate(30deg);
-      animation-delay: -1s;
-    }
-
-    .lds-spinner div:nth-child(3) {
-      transform: rotate(60deg);
-      animation-delay: -0.9s;
-    }
-
-    .lds-spinner div:nth-child(4) {
-      transform: rotate(90deg);
-      animation-delay: -0.8s;
-    }
-
-    .lds-spinner div:nth-child(5) {
-      transform: rotate(120deg);
-      animation-delay: -0.7s;
-    }
-
-    .lds-spinner div:nth-child(6) {
-      transform: rotate(150deg);
-      animation-delay: -0.6s;
-    }
-
-    .lds-spinner div:nth-child(7) {
-      transform: rotate(180deg);
-      animation-delay: -0.5s;
-    }
-
-    .lds-spinner div:nth-child(8) {
-      transform: rotate(210deg);
-      animation-delay: -0.4s;
-    }
-
-    .lds-spinner div:nth-child(9) {
-      transform: rotate(240deg);
-      animation-delay: -0.3s;
-    }
-
-    .lds-spinner div:nth-child(10) {
-      transform: rotate(270deg);
-      animation-delay: -0.2s;
-    }
-
-    .lds-spinner div:nth-child(11) {
-      transform: rotate(300deg);
-      animation-delay: -0.1s;
-    }
-
-    .lds-spinner div:nth-child(12) {
-      transform: rotate(330deg);
-      animation-delay: 0s;
-    }
-
-    @keyframes lds-spinner {
-      0% {
-        opacity: 1;
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- React bootstrap link -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/440c4dadc2.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Zarrar Palekar | Senior Software Developer</title>
+    <!-- Loading Spinner Styling -->
+    <style>
+      .overlay {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background: #222;
       }
 
-      100% {
-        opacity: 0;
+      .overlay__inner {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
       }
-    }
-  </style>
-</head>
 
-<body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRZFWJJ" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
-  <!-- Loading Spinner Div -->
-  <div class="overlay">
-    <div class="overlay__inner">
-      <div class="overlay__content">
-        <div class="lds-spinner">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+      .overlay__content {
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .lds-spinner {
+        color: official;
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+      }
+
+      .lds-spinner div {
+        transform-origin: 40px 40px;
+        animation: lds-spinner 1.2s linear infinite;
+      }
+
+      .lds-spinner div:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 3px;
+        left: 37px;
+        width: 6px;
+        height: 18px;
+        border-radius: 20%;
+        background: #fed;
+      }
+
+      .lds-spinner div:nth-child(1) {
+        transform: rotate(0deg);
+        animation-delay: -1.1s;
+      }
+
+      .lds-spinner div:nth-child(2) {
+        transform: rotate(30deg);
+        animation-delay: -1s;
+      }
+
+      .lds-spinner div:nth-child(3) {
+        transform: rotate(60deg);
+        animation-delay: -0.9s;
+      }
+
+      .lds-spinner div:nth-child(4) {
+        transform: rotate(90deg);
+        animation-delay: -0.8s;
+      }
+
+      .lds-spinner div:nth-child(5) {
+        transform: rotate(120deg);
+        animation-delay: -0.7s;
+      }
+
+      .lds-spinner div:nth-child(6) {
+        transform: rotate(150deg);
+        animation-delay: -0.6s;
+      }
+
+      .lds-spinner div:nth-child(7) {
+        transform: rotate(180deg);
+        animation-delay: -0.5s;
+      }
+
+      .lds-spinner div:nth-child(8) {
+        transform: rotate(210deg);
+        animation-delay: -0.4s;
+      }
+
+      .lds-spinner div:nth-child(9) {
+        transform: rotate(240deg);
+        animation-delay: -0.3s;
+      }
+
+      .lds-spinner div:nth-child(10) {
+        transform: rotate(270deg);
+        animation-delay: -0.2s;
+      }
+
+      .lds-spinner div:nth-child(11) {
+        transform: rotate(300deg);
+        animation-delay: -0.1s;
+      }
+
+      .lds-spinner div:nth-child(12) {
+        transform: rotate(330deg);
+        animation-delay: 0s;
+      }
+
+      @keyframes lds-spinner {
+        0% {
+          opacity: 1;
+        }
+
+        100% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KRZFWJJ"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!-- Loading Spinner Div -->
+    <div class="overlay">
+      <div class="overlay__inner">
+        <div class="overlay__content">
+          <div class="lds-spinner">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>

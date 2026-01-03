@@ -1,23 +1,189 @@
+/* ========================================
+   MODERN CONTACT FORM STYLES
+   ======================================== */
+
+.contact-section {
+  padding: var(--space-12) 0;
+}
+
 .contact-jumbotron {
+  background: var(--glass-bg-dark);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--glass-shadow);
+  padding: var(--space-10);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-jumbotron::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-image: url("../../assets/img/background/background.webp");
   background-size: cover;
   background-repeat: no-repeat;
+  opacity: 0.1;
+  z-index: -1;
 }
 
-#youtube-btn {
-  border-color: #f83f37;
-  color: #f83f37;
+/* Form Inputs */
+.contact-jumbotron .form-control {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  color: var(--color-white);
+  padding: var(--space-4);
+  font-size: 1.05rem;
+  transition: all var(--transition-base);
 }
+
+.contact-jumbotron .form-control:focus {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-primary-light);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+  color: var(--color-white);
+}
+
+.contact-jumbotron .form-control::placeholder {
+  color: var(--color-gray-light);
+}
+
+/* Buttons */
+#youtube-btn {
+  border: 2px solid #f83f37;
+  color: #f83f37;
+  background: transparent;
+  border-radius: var(--radius-full);
+  padding: var(--space-3) var(--space-6);
+  font-weight: 600;
+  transition: all var(--transition-base);
+}
+
 #youtube-btn:hover {
   background-color: #f83f37;
   color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(248, 63, 55, 0.4);
 }
 
 .calendly-btn {
-  border-color: rgb(0, 107, 255);
-  color: rgb(0, 107, 255);
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary-light);
+  background: transparent;
+  border-radius: var(--radius-full);
+  padding: var(--space-3) var(--space-6);
+  font-weight: 600;
+  transition: all var(--transition-base);
 }
+
 .calendly-btn:hover {
-  background-color: rgb(0, 107, 255);
+  background: var(--color-primary);
   color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+/* Submit Button */
+.contact-jumbotron .btn-primary {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  border: none;
+  border-radius: var(--radius-full);
+  padding: var(--space-4) var(--space-8);
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all var(--transition-base);
+}
+
+.contact-jumbotron .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+}
+
+/* Responsive */
+
+/* Tablet styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .contact-section {
+    padding: var(--space-10) 0;
+  }
+
+  .contact-jumbotron {
+    padding: var(--space-8);
+  }
+
+  .contact-jumbotron .form-control {
+    font-size: 1rem;
+  }
+
+  #youtube-btn,
+  .calendly-btn {
+    padding: var(--space-3) var(--space-5);
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: var(--space-8) 0;
+  }
+
+  .contact-jumbotron {
+    padding: var(--space-6);
+    border-radius: var(--radius-xl);
+  }
+
+  .contact-jumbotron .form-control {
+    padding: var(--space-3);
+    font-size: 1rem;
+  }
+
+  .contact-jumbotron .btn-primary {
+    width: 100%;
+    padding: var(--space-4) var(--space-6);
+    font-size: 1rem;
+  }
+
+  #youtube-btn,
+  .calendly-btn {
+    width: 100%;
+    margin: var(--space-2) 0 !important;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .contact-section {
+    padding: var(--space-6) 0;
+  }
+
+  .contact-jumbotron {
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+  }
+
+  .contact-jumbotron .form-control {
+    padding: var(--space-3);
+    font-size: 0.95rem;
+  }
+
+  .contact-jumbotron .btn-primary {
+    padding: var(--space-3) var(--space-5);
+    font-size: 0.95rem;
+  }
+
+  #youtube-btn,
+  .calendly-btn {
+    padding: var(--space-3) var(--space-4);
+    font-size: 0.95rem;
+  }
 }

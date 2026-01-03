@@ -1,43 +1,215 @@
+/* ========================================
+   MODERN NAVBAR STYLES
+   ======================================== */
+
 .logo {
-  width: 6rem;
-  height: 6rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  transition: transform var(--transition-base);
+  filter: drop-shadow(0 0 15px rgba(99, 102, 241, 0.5));
 }
 
+.logo:hover {
+  transform: scale(1.08) rotate(5deg);
+  filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.7));
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 1.3rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-white) !important;
+  transition: all var(--transition-base);
+}
+
+.navbar-brand:hover {
+  color: var(--color-primary-light) !important;
+}
+
+/* Glassmorphism Navbar */
 .nav-theme {
-  background-color: #101018f8;
-  font-size: 20px;
+  background: rgba(10, 10, 30, 0.85) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(99, 102, 241, 0.3);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding: var(--space-3) var(--space-6) !important;
+  transition: all var(--transition-base);
 }
 
 .animate-navbar {
-  box-shadow: 1px 1px 1px #222;
-  animation: moveDown 1s ease-in-out;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.navToggler {
-  padding: 0%;
-  border: none;
+/* Nav Links */
+.nav-theme .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  padding: var(--space-2) var(--space-4) !important;
+  margin: 0 var(--space-2);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  position: relative;
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  font-size: 1rem;
 }
-@keyframes moveDown {
+
+.nav-theme .nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary-light),
+    var(--color-secondary-light)
+  );
+  transform: translateX(-50%);
+  transition: width var(--transition-base);
+}
+
+.nav-theme .nav-link:hover {
+  color: var(--color-primary-light) !important;
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+.nav-theme .nav-link:hover::before {
+  width: 80%;
+}
+
+/* Calendly Button */
+.calendly-btn {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+  ) !important;
+  border: none !important;
+  padding: var(--space-2) var(--space-5) !important;
+  border-radius: var(--radius-full) !important;
+  font-weight: 600 !important;
+  color: white !important;
+  transition: all var(--transition-base) !important;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.calendly-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+}
+
+/* Navbar Calendly wrapper alignment */
+.nav-link:has(.calendly-btn) {
+  padding: 0 !important;
+  margin: 0 var(--space-2);
+  display: flex;
+  align-items: center;
+}
+
+/* Hamburger Menu */
+.navToggler {
+  padding: 0;
+  border: none !important;
+  background: transparent !important;
+}
+
+.navToggler:focus {
+  box-shadow: none !important;
+}
+
+/* Mobile Menu */
+.navbar-collapse {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-radius: 0;
+  margin-top: 0;
+  padding: 0;
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background: rgba(10, 10, 30, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: var(--radius-lg);
+    margin-top: var(--space-4);
+    padding: var(--space-4);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+  }
+}
+
+/* Animations */
+@keyframes slideDown {
   from {
-    transform: translateY(-5rem);
+    transform: translateY(-100%);
+    opacity: 0;
   }
   to {
-    transform: translateY(0rem);
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
-/* header.smaller {
-  height: 75px;
+/* Responsive */
+@media (max-width: 991px) {
+  .nav-theme .nav-link {
+    margin: var(--space-2) 0;
+    text-align: center;
+  }
+
+  .nav-theme .nav-link::before {
+    display: none;
+  }
+
+  .calendly-btn {
+    width: 100%;
+    margin-top: var(--space-3) !important;
+  }
 }
 
-header.smaller #logo {
-  width: 150px;
-  height: 75px;
-  line-height: 55px;
-  font-size: 55px;
-  margin: 0;
+@media (max-width: 768px) {
+  .logo {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.1rem;
+  }
+
+  .nav-theme {
+    padding: var(--space-2) var(--space-4) !important;
+  }
+
+  .nav-theme .nav-link {
+    padding: var(--space-3) var(--space-4) !important;
+    font-size: 1rem;
+  }
 }
 
-header.smaller Nav.navlinks {
-  line-height: 75px;
-} */
+@media (max-width: 480px) {
+  .logo {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .navbar-brand {
+    font-size: 1rem;
+    gap: var(--space-2);
+  }
+
+  .nav-theme {
+    padding: var(--space-2) var(--space-3) !important;
+  }
+}

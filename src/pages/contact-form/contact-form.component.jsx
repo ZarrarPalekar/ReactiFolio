@@ -1,5 +1,3 @@
-import React from "react";
-import Jumbotron from "react-bootstrap/Jumbotron";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -8,9 +6,9 @@ import { PopupButton } from "react-calendly";
 
 const ContactForm = () => {
   return (
-    <div id="contact">
+    <div id="contact" className="contact-section">
       <h1 className="pt-3 text-center font-details-b pb-3">CONTACT ME</h1>
-      <Jumbotron className="contact-jumbotron">
+      <div className="contact-jumbotron p-4">
         <Row>
           <Col className="d-flex justify-content-center flex-wrap">
             <div className="m-2">
@@ -84,7 +82,7 @@ const ContactForm = () => {
             </div>
           </Col>
         </Row>
-      </Jumbotron>
+      </div>
     </div>
   );
 };
