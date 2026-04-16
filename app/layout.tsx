@@ -3,6 +3,7 @@ import Script from "next/script";
 
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import { WhatsAppFab } from "@/components/layout/whatsapp-fab";
 import { CalendlyProvider } from "@/components/ui/calendly-provider";
 import { siteConfig } from "@/data/portfolio";
 
@@ -58,9 +59,12 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
   },
   formatDetection: {
     email: false,
@@ -186,8 +190,9 @@ export default function RootLayout({
               className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(239,68,68,0.14),_transparent_32%),linear-gradient(to_bottom,_rgba(255,255,255,0.02),_transparent_25%)]"
             />
             <SiteHeader />
-            <main className="relative">{children}</main>
+            <main className="relative pt-20">{children}</main>
             <SiteFooter />
+            <WhatsAppFab />
           </div>
         </CalendlyProvider>
       </body>

@@ -12,16 +12,16 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur-xl">
       <Container className="flex min-h-20 items-center justify-between gap-6">
         <Link href="/" className="flex items-center gap-3 text-sm uppercase tracking-[0.35em] text-white">
           <span className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-full border border-white/12 bg-white/5 shadow-[0_0_30px_rgba(239,68,68,0.16)]">
             <Image
-              src="/favicon.ico"
+              src="/favicon.svg"
               alt={`${siteConfig.name} logo`}
               fill
               sizes="44px"
-              className="object-cover p-1.5"
+              className="object-contain p-1"
             />
           </span>
           <span className="hidden sm:inline">{siteConfig.name}</span>
