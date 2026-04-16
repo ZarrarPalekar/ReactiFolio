@@ -19,6 +19,8 @@ export type SkillCategory = {
   skills: Array<{
     name: string;
     icon: string;
+    iconClassName?: string;
+    iconWrapperClassName?: string;
   }>;
 };
 

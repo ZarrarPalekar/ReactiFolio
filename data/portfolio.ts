@@ -77,7 +77,12 @@ export const skillCategories: SkillCategory[] = [
       "End-to-end delivery with Node, APIs, and database-backed applications that scale with product needs.",
     skills: [
       { name: "Node.js", icon: "/images/skills/nodejs.svg" },
-      { name: "Express", icon: "/images/skills/express.svg" },
+      {
+        name: "Express",
+        icon: "/images/skills/express.svg",
+        iconWrapperClassName: "w-14",
+        iconClassName: "drop-shadow-[0_0_10px_rgba(255,255,255,0.35)]",
+      },
       { name: "MongoDB", icon: "/images/skills/mongodb.svg" },
       { name: "MS SQL", icon: "/images/skills/mssql.svg" },
       { name: ".NET", icon: "/images/skills/net.svg" },
