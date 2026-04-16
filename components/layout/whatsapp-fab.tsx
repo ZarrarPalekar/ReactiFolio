@@ -9,7 +9,10 @@ export function WhatsAppFab() {
       target="_blank"
       rel="noreferrer"
       aria-label="Chat on WhatsApp"
-      className="fixed bottom-5 right-5 z-[70] inline-flex h-15 w-15 items-center justify-center rounded-full border border-white/12 bg-[#25D366] text-black shadow-[0_18px_45px_rgba(37,211,102,0.35)] transition hover:scale-[1.03] hover:bg-[#1fbc59] sm:bottom-6 sm:right-6"
+      className="fixed bottom-5 right-5 z-[70] inline-flex h-15 w-15 items-center justify-center rounded-full border border-white/12 bg-[#25D366] text-black shadow-[0_0_0_10px_rgba(37,211,102,0.1),0_0_32px_rgba(37,211,102,0.28)] transition hover:scale-[1.03] hover:bg-[#1fbc59] sm:bottom-6 sm:right-6"
+      style={{
+        animation: "whatsappPulse 1.8s ease-in-out infinite",
+      }}
     >
       <svg
         aria-hidden="true"
