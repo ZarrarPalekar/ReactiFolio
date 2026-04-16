@@ -1,7 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 
 import { heroStats, siteConfig, socialLinks } from "@/data/portfolio";
 import { Container } from "@/components/ui/container";
@@ -9,7 +14,11 @@ import { Container } from "@/components/ui/container";
 export function Hero() {
   const prefersReducedMotion = useReducedMotion();
   const { scrollYProgress } = useScroll();
-  const haloY = useTransform(scrollYProgress, [0, 1], prefersReducedMotion ? [0, 0] : [0, 220]);
+  const haloY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    prefersReducedMotion ? [0, 0] : [0, 220],
+  );
   const gridOpacity = useTransform(
     scrollYProgress,
     [0, 0.35],
@@ -38,7 +47,7 @@ export function Hero() {
               transition={{ duration: 0.8 }}
               className="text-xs font-semibold uppercase tracking-[0.45em] text-red-500"
             >
-              Senior frontend engineer
+              React frontend and Node.js backend engineer
             </motion.p>
 
             <motion.h1
@@ -47,7 +56,7 @@ export function Hero() {
               transition={{ duration: 0.9, delay: 0.08 }}
               className="mt-6 max-w-5xl text-5xl font-semibold tracking-[-0.06em] text-white sm:text-7xl lg:text-[7rem] lg:leading-[0.92]"
             >
-              Product-grade interfaces with cinematic motion and clean engineering.
+              Product-grade interfaces with clean engineering.
             </motion.h1>
 
             <motion.p
@@ -56,9 +65,9 @@ export function Hero() {
               transition={{ duration: 0.9, delay: 0.18 }}
               className="mt-8 max-w-2xl text-lg leading-8 text-white/68 sm:text-xl"
             >
-              I&apos;m {siteConfig.name}, a {siteConfig.location}-based engineer crafting modern web
-              experiences that balance technical depth, strong visual systems, and real business
-              impact.
+              I&apos;m {siteConfig.name}, a {siteConfig.location}-based full
+              stack developer who enjoys building elegant React frontends and
+              robust Node.js-powered applications with real business impact.
             </motion.p>
 
             <motion.div
@@ -93,7 +102,9 @@ export function Hero() {
             <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 shadow-[0_30px_120px_rgba(0,0,0,0.55)] backdrop-blur-md">
               <div className="flex items-center justify-between border-b border-white/10 pb-5">
                 <div>
-                  <p className="text-xs uppercase tracking-[0.4em] text-white/44">Now shipping</p>
+                  <p className="text-xs uppercase tracking-[0.4em] text-white/44">
+                    Now shipping
+                  </p>
                   <p className="mt-2 text-2xl font-semibold tracking-[-0.04em] text-white">
                     {siteConfig.title}
                   </p>
@@ -109,8 +120,12 @@ export function Hero() {
                     key={stat.label}
                     className="rounded-2xl border border-white/8 bg-black/40 p-4 transition hover:border-red-500/30"
                   >
-                    <p className="text-3xl font-semibold tracking-[-0.04em] text-white">{stat.value}</p>
-                    <p className="mt-1 text-sm leading-6 text-white/60">{stat.label}</p>
+                    <p className="text-3xl font-semibold tracking-[-0.04em] text-white">
+                      {stat.value}
+                    </p>
+                    <p className="mt-1 text-sm leading-6 text-white/60">
+                      {stat.label}
+                    </p>
                   </div>
                 ))}
               </div>

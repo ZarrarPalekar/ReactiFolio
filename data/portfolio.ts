@@ -9,7 +9,7 @@ import type {
 
 export const siteConfig = {
   name: "Zarrar Palekar",
-  title: "Senior Frontend & Full Stack Engineer",
+  title: "Senior React Frontend & Node.js Backend Engineer",
   email: "zarrar@live.in",
   phone: "+91 98673 63215",
   location: "Mumbai, India",
@@ -33,9 +33,13 @@ export const navigation: NavigationItem[] = [
 ];
 
 export const heroStats: HeroStat[] = [
-  { value: "8+", label: "Years building digital products" },
-  { value: "20+", label: "Projects shipped across web stacks" },
-  { value: "4", label: "Companies served in product and consulting roles" },
+  { value: "9+", label: "Years building digital products" },
+  { value: "10+", label: "Projects shipped across web stacks" },
+  {
+    value: "4",
+    label:
+      "Startups, mid-sized and MNCs served in product building full-time roles",
+  },
 ];
 
 export const socialLinks: SocialLink[] = [
@@ -100,8 +104,8 @@ export const experience: ExperienceItem[] = [
     stack: "MERN Stack, Context API",
     start: "2022-10-01",
     summary: [
-      "Lead development for React-based products with a strong emphasis on maintainable component architecture.",
-      "Partner directly with clients to shape requirements, delivery scope, and UI quality.",
+      "Lead development for PERN-stack products with a strong emphasis on maintainable component architecture.",
+      "Communicate directly with clients to shape requirements and the delivery scope.",
     ],
   },
   {
@@ -114,7 +118,8 @@ export const experience: ExperienceItem[] = [
     start: "2021-06-01",
     end: "2022-10-01",
     summary: [
-      "Built React applications with Apollo GraphQL and helped evolve large-scale internal frontend workflows.",
+      "Built MERN application with Apollo GraphQL and helped evolve large-scale SaaS application.",
+      "Lead development and delivery of from the scratch modules within the product.",
     ],
   },
   {
@@ -143,6 +148,7 @@ export const experience: ExperienceItem[] = [
     end: "2019-04-01",
     summary: [
       "Contributed to enterprise CRM and CMS platforms and supported downstream UI integrations with web APIs.",
+      "Introduced new best practices around .Net applications at the time.",
     ],
   },
 ];
@@ -234,7 +240,6 @@ export const projects: ProjectItem[] = [
     description:
       "React-based portfolio site with styled-components, GitHub Pages deployment, and WhatsApp contact hooks.",
     stack: ["React", "Styled Components", "GitHub Pages", "WhatsApp"],
-    liveUrl: "https://www.zarrarpalekar.com/",
     featured: true,
   },
   {

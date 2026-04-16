@@ -16,8 +16,8 @@ export function AboutSection() {
         <Reveal>
           <SectionHeading
             eyebrow="About"
-            title="Clean execution, strong design instincts, and end-to-end ownership."
-            description="I build interfaces that look sharp, feel fast, and stay maintainable as products evolve. My background spans frontend architecture, full-stack delivery, and direct client collaboration."
+            title="Dedicated full stack web development with a strong React and Node.js foundation."
+            description="The copy below restores the original personal positioning from the earlier portfolio so the new site stays true to your existing brand and experience."
           />
         </Reveal>
 
@@ -48,16 +48,33 @@ export function AboutSection() {
 
               <div className="space-y-5 text-base leading-8 text-white/68 sm:text-lg">
                 <p>
-                  I specialize in shipping polished digital products with React, modern frontend
-                  systems, and pragmatic full-stack thinking.
+                  Hi there! I am <strong className="font-semibold text-white">Zarrar Palekar</strong>.
                 </p>
                 <p>
-                  My approach blends interface craft, performance awareness, and delivery discipline
-                  so the final product feels premium without becoming fragile.
+                  With over{" "}
+                  <strong className="font-semibold text-red-400">{experienceYears} years</strong> of
+                  dedicated experience in Full Stack Web Development, my passion lies in crafting
+                  elegant and intuitive web applications that provide seamless user experiences.
                 </p>
                 <p>
-                  From early architecture to launch refinement, I focus on clarity, momentum, and
-                  outcomes that clients and users can feel immediately.
+                  I excel in utilizing the MERN stack (MongoDB, Express, React, Node.js) and stay
+                  up-to-date with the latest technologies and methodologies to deliver innovative,
+                  tailor-made solutions that align with clients&apos; specific needs.
+                </p>
+                <p>
+                  From ideation to deployment, I prioritize delivering exceptional outcomes that
+                  surpass expectations. My attention to detail ensures visually appealing and
+                  functionally robust applications that drive business growth and enhance user
+                  engagement.
+                </p>
+                <p>
+                  Whether working independently or collaboratively, my commitment to excellence
+                  remains steadfast. I continuously expand my expertise to remain at the forefront
+                  of this dynamic industry.
+                </p>
+                <p>
+                  Let&apos;s collaborate to turn your vision to reality and create something truly
+                  exceptional together!
                 </p>
               </div>
             </div>
