@@ -26,7 +26,7 @@ export function Hero() {
   );
 
   return (
-    <section className="relative overflow-hidden border-b border-white/10">
+    <section className="relative overflow-hidden border-b border-white/10 lg:min-h-[calc(100svh-5rem)]">
       <motion.div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-[-20%] top-[-10rem] h-[38rem] rounded-full bg-[radial-gradient(circle,_rgba(239,68,68,0.34),_rgba(239,68,68,0.06)_38%,_transparent_68%)] blur-3xl"
@@ -38,8 +38,8 @@ export function Hero() {
         style={{ opacity: gridOpacity }}
       />
 
-      <Container className="relative py-20 sm:py-28 lg:py-36">
-        <div className="grid gap-14 lg:grid-cols-[1.2fr_0.8fr] lg:items-stretch">
+      <Container className="relative flex py-20 sm:py-24 lg:min-h-[calc(100svh-5rem)] lg:items-center lg:py-10">
+        <div className="grid w-full gap-12 lg:grid-cols-[1.16fr_0.84fr] lg:items-stretch xl:gap-14">
           <div className="flex h-full flex-col justify-between">
             <div>
               <motion.p
@@ -55,7 +55,7 @@ export function Hero() {
                 initial={prefersReducedMotion ? false : { opacity: 0, y: 32 }}
                 animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, delay: 0.08 }}
-                className="mt-6 max-w-5xl text-5xl font-semibold tracking-[-0.06em] text-white sm:text-7xl lg:text-[7rem] lg:leading-[0.92]"
+                className="mt-6 max-w-5xl text-5xl font-semibold tracking-[-0.06em] text-white sm:text-7xl lg:text-[5.8rem] lg:leading-[0.92] xl:text-[6.5rem]"
               >
                 Product-grade interfaces with clean engineering.
               </motion.h1>
@@ -76,7 +76,7 @@ export function Hero() {
               initial={prefersReducedMotion ? false : { opacity: 0, y: 28 }}
               animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.28 }}
-              className="mt-10 flex flex-col gap-4 sm:mt-14 sm:flex-row"
+              className="mt-10 flex flex-col gap-4 sm:mt-12 sm:flex-row"
             >
               <Link
                 href="/#projects"
@@ -101,7 +101,7 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.34 }}
             className="relative h-full"
           >
-            <div className="flex h-full flex-col rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 shadow-[0_30px_120px_rgba(0,0,0,0.55)] backdrop-blur-md">
+            <div className="flex h-full flex-col rounded-[2rem] border border-white/10 bg-white/[0.03] p-5 shadow-[0_30px_120px_rgba(0,0,0,0.55)] backdrop-blur-md sm:p-6">
               <div className="flex items-center justify-between border-b border-white/10 pb-5">
                 <div>
                   <p className="text-xs uppercase tracking-[0.4em] text-white/44">
@@ -116,7 +116,7 @@ export function Hero() {
                 </span>
               </div>
 
-              <div className="mt-6 space-y-4">
+              <div className="mt-5 space-y-3.5">
                 {heroStats.map((stat) => (
                   <div
                     key={stat.label}
