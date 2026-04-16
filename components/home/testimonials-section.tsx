@@ -51,6 +51,8 @@ export function TestimonialsSection() {
         )
       : [];
   const currentPage = Math.min(activePage, Math.max(pages.length - 1, 0));
+  const rangeStart = Math.min(currentPage * itemsPerPage + 1, testimonials.length);
+  const rangeEnd = Math.min((currentPage + 1) * itemsPerPage, testimonials.length);
 
   return (
     <section
@@ -70,13 +72,12 @@ export function TestimonialsSection() {
           <div className="mt-14">
             <Reveal className="flex items-center justify-between gap-4">
               <p className="text-sm text-white/50">
-                Showing{" "}
-                {Math.min(currentPage * itemsPerPage + 1, testimonials.length)}-
-                {Math.min(
-                  (currentPage + 1) * itemsPerPage,
-                  testimonials.length,
-                )}{" "}
-                of {testimonials.length} recommendations
+                <span className="sm:hidden">
+                  Recommendation {currentPage + 1} of {pages.length}
+                </span>
+                <span className="hidden sm:inline">
+                  Showing {rangeStart}-{rangeEnd} of {testimonials.length} recommendations
+                </span>
               </p>
 
               <div className="flex items-center gap-2">
