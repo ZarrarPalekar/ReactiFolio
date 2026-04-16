@@ -13,6 +13,16 @@ export type SocialLink = {
   label: string;
 };
 
+export type TestimonialItem = {
+  quote: string;
+  author: string;
+  role: string;
+  company?: string;
+  relationship?: string;
+  image?: string;
+  linkedinUrl?: string;
+};
+
 export type SkillCategory = {
   title: string;
   description: string;
