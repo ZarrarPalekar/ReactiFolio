@@ -27,16 +27,18 @@ export function ExpertiseSection() {
               <p className="text-sm uppercase tracking-[0.35em] text-red-500">{category.title}</p>
               <p className="mt-4 text-base leading-7 text-white/62">{category.description}</p>
 
-              <div className="mt-8 grid grid-cols-2 gap-3">
+              <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
                 {category.skills.map((skill) => (
                   <div
                     key={skill.name}
-                    className="flex items-center gap-3 rounded-2xl border border-white/8 bg-black/40 px-4 py-3"
+                    className="flex min-w-0 items-center gap-3 rounded-2xl border border-white/8 bg-black/40 px-4 py-3"
                   >
                     <div className="relative h-9 w-9 shrink-0">
                       <Image src={skill.icon} alt={skill.name} fill sizes="36px" className="object-contain" />
                     </div>
-                    <span className="text-sm text-white/78">{skill.name}</span>
+                    <span className="min-w-0 break-words text-sm leading-5 text-white/78">
+                      {skill.name}
+                    </span>
                   </div>
                 ))}
               </div>
