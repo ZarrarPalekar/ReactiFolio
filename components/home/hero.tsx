@@ -66,8 +66,8 @@ export function Hero() {
               className="mt-8 max-w-2xl text-lg leading-8 text-white/68 sm:text-xl"
             >
               I&apos;m {siteConfig.name}, a {siteConfig.location}-based full
-              stack developer who enjoys building elegant React frontends and
-              robust Node.js-powered applications with real business impact.
+              stack developer who enjoys building web applications with real
+              business impact.
             </motion.p>
 
             <motion.div
