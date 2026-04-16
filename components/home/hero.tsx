@@ -9,6 +9,7 @@ import {
 } from "framer-motion";
 
 import { heroStats, siteConfig, socialLinks } from "@/data/portfolio";
+import { CalendlyButton } from "@/components/ui/calendly-button";
 import { Container } from "@/components/ui/container";
 
 export function Hero() {
@@ -84,14 +85,11 @@ export function Hero() {
               >
                 Explore selected work
               </Link>
-              <Link
-                href={siteConfig.calendlyUrl}
-                target="_blank"
-                rel="noreferrer"
+              <CalendlyButton
                 className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/16 px-7 text-sm font-medium text-white transition hover:border-red-500 hover:text-red-400"
               >
                 Book a strategy call
-              </Link>
+              </CalendlyButton>
             </motion.div>
           </div>
 
@@ -144,6 +142,9 @@ export function Hero() {
                     {link.label}
                   </Link>
                 ))}
+                <CalendlyButton className="rounded-full border border-white/10 px-4 py-2 transition hover:border-red-500/40 hover:text-white">
+                  Calendly
+                </CalendlyButton>
               </div>
             </div>
           </motion.div>

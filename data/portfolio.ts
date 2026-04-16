@@ -29,7 +29,6 @@ export const navigation: NavigationItem[] = [
   { href: "/#experience", label: "Experience" },
   { href: "/#projects", label: "Projects" },
   { href: "/#contact", label: "Contact" },
-  { href: "/projects", label: "Archive" },
 ];
 
 export const heroStats: HeroStat[] = [
@@ -46,7 +45,6 @@ export const socialLinks: SocialLink[] = [
   { href: siteConfig.githubUrl, label: "GitHub" },
   { href: siteConfig.linkedinUrl, label: "LinkedIn" },
   { href: siteConfig.resumeUrl, label: "Resume" },
-  { href: siteConfig.calendlyUrl, label: "Calendly" },
 ];
 
 export const skillCategories: SkillCategory[] = [

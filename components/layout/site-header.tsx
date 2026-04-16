@@ -6,6 +6,7 @@ import { useState } from "react";
 
 import { navigation, siteConfig } from "@/data/portfolio";
 import { Container } from "@/components/ui/container";
+import { CalendlyButton } from "@/components/ui/calendly-button";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -36,6 +37,9 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
+          <CalendlyButton className="inline-flex min-h-11 items-center justify-center rounded-full border border-red-500/40 bg-red-500/10 px-5 text-sm font-medium text-red-400 transition hover:bg-red-500 hover:text-black">
+            Calendly
+          </CalendlyButton>
         </nav>
 
         <button
@@ -62,6 +66,12 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
+            <CalendlyButton
+              onClick={() => setOpen(false)}
+              className="mt-3 inline-flex min-h-11 items-center justify-center rounded-full bg-red-500 px-5 text-sm font-medium text-black transition hover:bg-red-400"
+            >
+              Calendly
+            </CalendlyButton>
           </Container>
         </div>
       ) : null}

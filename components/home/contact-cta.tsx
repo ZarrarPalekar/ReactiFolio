@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { siteConfig } from "@/data/portfolio";
 import { Container } from "@/components/ui/container";
+import { CalendlyButton } from "@/components/ui/calendly-button";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 
@@ -36,14 +37,11 @@ export function ContactCta() {
           </div>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <Link
-              href={siteConfig.calendlyUrl}
-              target="_blank"
-              rel="noreferrer"
+            <CalendlyButton
               className="inline-flex min-h-12 items-center justify-center rounded-full bg-red-500 px-7 text-sm font-medium text-black transition hover:bg-red-400"
             >
               Schedule on Calendly
-            </Link>
+            </CalendlyButton>
             <Link
               href={siteConfig.linkedinUrl}
               target="_blank"
