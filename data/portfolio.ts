@@ -8,6 +8,8 @@ import type {
 } from "@/types/portfolio";
 
 export const siteConfig = {
+  whatsappMessage:
+    "Hey, Zarrar! I came here from your website zarrarpalekar.com",
   name: "Zarrar Palekar",
   title: "Senior React Frontend & Node.js Backend Engineer",
   shortTitle: "Full Stack Developer in India",
@@ -15,6 +17,9 @@ export const siteConfig = {
     "Zarrar Palekar is a full stack developer in India specializing in React, Node.js, TypeScript, and scalable web application development for startups, product teams, and businesses.",
   email: "zarrar@live.in",
   phone: "+91 98673 63215",
+  whatsappUrl: `https://wa.me/919867363215?text=${encodeURIComponent(
+    "Hey, Zarrar! I came here from your website zarrarpalekar.com",
+  )}`,
   location: "Mumbai, India",
   country: "India",
   resumeUrl:

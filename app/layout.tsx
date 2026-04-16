@@ -3,6 +3,7 @@ import Script from "next/script";
 
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import { WhatsAppFab } from "@/components/layout/whatsapp-fab";
 import { CalendlyProvider } from "@/components/ui/calendly-provider";
 import { siteConfig } from "@/data/portfolio";
 
@@ -191,6 +192,7 @@ export default function RootLayout({
             <SiteHeader />
             <main className="relative">{children}</main>
             <SiteFooter />
+            <WhatsAppFab />
           </div>
         </CalendlyProvider>
       </body>
