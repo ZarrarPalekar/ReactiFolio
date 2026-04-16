@@ -10,9 +10,13 @@ import type {
 export const siteConfig = {
   name: "Zarrar Palekar",
   title: "Senior React Frontend & Node.js Backend Engineer",
+  shortTitle: "Full Stack Developer in India",
+  description:
+    "Zarrar Palekar is a full stack developer in India specializing in React, Node.js, TypeScript, and scalable web application development for startups, product teams, and businesses.",
   email: "zarrar@live.in",
   phone: "+91 98673 63215",
   location: "Mumbai, India",
+  country: "India",
   resumeUrl:
     "https://drive.google.com/file/d/192b3fDbA7bUnrfS4YamCyBVy-qCHl3hI/view?usp=sharing",
   calendlyUrl: "https://calendly.com/meetzarrar",
@@ -20,6 +24,7 @@ export const siteConfig = {
   linkedinUrl: "https://www.linkedin.com/in/zarrarpalekar/",
   instagramUrl: "https://www.instagram.com/palekarzarrar/?hl=en",
   siteUrl: "https://www.zarrarpalekar.com/",
+  ogImage: "/images/profile/profile.webp",
 };
 
 export const navigation: NavigationItem[] = [

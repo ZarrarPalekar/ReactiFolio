@@ -7,7 +7,8 @@ import { projects } from "@/data/portfolio";
 
 export const metadata = {
   title: "Projects",
-  description: "Project archive for Zarrar Palekar.",
+  description:
+    "Project archive for Zarrar Palekar, a full stack developer in India building React and Node.js applications.",
 };
 
 export default function ProjectsPage() {
