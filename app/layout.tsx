@@ -190,7 +190,7 @@ export default function RootLayout({
               className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(239,68,68,0.14),_transparent_32%),linear-gradient(to_bottom,_rgba(255,255,255,0.02),_transparent_25%)]"
             />
             <SiteHeader />
-            <main className="relative">{children}</main>
+            <main className="relative pt-20">{children}</main>
             <SiteFooter />
             <WhatsAppFab />
           </div>
