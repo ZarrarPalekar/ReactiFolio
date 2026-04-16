@@ -39,6 +39,7 @@ export default function ProjectsShowcase() {
                   alt={project.name}
                   fill
                   sizes="(max-width: 1024px) 100vw, 52vw"
+                  priority={index === 0}
                   className="object-cover transition duration-700 group-hover:scale-[1.03]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />

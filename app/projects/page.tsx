@@ -55,7 +55,7 @@ export default function ProjectsPage() {
           />
 
           <div className="mt-14 grid gap-6 md:grid-cols-2">
-            {projects.map((project) => (
+            {projects.map((project, index) => (
               <article
                 key={project.slug}
                 className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03]"
@@ -66,6 +66,7 @@ export default function ProjectsPage() {
                     alt={project.name}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
+                    priority={index === 0}
                     className="object-cover"
                   />
                 </div>
