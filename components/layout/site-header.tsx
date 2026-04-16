@@ -21,6 +21,7 @@ export function SiteHeader() {
               alt={`${siteConfig.name} logo`}
               fill
               sizes="44px"
+              priority
               className="object-contain p-1"
             />
           </span>
