@@ -41,14 +41,22 @@ export function TestimonialsSection() {
 
   const pages =
     testimonials.length > 0
-      ? Array.from({ length: Math.ceil(testimonials.length / itemsPerPage) }, (_, index) =>
-          testimonials.slice(index * itemsPerPage, (index + 1) * itemsPerPage),
+      ? Array.from(
+          { length: Math.ceil(testimonials.length / itemsPerPage) },
+          (_, index) =>
+            testimonials.slice(
+              index * itemsPerPage,
+              (index + 1) * itemsPerPage,
+            ),
         )
       : [];
   const currentPage = Math.min(activePage, Math.max(pages.length - 1, 0));
 
   return (
-    <section id="testimonials" className="border-b border-white/10 py-20 sm:py-28">
+    <section
+      id="testimonials"
+      className="border-b border-white/10 py-20 sm:py-28"
+    >
       <Container>
         <Reveal>
           <SectionHeading
@@ -62,9 +70,13 @@ export function TestimonialsSection() {
           <div className="mt-14">
             <Reveal className="flex items-center justify-between gap-4">
               <p className="text-sm text-white/50">
-                Showing {Math.min(currentPage * itemsPerPage + 1, testimonials.length)}-
-                {Math.min((currentPage + 1) * itemsPerPage, testimonials.length)} of{" "}
-                {testimonials.length} recommendations
+                Showing{" "}
+                {Math.min(currentPage * itemsPerPage + 1, testimonials.length)}-
+                {Math.min(
+                  (currentPage + 1) * itemsPerPage,
+                  testimonials.length,
+                )}{" "}
+                of {testimonials.length} recommendations
               </p>
 
               <div className="flex items-center gap-2">
@@ -72,16 +84,20 @@ export function TestimonialsSection() {
                   type="button"
                   onClick={() => setActivePage((page) => Math.max(page - 1, 0))}
                   disabled={currentPage === 0}
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/12 text-lg text-white transition hover:border-red-500 hover:text-red-400 disabled:cursor-not-allowed disabled:opacity-40"
+                  className="cursor-pointer inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/12 text-lg text-white transition hover:border-red-500 hover:text-red-400 disabled:cursor-not-allowed disabled:opacity-40"
                   aria-label="Previous testimonials"
                 >
                   ←
                 </button>
                 <button
                   type="button"
-                  onClick={() => setActivePage((page) => Math.min(page + 1, pages.length - 1))}
+                  onClick={() =>
+                    setActivePage((page) =>
+                      Math.min(page + 1, pages.length - 1),
+                    )
+                  }
                   disabled={currentPage === pages.length - 1}
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/12 text-lg text-white transition hover:border-red-500 hover:text-red-400 disabled:cursor-not-allowed disabled:opacity-40"
+                  className="cursor-pointer inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/12 text-lg text-white transition hover:border-red-500 hover:text-red-400 disabled:cursor-not-allowed disabled:opacity-40"
                   aria-label="Next testimonials"
                 >
                   →
@@ -125,7 +141,9 @@ export function TestimonialsSection() {
                           )}
 
                           <div>
-                            <p className="text-lg font-medium text-white">{item.author}</p>
+                            <p className="text-lg font-medium text-white">
+                              {item.author}
+                            </p>
                             <p className="text-sm text-white/56">
                               {item.role}
                               {item.company ? `, ${item.company}` : ""}
@@ -167,7 +185,9 @@ export function TestimonialsSection() {
                     type="button"
                     onClick={() => setActivePage(pageIndex)}
                     className={`h-2.5 rounded-full transition ${
-                      currentPage === pageIndex ? "w-10 bg-red-500" : "w-2.5 bg-white/20 hover:bg-white/35"
+                      currentPage === pageIndex
+                        ? "w-10 bg-red-500"
+                        : "w-2.5 bg-white/20 hover:bg-white/35"
                     }`}
                     aria-label={`Go to testimonial page ${pageIndex + 1}`}
                   />
@@ -189,17 +209,21 @@ export function TestimonialsSection() {
                   Ready to showcase your recommendations here.
                 </h3>
                 <p className="mt-4 max-w-2xl text-base leading-8 text-white/66">
-                  I could not automatically extract recommendation text from LinkedIn in this
-                  environment, so the section is live with a clean fallback and is ready to be
-                  populated as soon as the recommendation copy is available.
+                  I could not automatically extract recommendation text from
+                  LinkedIn in this environment, so the section is live with a
+                  clean fallback and is ready to be populated as soon as the
+                  recommendation copy is available.
                 </p>
               </div>
 
               <div className="rounded-[1.75rem] border border-white/10 bg-black/30 p-6">
-                <p className="text-sm uppercase tracking-[0.35em] text-white/38">Next Step</p>
+                <p className="text-sm uppercase tracking-[0.35em] text-white/38">
+                  Next Step
+                </p>
                 <p className="mt-4 text-base leading-7 text-white/68">
-                  Share the recommendation text or a public export, and I can replace this CTA
-                  state with fully designed testimonial cards immediately.
+                  Share the recommendation text or a public export, and I can
+                  replace this CTA state with fully designed testimonial cards
+                  immediately.
                 </p>
                 <Link
                   href={siteConfig.linkedinUrl}
