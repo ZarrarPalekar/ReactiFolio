@@ -39,42 +39,44 @@ export function Hero() {
       />
 
       <Container className="relative py-20 sm:py-28 lg:py-36">
-        <div className="grid items-end gap-14 lg:grid-cols-[1.2fr_0.8fr]">
-          <div>
-            <motion.p
-              initial={prefersReducedMotion ? false : { opacity: 0, y: 24 }}
-              animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-xs font-semibold uppercase tracking-[0.45em] text-red-500"
-            >
-              React frontend and Node.js backend engineer
-            </motion.p>
+        <div className="grid gap-14 lg:grid-cols-[1.2fr_0.8fr] lg:items-stretch">
+          <div className="flex h-full flex-col justify-between">
+            <div>
+              <motion.p
+                initial={prefersReducedMotion ? false : { opacity: 0, y: 24 }}
+                animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-xs font-semibold uppercase tracking-[0.45em] text-red-500"
+              >
+                React frontend and Node.js backend engineer
+              </motion.p>
 
-            <motion.h1
-              initial={prefersReducedMotion ? false : { opacity: 0, y: 32 }}
-              animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.08 }}
-              className="mt-6 max-w-5xl text-5xl font-semibold tracking-[-0.06em] text-white sm:text-7xl lg:text-[7rem] lg:leading-[0.92]"
-            >
-              Product-grade interfaces with clean engineering.
-            </motion.h1>
+              <motion.h1
+                initial={prefersReducedMotion ? false : { opacity: 0, y: 32 }}
+                animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
+                transition={{ duration: 0.9, delay: 0.08 }}
+                className="mt-6 max-w-5xl text-5xl font-semibold tracking-[-0.06em] text-white sm:text-7xl lg:text-[7rem] lg:leading-[0.92]"
+              >
+                Product-grade interfaces with clean engineering.
+              </motion.h1>
 
-            <motion.p
-              initial={prefersReducedMotion ? false : { opacity: 0, y: 32 }}
-              animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.18 }}
-              className="mt-8 max-w-2xl text-lg leading-8 text-white/68 sm:text-xl"
-            >
-              I&apos;m {siteConfig.name}, a {siteConfig.location}-based full
-              stack developer who enjoys building web applications with real
-              business impact.
-            </motion.p>
+              <motion.p
+                initial={prefersReducedMotion ? false : { opacity: 0, y: 32 }}
+                animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
+                transition={{ duration: 0.9, delay: 0.18 }}
+                className="mt-8 max-w-2xl text-lg leading-8 text-white/68 sm:text-xl"
+              >
+                I&apos;m {siteConfig.name}, a {siteConfig.location}-based full
+                stack developer who enjoys building web applications with real
+                business impact.
+              </motion.p>
+            </div>
 
             <motion.div
               initial={prefersReducedMotion ? false : { opacity: 0, y: 28 }}
               animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.28 }}
-              className="mt-10 flex flex-col gap-4 sm:flex-row"
+              className="mt-10 flex flex-col gap-4 sm:mt-14 sm:flex-row"
             >
               <Link
                 href="/#projects"
@@ -97,9 +99,9 @@ export function Hero() {
             initial={prefersReducedMotion ? false : { opacity: 0, y: 40 }}
             animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.34 }}
-            className="relative lg:pb-4"
+            className="relative h-full"
           >
-            <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 shadow-[0_30px_120px_rgba(0,0,0,0.55)] backdrop-blur-md">
+            <div className="flex h-full flex-col rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 shadow-[0_30px_120px_rgba(0,0,0,0.55)] backdrop-blur-md">
               <div className="flex items-center justify-between border-b border-white/10 pb-5">
                 <div>
                   <p className="text-xs uppercase tracking-[0.4em] text-white/44">
