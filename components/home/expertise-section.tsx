@@ -6,6 +6,9 @@ import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 
 export function ExpertiseSection() {
+  const baseIconWrapperClassName = "relative h-9 w-9 shrink-0";
+  const baseIconClassName = "object-contain";
+
   return (
     <section id="expertise" className="border-b border-white/10 py-20 sm:py-28">
       <Container>
@@ -33,8 +36,16 @@ export function ExpertiseSection() {
                     key={skill.name}
                     className="flex min-w-0 items-center gap-3 rounded-2xl border border-white/8 bg-black/40 px-4 py-3"
                   >
-                    <div className="relative h-9 w-9 shrink-0">
-                      <Image src={skill.icon} alt={skill.name} fill sizes="36px" className="object-contain" />
+                    <div
+                      className={`${baseIconWrapperClassName} ${skill.iconWrapperClassName ?? ""}`.trim()}
+                    >
+                      <Image
+                        src={skill.icon}
+                        alt={skill.name}
+                        fill
+                        sizes="56px"
+                        className={`${baseIconClassName} ${skill.iconClassName ?? ""}`.trim()}
+                      />
                     </div>
                     <span className="min-w-0 break-words text-sm leading-5 text-white/78">
                       {skill.name}
