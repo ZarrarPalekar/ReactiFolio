@@ -204,6 +204,7 @@ export const testimonials: TestimonialItem[] = [
     role: "Sr. Software Developer",
     company: "AzulArc",
     relationship: "Nihar reported to Zarrar directly",
+    image: "/images/testimonials/nihar.jpeg",
     quote:
       "I've had the pleasure of working with Zarrar for nearly three years, first as a peer and later as a member of his team. Throughout this time, I've seen firsthand that Zarrar is not only a highly skilled and intelligent engineer but also a natural leader. As a team leader, Zarrar excels at creating an environment where everyone can thrive. He consistently supported our team, advocated for our needs, and encouraged us to grow while also ensuring we maintained a healthy work-life balance. His approachability and willingness to help made him an incredibly effective leader; I never felt intimidated, and it was always easy to seek his guidance. In my seven years of professional experience, Zarrar stands out as the best colleague and team leader I've had the honor of working with. His commitment to both the team's success and individual well-being makes him an exceptional asset.",
   },
@@ -211,8 +212,34 @@ export const testimonials: TestimonialItem[] = [
     author: "Premraj Tripute",
     role: "Full Stack Developer",
     relationship: "Premraj reported to Zarrar directly",
+    image: "/images/testimonials/premraj.jpeg",
     quote:
       "I'm incredibly fortunate to be working alongside Zarrar! As a colleague at Azul Arc, they've proven to be a truly exceptional leader and a master of project management. Their deep knowledge of software development, especially with the PERN stack and DevOps, is a huge asset to our team. They've been instrumental in guiding our projects, and their expertise in agile practices ensures we consistently stay on track and deliver high-quality work. What truly sets Zarrar apart is his fantastic approach to team management. They foster a collaborative and positive environment, always providing clear direction and empowering everyone to do their best work. Their ability to lead, mentor, and motivate makes our team incredibly effective.",
+  },
+  {
+    author: "Nikhil Joshi",
+    role: "International Business Development",
+    relationship: "Nikhil worked with Zarrar but on different teams",
+    image: "/images/testimonials/nikhil.jpeg",
+    quote:
+      "During the time of working alongside Zarrar at Euclid, I was instantly awed by his unwavering zest to go deep into requirements, his working on the problems encountered and coming out with a solution. A curious self learner that he is and technical brilliance that he brought to the table, resonates well with the progress he has done till date and definitely way to go. Onward and Upwards.",
+  },
+  {
+    author: "Shir Avidan",
+    role: "Sr. Software Product Manager",
+    relationship: "Shir managed Zarrar directly",
+    image: "/images/testimonials/shir.jpeg",
+    quote:
+      "Zarrar has skillfully navigated through the project's most challenging aspects. His effective communication and proactive problem-solving reflect his strong commitment to excellence and delivering results. Zarrar's hard work and dedication have greatly contributed to the ongoing success of our organization.",
+  },
+  {
+    author: "Shubham Singh",
+    role: "Senior Software Engineer",
+    company: "SponsorCloud",
+    relationship: "Shubham worked with Zarrar on the same team",
+    image: "/images/testimonials/shubham.jpeg",
+    quote:
+      "Zarrar is very passionate and has a great vision for his work. His focus keeps everything moving smoothly, he makes sure all the deadlines are met and makes sure that whatever project he is working on meets the highest standards. His helping nature to other colleagues makes him a more loving employee and person.",
   },
 ];
 
