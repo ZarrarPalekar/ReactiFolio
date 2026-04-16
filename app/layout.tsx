@@ -35,6 +35,16 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  verification: {
+    google: "google82d84c96242b4b4e",
+    ...(process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+      ? {
+          other: {
+            "msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION,
+          },
+        }
+      : {}),
+  },
   category: "technology",
   robots: {
     index: true,
@@ -66,7 +76,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: siteConfig.ogImage,
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: `${siteConfig.name} - ${siteConfig.title}`,
@@ -77,7 +87,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${siteConfig.name} | ${siteConfig.title}`,
     description: siteConfig.description,
-    images: [siteConfig.ogImage],
+    images: ["/opengraph-image"],
   },
   other: {
     "geo.region": "IN-MH",
@@ -125,11 +135,30 @@ const personJsonLd = {
 
 const websiteJsonLd = {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: siteConfig.name,
-  url: siteConfig.siteUrl,
-  description: siteConfig.description,
-  inLanguage: "en-IN",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      name: siteConfig.name,
+      url: siteConfig.siteUrl,
+      description: siteConfig.description,
+      inLanguage: "en-IN",
+    },
+    {
+      "@type": "ProfessionalService",
+      name: `${siteConfig.name} - Full Stack Development`,
+      url: siteConfig.siteUrl,
+      description: siteConfig.description,
+      areaServed: {
+        "@type": "Country",
+        name: siteConfig.country,
+      },
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Mumbai",
+        addressCountry: "IN",
+      },
+    },
+  ],
 };
 
 export default function RootLayout({
