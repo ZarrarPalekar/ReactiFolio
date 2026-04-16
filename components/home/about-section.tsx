@@ -17,7 +17,7 @@ export function AboutSection() {
           <SectionHeading
             eyebrow="About"
             title="Dedicated full stack web development with a strong React and Node.js foundation."
-            description="The copy below restores the original personal positioning from the earlier portfolio so the new site stays true to your existing brand and experience."
+            description="I build scalable web applications with polished React frontends, dependable Node.js backends, and a strong focus on clean delivery from idea to launch."
           />
         </Reveal>
 
