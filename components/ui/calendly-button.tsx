@@ -20,7 +20,7 @@ export function CalendlyButton({
   return (
     <button
       type="button"
-      className={className}
+      className={`cursor-pointer ${className}`}
       onClick={(event) => {
         onClick?.(event);
         if (!event.defaultPrevented) {

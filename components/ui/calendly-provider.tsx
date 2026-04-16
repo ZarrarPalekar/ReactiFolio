@@ -75,7 +75,7 @@ function CalendlyModal({
           <button
             type="button"
             onClick={onClose}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/12 text-xl text-white/72 transition hover:border-red-500 hover:text-white"
+            className="cursor-pointer inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/12 text-xl text-white/72 transition hover:border-red-500 hover:text-white"
             aria-label="Close Calendly popup"
           >
             ×
