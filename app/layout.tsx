@@ -60,11 +60,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", sizes: "any" },
+      { url: "/images/profile/ZP-logo.png", type: "image/png" },
     ],
-    shortcut: "/favicon.svg",
-    apple: "/favicon.svg",
+    shortcut: "/images/profile/ZP-logo.png",
+    apple: "/images/profile/ZP-logo.png",
   },
   formatDetection: {
     email: false,

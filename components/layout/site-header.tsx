@@ -17,7 +17,7 @@ export function SiteHeader() {
         <Link href="/" className="flex items-center gap-3 text-sm uppercase tracking-[0.35em] text-white">
           <span className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-full border border-white/12 bg-white/5 shadow-[0_0_30px_rgba(239,68,68,0.16)]">
             <Image
-              src="/favicon.svg"
+              src="/images/profile/ZP-logo.png"
               alt={`${siteConfig.name} logo`}
               fill
               sizes="44px"
