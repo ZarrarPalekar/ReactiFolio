@@ -49,7 +49,7 @@ export function Hero() {
                 transition={{ duration: 0.8 }}
                 className="text-xs font-semibold uppercase tracking-[0.45em] text-red-500"
               >
-                React frontend and Node.js backend engineer
+                Full stack engineer and delivery lead
               </motion.p>
 
               <motion.h1
@@ -58,7 +58,8 @@ export function Hero() {
                 transition={{ duration: 0.9, delay: 0.08 }}
                 className="mt-6 max-w-5xl text-5xl font-semibold tracking-[-0.06em] text-white sm:text-7xl lg:text-[5.8rem] lg:leading-[0.92] xl:text-[6.5rem]"
               >
-                Product-grade interfaces with clean engineering.
+                End-to-end applications led with engineering depth and clear
+                communication.
               </motion.h1>
 
               <motion.p
@@ -68,8 +69,9 @@ export function Hero() {
                 className="mt-8 max-w-2xl text-lg leading-8 text-white/68 sm:text-xl"
               >
                 I&apos;m {siteConfig.name}, a {siteConfig.location}-based full
-                stack developer who enjoys building web applications with real
-                business impact.
+                stack engineer who builds frontend and backend systems, works
+                closely with stakeholders, and helps teams deliver complex
+                products with confidence.
               </motion.p>
             </div>
 
@@ -81,13 +83,11 @@ export function Hero() {
             >
               <Link
                 href="/#projects"
-                className="inline-flex min-h-12 items-center justify-center rounded-full bg-red-500 px-7 text-sm font-medium text-black transition hover:bg-red-400"
+                className="inline-flex min-h-12 items-center justify-center rounded-full bg-red-600 px-7 text-sm font-medium text-white transition hover:bg-red-500"
               >
                 Explore selected work
               </Link>
-              <CalendlyButton
-                className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/16 px-7 text-sm font-medium text-white transition hover:border-red-500 hover:text-red-400"
-              >
+              <CalendlyButton className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/16 px-7 text-sm font-medium text-white transition hover:border-red-500 hover:text-red-400">
                 Book a strategy call
               </CalendlyButton>
             </motion.div>

@@ -230,7 +230,7 @@ export function TestimonialsSection() {
                   href={siteConfig.linkedinUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-6 inline-flex min-h-12 items-center justify-center rounded-full bg-red-500 px-6 text-sm font-medium text-black transition hover:bg-red-400"
+                  className="mt-6 inline-flex min-h-12 items-center justify-center rounded-full bg-red-600 px-6 text-sm font-medium text-white transition hover:bg-red-500"
                 >
                   Open LinkedIn Profile
                 </Link>

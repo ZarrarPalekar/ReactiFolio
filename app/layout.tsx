@@ -59,11 +59,9 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [
-      { url: "/images/profile/ZP-logo.png", type: "image/png" },
-    ],
-    shortcut: "/images/profile/ZP-logo.png",
-    apple: "/images/profile/ZP-logo.png",
+    icon: [{ url: "/images/profile/ZP-logo.svg", type: "image/png" }],
+    shortcut: "/images/profile/ZP-logo.svg",
+    apple: "/images/profile/ZP-logo.svg",
   },
   formatDetection: {
     email: false,
@@ -119,7 +117,11 @@ const personJsonLd = {
     "@type": "Place",
     name: siteConfig.location,
   },
-  sameAs: [siteConfig.githubUrl, siteConfig.linkedinUrl, siteConfig.instagramUrl],
+  sameAs: [
+    siteConfig.githubUrl,
+    siteConfig.linkedinUrl,
+    siteConfig.instagramUrl,
+  ],
   knowsAbout: [
     "React",
     "Node.js",
