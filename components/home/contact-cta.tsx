@@ -77,7 +77,7 @@ export function ContactCta() {
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <CalendlyButton
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-red-500 px-7 text-sm font-medium text-black transition hover:bg-red-400"
+              className="inline-flex min-h-12 items-center justify-center rounded-full bg-red-600 px-7 text-sm font-medium text-white transition hover:bg-red-500"
             >
               Schedule on Calendly
             </CalendlyButton>

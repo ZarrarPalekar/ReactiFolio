@@ -14,10 +14,13 @@ export function SiteHeader() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur-xl">
       <Container className="flex min-h-20 items-center justify-between gap-6">
-        <Link href="/" className="flex items-center gap-3 text-sm uppercase tracking-[0.35em] text-white">
+        <Link
+          href="/"
+          className="flex items-center gap-3 text-sm uppercase tracking-[0.35em] text-white"
+        >
           <span className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-full border border-white/12 bg-white/5 shadow-[0_0_30px_rgba(239,68,68,0.16)]">
             <Image
-              src="/images/profile/ZP-logo.png"
+              src="/images/profile/ZP-logo.svg"
               alt={`${siteConfig.name} logo`}
               fill
               sizes="44px"
@@ -38,7 +41,7 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <CalendlyButton className="inline-flex min-h-11 items-center justify-center rounded-full border border-red-500/40 bg-red-500/10 px-5 text-sm font-medium text-red-400 transition hover:bg-red-500 hover:text-black">
+          <CalendlyButton className="inline-flex min-h-11 items-center justify-center rounded-full border border-red-500/40 bg-red-500/10 px-5 text-sm font-medium text-red-400 transition hover:bg-red-600 hover:text-white">
             Calendly
           </CalendlyButton>
         </nav>
@@ -69,7 +72,7 @@ export function SiteHeader() {
             ))}
             <CalendlyButton
               onClick={() => setOpen(false)}
-              className="mt-3 inline-flex min-h-11 items-center justify-center rounded-full bg-red-500 px-5 text-sm font-medium text-black transition hover:bg-red-400"
+              className="mt-3 inline-flex min-h-11 items-center justify-center rounded-full bg-red-600 px-5 text-sm font-medium text-white transition hover:bg-red-500"
             >
               Calendly
             </CalendlyButton>

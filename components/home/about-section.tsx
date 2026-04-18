@@ -171,7 +171,7 @@ export function AboutSection() {
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
                 href="/#contact"
-                className="inline-flex min-h-12 items-center justify-center rounded-full bg-red-500 px-6 text-sm font-medium text-black transition hover:bg-red-400"
+                className="inline-flex min-h-12 items-center justify-center rounded-full bg-red-600 px-6 text-sm font-medium text-white transition hover:bg-red-500"
               >
                 Start a conversation
               </Link>
