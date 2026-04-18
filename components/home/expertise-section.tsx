@@ -15,8 +15,8 @@ export function ExpertiseSection() {
         <Reveal>
           <SectionHeading
             eyebrow="Expertise"
-            title="A stack you can scan in seconds."
-            description="Less explanation, more signal: the tools I reach for most, grouped by how they help products move."
+            title="A balanced stack with delivery and leadership around it."
+            description="The stack reflects how I work in practice: frontend and backend depth, enterprise reliability, and communication that keeps delivery moving."
           />
         </Reveal>
 

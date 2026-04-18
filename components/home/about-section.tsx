@@ -16,8 +16,8 @@ export function AboutSection() {
         <Reveal>
           <SectionHeading
             eyebrow="About"
-            title="Clear product thinking, shipped through code."
-            description="A quick snapshot of how I build: calm interfaces, reliable systems, and delivery that stays close to business goals."
+            title="Full-stack execution with leadership built in."
+            description="I work across frontend, backend, stakeholders, and delivery execution so products move forward with less friction and more clarity."
           />
         </Reveal>
 
@@ -45,7 +45,7 @@ export function AboutSection() {
                     {experienceYears}
                   </p>
                   <p className="mt-3 text-sm leading-7 text-white/60 sm:text-base">
-                    years designing, building, and shipping web products.
+                    years leading web products from requirement discussions to production delivery.
                   </p>
                 </div>
               </div>
@@ -57,10 +57,10 @@ export function AboutSection() {
                   Focus
                 </p>
                 <p className="mt-3 text-lg font-medium text-white">
-                  React + Node.js
+                  Full Stack Delivery
                 </p>
                 <p className="mt-2 text-sm leading-6 text-white/58">
-                  UI craft paired with dependable backend delivery.
+                  Frontend, backend, APIs, databases, and delivery ownership together.
                 </p>
               </div>
 
@@ -91,7 +91,7 @@ export function AboutSection() {
                       Build Lens
                     </p>
                     <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
-                      {["Clarity first", "Motion with purpose", "Launch-ready code"].map((item) => (
+                      {["Stakeholder clarity", "Enterprise delivery", "Launch-ready systems"].map((item) => (
                         <div
                           key={item}
                           className="flex items-center gap-3 rounded-full border border-white/10 bg-black/35 px-4 py-3 text-sm text-white/72"
@@ -123,10 +123,10 @@ export function AboutSection() {
 
                     <div className="rounded-[1.5rem] border border-white/10 bg-black/35 p-5">
                       <p className="text-xs uppercase tracking-[0.35em] text-white/38">
-                        Product Stack
+                        Core Mix
                       </p>
                       <div className="mt-4 flex flex-wrap gap-2">
-                        {["React", "TypeScript", "Node", "MongoDB"].map((item) => (
+                        {["React", "Node", ".NET", "SQL"].map((item) => (
                           <span
                             key={item}
                             className="rounded-full border border-white/10 px-3 py-1.5 text-xs uppercase tracking-[0.18em] text-white/64"
@@ -146,7 +146,7 @@ export function AboutSection() {
                     Speciality
                   </p>
                   <p className="mt-3 text-lg font-medium leading-8 text-white">
-                    Frontend-led product builds
+                    End-to-end application leadership
                   </p>
                 </div>
                 <div className="rounded-[1.4rem] border border-white/10 bg-white/[0.03] p-5">
@@ -154,7 +154,7 @@ export function AboutSection() {
                     Strength
                   </p>
                   <p className="mt-3 text-lg font-medium leading-8 text-white">
-                    Clean handoff from idea to launch
+                    Stakeholder management and communication
                   </p>
                 </div>
                 <div className="rounded-[1.4rem] border border-white/10 bg-white/[0.03] p-5 md:col-span-2 xl:col-span-1">
@@ -162,7 +162,7 @@ export function AboutSection() {
                     Style
                   </p>
                   <p className="mt-3 text-lg font-medium leading-8 text-white">
-                    Calm, fast, collaborative
+                    Clear, dependable, leadership-driven
                   </p>
                 </div>
               </div>

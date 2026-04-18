@@ -16,8 +16,8 @@ export function ExperienceSection() {
             <Reveal>
               <SectionHeading
                 eyebrow="Experience"
-                title="A lighter timeline of how the work evolved."
-                description="From enterprise systems to product teams, each role added a new layer: architecture, ownership, and delivery leadership."
+                title="Built through enterprise delivery, product ownership, and communication."
+                description="The timeline below shows a consistent mix of technical depth, stakeholder alignment, and end-to-end application leadership."
               />
             </Reveal>
           </div>

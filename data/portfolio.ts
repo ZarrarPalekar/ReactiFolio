@@ -12,10 +12,10 @@ export const siteConfig = {
   whatsappMessage:
     "Hey, Zarrar! I came here from your website zarrarpalekar.com",
   name: "Zarrar Palekar",
-  title: "Senior React Frontend & Node.js Backend Engineer",
+  title: "Senior Full Stack Engineer & Delivery Lead",
   shortTitle: "Full Stack Developer in India",
   description:
-    "Zarrar Palekar is a full stack developer in India specializing in React, Node.js, TypeScript, and scalable web application development for startups, product teams, and businesses.",
+    "Zarrar Palekar is a full stack engineer in India specializing in React, Node.js, TypeScript, enterprise web applications, stakeholder management, and end-to-end product delivery.",
   email: "zarrar@live.in",
   phone: "+91 98673 63215",
   whatsappUrl: `https://wa.me/919867363215?text=${encodeURIComponent(
@@ -45,11 +45,10 @@ export const navigation: NavigationItem[] = [
 
 export const heroStats: HeroStat[] = [
   { value: "9+", label: "Years building digital products" },
-  { value: "10+", label: "Projects shipped across web stacks" },
+  { value: "E2E", label: "Enterprise and product applications led end to end" },
   {
     value: "4",
-    label:
-      "Startups, mid-sized and MNCs served in product building full-time roles",
+    label: "Startups, mid-sized teams, and enterprises partnered with directly",
   },
 ];
 
@@ -61,9 +60,9 @@ export const socialLinks: SocialLink[] = [
 
 export const skillCategories: SkillCategory[] = [
   {
-    title: "Frontend Systems",
+    title: "Frontend + Backend",
     description:
-      "Production-ready interfaces with modern React ecosystems, motion, and design-system thinking.",
+      "Balanced product engineering across interface systems, application logic, APIs, and full-stack architecture.",
     skills: [
       { name: "React", icon: "/images/skills/react.svg" },
       { name: "TypeScript", icon: "/images/skills/typescript.svg" },
@@ -74,9 +73,9 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    title: "Backend Delivery",
+    title: "Enterprise Delivery",
     description:
-      "End-to-end delivery with Node, APIs, and database-backed applications that scale with product needs.",
+      "Scalable backend delivery across APIs, databases, legacy modernization, and application ownership at production scale.",
     skills: [
       { name: "Node.js", icon: "/images/skills/nodejs.svg" },
       {
@@ -88,25 +87,28 @@ export const skillCategories: SkillCategory[] = [
       {
         name: "MongoDB",
         icon: "/images/skills/mongodb.svg",
-        iconClassName: "brightness-110 contrast-125 drop-shadow-[0_0_8px_rgba(255,255,255,0.18)]",
+        iconClassName:
+          "brightness-110 contrast-125 drop-shadow-[0_0_8px_rgba(255,255,255,0.18)]",
       },
       {
         name: "MS SQL",
         icon: "/images/skills/mssql.svg",
-        iconClassName: "brightness-125 contrast-125 drop-shadow-[0_0_10px_rgba(255,255,255,0.22)]",
+        iconClassName:
+          "brightness-125 contrast-125 drop-shadow-[0_0_10px_rgba(255,255,255,0.22)]",
       },
       {
         name: ".NET",
         icon: "/images/skills/net.svg",
-        iconClassName: "brightness-125 contrast-125 drop-shadow-[0_0_10px_rgba(255,255,255,0.22)]",
+        iconClassName:
+          "brightness-125 contrast-125 drop-shadow-[0_0_10px_rgba(255,255,255,0.22)]",
       },
       { name: "Oracle", icon: "/images/skills/oracle.svg" },
     ],
   },
   {
-    title: "Workflow & Shipping",
+    title: "Leadership & Execution",
     description:
-      "Team-friendly delivery pipelines, version control, and deployment habits tuned for reliability and speed.",
+      "Communication, delivery planning, and engineering workflows that keep stakeholders aligned and teams moving.",
     skills: [
       { name: "Git", icon: "/images/skills/git-icon.svg" },
       { name: "GitHub", icon: "/images/skills/github.svg" },
@@ -131,8 +133,8 @@ export const experience: ExperienceItem[] = [
     stack: "MERN Stack, Context API",
     start: "2022-10-01",
     summary: [
-      "Lead development for PERN-stack products with a strong emphasis on maintainable component architecture.",
-      "Communicate directly with clients to shape requirements and the delivery scope.",
+      "Led end-to-end development for enterprise-grade PERN products across frontend, backend, architecture, and delivery quality.",
+      "Managed direct client communication, aligned stakeholders on scope, and translated business discussions into executable technical plans.",
     ],
   },
   {
@@ -145,8 +147,8 @@ export const experience: ExperienceItem[] = [
     start: "2021-06-01",
     end: "2022-10-01",
     summary: [
-      "Built MERN application with Apollo GraphQL and helped evolve large-scale SaaS application.",
-      "Lead development and delivery of from the scratch modules within the product.",
+      "Built and scaled full-stack SaaS modules with MERN, GraphQL, and Apollo across both user-facing flows and backend integration layers.",
+      "Led delivery of new modules from scratch while coordinating expectations, technical decisions, and cross-functional communication.",
     ],
   },
   {
@@ -159,9 +161,9 @@ export const experience: ExperienceItem[] = [
     start: "2019-04-01",
     end: "2021-06-01",
     summary: [
-      "Delivered CRM and CMS features across business-critical web applications.",
-      "Built mailer applications and JSON APIs for connected client experiences.",
-      "Automated repeated internal workflows by shipping custom modules from scratch.",
+      "Delivered enterprise CRM and CMS features across business-critical web applications with ownership spanning UI, backend, and data workflows.",
+      "Built APIs, mailer systems, and custom modules that improved connected client experiences and internal operational efficiency.",
+      "Worked closely with business stakeholders to understand requirements deeply and turn them into reliable production solutions.",
     ],
   },
   {
@@ -174,8 +176,8 @@ export const experience: ExperienceItem[] = [
     start: "2017-03-01",
     end: "2019-04-01",
     summary: [
-      "Contributed to enterprise CRM and CMS platforms and supported downstream UI integrations with web APIs.",
-      "Introduced new best practices around .Net applications at the time.",
+      "Contributed to enterprise CRM and CMS platforms while supporting backend services, database workflows, and downstream UI integrations.",
+      "Strengthened delivery standards with better engineering practices, clear communication, and dependable execution in large-team environments.",
     ],
   },
 ];
