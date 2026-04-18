@@ -16,8 +16,8 @@ export function AboutSection() {
         <Reveal>
           <SectionHeading
             eyebrow="About"
-            title="Dedicated full stack web development with a strong React and Node.js foundation."
-            description="I build scalable web applications with polished React frontends, dependable Node.js backends, and a strong focus on clean delivery from idea to launch."
+            title="Clear product thinking, shipped through code."
+            description="A quick snapshot of how I build: calm interfaces, reliable systems, and delivery that stays close to business goals."
           />
         </Reveal>
 
@@ -45,9 +45,7 @@ export function AboutSection() {
                     {experienceYears}
                   </p>
                   <p className="mt-3 text-sm leading-7 text-white/60 sm:text-base">
-                    years of professional experience building full stack
-                    products with React on the frontend and Node.js on the
-                    backend.
+                    years designing, building, and shipping web products.
                   </p>
                 </div>
               </div>
@@ -62,8 +60,7 @@ export function AboutSection() {
                   React + Node.js
                 </p>
                 <p className="mt-2 text-sm leading-6 text-white/58">
-                  Building elegant UI systems and robust application logic
-                  together.
+                  UI craft paired with dependable backend delivery.
                 </p>
               </div>
 
@@ -75,8 +72,7 @@ export function AboutSection() {
                   {siteConfig.location}
                 </p>
                 <p className="mt-2 text-sm leading-6 text-white/58">
-                  Available for consulting, product builds, and long-term
-                  engineering work.
+                  Open to product builds, consulting, and team support.
                 </p>
               </div>
             </div>
@@ -86,65 +82,87 @@ export function AboutSection() {
             delay={0.08}
             className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 sm:p-10"
           >
-            <div className="grid gap-8 xl:grid-cols-[1.02fr_0.98fr]">
-              <div className="space-y-5 text-base leading-8 text-white/68 sm:text-lg">
-                <p>
-                  Hi there! I am{" "}
-                  <strong className="font-semibold text-white">
-                    Zarrar Palekar
-                  </strong>
-                  .
-                </p>
-                <p>
-                  With over{" "}
-                  <strong className="font-semibold text-red-400">
-                    {experienceYears} years
-                  </strong>{" "}
-                  of dedicated experience in Full Stack Web Development, my
-                  passion lies in crafting elegant and intuitive web
-                  applications that provide seamless user experiences.
-                </p>
-                <p>
-                  From ideation to deployment, I prioritize delivering
-                  exceptional outcomes that surpass expectations. My attention
-                  to detail ensures visually appealing and functionally robust
-                  applications that drive business growth and enhance user
-                  engagement.
-                </p>
-                <p>
-                  Let&apos;s collaborate to turn your vision to reality and
-                  create something truly exceptional together!
-                </p>
+            <div className="overflow-hidden rounded-[1.8rem] border border-white/10 bg-black/30">
+              <div className="relative min-h-[18rem] overflow-hidden border-b border-white/10 p-6 sm:min-h-[20rem] sm:p-8">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(239,68,68,0.22),transparent_32%),radial-gradient(circle_at_75%_30%,rgba(255,255,255,0.12),transparent_24%),linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0))]" />
+                <div className="relative grid gap-4 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+                  <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm">
+                    <p className="text-xs uppercase tracking-[0.35em] text-white/38">
+                      Build Lens
+                    </p>
+                    <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+                      {["Clarity first", "Motion with purpose", "Launch-ready code"].map((item) => (
+                        <div
+                          key={item}
+                          className="flex items-center gap-3 rounded-full border border-white/10 bg-black/35 px-4 py-3 text-sm text-white/72"
+                        >
+                          <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-red-500" />
+                          <span>{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+                    <div className="rounded-[1.5rem] border border-white/10 bg-black/35 p-5">
+                      <p className="text-xs uppercase tracking-[0.35em] text-white/38">
+                        Delivery Rhythm
+                      </p>
+                      <div className="mt-5 flex h-28 items-end gap-3">
+                        {[42, 64, 88, 72].map((height, index) => (
+                          <div
+                            key={height}
+                            className={`flex-1 rounded-t-full ${
+                              index === 2 ? "bg-red-500/80" : "bg-white/14"
+                            }`}
+                            style={{ height }}
+                          />
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="rounded-[1.5rem] border border-white/10 bg-black/35 p-5">
+                      <p className="text-xs uppercase tracking-[0.35em] text-white/38">
+                        Product Stack
+                      </p>
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {["React", "TypeScript", "Node", "MongoDB"].map((item) => (
+                          <span
+                            key={item}
+                            className="rounded-full border border-white/10 px-3 py-1.5 text-xs uppercase tracking-[0.18em] text-white/64"
+                          >
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div className="grid content-start gap-4">
-                <div className="rounded-[1.6rem] border border-white/10 bg-black/30 p-5">
+              <div className="grid gap-4 p-6 md:grid-cols-2 xl:grid-cols-3 sm:p-8">
+                <div className="rounded-[1.4rem] border border-white/10 bg-white/[0.03] p-5">
                   <p className="text-xs uppercase tracking-[0.35em] text-white/38">
                     Speciality
                   </p>
-                  <p className="mt-3 text-xl font-medium text-white">
-                    Full stack delivery with product-focused execution
+                  <p className="mt-3 text-lg font-medium leading-8 text-white">
+                    Frontend-led product builds
                   </p>
                 </div>
-
-                <div className="rounded-[1.6rem] border border-white/10 bg-black/30 p-5">
+                <div className="rounded-[1.4rem] border border-white/10 bg-white/[0.03] p-5">
                   <p className="text-xs uppercase tracking-[0.35em] text-white/38">
-                    Core Stack
+                    Strength
                   </p>
-                  <p className="mt-3 text-base leading-7 text-white/68">
-                    MongoDB, Express, React, Node.js, TypeScript, scalable UI
-                    architecture, and modern web delivery practices.
+                  <p className="mt-3 text-lg font-medium leading-8 text-white">
+                    Clean handoff from idea to launch
                   </p>
                 </div>
-
-                <div className="rounded-[1.6rem] border border-white/10 bg-black/30 p-5">
+                <div className="rounded-[1.4rem] border border-white/10 bg-white/[0.03] p-5 md:col-span-2 xl:col-span-1">
                   <p className="text-xs uppercase tracking-[0.35em] text-white/38">
-                    Working Style
+                    Style
                   </p>
-                  <p className="mt-3 text-base leading-7 text-white/68">
-                    From ideation to deployment, focused on clean execution,
-                    clear communication, and outcomes that genuinely move
-                    products forward.
+                  <p className="mt-3 text-lg font-medium leading-8 text-white">
+                    Calm, fast, collaborative
                   </p>
                 </div>
               </div>

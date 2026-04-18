@@ -15,8 +15,8 @@ export function ExpertiseSection() {
         <Reveal>
           <SectionHeading
             eyebrow="Expertise"
-            title="A focused stack for building modern, scalable, user-first products."
-            description="The toolkit here reflects how I actually ship: frontend systems first, backend fluency when needed, and delivery habits that keep teams fast."
+            title="A stack you can scan in seconds."
+            description="Less explanation, more signal: the tools I reach for most, grouped by how they help products move."
           />
         </Reveal>
 
@@ -27,8 +27,36 @@ export function ExpertiseSection() {
               delay={index * 0.08}
               className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-7"
             >
-              <p className="text-sm uppercase tracking-[0.35em] text-red-500">{category.title}</p>
-              <p className="mt-4 text-base leading-7 text-white/62">{category.description}</p>
+              <div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-black/30">
+                <div className="relative h-32 overflow-hidden border-b border-white/10">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_35%,rgba(239,68,68,0.3),transparent_24%),radial-gradient(circle_at_75%_35%,rgba(255,255,255,0.12),transparent_20%),linear-gradient(135deg,rgba(255,255,255,0.06),transparent_60%)]" />
+                  <div className="absolute inset-x-5 bottom-5 flex items-end gap-2">
+                    {[32, 52, 72, 44, 60].map((height, barIndex) => (
+                      <div
+                        key={`${category.title}-${height}`}
+                        className={`flex-1 rounded-t-full ${
+                          barIndex === 2 ? "bg-red-500/80" : "bg-white/12"
+                        }`}
+                        style={{ height }}
+                      />
+                    ))}
+                  </div>
+                </div>
+
+                <div className="p-5">
+                  <div className="flex items-center justify-between gap-4">
+                    <p className="text-sm uppercase tracking-[0.35em] text-red-500">
+                      {category.title}
+                    </p>
+                    <span className="rounded-full border border-white/10 px-3 py-1 text-xs uppercase tracking-[0.24em] text-white/46">
+                      {category.skills.length} tools
+                    </span>
+                  </div>
+                  <p className="mt-4 text-sm leading-6 text-white/58">
+                    {category.description}
+                  </p>
+                </div>
+              </div>
 
               <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
                 {category.skills.map((skill) => (

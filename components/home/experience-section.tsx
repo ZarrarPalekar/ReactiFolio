@@ -16,8 +16,8 @@ export function ExperienceSection() {
             <Reveal>
               <SectionHeading
                 eyebrow="Experience"
-                title="Enterprise discipline with product-minded frontend leadership."
-                description="From .NET systems to MERN applications, each role sharpened a different part of how I build, communicate, and deliver."
+                title="A lighter timeline of how the work evolved."
+                description="From enterprise systems to product teams, each role added a new layer: architecture, ownership, and delivery leadership."
               />
             </Reveal>
           </div>
@@ -85,14 +85,26 @@ export function ExperienceSection() {
                   </div>
                 </div>
 
-                <ul className="mt-6 space-y-3 text-base leading-7 text-white/68">
-                  {item.summary.map((point) => (
-                    <li key={point} className="flex gap-3">
-                      <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-red-500" />
-                      <span>{point}</span>
-                    </li>
+                <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                  {item.summary.map((point, pointIndex) => (
+                    <div
+                      key={point}
+                      className="rounded-[1.4rem] border border-white/8 bg-black/35 p-4"
+                    >
+                      <div className="flex items-center gap-3">
+                        <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-red-500/30 bg-red-500/10 text-xs font-semibold text-red-400">
+                          0{pointIndex + 1}
+                        </span>
+                        <span className="text-xs uppercase tracking-[0.28em] text-white/36">
+                          Highlight
+                        </span>
+                      </div>
+                      <p className="mt-4 text-sm leading-7 text-white/66">
+                        {point}
+                      </p>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </Reveal>
             ))}
           </div>
