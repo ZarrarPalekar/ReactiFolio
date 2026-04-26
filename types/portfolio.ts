@@ -10,7 +10,7 @@ export type HeroStat = {
 
 export type SocialLink = {
   href: string;
-  label: string;
+  label: "GitHub" | "LinkedIn" | "Instagram" | "Resume";
 };
 
 export type TestimonialItem = {
