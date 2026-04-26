@@ -71,6 +71,8 @@ export const skillCategories: SkillCategory[] = [
       { name: "Redux", icon: "/images/skills/redux.svg" },
       { name: "HTML5", icon: "/images/skills/html-5.svg" },
       { name: "CSS3", icon: "/images/skills/css3.svg" },
+      { name: "Bootstrap", icon: "/images/skills/bootstrap-4.svg" },
+      { name: "Sass", icon: "/images/skills/sass-1.svg" },
     ],
   },
   {
@@ -104,23 +106,15 @@ export const skillCategories: SkillCategory[] = [
           "brightness-125 contrast-125 drop-shadow-[0_0_10px_rgba(255,255,255,0.22)]",
       },
       { name: "Oracle", icon: "/images/skills/oracle.svg" },
+      { name: "Git", icon: "/images/skills/git-icon.svg" },
+      { name: "GitHub", icon: "/images/skills/github.svg" },
     ],
   },
   {
     title: "Leadership & Execution",
     description:
       "Communication, delivery planning, and engineering workflows that keep stakeholders aligned and teams moving.",
-    skills: [
-      { name: "Git", icon: "/images/skills/git-icon.svg" },
-      { name: "GitHub", icon: "/images/skills/github.svg" },
-      { name: "Heroku", icon: "/images/skills/heroku.svg" },
-      { name: "Bootstrap", icon: "/images/skills/bootstrap-4.svg" },
-      { name: "Sass", icon: "/images/skills/sass-1.svg" },
-      {
-        name: "Styled Components",
-        icon: "/images/skills/styled-components.svg",
-      },
-    ],
+    skills: [],
   },
 ];
 
