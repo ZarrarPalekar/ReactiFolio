@@ -11,6 +11,7 @@ import {
 import { heroStats, siteConfig, socialLinks } from "@/data/portfolio";
 import { CalendlyButton } from "@/components/ui/calendly-button";
 import { Container } from "@/components/ui/container";
+import { SocialIcon } from "@/components/ui/social-icon";
 
 export function Hero() {
   const prefersReducedMotion = useReducedMotion();
@@ -137,12 +138,14 @@ export function Hero() {
                     href={link.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="rounded-full border border-white/10 px-4 py-2 transition hover:border-red-500/40 hover:text-white"
+                    className="inline-flex min-h-10 items-center gap-2 rounded-full border border-white/10 px-4 py-2 transition hover:border-red-500/40 hover:text-white"
                   >
+                    <SocialIcon name={link.label} className="size-4 shrink-0" />
                     {link.label}
                   </Link>
                 ))}
-                <CalendlyButton className="rounded-full border border-white/10 px-4 py-2 transition hover:border-red-500/40 hover:text-white">
+                <CalendlyButton className="inline-flex min-h-10 items-center gap-2 rounded-full border border-white/10 px-4 py-2 transition hover:border-red-500/40 hover:text-white">
+                  <SocialIcon name="Calendly" className="size-4 shrink-0" />
                   Calendly
                 </CalendlyButton>
               </div>

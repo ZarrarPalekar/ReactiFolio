@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { siteConfig, socialLinks } from "@/data/portfolio";
 import { Container } from "@/components/ui/container";
+import { SocialIcon } from "@/components/ui/social-icon";
 
 export function SiteFooter() {
   return (
@@ -27,8 +28,9 @@ export function SiteFooter() {
               href={link.href}
               target="_blank"
               rel="noreferrer"
-              className="transition hover:text-white"
+              className="inline-flex items-center gap-2 transition hover:text-white"
             >
+              <SocialIcon name={link.label} className="size-4 shrink-0" />
               {link.label}
             </Link>
           ))}
