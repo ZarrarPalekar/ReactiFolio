@@ -7,6 +7,7 @@ import { useState } from "react";
 import { navigation, siteConfig } from "@/data/portfolio";
 import { Container } from "@/components/ui/container";
 import { CalendlyButton } from "@/components/ui/calendly-button";
+import { SocialIcon } from "@/components/ui/social-icon";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -41,7 +42,8 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <CalendlyButton className="inline-flex min-h-11 items-center justify-center rounded-full border border-red-500/40 bg-red-500/10 px-5 text-sm font-medium text-red-400 transition hover:bg-red-600 hover:text-white">
+          <CalendlyButton className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-red-500/40 bg-red-500/10 px-5 text-sm font-medium text-red-400 transition hover:bg-red-600 hover:text-white">
+            <SocialIcon name="Calendly" className="size-5 shrink-0" />
             Calendly
           </CalendlyButton>
         </nav>
@@ -72,8 +74,9 @@ export function SiteHeader() {
             ))}
             <CalendlyButton
               onClick={() => setOpen(false)}
-              className="mt-3 inline-flex min-h-11 items-center justify-center rounded-full bg-red-600 px-5 text-sm font-medium text-white transition hover:bg-red-500"
+              className="mt-3 inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-red-600 px-5 text-sm font-medium text-white transition hover:bg-red-500"
             >
+              <SocialIcon name="Calendly" className="size-5 shrink-0" />
               Calendly
             </CalendlyButton>
           </Container>
