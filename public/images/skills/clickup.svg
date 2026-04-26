@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">ClickUp</title>
+  <rect width="64" height="64" rx="14" fill="#111111"/>
+  <path d="M18 24 32 14l14 10-5.2 7.1L32 24.7l-8.8 6.4L18 24Z" fill="#7B68EE"/>
+  <path d="m18 40 5.2-7.1 8.8 6.4 8.8-6.4L46 40 32 50 18 40Z" fill="#00B884"/>
+</svg>

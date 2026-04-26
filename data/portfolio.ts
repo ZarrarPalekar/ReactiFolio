@@ -114,7 +114,14 @@ export const skillCategories: SkillCategory[] = [
     title: "Leadership & Execution",
     description:
       "Communication, delivery planning, and engineering workflows that keep stakeholders aligned and teams moving.",
-    skills: [],
+    skills: [
+      { name: "ClickUp", icon: "/images/skills/clickup.svg" },
+      { name: "Google Docs", icon: "/images/skills/google-docs.svg" },
+      { name: "Google Sheets", icon: "/images/skills/google-sheets.svg" },
+      { name: "Webex", icon: "/images/skills/webex.svg" },
+      { name: "Google Chat", icon: "/images/skills/google-chat.svg" },
+      { name: "Zoom", icon: "/images/skills/zoom.svg" },
+    ],
   },
 ];
 
