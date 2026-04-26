@@ -24,7 +24,7 @@ export const siteConfig = {
   location: "Mumbai, India",
   country: "India",
   resumeUrl:
-    "https://drive.google.com/file/d/192b3fDbA7bUnrfS4YamCyBVy-qCHl3hI/view?usp=sharing",
+    "https://drive.google.com/file/d/1ApVd4rZrw_OXoKNA2SRPLeNvqksiu0fl/view?usp=sharing",
   calendlyUrl: "https://calendly.com/meetzarrar",
   githubUrl: "https://github.com/ZarrarPalekar",
   linkedinUrl: "https://www.linkedin.com/in/zarrarpalekar/",
