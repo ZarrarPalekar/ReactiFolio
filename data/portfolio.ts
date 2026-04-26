@@ -118,6 +118,8 @@ export const skillCategories: SkillCategory[] = [
       { name: "ClickUp", icon: "/images/skills/clickup.svg" },
       { name: "Google Docs", icon: "/images/skills/google-docs.svg" },
       { name: "Google Sheets", icon: "/images/skills/google-sheets.svg" },
+      { name: "Google Slides", icon: "/images/skills/google-slides.svg" },
+      { name: "Gmail", icon: "/images/skills/gmail.svg" },
       { name: "Webex", icon: "/images/skills/webex.svg" },
       { name: "Google Chat", icon: "/images/skills/google-chat.svg" },
       { name: "Zoom", icon: "/images/skills/zoom.svg" },
