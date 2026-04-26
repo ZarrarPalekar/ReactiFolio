@@ -108,16 +108,36 @@ export function AboutSection() {
                       <p className="text-xs uppercase tracking-[0.35em] text-white/38">
                         Delivery Rhythm
                       </p>
-                      <div className="mt-5 flex h-28 items-end gap-3">
-                        {[42, 64, 88, 72].map((height, index) => (
+                      <div className="relative mt-5 h-28 overflow-hidden rounded-2xl border border-white/8 bg-white/[0.03]">
+                        <div className="absolute inset-0 opacity-[0.11] [background-image:linear-gradient(rgba(255,255,255,0.35)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.35)_1px,transparent_1px)] [background-size:28px_28px]" />
+                        <div className="absolute left-7 right-7 top-1/2 h-px bg-red-400/45" />
+                        {[
+                          ["Plan", "left-4 top-4", "01"],
+                          ["Build", "left-[34%] bottom-4", "02"],
+                          ["Review", "right-[27%] top-4", "03"],
+                          ["Ship", "right-4 bottom-4", "04"],
+                        ].map(([label, position, step], index) => (
                           <div
-                            key={height}
-                            className={`flex-1 rounded-t-full ${
-                              index === 2 ? "bg-red-500/80" : "bg-white/14"
+                            key={label}
+                            className={`absolute ${position} flex h-12 w-12 flex-col items-center justify-center rounded-2xl border text-[0.5rem] font-medium uppercase tracking-[0.12em] ${
+                              index === 1
+                                ? "border-red-400/34 bg-red-500/18 text-white"
+                                : "border-white/10 bg-black/36 text-white/58"
                             }`}
-                            style={{ height }}
-                          />
+                          >
+                            <span className="text-[0.48rem] text-white/34">
+                              {step}
+                            </span>
+                            {label}
+                            {index < 3 ? (
+                              <span className="absolute -right-1 top-1/2 size-1.5 -translate-y-1/2 rounded-full bg-red-400" />
+                            ) : null}
+                          </div>
                         ))}
+                        <div className="absolute bottom-2.5 left-4 right-4 flex justify-between text-[0.5rem] uppercase tracking-[0.2em] text-white/24">
+                          <span>Scope</span>
+                          <span>Release</span>
+                        </div>
                       </div>
                     </div>
 
