@@ -140,12 +140,12 @@ export function Hero() {
                     rel="noreferrer"
                     className="inline-flex min-h-10 items-center gap-2 rounded-full border border-white/10 px-4 py-2 transition hover:border-red-500/40 hover:text-white"
                   >
-                    <SocialIcon name={link.label} className="size-4 shrink-0" />
+                    <SocialIcon name={link.label} className="size-5 shrink-0" />
                     {link.label}
                   </Link>
                 ))}
                 <CalendlyButton className="inline-flex min-h-10 items-center gap-2 rounded-full border border-white/10 px-4 py-2 transition hover:border-red-500/40 hover:text-white">
-                  <SocialIcon name="Calendly" className="size-4 shrink-0" />
+                  <SocialIcon name="Calendly" className="size-5 shrink-0" />
                   Calendly
                 </CalendlyButton>
               </div>

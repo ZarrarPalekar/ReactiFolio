@@ -30,7 +30,7 @@ export function SiteFooter() {
               rel="noreferrer"
               className="inline-flex items-center gap-2 transition hover:text-white"
             >
-              <SocialIcon name={link.label} className="size-4 shrink-0" />
+              <SocialIcon name={link.label} className="size-5 shrink-0" />
               {link.label}
             </Link>
           ))}

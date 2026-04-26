@@ -80,7 +80,7 @@ export function ContactCta() {
             <CalendlyButton
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-red-600 px-7 text-sm font-medium text-white transition hover:bg-red-500"
             >
-              <SocialIcon name="Calendly" className="size-4 shrink-0" />
+              <SocialIcon name="Calendly" className="size-5 shrink-0" />
               Schedule on Calendly
             </CalendlyButton>
             <Link
@@ -89,7 +89,7 @@ export function ContactCta() {
               rel="noreferrer"
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/12 px-7 text-sm font-medium text-white transition hover:border-red-500 hover:text-red-400"
             >
-              <SocialIcon name="LinkedIn" className="size-4 shrink-0" />
+              <SocialIcon name="LinkedIn" className="size-5 shrink-0" />
               Connect on LinkedIn
             </Link>
           </div>

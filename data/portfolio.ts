@@ -28,7 +28,7 @@ export const siteConfig = {
   calendlyUrl: "https://calendly.com/meetzarrar",
   githubUrl: "https://github.com/ZarrarPalekar",
   linkedinUrl: "https://www.linkedin.com/in/zarrarpalekar/",
-  instagramUrl: "https://www.instagram.com/palekarzarrar/?hl=en",
+  instagramUrl: "https://www.instagram.com/palekarzarrar",
   siteUrl: "https://www.zarrarpalekar.com/",
   ogImage: "/images/profile/profile.webp",
 };
@@ -55,6 +55,7 @@ export const heroStats: HeroStat[] = [
 export const socialLinks: SocialLink[] = [
   { href: siteConfig.githubUrl, label: "GitHub" },
   { href: siteConfig.linkedinUrl, label: "LinkedIn" },
+  { href: siteConfig.instagramUrl, label: "Instagram" },
   { href: siteConfig.resumeUrl, label: "Resume" },
 ];
 
