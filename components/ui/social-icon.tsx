@@ -27,7 +27,7 @@ export function SocialIcon({ name, ...props }: SocialIconProps) {
   if (name === "LinkedIn") {
     return (
       <svg {...baseProps} fill="none">
-        <rect width="24" height="24" rx="3" fill="#EF4444" />
+        <rect width="24" height="24" rx="3" fill="#0A66C2" />
         <path
           fill="#ffffff"
           d="M7.06 20.45H3.83V9.97h3.23v10.48ZM5.44 8.54a1.87 1.87 0 1 1 0-3.74 1.87 1.87 0 0 1 0 3.74Zm14.99 11.91H17.2v-5.1c0-1.21-.02-2.77-1.69-2.77-1.69 0-1.95 1.32-1.95 2.68v5.19h-3.22V9.97h3.09v1.43h.04c.43-.82 1.49-1.69 3.06-1.69 3.27 0 3.9 2.16 3.9 4.96v5.78Z"
@@ -48,11 +48,11 @@ export function SocialIcon({ name, ...props }: SocialIconProps) {
             y2="3.5"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#FCA5A5" />
-            <stop offset="0.28" stopColor="#EF4444" />
-            <stop offset="0.52" stopColor="#DC2626" />
-            <stop offset="0.76" stopColor="#991B1B" />
-            <stop offset="1" stopColor="#450A0A" />
+            <stop stopColor="#FEDA75" />
+            <stop offset="0.28" stopColor="#FA7E1E" />
+            <stop offset="0.52" stopColor="#D62976" />
+            <stop offset="0.76" stopColor="#962FBF" />
+            <stop offset="1" stopColor="#4F5BD5" />
           </linearGradient>
         </defs>
         <rect width="24" height="24" rx="6" fill="url(#instagram-gradient)" />
@@ -94,7 +94,7 @@ export function SocialIcon({ name, ...props }: SocialIconProps) {
 
   return (
     <svg {...baseProps} fill="none" strokeWidth={2}>
-      <rect width="24" height="24" rx="6" fill="#EF4444" />
+      <rect width="24" height="24" rx="6" fill="#006BFF" />
       <path
         stroke="#ffffff"
         d="M15.9 8.85A4.55 4.55 0 1 0 16.45 12"
