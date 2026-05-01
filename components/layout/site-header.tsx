@@ -50,8 +50,8 @@ export function SiteHeader() {
         </nav>
 
         <nav className="hidden items-center gap-3 lg:flex">
-          <span className="hidden items-center gap-2 rounded-full border border-red-500/25 bg-red-950/45 px-3 py-2 text-xs font-medium uppercase tracking-[0.2em] text-red-300 xl:inline-flex">
-            <span className="h-2 w-2 rounded-full bg-red-500 shadow-[0_0_16px_rgba(185,28,28,0.55)]" />
+          <span className="hidden items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-2 text-xs font-medium uppercase tracking-[0.2em] text-emerald-200 xl:inline-flex">
+            <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_16px_rgba(52,211,153,0.55)]" />
             Available
           </span>
           <CalendlyButton className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-red-500/25 bg-red-500/10 px-5 text-sm font-medium text-red-200 transition hover:border-red-500/60 hover:bg-red-600 hover:text-white">
