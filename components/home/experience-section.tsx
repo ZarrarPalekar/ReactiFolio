@@ -8,8 +8,8 @@ import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 
 const accents = [
-  "border-cyan-200/30 bg-cyan-200/10 text-cyan-100",
-  "border-lime-200/30 bg-lime-200/10 text-lime-100",
+  "border-red-500/30 bg-red-500/10 text-red-200",
+  "border-red-800/30 bg-red-950/45 text-red-300",
   "border-red-200/30 bg-red-300/10 text-red-100",
 ];
 
@@ -40,7 +40,7 @@ export function ExperienceSection() {
             <Reveal delay={0.1} className="mt-8 overflow-hidden rounded-lg border border-white/10 bg-white/[0.04]">
               <div className="grid grid-cols-3 gap-px bg-white/10">
                 {["Plan", "Build", "Ship"].map((item, index) => (
-                  <div key={item} className="bg-[#06100d] p-4">
+                  <div key={item} className="bg-[#100506] p-4">
                     <p className="text-xs uppercase tracking-[0.24em] text-white/36">
                       0{index + 1}
                     </p>
@@ -54,7 +54,7 @@ export function ExperienceSection() {
           <div className="relative">
             <div
               aria-hidden="true"
-              className="absolute bottom-0 left-5 top-0 w-px bg-gradient-to-b from-cyan-200/50 via-white/16 to-red-200/35 sm:left-8"
+              className="absolute bottom-0 left-5 top-0 w-px bg-gradient-to-b from-red-500/55 via-white/16 to-red-950/55 sm:left-8"
             />
 
             <div className="space-y-5">
@@ -134,7 +134,7 @@ export function ExperienceSection() {
                           key={point}
                           className="grid gap-3 border-l border-white/10 bg-black/[0.22] px-4 py-3 sm:grid-cols-[3rem_1fr]"
                         >
-                          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-100/62">
+                          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-red-200/72">
                             H{pointIndex + 1}
                           </span>
                           <p className="text-sm leading-7 text-white/66">

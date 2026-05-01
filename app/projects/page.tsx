@@ -58,7 +58,7 @@ export default function ProjectsPage() {
             {projects.map((project, index) => (
               <article
                 key={project.slug}
-                className="group overflow-hidden rounded-lg border border-white/10 bg-white/[0.045] transition hover:border-cyan-200/30"
+                className="group overflow-hidden rounded-lg border border-white/10 bg-white/[0.045] transition hover:border-red-500/30"
               >
                 <div className="relative aspect-[16/10]">
                   <Image
@@ -76,7 +76,7 @@ export default function ProjectsPage() {
                 </div>
 
                 <div className="p-6">
-                  <p className="text-xs uppercase tracking-[0.28em] text-cyan-100/64">
+                  <p className="text-xs uppercase tracking-[0.28em] text-red-200/72">
                     Project 0{index + 1}
                   </p>
                   <h2 className="mt-3 text-2xl font-semibold leading-tight text-white">
@@ -101,7 +101,7 @@ export default function ProjectsPage() {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex min-h-11 items-center justify-center rounded-full bg-cyan-300 px-5 text-sm font-semibold !text-slate-950 shadow-[0_0_24px_rgba(41,211,208,0.14)] transition hover:bg-[#29d3d0] hover:!text-slate-950"
+                        className="inline-flex min-h-11 items-center justify-center rounded-full bg-red-600 px-5 text-sm font-semibold text-white shadow-[0_0_24px_rgba(239,68,68,0.14)] transition hover:bg-red-500 hover:text-white"
                       >
                         Live site
                       </Link>
@@ -111,7 +111,7 @@ export default function ProjectsPage() {
                         href={project.repoUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/12 px-5 text-sm font-semibold text-white transition hover:border-cyan-200/50 hover:text-cyan-100"
+                        className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/12 px-5 text-sm font-semibold text-white transition hover:border-red-500/50 hover:text-red-200"
                       >
                         Repository
                       </Link>

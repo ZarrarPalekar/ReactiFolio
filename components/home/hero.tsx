@@ -27,10 +27,10 @@ export function Hero() {
   );
 
   return (
-    <section className="relative isolate overflow-hidden border-b border-white/10 bg-[#030404]">
+    <section className="relative isolate overflow-hidden border-b border-white/10 bg-[#050202]">
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[radial-gradient(circle_at_78%_28%,rgba(41,211,208,0.14),transparent_30%),radial-gradient(circle_at_88%_72%,rgba(183,255,90,0.08),transparent_28%),linear-gradient(90deg,#030404_0%,rgba(3,4,4,0.96)_48%,rgba(3,4,4,0.86)_100%)]"
+        className="absolute inset-0 bg-[radial-gradient(circle_at_78%_28%,rgba(239,68,68,0.14),transparent_30%),radial-gradient(circle_at_88%_72%,rgba(185,28,28,0.08),transparent_28%),linear-gradient(90deg,#050202_0%,rgba(5,2,2,0.96)_48%,rgba(5,2,2,0.86)_100%)]"
       />
       <motion.div
         aria-hidden="true"
@@ -39,7 +39,7 @@ export function Hero() {
       />
       <div
         aria-hidden="true"
-        className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-cyan-200/50 to-transparent sm:left-8 lg:left-12"
+        className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-red-500/50 to-transparent sm:left-8 lg:left-12"
       />
 
       <Container className="relative flex min-h-[calc(92svh-5rem)] flex-col justify-between py-14 sm:py-16 lg:py-18">
@@ -48,7 +48,7 @@ export function Hero() {
             initial={prefersReducedMotion ? false : { opacity: 0, y: 24 }}
             animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-xs font-semibold uppercase tracking-[0.38em] text-cyan-100/80"
+            className="text-xs font-semibold uppercase tracking-[0.38em] text-red-200/85"
           >
             Senior full stack engineer / delivery lead
           </motion.p>
@@ -75,8 +75,8 @@ export function Hero() {
                   index % 3 === 0
                     ? "border-red-300/24 bg-red-300/10 text-red-100"
                     : index % 3 === 1
-                      ? "border-cyan-200/24 bg-cyan-200/10 text-cyan-100"
-                      : "border-lime-200/24 bg-lime-200/10 text-lime-100"
+                      ? "border-red-500/24 bg-red-500/10 text-red-200"
+                      : "border-red-800/24 bg-red-950/45 text-red-300"
                 }`}
               >
                 {item}
@@ -103,11 +103,11 @@ export function Hero() {
           >
             <Link
               href="/#projects"
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-cyan-300 px-7 text-sm font-semibold !text-slate-950 shadow-[0_0_28px_rgba(41,211,208,0.18)] transition hover:bg-[#29d3d0] hover:!text-slate-950"
+              className="inline-flex min-h-12 items-center justify-center rounded-full bg-red-600 px-7 text-sm font-semibold text-white shadow-[0_0_28px_rgba(239,68,68,0.18)] transition hover:bg-red-500 hover:text-white"
             >
               Explore selected work
             </Link>
-            <CalendlyButton className="inline-flex min-h-12 items-center justify-center rounded-full border border-cyan-200/22 bg-black/45 px-7 text-sm font-semibold text-cyan-100 backdrop-blur transition hover:border-cyan-200/55 hover:bg-cyan-300/10">
+            <CalendlyButton className="inline-flex min-h-12 items-center justify-center rounded-full border border-red-500/22 bg-black/45 px-7 text-sm font-semibold text-red-200 backdrop-blur transition hover:border-red-500/55 hover:bg-red-500/10">
               Book a strategy call
             </CalendlyButton>
           </motion.div>
@@ -123,7 +123,7 @@ export function Hero() {
             {heroStats.map((stat) => (
               <div
                 key={stat.label}
-                className="bg-[#07100d]/86 p-5 backdrop-blur-md transition hover:bg-cyan-300/[0.08]"
+                className="bg-[#100506]/86 p-5 backdrop-blur-md transition hover:bg-red-500/10"
               >
                 <p className="text-3xl font-semibold text-white">{stat.value}</p>
                 <p className="mt-2 text-sm leading-6 text-white/60">
@@ -141,7 +141,7 @@ export function Hero() {
                   href={link.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex min-h-10 items-center gap-2 rounded-full border border-cyan-200/15 bg-black/30 px-3.5 py-2 text-sm text-white/72 transition hover:border-cyan-200/45 hover:bg-cyan-300/10 hover:text-cyan-100"
+                  className="inline-flex min-h-10 items-center gap-2 rounded-full border border-red-500/15 bg-black/30 px-3.5 py-2 text-sm text-white/72 transition hover:border-red-500/45 hover:bg-red-500/10 hover:text-red-200"
                 >
                   <SocialIcon name={link.label} className="size-5 shrink-0" />
                   {link.label}

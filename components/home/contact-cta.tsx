@@ -28,7 +28,7 @@ export function ContactCta() {
   return (
     <section
       id="contact"
-      className="bg-[linear-gradient(180deg,transparent,rgba(41,211,208,0.055)_42%,rgba(255,67,87,0.055)_100%)] py-18 sm:py-24"
+      className="bg-[linear-gradient(180deg,transparent,rgba(239,68,68,0.055)_42%,rgba(255,67,87,0.055)_100%)] py-18 sm:py-24"
     >
       <Container>
         <Reveal>
@@ -42,7 +42,7 @@ export function ContactCta() {
 
         <div className="mt-12 grid gap-5 lg:grid-cols-[1.12fr_0.88fr]">
           <Reveal className="rounded-lg border border-white/10 bg-white/[0.045] p-6 sm:p-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-cyan-100/80">
+            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-red-200/85">
               Collaboration path
             </p>
             <div className="mt-8 grid gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 sm:grid-cols-3">
@@ -51,13 +51,13 @@ export function ContactCta() {
                 ["02", "Build", "Shape the architecture, interface, and delivery plan."],
                 ["03", "Launch", "Review, refine, and ship with clean handover."],
               ].map(([step, label, copy], index) => (
-                <div key={step} className="bg-[#06100d] p-5">
+                <div key={step} className="bg-[#100506] p-5">
                   <p
                     className={`text-xs font-semibold uppercase tracking-[0.24em] ${
                       index === 0
-                        ? "text-cyan-100/72"
+                        ? "text-red-200/80"
                         : index === 1
-                          ? "text-lime-100/72"
+                          ? "text-red-300/75"
                           : "text-red-100/72"
                     }`}
                   >
@@ -74,7 +74,7 @@ export function ContactCta() {
             </div>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <CalendlyButton className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-cyan-300 px-7 text-sm font-semibold !text-slate-950 shadow-[0_0_28px_rgba(41,211,208,0.16)] transition hover:bg-[#29d3d0] hover:!text-slate-950">
+              <CalendlyButton className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-red-600 px-7 text-sm font-semibold text-white shadow-[0_0_28px_rgba(239,68,68,0.16)] transition hover:bg-red-500 hover:text-white">
                 <SocialIcon name="Calendly" className="size-5 shrink-0" />
                 Schedule on Calendly
               </CalendlyButton>
@@ -82,7 +82,7 @@ export function ContactCta() {
                 href={siteConfig.linkedinUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/12 px-7 text-sm font-semibold text-white transition hover:border-cyan-200/50 hover:text-cyan-100"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/12 px-7 text-sm font-semibold text-white transition hover:border-red-500/50 hover:text-red-200"
               >
                 <SocialIcon name="LinkedIn" className="size-5 shrink-0" />
                 Connect on LinkedIn
@@ -93,13 +93,13 @@ export function ContactCta() {
           <Reveal delay={0.08} className="grid gap-5">
             {contactCards.map((item, index) => {
               const content = (
-                <div className="rounded-lg border border-white/10 bg-black/35 p-5 transition hover:border-cyan-200/35">
+                <div className="rounded-lg border border-white/10 bg-black/35 p-5 transition hover:border-red-500/35">
                   <p
                     className={`text-xs font-semibold uppercase tracking-[0.28em] ${
                       index === 0
-                        ? "text-cyan-100/70"
+                        ? "text-red-200/78"
                         : index === 1
-                          ? "text-lime-100/70"
+                          ? "text-red-300/75"
                           : "text-red-100/70"
                     }`}
                   >

@@ -2,15 +2,14 @@
 
 :root {
   color-scheme: dark;
-  --background: #030404;
+  --background: #050202;
   --foreground: #f8faf7;
   --muted: rgba(255, 255, 255, 0.62);
   --line: rgba(255, 255, 255, 0.12);
   --card: rgba(255, 255, 255, 0.045);
   --accent: #ff4357;
-  --accent-cyan: #29d3d0;
-  --accent-lime: #b7ff5a;
-  --accent-amber: #f7c948;
+  --accent-dark-red: #7f1d1d;
+  --accent-soft-red: #fecaca;
   --font-sans:
     "Space Grotesk", "Satoshi", "Avenir Next", "Inter Tight", "Segoe UI", sans-serif;
 }
@@ -27,9 +26,9 @@ html {
 body {
   margin: 0;
   background:
-    linear-gradient(115deg, rgba(41, 211, 208, 0.1), transparent 28%),
+    linear-gradient(115deg, rgba(127, 29, 29, 0.18), transparent 28%),
     linear-gradient(245deg, rgba(255, 67, 87, 0.12), transparent 34%),
-    linear-gradient(180deg, #050605 0%, #07100d 42%, #040404 100%);
+    linear-gradient(180deg, #070303 0%, #100506 42%, #030303 100%);
   color: var(--foreground);
   font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
@@ -81,7 +80,7 @@ body::after {
 }
 
 ::selection {
-  background: rgba(41, 211, 208, 0.28);
+  background: rgba(239, 68, 68, 0.32);
   color: #fff;
 }
 
@@ -112,13 +111,13 @@ body::after {
   0%,
   100% {
     box-shadow:
-      0 0 0 6px rgba(37, 211, 102, 0.04),
-      0 0 14px rgba(37, 211, 102, 0.1);
+      0 0 0 6px rgba(239, 68, 68, 0.04),
+      0 0 14px rgba(239, 68, 68, 0.1);
   }
 
   50% {
     box-shadow:
-      0 0 0 16px rgba(37, 211, 102, 0.16),
-      0 0 42px rgba(37, 211, 102, 0.42);
+      0 0 0 16px rgba(239, 68, 68, 0.16),
+      0 0 42px rgba(239, 68, 68, 0.42);
   }
 }

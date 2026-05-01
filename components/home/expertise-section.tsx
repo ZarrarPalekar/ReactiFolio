@@ -8,17 +8,17 @@ import { SectionHeading } from "@/components/ui/section-heading";
 const categoryThemes = [
   {
     label: "Interface to API",
-    accentText: "text-cyan-100",
-    border: "border-cyan-200/24",
-    background: "bg-cyan-200/10",
-    line: "bg-cyan-200/70",
+    accentText: "text-red-200",
+    border: "border-red-500/24",
+    background: "bg-red-500/10",
+    line: "bg-red-500/70",
   },
   {
     label: "Scale and systems",
-    accentText: "text-lime-100",
-    border: "border-lime-200/24",
-    background: "bg-lime-200/10",
-    line: "bg-lime-200/70",
+    accentText: "text-red-300",
+    border: "border-red-800/24",
+    background: "bg-red-950/45",
+    line: "bg-red-700/70",
   },
   {
     label: "Delivery rhythm",

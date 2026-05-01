@@ -85,7 +85,7 @@ export function ServiceLanding({
         <Container>
           <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr]">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.36em] text-cyan-100/80">
+              <p className="text-xs font-semibold uppercase tracking-[0.36em] text-red-200/85">
                 {eyebrow}
               </p>
               <h1 className="mt-6 max-w-4xl text-5xl font-semibold leading-[0.98] text-white sm:text-6xl lg:text-7xl">
@@ -99,12 +99,12 @@ export function ServiceLanding({
               </p>
 
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                <CalendlyButton className="inline-flex min-h-12 items-center justify-center rounded-full bg-cyan-300 px-7 text-sm font-semibold !text-slate-950 shadow-[0_0_28px_rgba(41,211,208,0.16)] transition hover:bg-[#29d3d0] hover:!text-slate-950">
+                <CalendlyButton className="inline-flex min-h-12 items-center justify-center rounded-full bg-red-600 px-7 text-sm font-semibold text-white shadow-[0_0_28px_rgba(239,68,68,0.16)] transition hover:bg-red-500 hover:text-white">
                   Book a consultation
                 </CalendlyButton>
                 <Link
                   href="/projects"
-                  className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/12 px-7 text-sm font-semibold text-white transition hover:border-cyan-200/50 hover:text-cyan-100"
+                  className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/12 px-7 text-sm font-semibold text-white transition hover:border-red-500/50 hover:text-red-200"
                 >
                   Explore project archive
                 </Link>
@@ -119,7 +119,7 @@ export function ServiceLanding({
                 {supportingPoints.map((point) => (
                   <div
                     key={point}
-                    className="border-l border-cyan-200/30 bg-black/30 p-5 text-base leading-7 text-white/66"
+                    className="border-l border-red-500/30 bg-black/30 p-5 text-base leading-7 text-white/66"
                   >
                     {point}
                   </div>

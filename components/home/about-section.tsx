@@ -40,7 +40,7 @@ export function AboutSection() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/18 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
-              <p className="text-xs font-semibold uppercase tracking-[0.32em] text-cyan-100/84">
+              <p className="text-xs font-semibold uppercase tracking-[0.32em] text-red-200/85">
                 {siteConfig.location}
               </p>
               <h3 className="mt-3 text-4xl font-semibold leading-tight text-white sm:text-5xl">
@@ -82,9 +82,9 @@ export function AboutSection() {
                   <p
                     className={`text-xs font-semibold uppercase tracking-[0.28em] ${
                       index === 0
-                        ? "text-cyan-100/76"
+                        ? "text-red-200/80"
                         : index === 1
-                          ? "text-lime-100/76"
+                          ? "text-red-300/75"
                           : "text-red-100/76"
                     }`}
                   >
@@ -98,8 +98,8 @@ export function AboutSection() {
             </div>
 
             <Reveal delay={0.18} className="grid gap-5 md:grid-cols-3">
-              <div className="rounded-lg border border-white/10 bg-cyan-200/10 p-5">
-                <p className="text-xs uppercase tracking-[0.28em] text-cyan-100/64">
+              <div className="rounded-lg border border-white/10 bg-red-500/10 p-5">
+                <p className="text-xs uppercase tracking-[0.28em] text-red-200/72">
                   Focus
                 </p>
                 <p className="mt-3 text-xl font-semibold text-white">
@@ -109,8 +109,8 @@ export function AboutSection() {
                   UI, APIs, data workflows, and release ownership.
                 </p>
               </div>
-              <div className="rounded-lg border border-white/10 bg-lime-200/10 p-5">
-                <p className="text-xs uppercase tracking-[0.28em] text-lime-100/64">
+              <div className="rounded-lg border border-white/10 bg-red-950/45 p-5">
+                <p className="text-xs uppercase tracking-[0.28em] text-red-300/72">
                   Strength
                 </p>
                 <p className="mt-3 text-xl font-semibold text-white">
@@ -136,7 +136,7 @@ export function AboutSection() {
             <Reveal delay={0.24} className="flex flex-wrap gap-3">
               <Link
                 href="/#contact"
-                className="inline-flex min-h-12 items-center justify-center rounded-full bg-cyan-300 px-6 text-sm font-semibold !text-slate-950 shadow-[0_0_28px_rgba(41,211,208,0.16)] transition hover:bg-[#29d3d0] hover:!text-slate-950"
+                className="inline-flex min-h-12 items-center justify-center rounded-full bg-red-600 px-6 text-sm font-semibold text-white shadow-[0_0_28px_rgba(239,68,68,0.16)] transition hover:bg-red-500 hover:text-white"
               >
                 Start a conversation
               </Link>
@@ -144,7 +144,7 @@ export function AboutSection() {
                 href={siteConfig.resumeUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/12 px-6 text-sm font-semibold text-white transition hover:border-cyan-200/50 hover:text-cyan-100"
+                className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/12 px-6 text-sm font-semibold text-white transition hover:border-red-500/50 hover:text-red-200"
               >
                 View resume
               </Link>

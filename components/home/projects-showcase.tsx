@@ -10,8 +10,8 @@ import { SectionHeading } from "@/components/ui/section-heading";
 
 const featuredProjects = projects.filter((project) => project.featured);
 const accents = [
-  "border-cyan-200/26 bg-cyan-200/10 text-cyan-100",
-  "border-lime-200/26 bg-lime-200/10 text-lime-100",
+  "border-red-500/26 bg-red-500/10 text-red-200",
+  "border-red-800/26 bg-red-950/45 text-red-300",
   "border-red-200/26 bg-red-300/10 text-red-100",
 ];
 
@@ -29,7 +29,7 @@ export default function ProjectsShowcase() {
           />
           <Link
             href="/projects"
-            className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/12 px-6 text-sm font-semibold text-white transition hover:border-cyan-200/50 hover:text-cyan-100 lg:justify-self-end"
+            className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/12 px-6 text-sm font-semibold text-white transition hover:border-red-500/50 hover:text-red-200 lg:justify-self-end"
           >
             Full archive
           </Link>
@@ -116,7 +116,7 @@ export default function ProjectsShowcase() {
                           href={project.liveUrl}
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex min-h-11 items-center justify-center rounded-full bg-cyan-300 px-5 text-sm font-semibold !text-slate-950 shadow-[0_0_24px_rgba(41,211,208,0.14)] transition hover:bg-[#29d3d0] hover:!text-slate-950"
+                          className="inline-flex min-h-11 items-center justify-center rounded-full bg-red-600 px-5 text-sm font-semibold text-white shadow-[0_0_24px_rgba(239,68,68,0.14)] transition hover:bg-red-500 hover:text-white"
                         >
                           Visit live project
                         </Link>
@@ -126,7 +126,7 @@ export default function ProjectsShowcase() {
                           href={project.repoUrl}
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/12 px-5 text-sm font-semibold text-white transition hover:border-cyan-200/50 hover:text-cyan-100"
+                          className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/12 px-5 text-sm font-semibold text-white transition hover:border-red-500/50 hover:text-red-200"
                         >
                           View repository
                         </Link>

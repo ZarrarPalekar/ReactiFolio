@@ -13,13 +13,13 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#030404]/72 backdrop-blur-2xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#050202]/72 backdrop-blur-2xl">
       <Container className="flex min-h-20 items-center justify-between gap-6">
         <Link
           href="/"
           className="group flex items-center gap-3 text-sm uppercase tracking-[0.28em] text-white"
         >
-          <span className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-full border border-cyan-200/20 bg-cyan-300/10 shadow-[0_0_32px_rgba(41,211,208,0.15)] transition group-hover:border-cyan-200/50">
+          <span className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-full border border-red-500/20 bg-red-500/10 shadow-[0_0_32px_rgba(239,68,68,0.15)] transition group-hover:border-red-500/50">
             <Image
               src="/images/profile/ZP-logo.svg"
               alt={`${siteConfig.name} logo`}
@@ -42,7 +42,7 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-full px-3.5 py-2 text-sm text-white/66 transition hover:bg-cyan-300/10 hover:text-cyan-100"
+              className="rounded-full px-3.5 py-2 text-sm text-white/66 transition hover:bg-red-500/10 hover:text-red-200"
             >
               {item.label}
             </Link>
@@ -50,11 +50,11 @@ export function SiteHeader() {
         </nav>
 
         <nav className="hidden items-center gap-3 lg:flex">
-          <span className="hidden items-center gap-2 rounded-full border border-lime-300/25 bg-lime-300/10 px-3 py-2 text-xs font-medium uppercase tracking-[0.2em] text-lime-100 xl:inline-flex">
-            <span className="h-2 w-2 rounded-full bg-lime-300 shadow-[0_0_16px_rgba(183,255,90,0.55)]" />
+          <span className="hidden items-center gap-2 rounded-full border border-red-500/25 bg-red-950/45 px-3 py-2 text-xs font-medium uppercase tracking-[0.2em] text-red-300 xl:inline-flex">
+            <span className="h-2 w-2 rounded-full bg-red-500 shadow-[0_0_16px_rgba(185,28,28,0.55)]" />
             Available
           </span>
-          <CalendlyButton className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-cyan-200/25 bg-cyan-200/10 px-5 text-sm font-medium text-cyan-100 transition hover:border-cyan-300/60 hover:bg-cyan-300 hover:!text-slate-950">
+          <CalendlyButton className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-red-500/25 bg-red-500/10 px-5 text-sm font-medium text-red-200 transition hover:border-red-500/60 hover:bg-red-600 hover:text-white">
             <SocialIcon name="Calendly" className="size-5 shrink-0" />
             Strategy call
           </CalendlyButton>
@@ -62,7 +62,7 @@ export function SiteHeader() {
 
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-cyan-200/20 bg-cyan-300/10 text-cyan-100 lg:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-red-500/20 bg-red-500/10 text-red-200 lg:hidden"
           aria-expanded={open}
           aria-label="Toggle navigation"
           onClick={() => setOpen((value) => !value)}
@@ -83,7 +83,7 @@ export function SiteHeader() {
       </Container>
 
       {open ? (
-        <div className="border-t border-white/10 bg-[#030404]/96 backdrop-blur-2xl lg:hidden">
+        <div className="border-t border-white/10 bg-[#050202]/96 backdrop-blur-2xl lg:hidden">
           <Container className="flex flex-col py-4">
             {navigation.slice(1).map((item) => (
               <Link
@@ -97,7 +97,7 @@ export function SiteHeader() {
             ))}
             <CalendlyButton
               onClick={() => setOpen(false)}
-              className="mt-3 inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-cyan-300 px-5 text-sm font-semibold !text-slate-950 transition hover:bg-[#29d3d0] hover:!text-slate-950"
+              className="mt-3 inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-red-600 px-5 text-sm font-semibold text-white transition hover:bg-red-500 hover:text-white"
             >
               <SocialIcon name="Calendly" className="size-5 shrink-0" />
               Strategy call
