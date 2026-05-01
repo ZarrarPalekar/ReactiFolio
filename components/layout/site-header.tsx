@@ -7,21 +7,26 @@ import { useState } from "react";
 import { navigation, siteConfig } from "@/data/portfolio";
 import { Container } from "@/components/ui/container";
 import { CalendlyButton } from "@/components/ui/calendly-button";
+import { SocialIcon } from "@/components/ui/social-icon";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur-xl">
       <Container className="flex min-h-20 items-center justify-between gap-6">
-        <Link href="/" className="flex items-center gap-3 text-sm uppercase tracking-[0.35em] text-white">
+        <Link
+          href="/"
+          className="flex items-center gap-3 text-sm uppercase tracking-[0.35em] text-white"
+        >
           <span className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-full border border-white/12 bg-white/5 shadow-[0_0_30px_rgba(239,68,68,0.16)]">
             <Image
-              src="/favicon.ico"
+              src="/images/profile/ZP-logo.svg"
               alt={`${siteConfig.name} logo`}
               fill
               sizes="44px"
-              className="object-cover p-1.5"
+              priority
+              className="object-contain p-1"
             />
           </span>
           <span className="hidden sm:inline">{siteConfig.name}</span>
@@ -37,7 +42,8 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <CalendlyButton className="inline-flex min-h-11 items-center justify-center rounded-full border border-red-500/40 bg-red-500/10 px-5 text-sm font-medium text-red-400 transition hover:bg-red-500 hover:text-black">
+          <CalendlyButton className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-red-500/40 bg-red-500/10 px-5 text-sm font-medium text-red-400 transition hover:bg-red-600 hover:text-white">
+            <SocialIcon name="Calendly" className="size-5 shrink-0" />
             Calendly
           </CalendlyButton>
         </nav>
@@ -68,8 +74,9 @@ export function SiteHeader() {
             ))}
             <CalendlyButton
               onClick={() => setOpen(false)}
-              className="mt-3 inline-flex min-h-11 items-center justify-center rounded-full bg-red-500 px-5 text-sm font-medium text-black transition hover:bg-red-400"
+              className="mt-3 inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-red-600 px-5 text-sm font-medium text-white transition hover:bg-red-500"
             >
+              <SocialIcon name="Calendly" className="size-5 shrink-0" />
               Calendly
             </CalendlyButton>
           </Container>

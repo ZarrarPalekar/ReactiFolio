@@ -10,7 +10,17 @@ export type HeroStat = {
 
 export type SocialLink = {
   href: string;
-  label: string;
+  label: "GitHub" | "LinkedIn" | "Instagram" | "Resume";
+};
+
+export type TestimonialItem = {
+  quote: string;
+  author: string;
+  role: string;
+  company?: string;
+  relationship?: string;
+  image?: string;
+  linkedinUrl?: string;
 };
 
 export type SkillCategory = {
@@ -19,6 +29,8 @@ export type SkillCategory = {
   skills: Array<{
     name: string;
     icon: string;
+    iconClassName?: string;
+    iconWrapperClassName?: string;
   }>;
 };
 

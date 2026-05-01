@@ -5,24 +5,30 @@ import type {
   ProjectItem,
   SkillCategory,
   SocialLink,
+  TestimonialItem,
 } from "@/types/portfolio";
 
 export const siteConfig = {
+  whatsappMessage:
+    "Hey, Zarrar! I came here from your website zarrarpalekar.com",
   name: "Zarrar Palekar",
-  title: "Senior React Frontend & Node.js Backend Engineer",
+  title: "Senior Full Stack Engineer & Delivery Lead",
   shortTitle: "Full Stack Developer in India",
   description:
-    "Zarrar Palekar is a full stack developer in India specializing in React, Node.js, TypeScript, and scalable web application development for startups, product teams, and businesses.",
+    "Zarrar Palekar is a full stack engineer in India specializing in React, Node.js, TypeScript, enterprise web applications, stakeholder management, and end-to-end product delivery.",
   email: "zarrar@live.in",
   phone: "+91 98673 63215",
+  whatsappUrl: `https://wa.me/919867363215?text=${encodeURIComponent(
+    "Hey, Zarrar! I came here from your website zarrarpalekar.com",
+  )}`,
   location: "Mumbai, India",
   country: "India",
   resumeUrl:
-    "https://drive.google.com/file/d/192b3fDbA7bUnrfS4YamCyBVy-qCHl3hI/view?usp=sharing",
+    "https://drive.google.com/file/d/1ApVd4rZrw_OXoKNA2SRPLeNvqksiu0fl/view?usp=sharing",
   calendlyUrl: "https://calendly.com/meetzarrar",
   githubUrl: "https://github.com/ZarrarPalekar",
   linkedinUrl: "https://www.linkedin.com/in/zarrarpalekar/",
-  instagramUrl: "https://www.instagram.com/palekarzarrar/?hl=en",
+  instagramUrl: "https://www.instagram.com/palekarzarrar",
   siteUrl: "https://www.zarrarpalekar.com/",
   ogImage: "/images/profile/profile.webp",
 };
@@ -32,31 +38,32 @@ export const navigation: NavigationItem[] = [
   { href: "/#about", label: "About" },
   { href: "/#expertise", label: "Expertise" },
   { href: "/#experience", label: "Experience" },
+  { href: "/#testimonials", label: "Testimonials" },
   { href: "/#projects", label: "Projects" },
   { href: "/#contact", label: "Contact" },
 ];
 
 export const heroStats: HeroStat[] = [
   { value: "9+", label: "Years building digital products" },
-  { value: "10+", label: "Projects shipped across web stacks" },
+  { value: "E2E", label: "Enterprise and product applications led end to end" },
   {
     value: "4",
-    label:
-      "Startups, mid-sized and MNCs served in product building full-time roles",
+    label: "Startups, mid-sized teams, and enterprises partnered with directly",
   },
 ];
 
 export const socialLinks: SocialLink[] = [
   { href: siteConfig.githubUrl, label: "GitHub" },
   { href: siteConfig.linkedinUrl, label: "LinkedIn" },
+  { href: siteConfig.instagramUrl, label: "Instagram" },
   { href: siteConfig.resumeUrl, label: "Resume" },
 ];
 
 export const skillCategories: SkillCategory[] = [
   {
-    title: "Frontend Systems",
+    title: "Frontend + Backend",
     description:
-      "Production-ready interfaces with modern React ecosystems, motion, and design-system thinking.",
+      "Balanced product engineering across interface systems, application logic, APIs, and full-stack architecture.",
     skills: [
       { name: "React", icon: "/images/skills/react.svg" },
       { name: "TypeScript", icon: "/images/skills/typescript.svg" },
@@ -64,35 +71,58 @@ export const skillCategories: SkillCategory[] = [
       { name: "Redux", icon: "/images/skills/redux.svg" },
       { name: "HTML5", icon: "/images/skills/html-5.svg" },
       { name: "CSS3", icon: "/images/skills/css3.svg" },
-    ],
-  },
-  {
-    title: "Backend Delivery",
-    description:
-      "End-to-end delivery with Node, APIs, and database-backed applications that scale with product needs.",
-    skills: [
-      { name: "Node.js", icon: "/images/skills/nodejs.svg" },
-      { name: "Express", icon: "/images/skills/express.svg" },
-      { name: "MongoDB", icon: "/images/skills/mongodb.svg" },
-      { name: "MS SQL", icon: "/images/skills/mssql.svg" },
-      { name: ".NET", icon: "/images/skills/net.svg" },
-      { name: "Oracle", icon: "/images/skills/oracle.svg" },
-    ],
-  },
-  {
-    title: "Workflow & Shipping",
-    description:
-      "Team-friendly delivery pipelines, version control, and deployment habits tuned for reliability and speed.",
-    skills: [
-      { name: "Git", icon: "/images/skills/git-icon.svg" },
-      { name: "GitHub", icon: "/images/skills/github.svg" },
-      { name: "Heroku", icon: "/images/skills/heroku.svg" },
       { name: "Bootstrap", icon: "/images/skills/bootstrap-4.svg" },
       { name: "Sass", icon: "/images/skills/sass-1.svg" },
+    ],
+  },
+  {
+    title: "Enterprise Delivery",
+    description:
+      "Scalable backend delivery across APIs, databases, legacy modernization, and application ownership at production scale.",
+    skills: [
+      { name: "Node.js", icon: "/images/skills/nodejs.svg" },
       {
-        name: "Styled Components",
-        icon: "/images/skills/styled-components.svg",
+        name: "Express",
+        icon: "/images/skills/express.svg",
+        iconWrapperClassName: "w-14",
+        iconClassName: "drop-shadow-[0_0_10px_rgba(255,255,255,0.35)]",
       },
+      {
+        name: "MongoDB",
+        icon: "/images/skills/mongodb.svg",
+        iconClassName:
+          "brightness-110 contrast-125 drop-shadow-[0_0_8px_rgba(255,255,255,0.18)]",
+      },
+      {
+        name: "MS SQL",
+        icon: "/images/skills/mssql.svg",
+        iconClassName:
+          "brightness-125 contrast-125 drop-shadow-[0_0_10px_rgba(255,255,255,0.22)]",
+      },
+      {
+        name: ".NET",
+        icon: "/images/skills/net.svg",
+        iconClassName:
+          "brightness-125 contrast-125 drop-shadow-[0_0_10px_rgba(255,255,255,0.22)]",
+      },
+      { name: "Oracle", icon: "/images/skills/oracle.svg" },
+      { name: "Git", icon: "/images/skills/git-icon.svg" },
+      { name: "GitHub", icon: "/images/skills/github.svg" },
+    ],
+  },
+  {
+    title: "Leadership & Execution",
+    description:
+      "Communication, delivery planning, and engineering workflows that keep stakeholders aligned and teams moving.",
+    skills: [
+      { name: "ClickUp", icon: "/images/skills/clickup.svg" },
+      { name: "Google Docs", icon: "/images/skills/google-docs.svg" },
+      { name: "Google Sheets", icon: "/images/skills/google-sheets.svg" },
+      { name: "Google Slides", icon: "/images/skills/google-slides.svg" },
+      { name: "Gmail", icon: "/images/skills/gmail.svg" },
+      { name: "Webex", icon: "/images/skills/webex.svg" },
+      { name: "Google Chat", icon: "/images/skills/google-chat.svg" },
+      { name: "Zoom", icon: "/images/skills/zoom.svg" },
     ],
   },
 ];
@@ -107,8 +137,8 @@ export const experience: ExperienceItem[] = [
     stack: "MERN Stack, Context API",
     start: "2022-10-01",
     summary: [
-      "Lead development for PERN-stack products with a strong emphasis on maintainable component architecture.",
-      "Communicate directly with clients to shape requirements and the delivery scope.",
+      "Led end-to-end development for enterprise-grade PERN products across frontend, backend, architecture, and delivery quality.",
+      "Managed direct client communication, aligned stakeholders on scope, and translated business discussions into executable technical plans.",
     ],
   },
   {
@@ -121,8 +151,8 @@ export const experience: ExperienceItem[] = [
     start: "2021-06-01",
     end: "2022-10-01",
     summary: [
-      "Built MERN application with Apollo GraphQL and helped evolve large-scale SaaS application.",
-      "Lead development and delivery of from the scratch modules within the product.",
+      "Built and scaled full-stack SaaS modules with MERN, GraphQL, and Apollo across both user-facing flows and backend integration layers.",
+      "Led delivery of new modules from scratch while coordinating expectations, technical decisions, and cross-functional communication.",
     ],
   },
   {
@@ -135,9 +165,9 @@ export const experience: ExperienceItem[] = [
     start: "2019-04-01",
     end: "2021-06-01",
     summary: [
-      "Delivered CRM and CMS features across business-critical web applications.",
-      "Built mailer applications and JSON APIs for connected client experiences.",
-      "Automated repeated internal workflows by shipping custom modules from scratch.",
+      "Delivered enterprise CRM and CMS features across business-critical web applications with ownership spanning UI, backend, and data workflows.",
+      "Built APIs, mailer systems, and custom modules that improved connected client experiences and internal operational efficiency.",
+      "Worked closely with business stakeholders to understand requirements deeply and turn them into reliable production solutions.",
     ],
   },
   {
@@ -150,9 +180,72 @@ export const experience: ExperienceItem[] = [
     start: "2017-03-01",
     end: "2019-04-01",
     summary: [
-      "Contributed to enterprise CRM and CMS platforms and supported downstream UI integrations with web APIs.",
-      "Introduced new best practices around .Net applications at the time.",
+      "Contributed to enterprise CRM and CMS platforms while supporting backend services, database workflows, and downstream UI integrations.",
+      "Strengthened delivery standards with better engineering practices, clear communication, and dependable execution in large-team environments.",
     ],
+  },
+];
+
+export const testimonials: TestimonialItem[] = [
+  {
+    author: "Swapnil Patil",
+    role: "Sr Software Developer",
+    company: "Azul Arc",
+    relationship: "Swapnil reported to Zarrar directly",
+    image: "/images/testimonials/swapnil.jpeg",
+    quote:
+      "I had the privilege of working with Zarrar, who seamlessly balances his role as a Team Lead and Scrum Master while also being an AI enthusiast constantly exploring ways to bring innovation into our projects. As a leader, Zarrar stands out for his ability to foster collaboration, encourage open communication, and guide the team with clarity and purpose. He has an exceptional knack for breaking down complex challenges into achievable steps, ensuring that everyone stays aligned and motivated. What truly sets him apart is his passion for AI and emerging technologies. He actively shares insights, experiments with new ideas, and inspires the team to think beyond conventional solutions. This forward-thinking mindset has helped us improve processes, deliver smarter solutions, and stay ahead of the curve.",
+  },
+  {
+    author: "Sadaf Mirza",
+    role: "Senior Software Engineer",
+    company: "AzulArc",
+    relationship: "Sadaf reported to Zarrar directly",
+    image: "/images/testimonials/sadaf.jpeg",
+    quote:
+      "I've had the privilege of working with Zarrar as my team lead, and it has truly been an enriching experience. From the very beginning, Zarrar has been very supportive and approachable, always ready to lend a hand or share his insights whenever needed. His straightforward approach makes communication clear and effective, while also creating a space where ideas and opinions can be freely expressed. What stands out the most about Zarrar is not only his impressive skill set and professionalism but also his genuine willingness to help others grow. He takes the time to guide, mentor, and ensure the team feels supported in every challenge. His ability to balance technical expertise with empathy and encouragement has had a huge impact on my own growth and confidence at work. Zarrar is more than just a great leader, he's someone who inspires trust, collaboration, and continuous learning within the team. I feel grateful to have worked under his guidance and would highly recommend him to anyone looking for a strong, supportive, and impactful leader.",
+  },
+  {
+    author: "Nihar Makwana",
+    role: "Sr. Software Developer",
+    company: "AzulArc",
+    relationship: "Nihar reported to Zarrar directly",
+    image: "/images/testimonials/nihar.jpeg",
+    quote:
+      "I've had the pleasure of working with Zarrar for nearly three years, first as a peer and later as a member of his team. Throughout this time, I've seen firsthand that Zarrar is not only a highly skilled and intelligent engineer but also a natural leader. As a team leader, Zarrar excels at creating an environment where everyone can thrive. He consistently supported our team, advocated for our needs, and encouraged us to grow while also ensuring we maintained a healthy work-life balance. His approachability and willingness to help made him an incredibly effective leader; I never felt intimidated, and it was always easy to seek his guidance. In my seven years of professional experience, Zarrar stands out as the best colleague and team leader I've had the honor of working with. His commitment to both the team's success and individual well-being makes him an exceptional asset.",
+  },
+  {
+    author: "Premraj Tripute",
+    role: "Full Stack Developer",
+    relationship: "Premraj reported to Zarrar directly",
+    image: "/images/testimonials/premraj.jpeg",
+    quote:
+      "I'm incredibly fortunate to be working alongside Zarrar! As a colleague at Azul Arc, they've proven to be a truly exceptional leader and a master of project management. Their deep knowledge of software development, especially with the PERN stack and DevOps, is a huge asset to our team. They've been instrumental in guiding our projects, and their expertise in agile practices ensures we consistently stay on track and deliver high-quality work. What truly sets Zarrar apart is his fantastic approach to team management. They foster a collaborative and positive environment, always providing clear direction and empowering everyone to do their best work. Their ability to lead, mentor, and motivate makes our team incredibly effective.",
+  },
+  {
+    author: "Nikhil Joshi",
+    role: "International Business Development",
+    relationship: "Nikhil worked with Zarrar but on different teams",
+    image: "/images/testimonials/nikhil.jpeg",
+    quote:
+      "During the time of working alongside Zarrar at Euclid, I was instantly awed by his unwavering zest to go deep into requirements, his working on the problems encountered and coming out with a solution. A curious self learner that he is and technical brilliance that he brought to the table, resonates well with the progress he has done till date and definitely way to go. Onward and Upwards.",
+  },
+  {
+    author: "Shir Avidan",
+    role: "Sr. Software Product Manager",
+    relationship: "Shir managed Zarrar directly",
+    image: "/images/testimonials/shir.jpeg",
+    quote:
+      "Zarrar has skillfully navigated through the project's most challenging aspects. His effective communication and proactive problem-solving reflect his strong commitment to excellence and delivering results. Zarrar's hard work and dedication have greatly contributed to the ongoing success of our organization.",
+  },
+  {
+    author: "Shubham Singh",
+    role: "Senior Software Engineer",
+    company: "SponsorCloud",
+    relationship: "Shubham worked with Zarrar on the same team",
+    image: "/images/testimonials/shubham.jpeg",
+    quote:
+      "Zarrar is very passionate and has a great vision for his work. His focus keeps everything moving smoothly, he makes sure all the deadlines are met and makes sure that whatever project he is working on meets the highest standards. His helping nature to other colleagues makes him a more loving employee and person.",
   },
 ];
 

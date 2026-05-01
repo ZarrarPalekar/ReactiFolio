@@ -5,6 +5,7 @@ import { ContactCta } from "@/components/home/contact-cta";
 import { ExperienceSection } from "@/components/home/experience-section";
 import { ExpertiseSection } from "@/components/home/expertise-section";
 import { Hero } from "@/components/home/hero";
+import { TestimonialsSection } from "@/components/home/testimonials-section";
 
 const ProjectsShowcase = dynamic(() => import("@/components/home/projects-showcase"), {
   loading: () => (
@@ -23,6 +24,7 @@ export default function HomePage() {
       <AboutSection />
       <ExpertiseSection />
       <ExperienceSection />
+      <TestimonialsSection />
       <ProjectsShowcase />
       <ContactCta />
     </>
