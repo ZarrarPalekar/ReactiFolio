@@ -19,7 +19,7 @@ export function SiteHeader() {
           href="/"
           className="group flex items-center gap-3 text-sm uppercase tracking-[0.28em] text-white"
         >
-          <span className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-full border border-white/15 bg-white/8 shadow-[0_0_32px_rgba(41,211,208,0.15)] transition group-hover:border-cyan-200/50">
+          <span className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-full border border-cyan-200/20 bg-cyan-300/10 shadow-[0_0_32px_rgba(41,211,208,0.15)] transition group-hover:border-cyan-200/50">
             <Image
               src="/images/profile/ZP-logo.svg"
               alt={`${siteConfig.name} logo`}
@@ -37,12 +37,12 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-3 rounded-full border border-white/10 bg-white/[0.045] p-1.5 shadow-[0_18px_60px_rgba(0,0,0,0.25)] lg:flex">
+        <nav className="hidden items-center gap-3 rounded-full border border-white/10 bg-black/35 p-1.5 shadow-[0_18px_60px_rgba(0,0,0,0.25)] lg:flex">
           {navigation.slice(1).map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-full px-3.5 py-2 text-sm text-white/66 transition hover:bg-white/8 hover:text-white"
+              className="rounded-full px-3.5 py-2 text-sm text-white/66 transition hover:bg-cyan-300/10 hover:text-cyan-100"
             >
               {item.label}
             </Link>
@@ -54,7 +54,7 @@ export function SiteHeader() {
             <span className="h-2 w-2 rounded-full bg-lime-300 shadow-[0_0_16px_rgba(183,255,90,0.55)]" />
             Available
           </span>
-          <CalendlyButton className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-cyan-200/25 bg-cyan-200/10 px-5 text-sm font-medium text-cyan-100 transition hover:border-cyan-200/50 hover:bg-cyan-200 hover:text-black">
+          <CalendlyButton className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-cyan-200/25 bg-cyan-200/10 px-5 text-sm font-medium text-cyan-100 transition hover:border-cyan-300/60 hover:bg-cyan-300 hover:!text-slate-950">
             <SocialIcon name="Calendly" className="size-5 shrink-0" />
             Strategy call
           </CalendlyButton>
@@ -62,7 +62,7 @@ export function SiteHeader() {
 
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/12 bg-white/5 text-white lg:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-cyan-200/20 bg-cyan-300/10 text-cyan-100 lg:hidden"
           aria-expanded={open}
           aria-label="Toggle navigation"
           onClick={() => setOpen((value) => !value)}
@@ -97,7 +97,7 @@ export function SiteHeader() {
             ))}
             <CalendlyButton
               onClick={() => setOpen(false)}
-              className="mt-3 inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-cyan-200 px-5 text-sm font-medium text-black transition hover:bg-white"
+              className="mt-3 inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-cyan-300 px-5 text-sm font-semibold !text-slate-950 transition hover:bg-[#29d3d0] hover:!text-slate-950"
             >
               <SocialIcon name="Calendly" className="size-5 shrink-0" />
               Strategy call

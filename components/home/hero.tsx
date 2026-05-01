@@ -122,11 +122,11 @@ export function Hero() {
           >
             <Link
               href="/#projects"
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-white px-7 text-sm font-semibold text-black transition hover:bg-cyan-100"
+              className="inline-flex min-h-12 items-center justify-center rounded-full bg-cyan-300 px-7 text-sm font-semibold !text-slate-950 shadow-[0_0_28px_rgba(41,211,208,0.18)] transition hover:bg-[#29d3d0] hover:!text-slate-950"
             >
               Explore selected work
             </Link>
-            <CalendlyButton className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/18 bg-white/8 px-7 text-sm font-semibold text-white backdrop-blur transition hover:border-cyan-200/50 hover:text-cyan-100">
+            <CalendlyButton className="inline-flex min-h-12 items-center justify-center rounded-full border border-cyan-200/22 bg-black/45 px-7 text-sm font-semibold text-cyan-100 backdrop-blur transition hover:border-cyan-200/55 hover:bg-cyan-300/10">
               Book a strategy call
             </CalendlyButton>
           </motion.div>
@@ -142,7 +142,7 @@ export function Hero() {
             {heroStats.map((stat) => (
               <div
                 key={stat.label}
-                className="bg-[#07100d]/86 p-5 backdrop-blur-md transition hover:bg-white/[0.065]"
+                className="bg-[#07100d]/86 p-5 backdrop-blur-md transition hover:bg-cyan-300/[0.08]"
               >
                 <p className="text-3xl font-semibold text-white">{stat.value}</p>
                 <p className="mt-2 text-sm leading-6 text-white/60">
@@ -160,7 +160,7 @@ export function Hero() {
                   href={link.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex min-h-10 items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-2 text-sm text-white/66 transition hover:border-cyan-200/40 hover:text-white"
+                  className="inline-flex min-h-10 items-center gap-2 rounded-full border border-cyan-200/15 bg-black/30 px-3.5 py-2 text-sm text-white/72 transition hover:border-cyan-200/45 hover:bg-cyan-300/10 hover:text-cyan-100"
                 >
                   <SocialIcon name={link.label} className="size-5 shrink-0" />
                   {link.label}

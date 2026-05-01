@@ -85,7 +85,7 @@ export function TestimonialsSection() {
                   type="button"
                   onClick={() => setActivePage((page) => Math.max(page - 1, 0))}
                   disabled={currentPage === 0}
-                  className="inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-white/12 bg-white/5 text-white transition hover:border-cyan-200/50 hover:text-cyan-100 disabled:cursor-not-allowed disabled:opacity-40"
+                  className="inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-cyan-200/20 bg-cyan-300/10 text-cyan-100 transition hover:border-cyan-200/50 hover:bg-cyan-300/15 disabled:cursor-not-allowed disabled:opacity-40"
                   aria-label="Previous testimonials"
                 >
                   <span className="block h-3 w-3 rotate-45 border-b border-l border-current" />
@@ -98,7 +98,7 @@ export function TestimonialsSection() {
                     )
                   }
                   disabled={currentPage === pages.length - 1}
-                  className="inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-white/12 bg-white/5 text-white transition hover:border-cyan-200/50 hover:text-cyan-100 disabled:cursor-not-allowed disabled:opacity-40"
+                  className="inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-cyan-200/20 bg-cyan-300/10 text-cyan-100 transition hover:border-cyan-200/50 hover:bg-cyan-300/15 disabled:cursor-not-allowed disabled:opacity-40"
                   aria-label="Next testimonials"
                 >
                   <span className="block h-3 w-3 rotate-45 border-r border-t border-current" />
@@ -188,7 +188,7 @@ export function TestimonialsSection() {
                     className={`h-2.5 rounded-full transition ${
                       currentPage === pageIndex
                         ? "w-10 bg-cyan-200"
-                        : "w-2.5 bg-white/20 hover:bg-white/35"
+                        : "w-2.5 bg-cyan-300/25 hover:bg-cyan-300/45"
                     }`}
                     aria-label={`Go to testimonial page ${pageIndex + 1}`}
                   />
@@ -230,7 +230,7 @@ export function TestimonialsSection() {
                   href={siteConfig.linkedinUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-6 inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-black transition hover:bg-cyan-100"
+                  className="mt-6 inline-flex min-h-12 items-center justify-center rounded-full bg-cyan-300 px-6 text-sm font-semibold !text-slate-950 shadow-[0_0_28px_rgba(41,211,208,0.16)] transition hover:bg-[#29d3d0] hover:!text-slate-950"
                 >
                   Open LinkedIn Profile
                 </Link>

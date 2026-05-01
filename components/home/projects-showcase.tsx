@@ -116,7 +116,7 @@ export default function ProjectsShowcase() {
                           href={project.liveUrl}
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-5 text-sm font-semibold text-black transition hover:bg-cyan-100"
+                          className="inline-flex min-h-11 items-center justify-center rounded-full bg-cyan-300 px-5 text-sm font-semibold !text-slate-950 shadow-[0_0_24px_rgba(41,211,208,0.14)] transition hover:bg-[#29d3d0] hover:!text-slate-950"
                         >
                           Visit live project
                         </Link>

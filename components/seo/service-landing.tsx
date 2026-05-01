@@ -99,7 +99,7 @@ export function ServiceLanding({
               </p>
 
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                <CalendlyButton className="inline-flex min-h-12 items-center justify-center rounded-full bg-white px-7 text-sm font-semibold text-black transition hover:bg-cyan-100">
+                <CalendlyButton className="inline-flex min-h-12 items-center justify-center rounded-full bg-cyan-300 px-7 text-sm font-semibold !text-slate-950 shadow-[0_0_28px_rgba(41,211,208,0.16)] transition hover:bg-[#29d3d0] hover:!text-slate-950">
                   Book a consultation
                 </CalendlyButton>
                 <Link
