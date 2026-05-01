@@ -57,14 +57,14 @@ export function TestimonialsSection() {
   return (
     <section
       id="testimonials"
-      className="border-b border-white/10 py-20 sm:py-28"
+      className="border-b border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.02),transparent)] py-18 sm:py-24"
     >
       <Container>
         <Reveal>
           <SectionHeading
             eyebrow="Testimonials"
-            title="What teammates and clients say about working with me."
-            description="This section is set up for LinkedIn recommendations so trust signals live directly on the site instead of staying buried on a profile page."
+            title="The work style, described by people who have lived it."
+            description="Recommendations from teammates, managers, and collaborators who have seen the mix of leadership, clarity, and engineering depth up close."
           />
         </Reveal>
 
@@ -85,10 +85,10 @@ export function TestimonialsSection() {
                   type="button"
                   onClick={() => setActivePage((page) => Math.max(page - 1, 0))}
                   disabled={currentPage === 0}
-                  className="cursor-pointer inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/12 text-lg text-white transition hover:border-red-500 hover:text-red-400 disabled:cursor-not-allowed disabled:opacity-40"
+                  className="inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-white/12 bg-white/5 text-white transition hover:border-cyan-200/50 hover:text-cyan-100 disabled:cursor-not-allowed disabled:opacity-40"
                   aria-label="Previous testimonials"
                 >
-                  ←
+                  <span className="block h-3 w-3 rotate-45 border-b border-l border-current" />
                 </button>
                 <button
                   type="button"
@@ -98,17 +98,17 @@ export function TestimonialsSection() {
                     )
                   }
                   disabled={currentPage === pages.length - 1}
-                  className="cursor-pointer inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/12 text-lg text-white transition hover:border-red-500 hover:text-red-400 disabled:cursor-not-allowed disabled:opacity-40"
+                  className="inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-white/12 bg-white/5 text-white transition hover:border-cyan-200/50 hover:text-cyan-100 disabled:cursor-not-allowed disabled:opacity-40"
                   aria-label="Next testimonials"
                 >
-                  →
+                  <span className="block h-3 w-3 rotate-45 border-r border-t border-current" />
                 </button>
               </div>
             </Reveal>
 
             <Reveal
               delay={0.06}
-              className="mt-6 overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.02] p-2"
+              className="mt-6 overflow-hidden rounded-lg border border-white/10 bg-white/[0.035] p-2"
             >
               <div
                 className="flex transition-transform duration-500 ease-out"
@@ -122,11 +122,11 @@ export function TestimonialsSection() {
                     {page.map((item, itemIndex) => (
                       <article
                         key={`${item.author}-${pageIndex}-${itemIndex}`}
-                        className="flex h-full flex-col rounded-[1.7rem] border border-white/10 bg-white/[0.03] p-7"
+                        className="flex h-full flex-col rounded-lg border border-white/10 bg-black/30 p-6"
                       >
                         <div className="flex items-start gap-3">
                           {item.image ? (
-                            <div className="relative h-11 w-11 overflow-hidden rounded-full border border-white/10 bg-black/40">
+                            <div className="relative h-12 w-12 overflow-hidden rounded-full border border-white/10 bg-black/40">
                               <Image
                                 src={item.image}
                                 alt={item.author}
@@ -136,13 +136,13 @@ export function TestimonialsSection() {
                               />
                             </div>
                           ) : (
-                            <div className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-black/40 text-sm font-semibold uppercase text-red-400">
+                            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-cyan-200/10 text-sm font-semibold uppercase text-cyan-100">
                               {getInitials(item.author)}
                             </div>
                           )}
 
                           <div>
-                            <p className="text-lg font-medium text-white">
+                            <p className="text-lg font-semibold text-white">
                               {item.author}
                             </p>
                             <p className="text-sm text-white/56">
@@ -166,7 +166,7 @@ export function TestimonialsSection() {
                             href={item.linkedinUrl}
                             target="_blank"
                             rel="noreferrer"
-                            className="mt-6 inline-flex w-fit items-center rounded-full border border-white/12 px-4 py-2 text-sm font-medium text-white transition hover:border-red-500 hover:text-red-400"
+                            className="mt-6 inline-flex w-fit items-center rounded-full border border-white/12 px-4 py-2 text-sm font-semibold text-white transition hover:border-cyan-200/50 hover:text-cyan-100"
                           >
                             View on LinkedIn
                           </Link>
@@ -187,7 +187,7 @@ export function TestimonialsSection() {
                     onClick={() => setActivePage(pageIndex)}
                     className={`h-2.5 rounded-full transition ${
                       currentPage === pageIndex
-                        ? "w-10 bg-red-500"
+                        ? "w-10 bg-cyan-200"
                         : "w-2.5 bg-white/20 hover:bg-white/35"
                     }`}
                     aria-label={`Go to testimonial page ${pageIndex + 1}`}
@@ -199,14 +199,14 @@ export function TestimonialsSection() {
         ) : (
           <Reveal
             delay={0.06}
-            className="mt-14 rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 sm:p-10"
+            className="mt-14 rounded-lg border border-white/10 bg-white/[0.04] p-8 sm:p-10"
           >
             <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
               <div>
-                <p className="text-xs uppercase tracking-[0.35em] text-red-500">
+                <p className="text-xs uppercase tracking-[0.32em] text-cyan-100/80">
                   LinkedIn Recommendations
                 </p>
-                <h3 className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white sm:text-4xl">
+                <h3 className="mt-4 text-3xl font-semibold leading-tight text-white sm:text-4xl">
                   Ready to showcase your recommendations here.
                 </h3>
                 <p className="mt-4 max-w-2xl text-base leading-8 text-white/66">
@@ -217,8 +217,8 @@ export function TestimonialsSection() {
                 </p>
               </div>
 
-              <div className="rounded-[1.75rem] border border-white/10 bg-black/30 p-6">
-                <p className="text-sm uppercase tracking-[0.35em] text-white/38">
+              <div className="rounded-lg border border-white/10 bg-black/30 p-6">
+                <p className="text-sm uppercase tracking-[0.3em] text-white/38">
                   Next Step
                 </p>
                 <p className="mt-4 text-base leading-7 text-white/68">
@@ -230,7 +230,7 @@ export function TestimonialsSection() {
                   href={siteConfig.linkedinUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-6 inline-flex min-h-12 items-center justify-center rounded-full bg-red-600 px-6 text-sm font-medium text-white transition hover:bg-red-500"
+                  className="mt-6 inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-black transition hover:bg-cyan-100"
                 >
                   Open LinkedIn Profile
                 </Link>

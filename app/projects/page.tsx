@@ -46,19 +46,19 @@ export default function ProjectsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(projectJsonLd) }}
       />
-      <section className="py-20 sm:py-28">
+      <section className="py-18 sm:py-24">
         <Container>
           <SectionHeading
             eyebrow="Archive"
             title="A broader look at the portfolio."
-            description="This page keeps every project accessible while the homepage stays curated and focused."
+            description="Every project remains accessible here while the homepage stays curated and focused."
           />
 
-          <div className="mt-14 grid gap-6 md:grid-cols-2">
+          <div className="mt-12 grid gap-5 md:grid-cols-2">
             {projects.map((project, index) => (
               <article
                 key={project.slug}
-                className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03]"
+                className="group overflow-hidden rounded-lg border border-white/10 bg-white/[0.045] transition hover:border-cyan-200/30"
               >
                 <div className="relative aspect-[16/10]">
                   <Image
@@ -67,13 +67,19 @@ export default function ProjectsPage() {
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     priority={index === 0}
-                    className="object-cover"
+                    className="object-cover transition duration-700 group-hover:scale-[1.035]"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/76 via-transparent to-transparent" />
+                  <span className="absolute left-4 top-4 rounded-full border border-white/12 bg-black/45 px-3 py-1.5 text-xs uppercase tracking-[0.16em] text-white/72 backdrop-blur">
+                    {project.date}
+                  </span>
                 </div>
 
                 <div className="p-6">
-                  <p className="text-xs uppercase tracking-[0.38em] text-red-500">{project.date}</p>
-                  <h2 className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-white">
+                  <p className="text-xs uppercase tracking-[0.28em] text-cyan-100/64">
+                    Project 0{index + 1}
+                  </p>
+                  <h2 className="mt-3 text-2xl font-semibold leading-tight text-white">
                     {project.name}
                   </h2>
                   <p className="mt-3 text-base leading-7 text-white/64">{project.description}</p>
@@ -82,7 +88,7 @@ export default function ProjectsPage() {
                     {project.stack.map((item) => (
                       <span
                         key={item}
-                        className="rounded-full border border-white/10 px-3 py-1.5 text-xs uppercase tracking-[0.18em] text-white/60"
+                        className="rounded-full border border-white/10 bg-black/[0.24] px-3 py-1.5 text-xs uppercase tracking-[0.16em] text-white/60"
                       >
                         {item}
                       </span>
@@ -95,7 +101,7 @@ export default function ProjectsPage() {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex min-h-11 items-center justify-center rounded-full bg-red-600 px-5 text-sm font-medium text-white transition hover:bg-red-500"
+                        className="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-5 text-sm font-semibold text-black transition hover:bg-cyan-100"
                       >
                         Live site
                       </Link>
@@ -105,7 +111,7 @@ export default function ProjectsPage() {
                         href={project.repoUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/12 px-5 text-sm font-medium text-white transition hover:border-red-500 hover:text-red-400"
+                        className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/12 px-5 text-sm font-semibold text-white transition hover:border-cyan-200/50 hover:text-cyan-100"
                       >
                         Repository
                       </Link>

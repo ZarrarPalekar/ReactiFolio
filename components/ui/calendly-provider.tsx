@@ -52,19 +52,19 @@ function CalendlyModal({
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/82 p-4 backdrop-blur-md"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/[0.82] p-4 backdrop-blur-md"
       role="dialog"
       aria-modal="true"
       aria-label="Calendly booking popup"
       onClick={onClose}
     >
       <div
-        className="relative flex h-[min(88vh,860px)] w-full max-w-5xl flex-col overflow-hidden rounded-[2rem] border border-white/12 bg-[#090909] shadow-[0_30px_120px_rgba(0,0,0,0.65)]"
+        className="relative flex h-[min(88vh,860px)] w-full max-w-5xl flex-col overflow-hidden rounded-lg border border-white/12 bg-[#050706] shadow-[0_30px_120px_rgba(0,0,0,0.65)]"
         onClick={(event) => event.stopPropagation()}
       >
         <div className="flex items-center justify-between border-b border-white/10 px-5 py-4 sm:px-6">
           <div>
-            <p className="text-xs uppercase tracking-[0.38em] text-red-500">
+            <p className="text-xs uppercase tracking-[0.34em] text-cyan-100/80">
               Schedule a call
             </p>
             <p className="mt-2 text-lg font-medium text-white">
@@ -75,10 +75,13 @@ function CalendlyModal({
           <button
             type="button"
             onClick={onClose}
-            className="cursor-pointer inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/12 text-xl text-white/72 transition hover:border-red-500 hover:text-white"
+            className="inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-white/12 text-white/72 transition hover:border-cyan-200/50 hover:text-white"
             aria-label="Close Calendly popup"
           >
-            ×
+            <span className="relative h-4 w-4">
+              <span className="absolute left-1/2 top-0 h-4 w-px -translate-x-1/2 rotate-45 bg-current" />
+              <span className="absolute left-1/2 top-0 h-4 w-px -translate-x-1/2 -rotate-45 bg-current" />
+            </span>
           </button>
         </div>
 

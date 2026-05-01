@@ -81,14 +81,14 @@ export function ServiceLanding({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className="border-b border-white/10 py-20 sm:py-28">
+      <section className="border-b border-white/10 py-18 sm:py-24">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr]">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.45em] text-red-500">
+              <p className="text-xs font-semibold uppercase tracking-[0.36em] text-cyan-100/80">
                 {eyebrow}
               </p>
-              <h1 className="mt-6 max-w-4xl text-5xl font-semibold tracking-[-0.06em] text-white sm:text-6xl lg:text-7xl lg:leading-[0.94]">
+              <h1 className="mt-6 max-w-4xl text-5xl font-semibold leading-[0.98] text-white sm:text-6xl lg:text-7xl">
                 {title}
               </h1>
               <p className="mt-7 max-w-3xl text-lg leading-8 text-white/68 sm:text-xl">
@@ -99,27 +99,27 @@ export function ServiceLanding({
               </p>
 
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                <CalendlyButton className="inline-flex min-h-12 items-center justify-center rounded-full bg-red-600 px-7 text-sm font-medium text-white transition hover:bg-red-500">
+                <CalendlyButton className="inline-flex min-h-12 items-center justify-center rounded-full bg-white px-7 text-sm font-semibold text-black transition hover:bg-cyan-100">
                   Book a consultation
                 </CalendlyButton>
                 <Link
                   href="/projects"
-                  className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/12 px-7 text-sm font-medium text-white transition hover:border-red-500 hover:text-red-400"
+                  className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/12 px-7 text-sm font-semibold text-white transition hover:border-cyan-200/50 hover:text-cyan-100"
                 >
                   Explore project archive
                 </Link>
               </div>
             </div>
 
-            <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 sm:p-8">
-              <p className="text-xs uppercase tracking-[0.35em] text-white/36">
+            <div className="rounded-lg border border-white/10 bg-white/[0.045] p-6 sm:p-8">
+              <p className="text-xs uppercase tracking-[0.3em] text-white/36">
                 What you can expect
               </p>
               <div className="mt-6 space-y-4">
                 {supportingPoints.map((point) => (
                   <div
                     key={point}
-                    className="rounded-[1.5rem] border border-white/10 bg-black/30 p-5 text-base leading-7 text-white/66"
+                    className="border-l border-cyan-200/30 bg-black/30 p-5 text-base leading-7 text-white/66"
                   >
                     {point}
                   </div>
