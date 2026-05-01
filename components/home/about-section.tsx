@@ -32,11 +32,11 @@ export function AboutSection() {
         <div className="mt-12 grid gap-5 lg:grid-cols-[0.88fr_1.12fr]">
           <Reveal className="relative min-h-[34rem] overflow-hidden rounded-lg border border-white/10 bg-black/30">
             <Image
-              src="/images/profile/profile.webp"
+              src="/images/profile/pro-pic-1.webp"
               alt={siteConfig.name}
               fill
               sizes="(max-width: 1024px) 100vw, 44vw"
-              className="object-cover object-top"
+              className="object-cover object-[22%_top]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/18 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">

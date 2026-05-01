@@ -20,11 +20,6 @@ const previewProjects = projects.filter((project) => project.featured).slice(0, 
 export function Hero() {
   const prefersReducedMotion = useReducedMotion();
   const { scrollYProgress } = useScroll();
-  const portraitY = useTransform(
-    scrollYProgress,
-    [0, 1],
-    prefersReducedMotion ? [0, 0] : [0, 120],
-  );
   const scanOpacity = useTransform(
     scrollYProgress,
     [0, 0.35],
@@ -33,23 +28,9 @@ export function Hero() {
 
   return (
     <section className="relative isolate overflow-hidden border-b border-white/10 bg-[#030404]">
-      <motion.div
-        aria-hidden="true"
-        className="absolute inset-y-0 right-[-24%] w-[92%] sm:right-[-12%] lg:right-0 lg:w-[58%]"
-        style={{ y: portraitY }}
-      >
-        <Image
-          src="/images/profile/profile.webp"
-          alt=""
-          fill
-          priority
-          sizes="(max-width: 1024px) 90vw, 58vw"
-          className="object-cover object-[56%_18%] opacity-30 saturate-[0.85] contrast-110 sm:opacity-36 lg:opacity-48"
-        />
-      </motion.div>
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[linear-gradient(90deg,#030404_0%,rgba(3,4,4,0.94)_34%,rgba(3,4,4,0.6)_68%,rgba(3,4,4,0.9)_100%),linear-gradient(180deg,rgba(3,4,4,0.08)_0%,#030404_100%)]"
+        className="absolute inset-0 bg-[radial-gradient(circle_at_78%_28%,rgba(41,211,208,0.14),transparent_30%),radial-gradient(circle_at_88%_72%,rgba(183,255,90,0.08),transparent_28%),linear-gradient(90deg,#030404_0%,rgba(3,4,4,0.96)_48%,rgba(3,4,4,0.86)_100%)]"
       />
       <motion.div
         aria-hidden="true"
