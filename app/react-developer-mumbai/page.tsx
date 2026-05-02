@@ -6,7 +6,7 @@ import { siteConfig } from "@/data/portfolio";
 export const metadata: Metadata = {
   title: "React Developer in Mumbai",
   description:
-    "Hire Zarrar Palekar, a React developer in Mumbai, India building performant frontend experiences and modern full stack applications with React and Node.js.",
+    "Hire Zarrar Palekar, a senior React and MERN/PERN full stack developer in Mumbai with 9+ years across SaaS, CRM, CMS, team leadership, and AI-assisted SDLC.",
   alternates: {
     canonical: "/react-developer-mumbai",
   },
@@ -24,14 +24,14 @@ export default function ReactDeveloperMumbaiPage() {
     <ServiceLanding
       eyebrow="Mumbai SEO Page"
       title="React Developer in Mumbai"
-      description={`${siteConfig.name} is a React developer in Mumbai focused on polished frontend experiences, strong component architecture, and full stack product delivery with React, TypeScript, and Node.js.`}
-      locationLine="Serving clients in Mumbai, across India, and remote teams looking for product-focused frontend and full stack execution."
+      description={`${siteConfig.name} is a React developer in Mumbai focused on MERN/PERN product delivery, reusable frontend architecture, Node.js APIs, PostgreSQL-backed workflows, and practical AI-assisted engineering habits.`}
+      locationLine="Serving clients in Mumbai, across India, and remote teams looking for senior frontend execution backed by full stack and Scrum delivery ownership."
       primaryKeyword="React Developer in Mumbai"
       slug="react-developer-mumbai"
       supportingPoints={[
-        "Modern React development with strong UI quality, performance focus, and reusable architecture.",
-        "Frontend leadership supported by backend fluency in Node.js, Express, and database-backed application delivery.",
-        "A portfolio that combines design sensitivity, business context, and production-ready engineering discipline.",
+        "Modern React development backed by TypeScript, reusable components, state management, and production UI quality.",
+        "Frontend leadership supported by Node.js, Express, PostgreSQL, MongoDB, GraphQL, Apollo, and API delivery.",
+        "Certified Scrum Master experience across sprint planning, client communication, code reviews, QA coordination, and AI-assisted SDLC.",
       ]}
     />
   );

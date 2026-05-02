@@ -10,7 +10,7 @@ import { projects, siteConfig } from "@/data/portfolio";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Project archive for Zarrar Palekar, a full stack developer in India building React and Node.js applications.",
+    "Project archive for Zarrar Palekar, a senior MERN/PERN full stack engineer in India with React, Node.js, PostgreSQL, .NET, and SaaS delivery experience.",
   alternates: {
     canonical: "/projects",
   },
@@ -25,7 +25,7 @@ export default function ProjectsPage() {
         name: "Projects",
         url: `${siteConfig.siteUrl}/projects`,
         description:
-          "Project archive for Zarrar Palekar, a full stack developer in India building React and Node.js applications.",
+          "Project archive for Zarrar Palekar, a senior MERN/PERN full stack engineer in India with React, Node.js, PostgreSQL, .NET, and SaaS delivery experience.",
       },
       {
         "@type": "ItemList",
@@ -50,8 +50,8 @@ export default function ProjectsPage() {
         <Container>
           <SectionHeading
             eyebrow="Archive"
-            title="A broader look at the portfolio."
-            description="Every project remains accessible here while the homepage stays curated and focused."
+            title="Hands-on builds behind the resume."
+            description="Earlier frontend and MERN projects that sit behind the current production experience across SaaS, CRM, CMS, and enterprise systems."
           />
 
           <div className="mt-12 grid gap-5 md:grid-cols-2">

@@ -7,21 +7,21 @@ import { SectionHeading } from "@/components/ui/section-heading";
 
 const categoryThemes = [
   {
-    label: "Interface to API",
+    label: "Product stack",
     accentText: "text-red-200",
     border: "border-red-500/24",
     background: "bg-red-500/10",
     line: "bg-red-500/70",
   },
   {
-    label: "Scale and systems",
+    label: "Enterprise systems",
     accentText: "text-red-300",
     border: "border-red-800/24",
     background: "bg-red-950/45",
     line: "bg-red-700/70",
   },
   {
-    label: "Delivery rhythm",
+    label: "Lead and improve",
     accentText: "text-red-100",
     border: "border-red-200/24",
     background: "bg-red-300/10",
@@ -31,7 +31,12 @@ const categoryThemes = [
 
 function ExpertiseVisual({ index }: { index: number }) {
   const theme = categoryThemes[index % categoryThemes.length];
-  const columns = index === 0 ? ["UI", "API", "DB"] : index === 1 ? ["Plan", "Build", "Run"] : ["Align", "Lead", "Ship"];
+  const columns =
+    index === 0
+      ? ["React", "API", "DB"]
+      : index === 1
+        ? [".NET", "CRM", "CMS"]
+        : ["Plan", "AI", "Ship"];
 
   return (
     <div className="relative h-40 overflow-hidden border-b border-white/10 bg-black/35">
@@ -76,8 +81,8 @@ export function ExpertiseSection() {
         <Reveal>
           <SectionHeading
             eyebrow="Expertise"
-            title="A stack that reads as one complete product engine."
-            description="The stack reflects how I work in practice: frontend and backend depth, enterprise reliability, and communication that keeps delivery moving."
+            title="Resume stack, translated into delivery strengths."
+            description="The core is MERN/PERN full-stack work, backed by .NET enterprise experience, Scrum leadership, and practical AI-assisted development habits."
           />
         </Reveal>
 

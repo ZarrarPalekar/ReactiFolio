@@ -10,9 +10,9 @@ import { SectionHeading } from "@/components/ui/section-heading";
 export function AboutSection() {
   const experienceYears = getExperienceYears("2017-03-01");
   const operatingPrinciples = [
-    "Requirements become readable plans before code starts moving.",
-    "Frontend polish and backend reliability are treated as one product surface.",
-    "Communication stays direct, calm, and useful when delivery gets complex.",
+    "Business requirements become user stories, estimates, and delivery plans.",
+    "React, Node.js, PostgreSQL, MongoDB, and .NET are handled as one product surface.",
+    "AI-assisted work stays human-reviewed, security-aware, and practical.",
   ];
 
   return (
@@ -24,8 +24,8 @@ export function AboutSection() {
         <Reveal>
           <SectionHeading
             eyebrow="About"
-            title="Engineering depth with a delivery lead's calm."
-            description="I work across frontend, backend, stakeholders, and release execution so products move forward with less friction and more clarity."
+            title="Hands-on engineering with team-lead ownership."
+            description="I work across architecture, API design, code reviews, sprint planning, client communication, and release execution so product work keeps moving clearly."
           />
         </Reveal>
 
@@ -48,7 +48,7 @@ export function AboutSection() {
               </h3>
               <p className="mt-4 max-w-md text-base leading-7 text-white/68">
                 From requirement calls to production releases, I stay close to
-                the work until the outcome is clear.
+                the code, the team, and the decisions that shape the outcome.
               </p>
             </div>
           </Reveal>
@@ -62,13 +62,14 @@ export function AboutSection() {
                 Operating mode
               </p>
               <p className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-white sm:text-4xl">
-                I build like a product engineer and communicate like the person
-                responsible for the room.
+                I build like the senior engineer in the codebase and
+                communicate like the Scrum Master responsible for delivery.
               </p>
               <p className="mt-5 max-w-3xl text-base leading-8 text-white/64">
-                The strongest projects are rarely just code. They need technical
-                judgment, clean sequencing, frequent alignment, and enough taste
-                to make the final experience feel considered.
+                My resume thread is consistent: MERN/PERN product work, .NET
+                CRM/CMS depth, remote team leadership, direct stakeholder
+                alignment, and AI-assisted development used with engineering
+                judgment instead of blind automation.
               </p>
             </Reveal>
 
@@ -103,10 +104,10 @@ export function AboutSection() {
                   Focus
                 </p>
                 <p className="mt-3 text-xl font-semibold text-white">
-                  Full Stack Delivery
+                  MERN/PERN Delivery
                 </p>
                 <p className="mt-2 text-sm leading-6 text-white/58">
-                  UI, APIs, data workflows, and release ownership.
+                  React UI, Node APIs, PostgreSQL, MongoDB, and release ownership.
                 </p>
               </div>
               <div className="rounded-lg border border-white/10 bg-red-950/45 p-5">
@@ -114,10 +115,10 @@ export function AboutSection() {
                   Strength
                 </p>
                 <p className="mt-3 text-xl font-semibold text-white">
-                  Stakeholder Clarity
+                  Remote Team Leadership
                 </p>
                 <p className="mt-2 text-sm leading-6 text-white/58">
-                  Better scope, fewer surprises, cleaner decisions.
+                  Sprint planning, backlog refinement, QA coordination, and reviews.
                 </p>
               </div>
               <div className="rounded-lg border border-white/10 bg-red-300/10 p-5">
@@ -125,10 +126,10 @@ export function AboutSection() {
                   Style
                 </p>
                 <p className="mt-3 text-xl font-semibold text-white">
-                  Launch Ready
+                  AI-Assisted SDLC
                 </p>
                 <p className="mt-2 text-sm leading-6 text-white/58">
-                  Practical engineering with a strong finish.
+                  Codebase analysis, debugging, docs, and test ideation with review.
                 </p>
               </div>
             </Reveal>

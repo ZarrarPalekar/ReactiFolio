@@ -14,6 +14,11 @@ const accents = [
   "border-red-800/26 bg-red-950/45 text-red-300",
   "border-red-200/26 bg-red-300/10 text-red-100",
 ];
+const projectHighlights = [
+  { label: "Frontend", value: "React UI" },
+  { label: "Backend", value: "APIs + data" },
+  { label: "Delivery", value: "Responsive UX" },
+];
 
 export default function ProjectsShowcase() {
   const prefersReducedMotion = useReducedMotion();
@@ -24,8 +29,8 @@ export default function ProjectsShowcase() {
         <div className="grid gap-8 lg:grid-cols-[0.82fr_0.18fr] lg:items-end">
           <SectionHeading
             eyebrow="Projects"
-            title="Selected work presented like product evidence."
-            description="A few builds that show range quickly through visuals, stack, and outcome instead of long case-study text."
+            title="Selected builds from the full-stack foundation."
+            description="Earlier MERN and frontend projects that show the hands-on base behind the current SaaS, CRM, CMS, and enterprise work."
           />
           <Link
             href="/projects"
@@ -85,13 +90,13 @@ export default function ProjectsShowcase() {
                     </p>
 
                     <div className="mt-7 grid gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 sm:grid-cols-3">
-                      {["Responsive", "Product UI", "Full stack"].map((item) => (
-                        <div key={item} className="bg-black/[0.34] p-4">
+                      {projectHighlights.map((item) => (
+                        <div key={item.value} className="bg-black/[0.34] p-4">
                           <p className="text-xs uppercase tracking-[0.2em] text-white/38">
-                            Signal
+                            {item.label}
                           </p>
                           <p className="mt-2 text-sm font-semibold text-white/78">
-                            {item}
+                            {item.value}
                           </p>
                         </div>
                       ))}

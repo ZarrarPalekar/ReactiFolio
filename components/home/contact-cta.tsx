@@ -34,8 +34,8 @@ export function ContactCta() {
         <Reveal>
           <SectionHeading
             eyebrow="Contact"
-            title="If the fit is right, let's make the next screen clearer."
-            description="Available for focused product work, frontend leadership, and full stack support."
+            title="Need a senior full-stack lead who can still get into the code?"
+            description="Available for MERN/PERN product work, AI-assisted SDLC workflows, codebase cleanup, and delivery leadership."
             align="center"
           />
         </Reveal>
@@ -47,9 +47,21 @@ export function ContactCta() {
             </p>
             <div className="mt-8 grid gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 sm:grid-cols-3">
               {[
-                ["01", "Brief", "Understand the product, audience, and pressure points."],
-                ["02", "Build", "Shape the architecture, interface, and delivery plan."],
-                ["03", "Launch", "Review, refine, and ship with clean handover."],
+                [
+                  "01",
+                  "Clarify",
+                  "Turn product needs into user stories, estimates, and technical direction.",
+                ],
+                [
+                  "02",
+                  "Build",
+                  "Ship React, Node.js, API, database, and integration work with review discipline.",
+                ],
+                [
+                  "03",
+                  "Lead",
+                  "Coordinate QA, stakeholders, handover, and release follow-through.",
+                ],
               ].map(([step, label, copy], index) => (
                 <div key={step} className="bg-[#100506] p-5">
                   <p
@@ -66,9 +78,7 @@ export function ContactCta() {
                   <p className="mt-8 text-2xl font-semibold text-white">
                     {label}
                   </p>
-                  <p className="mt-3 text-sm leading-6 text-white/60">
-                    {copy}
-                  </p>
+                  <p className="mt-3 text-sm leading-6 text-white/60">{copy}</p>
                 </div>
               ))}
             </div>
