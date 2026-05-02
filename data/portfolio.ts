@@ -12,10 +12,10 @@ export const siteConfig = {
   whatsappMessage:
     "Hey, Zarrar! I came here from your website zarrarpalekar.com",
   name: "Zarrar Palekar",
-  title: "Senior Full Stack Engineer & Delivery Lead",
+  title: "Senior MERN/PERN Full Stack Engineer & Team Lead",
   shortTitle: "Full Stack Developer in India",
   description:
-    "Zarrar Palekar is a full stack engineer in India specializing in React, Node.js, TypeScript, enterprise web applications, stakeholder management, and end-to-end product delivery.",
+    "Zarrar Palekar is a senior MERN/PERN full stack engineer and Certified Scrum Master in Mumbai with 9+ years across React, Node.js, PostgreSQL, .NET, SaaS, CRM, CMS, team leadership, and AI-assisted SDLC.",
   email: "zarrar@live.in",
   phone: "+91 98673 63215",
   whatsappUrl: `https://wa.me/919867363215?text=${encodeURIComponent(
@@ -44,11 +44,14 @@ export const navigation: NavigationItem[] = [
 ];
 
 export const heroStats: HeroStat[] = [
-  { value: "9+", label: "Years building digital products" },
-  { value: "E2E", label: "Enterprise and product applications led end to end" },
+  { value: "9+", label: "Years across MERN, PERN, .NET, CRM, CMS, and SaaS" },
   {
-    value: "4",
-    label: "Startups, mid-sized teams, and enterprises partnered with directly",
+    value: "9+3",
+    label: "Developers and QA engineers led in a remote product team",
+  },
+  {
+    value: "CSM",
+    label: "Certified Scrum Master with client-facing delivery ownership",
   },
 ];
 
@@ -61,25 +64,13 @@ export const socialLinks: SocialLink[] = [
 
 export const skillCategories: SkillCategory[] = [
   {
-    title: "Frontend + Backend",
+    title: "MERN/PERN Product Engineering",
     description:
-      "Balanced product engineering across interface systems, application logic, APIs, and full-stack architecture.",
+      "Hands-on React, Node.js, Express, MongoDB, PostgreSQL, GraphQL/Apollo, and TypeScript work across SaaS and product modules.",
     skills: [
       { name: "React", icon: "/images/skills/react.svg" },
       { name: "TypeScript", icon: "/images/skills/typescript.svg" },
       { name: "JavaScript", icon: "/images/skills/javascript.svg" },
-      { name: "Redux", icon: "/images/skills/redux.svg" },
-      { name: "HTML5", icon: "/images/skills/html-5.svg" },
-      { name: "CSS3", icon: "/images/skills/css3.svg" },
-      { name: "Bootstrap", icon: "/images/skills/bootstrap-4.svg" },
-      { name: "Sass", icon: "/images/skills/sass-1.svg" },
-    ],
-  },
-  {
-    title: "Enterprise Delivery",
-    description:
-      "Scalable backend delivery across APIs, databases, legacy modernization, and application ownership at production scale.",
-    skills: [
       { name: "Node.js", icon: "/images/skills/nodejs.svg" },
       {
         name: "Express",
@@ -93,27 +84,39 @@ export const skillCategories: SkillCategory[] = [
         iconClassName:
           "brightness-110 contrast-125 drop-shadow-[0_0_8px_rgba(255,255,255,0.18)]",
       },
-      {
-        name: "MS SQL",
-        icon: "/images/skills/mssql.svg",
-        iconClassName:
-          "brightness-125 contrast-125 drop-shadow-[0_0_10px_rgba(255,255,255,0.22)]",
-      },
+      { name: "PostgreSQL", icon: "/images/skills/postgresql.svg" },
+      { name: "Redux", icon: "/images/skills/redux.svg" },
+    ],
+  },
+  {
+    title: "Enterprise & Legacy Systems",
+    description:
+      "CRM/CMS and enterprise delivery across .NET, ASP.NET, C#, Web APIs, relational databases, frontend enhancements, and integrations.",
+    skills: [
       {
         name: ".NET",
         icon: "/images/skills/net.svg",
         iconClassName:
           "brightness-125 contrast-125 drop-shadow-[0_0_10px_rgba(255,255,255,0.22)]",
       },
+      {
+        name: "MS SQL",
+        icon: "/images/skills/mssql.svg",
+        iconClassName:
+          "brightness-125 contrast-125 drop-shadow-[0_0_10px_rgba(255,255,255,0.22)]",
+      },
       { name: "Oracle", icon: "/images/skills/oracle.svg" },
+      { name: "HTML5", icon: "/images/skills/html-5.svg" },
+      { name: "CSS3", icon: "/images/skills/css3.svg" },
+      { name: "Bootstrap", icon: "/images/skills/bootstrap-4.svg" },
       { name: "Git", icon: "/images/skills/git-icon.svg" },
       { name: "GitHub", icon: "/images/skills/github.svg" },
     ],
   },
   {
-    title: "Leadership & Execution",
+    title: "AI-Assisted Delivery Leadership",
     description:
-      "Communication, delivery planning, and engineering workflows that keep stakeholders aligned and teams moving.",
+      "Certified Scrum Master leadership across sprint planning, backlog refinement, client communication, code reviews, QA coordination, and AI-assisted developer workflows.",
     skills: [
       { name: "ClickUp", icon: "/images/skills/clickup.svg" },
       { name: "Google Docs", icon: "/images/skills/google-docs.svg" },
@@ -132,13 +135,15 @@ export const experience: ExperienceItem[] = [
     company: "Azul Arc",
     companyUrl: "https://azularc.com/",
     logo: "/images/experience/aa.webp",
-    role: "Senior Software Developer",
-    track: "MERN Full Stack Developer",
-    stack: "MERN Stack, Context API",
+    role: "Senior Software Engineer",
+    track: "MERN/PERN Full Stack Web Development | Team Lead, CSM",
+    stack:
+      "React, Node.js, Express, PostgreSQL, REST APIs, TypeScript, AI-assisted SDLC",
     start: "2022-10-01",
     summary: [
-      "Led end-to-end development for enterprise-grade PERN products across frontend, backend, architecture, and delivery quality.",
-      "Managed direct client communication, aligned stakeholders on scope, and translated business discussions into executable technical plans.",
+      "Lead a remote agile team of 9 developers and 3 QA engineers on an in-house PERN product while staying hands-on across architecture, APIs, code reviews, and delivery quality.",
+      "Work directly with US-based clients and stakeholders to clarify requirements, convert business needs into user stories, estimate work, and guide technical execution.",
+      "Use Augment Code, ChatGPT, Codex, and Claude Code for codebase exploration, debugging, refactoring support, documentation, and test-case ideation with manual review.",
     ],
   },
   {
@@ -147,12 +152,13 @@ export const experience: ExperienceItem[] = [
     logo: "/images/experience/sp.jpg",
     role: "Software Engineer L2",
     track: "MERN Full Stack Developer",
-    stack: "MERN Stack, Redux, GraphQL, Apollo",
+    stack:
+      "MongoDB, Express, React, Node.js, Apollo, GraphQL, TypeScript, Context API",
     start: "2021-06-01",
     end: "2022-10-01",
     summary: [
-      "Built and scaled full-stack SaaS modules with MERN, GraphQL, and Apollo across both user-facing flows and backend integration layers.",
-      "Led delivery of new modules from scratch while coordinating expectations, technical decisions, and cross-functional communication.",
+      "Built product features from scratch for Syndication Pro, now SponsorCloud, a real estate syndication SaaS platform used in the US market.",
+      "Delivered full-stack modules across reusable React components, Apollo/GraphQL flows, APIs, data handling, debugging, and performance improvements.",
     ],
   },
   {
@@ -160,14 +166,14 @@ export const experience: ExperienceItem[] = [
     companyUrl: "https://www.tendersinfo.com/",
     logo: "/images/experience/ti.jpg",
     role: "Senior Software Developer",
-    track: ".NET Full Stack Developer",
-    stack: ".NET, C#, MS SQL",
+    track: ".NET Full Stack CMS and CRM Development",
+    stack: ".NET, ASP.NET, C#, JavaScript, jQuery, AJAX, MS SQL, Web APIs",
     start: "2019-04-01",
     end: "2021-06-01",
     summary: [
-      "Delivered enterprise CRM and CMS features across business-critical web applications with ownership spanning UI, backend, and data workflows.",
-      "Built APIs, mailer systems, and custom modules that improved connected client experiences and internal operational efficiency.",
-      "Worked closely with business stakeholders to understand requirements deeply and turn them into reliable production solutions.",
+      "Developed and enhanced web-based and desktop-based CRM/CMS systems using .NET, ASP.NET, C#, JavaScript, jQuery, AJAX, HTML, CSS, and database-driven workflows.",
+      "Created JSON-based Web APIs for client data requirements, reporting needs, and internal application integrations.",
+      "Worked on backend logic, frontend enhancements, SQL queries, and production issue resolution for business-critical client systems.",
     ],
   },
   {
@@ -175,13 +181,14 @@ export const experience: ExperienceItem[] = [
     companyUrl: "https://www.techmahindra.com/",
     logo: "/images/experience/techmahindra.svg",
     role: "Software Engineer",
-    track: ".NET Full Stack Developer",
-    stack: ".NET, C#, Oracle PL/SQL",
+    track: ".NET Full Stack CMS and CRM Development",
+    stack: ".NET, C#, ASP.NET, JavaScript, jQuery, AJAX, Oracle PL/SQL",
     start: "2017-03-01",
     end: "2019-04-01",
     summary: [
-      "Contributed to enterprise CRM and CMS platforms while supporting backend services, database workflows, and downstream UI integrations.",
-      "Strengthened delivery standards with better engineering practices, clear communication, and dependable execution in large-team environments.",
+      "Worked for British Telecom on CRM systems supporting telecom operations and the BT-EE merger in the UK.",
+      "Developed and maintained enterprise application modules using .NET, C#, ASP.NET, JavaScript, jQuery, AJAX, HTML, CSS, and relational databases.",
+      "Supported defect fixes, enhancements, and cross-functional coordination in a large enterprise delivery environment.",
     ],
   },
 ];

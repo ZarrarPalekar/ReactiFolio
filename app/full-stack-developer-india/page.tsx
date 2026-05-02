@@ -6,7 +6,7 @@ import { siteConfig } from "@/data/portfolio";
 export const metadata: Metadata = {
   title: "Full Stack Developer in India",
   description:
-    "Zarrar Palekar is a full stack developer in India building scalable React and Node.js applications for startups, businesses, and product teams.",
+    "Zarrar Palekar is a senior MERN/PERN full stack developer in India with 9+ years across React, Node.js, PostgreSQL, .NET, SaaS, CRM, CMS, Scrum leadership, and AI-assisted SDLC.",
   alternates: {
     canonical: "/full-stack-developer-india",
   },
@@ -24,14 +24,14 @@ export default function FullStackDeveloperIndiaPage() {
     <ServiceLanding
       eyebrow="India SEO Page"
       title="Full Stack Developer in India"
-      description={`${siteConfig.name} is a full stack developer in India with deep experience building modern React frontends, Node.js backends, and product-ready web applications that balance speed, usability, and maintainable engineering.`}
-      locationLine="Based in Mumbai, India and available for product consulting, contract builds, and long-term development work."
+      description={`${siteConfig.name} is a full stack developer in India with deep experience across MERN, PERN, .NET, CRM/CMS systems, SaaS products, remote team leadership, client communication, and AI-assisted software delivery.`}
+      locationLine="Based in Mumbai, India and available for product builds, codebase cleanup, delivery leadership, and long-term full stack development work."
       primaryKeyword="Full Stack Developer in India"
       slug="full-stack-developer-india"
       supportingPoints={[
-        "Strong React, TypeScript, and UI architecture expertise for scalable frontend systems.",
-        "Hands-on Node.js and backend delivery experience for APIs, business logic, and product workflows.",
-        "Professional experience across startups, SaaS platforms, enterprise systems, and client-facing delivery.",
+        "Hands-on React, TypeScript, Node.js, Express, PostgreSQL, MongoDB, GraphQL, and Apollo experience.",
+        "Enterprise background in .NET, ASP.NET, C#, Web APIs, MS SQL, Oracle PL/SQL, CRM, and CMS workflows.",
+        "Certified Scrum Master leadership across user stories, estimation, code reviews, QA coordination, client communication, and AI-assisted SDLC.",
       ]}
     />
   );

@@ -26,6 +26,9 @@ export const metadata: Metadata = {
     "React developer India",
     "Node.js developer India",
     "MERN stack developer India",
+    "PERN stack developer India",
+    "AI-assisted software development",
+    "Certified Scrum Master developer",
     "frontend developer India",
     "backend developer India",
     "React Node.js developer",
@@ -128,6 +131,15 @@ const personJsonLd = {
     "TypeScript",
     "JavaScript",
     "MERN stack",
+    "PERN stack",
+    "PostgreSQL",
+    "GraphQL",
+    "Apollo",
+    ".NET",
+    "ASP.NET",
+    "CRM and CMS development",
+    "AI-assisted software development",
+    "Certified Scrum Master",
     "Frontend development",
     "Backend development",
     "Full stack web development",
@@ -185,10 +197,14 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         <CalendlyProvider>
-          <div className="relative min-h-screen overflow-x-hidden bg-black">
+          <div className="relative min-h-screen overflow-x-hidden bg-[#050202]">
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(239,68,68,0.14),_transparent_32%),linear-gradient(to_bottom,_rgba(255,255,255,0.02),_transparent_25%)]"
+              className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,_rgba(239,68,68,0.09),_transparent_30%),linear-gradient(245deg,_rgba(255,67,87,0.1),_transparent_35%),linear-gradient(to_bottom,_rgba(255,255,255,0.035),_transparent_24%)]"
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-x-0 top-20 h-px bg-gradient-to-r from-transparent via-red-500/40 to-transparent"
             />
             <SiteHeader />
             <main className="relative pt-20">{children}</main>
