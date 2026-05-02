@@ -35,7 +35,7 @@ export function ContactCta() {
           <SectionHeading
             eyebrow="Contact"
             title="If the fit is right, let’s make your product easier to use."
-            description="Available for focused product work, frontend leadership, and full stack support."
+            description="Available for focused product work, leadership, and full stack development."
             align="center"
           />
         </Reveal>
