@@ -34,7 +34,7 @@ export function ContactCta() {
         <Reveal>
           <SectionHeading
             eyebrow="Contact"
-            title="If the fit is right, let's make the next screen clearer."
+            title="If the fit is right, let’s make your product easier to use."
             description="Available for focused product work, frontend leadership, and full stack support."
             align="center"
           />
@@ -47,9 +47,21 @@ export function ContactCta() {
             </p>
             <div className="mt-8 grid gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 sm:grid-cols-3">
               {[
-                ["01", "Brief", "Understand the product, audience, and pressure points."],
-                ["02", "Build", "Shape the architecture, interface, and delivery plan."],
-                ["03", "Launch", "Review, refine, and ship with clean handover."],
+                [
+                  "01",
+                  "Brief",
+                  "Understand the product, audience, and pressure points.",
+                ],
+                [
+                  "02",
+                  "Build",
+                  "Shape the architecture, interface, and delivery plan.",
+                ],
+                [
+                  "03",
+                  "Launch",
+                  "Review, refine, and ship with clean handover.",
+                ],
               ].map(([step, label, copy], index) => (
                 <div key={step} className="bg-[#100506] p-5">
                   <p
@@ -66,9 +78,7 @@ export function ContactCta() {
                   <p className="mt-8 text-2xl font-semibold text-white">
                     {label}
                   </p>
-                  <p className="mt-3 text-sm leading-6 text-white/60">
-                    {copy}
-                  </p>
+                  <p className="mt-3 text-sm leading-6 text-white/60">{copy}</p>
                 </div>
               ))}
             </div>
