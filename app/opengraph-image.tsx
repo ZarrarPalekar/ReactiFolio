@@ -10,7 +10,7 @@ export const size = {
 export const contentType = "image/png";
 
 export default function OpenGraphImage() {
-  const subtitle = `Portfolio, projects, experience, and product-focused engineering by ${siteConfig.name}.`;
+  const subtitle = `9+ years across MERN, PERN, .NET, SaaS, CRM/CMS, team leadership, and AI-assisted SDLC by ${siteConfig.name}.`;
 
   return new ImageResponse(
     <div
@@ -55,9 +55,9 @@ export default function OpenGraphImage() {
             letterSpacing: "-0.06em",
           }}
         >
-          <span>React Frontend</span>
-          <span>and Node.js Backend</span>
-          <span>Full Stack Engineer</span>
+          <span>MERN/PERN Full Stack</span>
+          <span>Team Lead + CSM</span>
+          <span>AI-Assisted SDLC</span>
         </div>
         <div
           style={{
@@ -99,7 +99,7 @@ export default function OpenGraphImage() {
             color: "rgba(255,255,255,0.8)",
           }}
         >
-          React • Node.js • TypeScript
+          React • Node.js • PostgreSQL • .NET
         </div>
       </div>
     </div>,

@@ -14,7 +14,14 @@ import { CalendlyButton } from "@/components/ui/calendly-button";
 import { Container } from "@/components/ui/container";
 import { SocialIcon } from "@/components/ui/social-icon";
 
-const heroStack = ["React", "Node.js", "TypeScript", ".NET", "SQL", "Delivery"];
+const heroStack = [
+  "React",
+  "Node.js",
+  "PostgreSQL",
+  "TypeScript",
+  ".NET",
+  "AI-assisted SDLC",
+];
 const previewProjects = projects.filter((project) => project.featured).slice(0, 3);
 
 export function Hero() {
@@ -50,7 +57,7 @@ export function Hero() {
             transition={{ duration: 0.8 }}
             className="text-xs font-semibold uppercase tracking-[0.38em] text-red-200/85"
           >
-            Senior full stack engineer / delivery lead
+            Senior MERN/PERN engineer / Team Lead / CSM
           </motion.p>
 
           <motion.h1
@@ -90,9 +97,10 @@ export function Hero() {
             transition={{ duration: 0.9, delay: 0.2 }}
             className="mt-7 max-w-3xl text-lg leading-8 text-white/72 sm:text-xl"
           >
-            {siteConfig.title} in {siteConfig.location}, building polished
-            product interfaces, reliable backend systems, and the kind of
-            stakeholder rhythm that gets complex work shipped.
+            {siteConfig.title} in {siteConfig.location}, with 9+ years across
+            SaaS, CRM, CMS, and enterprise systems. I lead remote teams, stay
+            hands-on with React, Node.js, PostgreSQL, GraphQL, and .NET, and use
+            AI-assisted SDLC tools with human review.
           </motion.p>
 
           <motion.div

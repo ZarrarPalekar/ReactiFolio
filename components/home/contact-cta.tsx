@@ -34,8 +34,8 @@ export function ContactCta() {
         <Reveal>
           <SectionHeading
             eyebrow="Contact"
-            title="If the fit is right, let’s make your product easier to use."
-            description="Available for focused product work, leadership, and full stack development."
+            title="Need a senior full-stack lead who can still get into the code?"
+            description="Available for MERN/PERN product work, AI-assisted SDLC workflows, codebase cleanup, and delivery leadership."
             align="center"
           />
         </Reveal>
@@ -49,18 +49,18 @@ export function ContactCta() {
               {[
                 [
                   "01",
-                  "Brief",
-                  "Understand the product, audience, and pressure points.",
+                  "Clarify",
+                  "Turn product needs into user stories, estimates, and technical direction.",
                 ],
                 [
                   "02",
                   "Build",
-                  "Shape the architecture, interface, and delivery plan.",
+                  "Ship React, Node.js, API, database, and integration work with review discipline.",
                 ],
                 [
                   "03",
-                  "Launch",
-                  "Review, refine, and ship with clean handover.",
+                  "Lead",
+                  "Coordinate QA, stakeholders, handover, and release follow-through.",
                 ],
               ].map(([step, label, copy], index) => (
                 <div key={step} className="bg-[#100506] p-5">

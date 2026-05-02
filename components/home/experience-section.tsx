@@ -32,8 +32,8 @@ export function ExperienceSection() {
             <Reveal>
               <SectionHeading
                 eyebrow="Experience"
-                title="A career shaped by enterprise delivery and ownership."
-                description="The timeline shows a consistent mix of technical depth, stakeholder alignment, and end-to-end application leadership."
+                title="Nine years across SaaS, CRM, CMS, and enterprise delivery."
+                description="From .NET CRM/CMS systems to MERN/PERN SaaS products, the work has stayed hands-on while adding team leadership, Scrum practice, and client communication."
               />
             </Reveal>
 
