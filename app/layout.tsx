@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Instrument_Serif, Space_Grotesk } from "next/font/google";
 import Script from "next/script";
 
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -10,6 +11,21 @@ import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { siteConfig } from "@/data/portfolio";
 
 import "./globals.css";
+
+const sansFont = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-sans-loaded",
+  display: "swap",
+});
+
+const serifFont = Instrument_Serif({
+  subsets: ["latin"],
+  weight: ["400"],
+  style: ["normal", "italic"],
+  variable: "--font-serif",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
@@ -186,7 +202,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html
+      lang="en"
+      className={`scroll-smooth ${sansFont.variable} ${serifFont.variable}`}
+    >
       <body className="bg-black text-white antialiased">
         <Script
           id="person-jsonld"

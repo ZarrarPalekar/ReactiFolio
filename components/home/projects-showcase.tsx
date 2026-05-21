@@ -28,11 +28,7 @@ function ProjectCard({
     offset: ["start end", "end start"],
   });
   const imageY = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
-  const scale = useTransform(
-    scrollYProgress,
-    [0, 0.5, 1],
-    [0.96, 1, 0.96],
-  );
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.96, 1, 0.96]);
 
   return (
     <motion.article
@@ -69,7 +65,8 @@ function ProjectCard({
             Build / {String(index + 1).padStart(2, "0")}
           </span>
           <span className="mono text-[0.65rem] uppercase tracking-[0.32em]">
-            {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
+            {String(index + 1).padStart(2, "0")} /{" "}
+            {String(total).padStart(2, "0")}
           </span>
         </div>
       </div>
@@ -80,7 +77,7 @@ function ProjectCard({
             Featured work
           </span>
           <h3 className="display mt-5 text-4xl text-white sm:text-5xl">
-            {project.name}
+            <span className="serif font-normal">{project.name}</span>
           </h3>
           <p className="mt-6 text-base leading-[1.7] text-white/60 sm:text-lg">
             {project.description}
@@ -130,6 +127,8 @@ function ProjectCard({
 }
 
 export default function ProjectsShowcase() {
+  const total = featuredProjects.length;
+
   return (
     <section
       id="projects"
@@ -143,7 +142,9 @@ export default function ProjectsShowcase() {
               eyebrow="Projects"
               title={
                 <>
-                  <span className="block">Selected</span>
+                  <span className="block">
+                    <span className="serif font-normal">Selected</span>
+                  </span>
                   <span className="block text-gradient-red">builds.</span>
                 </>
               }
@@ -167,7 +168,7 @@ export default function ProjectsShowcase() {
               key={project.slug}
               project={project}
               index={index}
-              total={featuredProjects.length}
+              total={total}
             />
           ))}
         </div>

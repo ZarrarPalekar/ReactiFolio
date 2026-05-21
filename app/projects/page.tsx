@@ -56,7 +56,9 @@ export default function ProjectsPage() {
               title={
                 <>
                   <span className="block">Hands-on builds</span>
-                  <span className="block text-gradient-red">behind the resume.</span>
+                  <span className="block text-gradient-red">
+                    behind the <span className="serif font-normal">resume.</span>
+                  </span>
                 </>
               }
               description="Earlier frontend and MERN projects that sit behind the current production experience across SaaS, CRM, CMS, and enterprise systems."

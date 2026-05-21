@@ -52,11 +52,14 @@ export function ContactCta() {
 
           <h2 className="display mt-8 text-[clamp(3rem,10vw,9.5rem)] leading-[0.92] text-white">
             <WordsReveal text="Let's build" className="block" />
-            <WordsReveal
-              text="something serious."
-              className="block text-gradient-red"
-              delay={0.2}
-            />
+            <span className="block text-gradient-red">
+              <WordsReveal
+                text="something"
+                className="serif font-normal"
+                delay={0.2}
+              />{" "}
+              <WordsReveal text="serious." delay={0.32} />
+            </span>
           </h2>
 
           <Reveal delay={0.4}>

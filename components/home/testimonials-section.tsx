@@ -80,7 +80,7 @@ export function TestimonialsSection() {
               <>
                 <span className="block">Work style,</span>
                 <span className="block text-gradient-red">
-                  in their words.
+                  in <span className="serif font-normal">their words.</span>
                 </span>
               </>
             }

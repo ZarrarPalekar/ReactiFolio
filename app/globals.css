@@ -12,9 +12,13 @@
   --accent-deep: #5b0f15;
   --grid: rgba(255, 255, 255, 0.045);
   --font-display:
-    "Space Grotesk", "Satoshi", "Inter Tight", "Avenir Next", "Segoe UI", sans-serif;
+    var(--font-sans-loaded, "Space Grotesk"), "Satoshi", "Inter Tight",
+    "Avenir Next", "Segoe UI", sans-serif;
   --font-mono:
     "JetBrains Mono", "IBM Plex Mono", "Menlo", ui-monospace, monospace;
+  --font-editorial:
+    var(--font-serif, "Instrument Serif"), "Cormorant Garamond", "Iowan Old Style",
+    "Apple Garamond", Georgia, serif;
   --font-sans: var(--font-display);
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -110,6 +114,14 @@ body::after {
   font-family: var(--font-mono);
   font-feature-settings: "tnum", "ss01";
   letter-spacing: 0.02em;
+}
+
+.serif {
+  font-family: var(--font-editorial);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  font-feature-settings: "liga", "dlig";
 }
 
 /* Outlined display variant — for the brutalist accents */

@@ -42,8 +42,12 @@ export function ExperienceSection() {
             eyebrow="Experience"
             title={
               <>
-                <span className="block">Nine years.</span>
-                <span className="block text-gradient-red">Four chapters.</span>
+                <span className="block">
+                  Nine <span className="serif font-normal">years.</span>
+                </span>
+                <span className="block text-gradient-red">
+                  Four <span className="serif font-normal">chapters.</span>
+                </span>
               </>
             }
             description="From .NET CRM/CMS systems to MERN/PERN SaaS products — hands-on work that grew into team leadership, Scrum practice, and direct client ownership."

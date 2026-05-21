@@ -28,7 +28,7 @@ export function ExpertiseSection() {
               <>
                 <span className="block">Resume stack,</span>
                 <span className="block text-gradient-red">
-                  delivery strengths.
+                  <span className="serif font-normal">delivery</span> strengths.
                 </span>
               </>
             }

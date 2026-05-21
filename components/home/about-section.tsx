@@ -12,7 +12,7 @@ import { useRef } from "react";
 
 import { siteConfig } from "@/data/portfolio";
 import { getExperienceYears } from "@/lib/date";
-import { Reveal, WordsReveal } from "@/components/ui/reveal";
+import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 
 const principles = [
@@ -57,12 +57,12 @@ export function AboutSection() {
             eyebrow="About"
             title={
               <>
-                <WordsReveal text="Senior engineer." className="block" />
-                <WordsReveal
-                  text="Hands-on lead."
-                  className="block text-gradient-red"
-                  delay={0.15}
-                />
+                <span className="block">
+                  Senior <span className="serif font-normal">engineer.</span>
+                </span>
+                <span className="block text-gradient-red">
+                  Hands-on <span className="serif font-normal">lead.</span>
+                </span>
               </>
             }
             description="I work across architecture, API design, code review, sprint planning, and client communication — so product work keeps moving without losing engineering quality."
