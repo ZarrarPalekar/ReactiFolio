@@ -1,13 +1,27 @@
 import type { Metadata } from "next";
+import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { WhatsAppFab } from "@/components/layout/whatsapp-fab";
 import { CalendlyProvider } from "@/components/ui/calendly-provider";
+import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { siteConfig } from "@/data/portfolio";
 
 import "./globals.css";
+
+const sans = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
@@ -184,8 +198,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className="bg-black text-white antialiased">
+    <html lang="en" className={`${sans.variable} ${mono.variable} scroll-smooth`}>
+      <body className="bg-[var(--bg)] text-[var(--ink)] antialiased">
         <Script
           id="person-jsonld"
           type="application/ld+json"
@@ -197,15 +211,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         <CalendlyProvider>
-          <div className="relative min-h-screen overflow-x-hidden bg-[#050202]">
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,_rgba(239,68,68,0.09),_transparent_30%),linear-gradient(245deg,_rgba(255,67,87,0.1),_transparent_35%),linear-gradient(to_bottom,_rgba(255,255,255,0.035),_transparent_24%)]"
-            />
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-x-0 top-20 h-px bg-gradient-to-r from-transparent via-red-500/40 to-transparent"
-            />
+          <div aria-hidden="true" className="aurora" />
+          <div aria-hidden="true" className="grid-overlay" />
+          <ScrollProgress />
+          <div className="relative min-h-screen">
             <SiteHeader />
             <main className="relative pt-20">{children}</main>
             <SiteFooter />

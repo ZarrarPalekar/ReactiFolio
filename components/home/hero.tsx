@@ -6,185 +6,282 @@ import {
   motion,
   useReducedMotion,
   useScroll,
+  useSpring,
   useTransform,
 } from "framer-motion";
+import { useRef } from "react";
 
 import { heroStats, projects, siteConfig, socialLinks } from "@/data/portfolio";
 import { CalendlyButton } from "@/components/ui/calendly-button";
 import { Container } from "@/components/ui/container";
+import { Magnetic } from "@/components/ui/magnetic";
 import { SocialIcon } from "@/components/ui/social-icon";
+import { Marquee } from "@/components/ui/marquee";
 
 const heroStack = [
   "React",
   "Node.js",
-  "PostgreSQL",
   "TypeScript",
+  "PostgreSQL",
+  "GraphQL",
   ".NET",
   "AI-assisted SDLC",
+  "Scrum",
 ];
-const previewProjects = projects.filter((project) => project.featured).slice(0, 3);
+
+const previewProjects = projects.filter((p) => p.featured).slice(0, 3);
 
 export function Hero() {
-  const prefersReducedMotion = useReducedMotion();
-  const { scrollYProgress } = useScroll();
-  const scanOpacity = useTransform(
-    scrollYProgress,
-    [0, 0.35],
-    prefersReducedMotion ? [0.18, 0.18] : [0.26, 0.08],
-  );
+  const reduce = useReducedMotion();
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+
+  const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const yContent = useTransform(scrollYProgress, [0, 1], ["0%", "12%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+  const sBg = useSpring(yBg, { stiffness: 90, damping: 22 });
+  const sContent = useSpring(yContent, { stiffness: 90, damping: 22 });
 
   return (
-    <section className="relative isolate overflow-hidden border-b border-white/10 bg-[#050202]">
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-[radial-gradient(circle_at_78%_28%,rgba(239,68,68,0.14),transparent_30%),radial-gradient(circle_at_88%_72%,rgba(185,28,28,0.08),transparent_28%),linear-gradient(90deg,#050202_0%,rgba(5,2,2,0.96)_48%,rgba(5,2,2,0.86)_100%)]"
-      />
+    <section
+      ref={ref}
+      className="relative isolate overflow-hidden border-b border-white/5"
+    >
+      {/* Animated mesh */}
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:70px_70px]"
-        style={{ opacity: scanOpacity }}
-      />
+        style={{ y: reduce ? 0 : sBg }}
+        className="pointer-events-none absolute inset-0 -z-10"
+      >
+        <div className="absolute -left-32 top-10 h-[460px] w-[460px] rounded-full bg-[var(--primary)] opacity-[0.18] blur-[140px]" />
+        <div className="absolute right-0 top-40 h-[520px] w-[520px] rounded-full bg-[var(--tertiary)] opacity-[0.16] blur-[160px]" />
+        <div className="absolute bottom-0 left-1/3 h-[420px] w-[420px] rounded-full bg-[var(--secondary)] opacity-[0.12] blur-[140px]" />
+      </motion.div>
+
+      {/* Subtle grid */}
       <div
         aria-hidden="true"
-        className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-red-500/50 to-transparent sm:left-8 lg:left-12"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_70%_50%_at_50%_30%,#000_30%,transparent_80%)]"
       />
 
-      <Container className="relative flex min-h-[calc(92svh-5rem)] flex-col justify-between py-14 sm:py-16 lg:py-18">
-        <div className="max-w-5xl pt-5 lg:pt-12">
-          <motion.p
-            initial={prefersReducedMotion ? false : { opacity: 0, y: 24 }}
-            animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-xs font-semibold uppercase tracking-[0.38em] text-red-200/85"
-          >
-            Senior MERN/PERN engineer / Team Lead / CSM
-          </motion.p>
-
-          <motion.h1
-            initial={prefersReducedMotion ? false : { opacity: 0, y: 34 }}
-            animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.08 }}
-            className="mt-5 max-w-[12ch] text-6xl font-semibold leading-[0.92] text-white sm:text-8xl lg:text-[7.4rem] xl:text-[8.6rem]"
-          >
-            {siteConfig.name}
-          </motion.h1>
-
-          <motion.div
-            initial={prefersReducedMotion ? false : { opacity: 0, y: 24 }}
-            animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.14 }}
-            className="mt-6 flex max-w-3xl flex-wrap gap-2"
-          >
-            {heroStack.map((item, index) => (
-              <span
-                key={item}
-                className={`rounded-full border px-3.5 py-2 text-xs font-medium uppercase tracking-[0.18em] ${
-                  index % 3 === 0
-                    ? "border-red-300/24 bg-red-300/10 text-red-100"
-                    : index % 3 === 1
-                      ? "border-red-500/24 bg-red-500/10 text-red-200"
-                      : "border-red-800/24 bg-red-950/45 text-red-300"
-                }`}
-              >
-                {item}
-              </span>
-            ))}
-          </motion.div>
-
-          <motion.p
-            initial={prefersReducedMotion ? false : { opacity: 0, y: 30 }}
-            animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.2 }}
-            className="mt-7 max-w-3xl text-lg leading-8 text-white/72 sm:text-xl"
-          >
-            {siteConfig.title} in {siteConfig.location}, with 9+ years across
-            SaaS, CRM, CMS, and enterprise systems. I lead remote teams, stay
-            hands-on with React, Node.js, PostgreSQL, GraphQL, and .NET, and use
-            AI-assisted SDLC tools with human review.
-          </motion.p>
-
-          <motion.div
-            initial={prefersReducedMotion ? false : { opacity: 0, y: 28 }}
-            animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.28 }}
-            className="mt-9 flex flex-col gap-3 sm:flex-row"
-          >
-            <Link
-              href="/#projects"
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-red-600 px-7 text-sm font-semibold text-white shadow-[0_0_28px_rgba(239,68,68,0.18)] transition hover:bg-red-500 hover:text-white"
-            >
-              Explore selected work
-            </Link>
-            <CalendlyButton className="inline-flex min-h-12 items-center justify-center rounded-full border border-red-500/22 bg-black/45 px-7 text-sm font-semibold text-red-200 backdrop-blur transition hover:border-red-500/55 hover:bg-red-500/10">
-              Book a strategy call
-            </CalendlyButton>
-          </motion.div>
-        </div>
-
+      <Container className="relative">
         <motion.div
-          initial={prefersReducedMotion ? false : { opacity: 0, y: 34 }}
-          animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.36 }}
-          className="mt-12 grid gap-4 lg:grid-cols-[1fr_1.1fr]"
+          style={{ y: reduce ? 0 : sContent, opacity: reduce ? 1 : opacity }}
+          className="flex min-h-[calc(94svh-5rem)] flex-col justify-between py-14 sm:py-20 lg:py-24"
         >
-          <div className="grid gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 sm:grid-cols-3">
-            {heroStats.map((stat) => (
-              <div
-                key={stat.label}
-                className="bg-[#100506]/86 p-5 backdrop-blur-md transition hover:bg-red-500/10"
+          <div className="max-w-6xl pt-6 lg:pt-10">
+            {/* Eyebrow chip */}
+            <motion.div
+              initial={reduce ? false : { opacity: 0, y: 14 }}
+              animate={reduce ? {} : { opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 backdrop-blur-md"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+              </span>
+              <span className="font-mono text-[0.68rem] uppercase tracking-[0.32em] text-white/70">
+                Open to senior / lead roles
+              </span>
+            </motion.div>
+
+            {/* Headline */}
+            <h1 className="mt-7 text-balance text-[clamp(3.2rem,9.4vw,9.5rem)] font-semibold leading-[0.92] tracking-[-0.025em]">
+              <motion.span
+                initial={reduce ? false : { opacity: 0, y: 40 }}
+                animate={reduce ? {} : { opacity: 1, y: 0 }}
+                transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                className="block text-white"
               >
-                <p className="text-3xl font-semibold text-white">{stat.value}</p>
-                <p className="mt-2 text-sm leading-6 text-white/60">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
+                Building software
+              </motion.span>
+              <motion.span
+                initial={reduce ? false : { opacity: 0, y: 40 }}
+                animate={reduce ? {} : { opacity: 1, y: 0 }}
+                transition={{ duration: 0.9, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+                className="block text-gradient"
+              >
+                that ships,
+              </motion.span>
+              <motion.span
+                initial={reduce ? false : { opacity: 0, y: 40 }}
+                animate={reduce ? {} : { opacity: 1, y: 0 }}
+                transition={{ duration: 0.9, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
+                className="block text-white/90"
+              >
+                <span className="italic font-light text-white/60">led by</span>{" "}
+                <span className="text-gradient-warm">people who care</span>
+                <span className="cursor-blink ml-2 inline-block h-[0.85em] w-[0.06em] translate-y-1 bg-[var(--primary)]" />
+              </motion.span>
+            </h1>
+
+            {/* Subhead + meta */}
+            <div className="mt-10 grid max-w-5xl gap-8 lg:grid-cols-[1.4fr_1fr]">
+              <motion.p
+                initial={reduce ? false : { opacity: 0, y: 24 }}
+                animate={reduce ? {} : { opacity: 1, y: 0 }}
+                transition={{ duration: 0.9, delay: 0.28 }}
+                className="max-w-2xl text-pretty text-lg leading-8 text-white/72 sm:text-xl"
+              >
+                I&apos;m{" "}
+                <span className="font-semibold text-white">
+                  {siteConfig.name}
+                </span>{" "}
+                — a Senior MERN/PERN engineer and Certified Scrum Master in{" "}
+                {siteConfig.location}. I lead remote teams, stay hands-on across
+                React, Node, PostgreSQL, GraphQL and .NET, and use AI-assisted
+                SDLC with human review.
+              </motion.p>
+
+              <motion.div
+                initial={reduce ? false : { opacity: 0, y: 24 }}
+                animate={reduce ? {} : { opacity: 1, y: 0 }}
+                transition={{ duration: 0.9, delay: 0.34 }}
+                className="flex flex-wrap items-start gap-3"
+              >
+                <Magnetic strength={0.4}>
+                  <Link
+                    href="/#projects"
+                    className="group relative inline-flex min-h-12 items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[var(--primary)] to-[var(--primary-deep)] px-7 text-sm font-semibold text-white shadow-[0_10px_40px_rgba(255,75,92,0.35)] transition hover:shadow-[0_14px_60px_rgba(255,75,92,0.55)]"
+                  >
+                    <span className="relative z-10">See selected work</span>
+                    <span className="relative z-10 transition group-hover:translate-x-1">
+                      →
+                    </span>
+                    <span className="absolute inset-0 -z-0 translate-y-full bg-gradient-to-r from-[var(--primary-deep)] to-[var(--primary)] transition group-hover:translate-y-0" />
+                  </Link>
+                </Magnetic>
+                <Magnetic strength={0.3}>
+                  <CalendlyButton className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-7 text-sm font-semibold text-white backdrop-blur-md transition hover:border-white/30 hover:bg-white/[0.06]">
+                    <SocialIcon name="Calendly" className="size-4 shrink-0" />
+                    Book a call
+                  </CalendlyButton>
+                </Magnetic>
+              </motion.div>
+            </div>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-[0.82fr_1.18fr]">
-            <div className="flex flex-wrap content-start gap-2 rounded-lg border border-white/10 bg-black/35 p-4 backdrop-blur-md">
+          {/* Stats strip */}
+          <motion.div
+            initial={reduce ? false : { opacity: 0, y: 30 }}
+            animate={reduce ? {} : { opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.5 }}
+            className="mt-14 grid gap-4 lg:grid-cols-[1.1fr_0.9fr]"
+          >
+            <div className="grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-3">
+              {heroStats.map((stat, i) => (
+                <motion.div
+                  key={stat.label}
+                  whileHover={{ y: -4 }}
+                  transition={{ type: "spring", stiffness: 320, damping: 22 }}
+                  className="group relative overflow-hidden bg-[#0c0c12]/85 p-6 backdrop-blur-md"
+                >
+                  <div
+                    aria-hidden="true"
+                    className="absolute -right-6 -top-6 h-20 w-20 rounded-full bg-gradient-to-br from-[var(--primary)]/20 to-transparent opacity-0 blur-2xl transition group-hover:opacity-100"
+                  />
+                  <p className="font-mono text-[0.62rem] uppercase tracking-[0.3em] text-white/35">
+                    0{i + 1}
+                  </p>
+                  <p className="mt-3 bg-gradient-to-br from-white via-white to-white/60 bg-clip-text text-4xl font-semibold tracking-tight text-transparent">
+                    {stat.value}
+                  </p>
+                  <p className="mt-3 text-sm leading-6 text-white/55">
+                    {stat.label}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-2 backdrop-blur-md">
+              <div className="grid gap-2 sm:grid-cols-3">
+                {previewProjects.map((project, i) => (
+                  <Link
+                    key={project.slug}
+                    href={project.liveUrl ?? project.repoUrl ?? "/projects"}
+                    target={project.liveUrl || project.repoUrl ? "_blank" : undefined}
+                    rel={project.liveUrl || project.repoUrl ? "noreferrer" : undefined}
+                    className="group relative aspect-[4/5] overflow-hidden rounded-xl border border-white/8"
+                  >
+                    <Image
+                      src={project.image}
+                      alt={project.name}
+                      fill
+                      sizes="(max-width: 768px) 30vw, 200px"
+                      className="object-cover transition duration-700 group-hover:scale-110"
+                      priority={i === 0}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent" />
+                    <div className="absolute inset-x-3 bottom-3">
+                      <p className="font-mono text-[0.55rem] uppercase tracking-[0.24em] text-white/50">
+                        Project · {String(i + 1).padStart(2, "0")}
+                      </p>
+                      <p className="mt-1 text-sm font-semibold text-white">
+                        {project.name}
+                      </p>
+                    </div>
+                    <span
+                      aria-hidden
+                      className="absolute right-3 top-3 grid h-7 w-7 place-items-center rounded-full bg-white/10 text-white/80 backdrop-blur transition group-hover:bg-[var(--primary)] group-hover:text-white"
+                    >
+                      ↗
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Social row */}
+          <motion.div
+            initial={reduce ? false : { opacity: 0 }}
+            animate={reduce ? {} : { opacity: 1 }}
+            transition={{ duration: 0.9, delay: 0.7 }}
+            className="mt-8 flex flex-wrap items-center justify-between gap-4 text-sm text-white/50"
+          >
+            <div className="flex flex-wrap gap-2">
               {socialLinks.map((link) => (
                 <Link
                   key={link.label}
                   href={link.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex min-h-10 items-center gap-2 rounded-full border border-red-500/15 bg-black/30 px-3.5 py-2 text-sm text-white/72 transition hover:border-red-500/45 hover:bg-red-500/10 hover:text-red-200"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.02] px-3.5 py-1.5 transition hover:border-white/30 hover:bg-white/[0.06] hover:text-white"
                 >
-                  <SocialIcon name={link.label} className="size-5 shrink-0" />
+                  <SocialIcon name={link.label} className="size-4 shrink-0" />
                   {link.label}
                 </Link>
               ))}
             </div>
-
-            <div className="overflow-hidden rounded-lg border border-white/10 bg-black/35 p-3 backdrop-blur-md">
-              <div className="flex gap-3">
-                {previewProjects.map((project) => (
-                  <Link
-                    key={project.slug}
-                    href={project.liveUrl ?? project.repoUrl ?? "/projects"}
-                    target={project.liveUrl ?? project.repoUrl ? "_blank" : undefined}
-                    rel={project.liveUrl ?? project.repoUrl ? "noreferrer" : undefined}
-                    className="group relative min-h-28 flex-1 overflow-hidden rounded-md border border-white/10"
-                  >
-                    <Image
-                      src={project.image}
-                      alt={project.name}
-                      fill
-                      sizes="(max-width: 768px) 30vw, 180px"
-                      className="object-cover transition duration-700 group-hover:scale-105"
-                    />
-                    <span className="absolute inset-0 bg-gradient-to-t from-black/84 via-black/20 to-transparent" />
-                    <span className="absolute bottom-3 left-3 right-3 text-xs font-medium uppercase tracking-[0.16em] text-white/86">
-                      {project.name}
-                    </span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
+            <a
+              href="/#about"
+              className="group hidden items-center gap-2 font-mono text-[0.68rem] uppercase tracking-[0.3em] text-white/40 transition hover:text-white sm:inline-flex"
+            >
+              <span className="floaty inline-block">↓</span>
+              Scroll to explore
+            </a>
           </motion.div>
+        </motion.div>
       </Container>
+
+      {/* Tech marquee strip */}
+      <div className="relative border-y border-white/5 bg-black/30 py-5 backdrop-blur-sm">
+        <Marquee>
+          {heroStack.map((tech, i) => (
+            <span
+              key={`${tech}-${i}`}
+              className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.32em] text-white/40"
+            >
+              <span className="text-[var(--primary)]">◇</span>
+              {tech}
+            </span>
+          ))}
+        </Marquee>
+      </div>
     </section>
   );
 }
