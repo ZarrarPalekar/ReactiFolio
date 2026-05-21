@@ -1,153 +1,132 @@
+"use client";
+
 import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
 
 import { skillCategories } from "@/data/portfolio";
-import { Container } from "@/components/ui/container";
+import { Marquee } from "@/components/ui/marquee";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 
-const categoryThemes = [
-  {
-    label: "Product stack",
-    accentText: "text-red-200",
-    border: "border-red-500/24",
-    background: "bg-red-500/10",
-    line: "bg-red-500/70",
-  },
-  {
-    label: "Enterprise systems",
-    accentText: "text-red-300",
-    border: "border-red-800/24",
-    background: "bg-red-950/45",
-    line: "bg-red-700/70",
-  },
-  {
-    label: "Lead and improve",
-    accentText: "text-red-100",
-    border: "border-red-200/24",
-    background: "bg-red-300/10",
-    line: "bg-red-300/70",
-  },
-];
-
-function ExpertiseVisual({ index }: { index: number }) {
-  const theme = categoryThemes[index % categoryThemes.length];
-  const columns =
-    index === 0
-      ? ["React", "API", "DB"]
-      : index === 1
-        ? [".NET", "CRM", "CMS"]
-        : ["Plan", "AI", "Ship"];
-
-  return (
-    <div className="relative h-40 overflow-hidden border-b border-white/10 bg-black/35">
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 opacity-[0.18] [background-image:linear-gradient(rgba(255,255,255,0.35)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.28)_1px,transparent_1px)] [background-size:30px_30px]"
-      />
-      <div className="absolute inset-x-5 top-5 flex items-center gap-2">
-        {columns.map((column, columnIndex) => (
-          <div
-            key={column}
-            className={`relative flex h-24 flex-1 flex-col justify-between rounded-lg border p-3 ${theme.border} ${columnIndex === index % 3 ? theme.background : "bg-white/[0.035]"}`}
-          >
-            <span className="text-[0.58rem] font-semibold uppercase tracking-[0.18em] text-white/46">
-              0{columnIndex + 1}
-            </span>
-            <span className={`text-sm font-semibold ${theme.accentText}`}>
-              {column}
-            </span>
-            {columnIndex < columns.length - 1 ? (
-              <span
-                className={`absolute -right-3 top-1/2 h-px w-6 -translate-y-1/2 ${theme.line}`}
-              />
-            ) : null}
-          </div>
-        ))}
-      </div>
-      <div className="absolute bottom-4 left-5 right-5 flex items-center gap-3">
-        <span className={`h-1.5 flex-1 rounded-full ${theme.line}`} />
-        <span className="text-[0.58rem] font-semibold uppercase tracking-[0.22em] text-white/38">
-          Production ready
-        </span>
-      </div>
-    </div>
-  );
-}
+const labels = ["Product stack", "Enterprise systems", "Lead and improve"];
 
 export function ExpertiseSection() {
+  const prefersReducedMotion = useReducedMotion();
+  const allSkills = skillCategories.flatMap((cat) => cat.skills);
+
   return (
-    <section id="expertise" className="border-b border-white/10 py-18 sm:py-24">
-      <Container>
+    <section
+      id="expertise"
+      className="relative border-t border-white/10 py-32 sm:py-40"
+    >
+      <div className="mx-auto w-full max-w-[1480px] px-5 sm:px-10 lg:px-14">
         <Reveal>
           <SectionHeading
+            index="03"
             eyebrow="Expertise"
-            title="Resume stack, translated into delivery strengths."
-            description="The core is MERN/PERN full-stack work, backed by .NET enterprise experience, Scrum leadership, and practical AI-assisted development habits."
+            title={
+              <>
+                <span className="block">Resume stack,</span>
+                <span className="block text-gradient-red">
+                  delivery strengths.
+                </span>
+              </>
+            }
+            description="The core is MERN/PERN full-stack work, backed by .NET enterprise depth, Scrum leadership, and practical AI-assisted development habits."
           />
         </Reveal>
 
-        <div className="mt-12 grid gap-5 lg:grid-cols-3">
-          {skillCategories.map((category, index) => {
-            const theme = categoryThemes[index % categoryThemes.length];
+        <div className="mt-20 grid gap-6 lg:grid-cols-3">
+          {skillCategories.map((category, index) => (
+            <motion.div
+              key={category.title}
+              initial={prefersReducedMotion ? false : { opacity: 0, y: 40 }}
+              whileInView={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{
+                duration: 0.9,
+                delay: index * 0.1,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              className="group relative flex flex-col overflow-hidden border border-white/10 bg-[#080404]/80"
+            >
+              <div className="flex items-center justify-between border-b border-white/10 px-6 py-5">
+                <span className="mono text-[0.65rem] uppercase tracking-[0.32em] text-[var(--accent-soft)]/85">
+                  {labels[index]}
+                </span>
+                <span className="mono text-[0.65rem] uppercase tracking-[0.32em] text-white/35">
+                  {String(index + 1).padStart(2, "0")} / 03
+                </span>
+              </div>
 
-            return (
-              <Reveal
-                key={category.title}
-                delay={index * 0.08}
-                className="overflow-hidden rounded-lg border border-white/10 bg-white/[0.045]"
-              >
-                <ExpertiseVisual index={index} />
+              <div className="flex flex-1 flex-col gap-6 p-6 sm:p-8">
+                <h3 className="display text-3xl leading-tight text-white">
+                  {category.title}
+                </h3>
+                <p className="text-sm leading-[1.7] text-white/55">
+                  {category.description}
+                </p>
 
-                <div className="p-6">
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <p
-                        className={`text-xs font-semibold uppercase tracking-[0.28em] ${theme.accentText}`}
-                      >
-                        {theme.label}
-                      </p>
-                      <h3 className="mt-3 text-2xl font-semibold leading-tight text-white">
-                        {category.title}
-                      </h3>
-                    </div>
-                    <span className="shrink-0 rounded-full border border-white/10 bg-black/30 px-3 py-1 text-xs uppercase tracking-[0.18em] text-white/48">
-                      {category.skills.length} tools
-                    </span>
-                  </div>
-
-                  <p className="mt-4 text-sm leading-6 text-white/60">
-                    {category.description}
-                  </p>
-
-                  <div className="mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-                    {category.skills.map((skill) => (
+                <div className="mt-auto grid grid-cols-4 gap-px overflow-hidden border border-white/10 bg-white/[0.06]">
+                  {category.skills.slice(0, 8).map((skill) => (
+                    <div
+                      key={skill.name}
+                      className="group/skill relative flex aspect-square items-center justify-center bg-[#080404] transition hover:bg-[var(--accent)]/15"
+                    >
                       <div
-                        key={skill.name}
-                        className="flex min-w-0 items-center gap-3 border border-white/8 bg-black/30 px-3 py-3"
+                        className={`relative h-8 w-8 transition group-hover/skill:scale-110 ${skill.iconWrapperClassName ?? ""}`}
                       >
-                        <div
-                          className={`relative h-8 w-8 shrink-0 ${skill.iconWrapperClassName ?? ""}`.trim()}
-                        >
-                          <Image
-                            src={skill.icon}
-                            alt={skill.name}
-                            fill
-                            sizes="40px"
-                            className={`object-contain ${skill.iconClassName ?? ""}`.trim()}
-                          />
-                        </div>
-                        <span className="min-w-0 break-words text-sm leading-5 text-white/76">
-                          {skill.name}
-                        </span>
+                        <Image
+                          src={skill.icon}
+                          alt={skill.name}
+                          fill
+                          sizes="40px"
+                          className={`object-contain ${skill.iconClassName ?? ""}`}
+                        />
                       </div>
-                    ))}
-                  </div>
+                      <span className="pointer-events-none absolute inset-x-0 bottom-1 text-center text-[0.55rem] uppercase tracking-[0.18em] text-white/0 transition group-hover/skill:text-white/70">
+                        {skill.name}
+                      </span>
+                    </div>
+                  ))}
                 </div>
-              </Reveal>
-            );
-          })}
+              </div>
+
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[var(--accent)]/60 to-transparent opacity-0 transition group-hover:opacity-100"
+              />
+            </motion.div>
+          ))}
         </div>
-      </Container>
+
+        {/* skills marquee */}
+        <div className="mt-16 -mx-5 border-y border-white/10 bg-black/40 backdrop-blur sm:-mx-10 lg:-mx-14">
+          <Marquee duration={56}>
+            {allSkills.map((skill, index) => (
+              <span
+                key={`${skill.name}-${index}`}
+                className="flex items-center gap-4 px-6 py-5"
+              >
+                <span
+                  className={`relative inline-block h-6 w-6 ${skill.iconWrapperClassName ?? ""}`}
+                >
+                  <Image
+                    src={skill.icon}
+                    alt=""
+                    fill
+                    sizes="24px"
+                    className={`object-contain ${skill.iconClassName ?? ""}`}
+                  />
+                </span>
+                <span className="mono text-xs uppercase tracking-[0.32em] text-white/50">
+                  {skill.name}
+                </span>
+              </span>
+            ))}
+          </Marquee>
+        </div>
+      </div>
     </section>
   );
 }

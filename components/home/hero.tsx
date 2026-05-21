@@ -1,190 +1,213 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import {
   motion,
+  useMotionTemplate,
+  useMotionValue,
   useReducedMotion,
   useScroll,
+  useSpring,
   useTransform,
 } from "framer-motion";
+import { useEffect } from "react";
 
-import { heroStats, projects, siteConfig, socialLinks } from "@/data/portfolio";
+import { siteConfig } from "@/data/portfolio";
 import { CalendlyButton } from "@/components/ui/calendly-button";
-import { Container } from "@/components/ui/container";
-import { SocialIcon } from "@/components/ui/social-icon";
+import { Magnetic } from "@/components/ui/magnetic";
+import { Marquee } from "@/components/ui/marquee";
 
-const heroStack = [
+const marqueeStack = [
   "React",
   "Node.js",
   "PostgreSQL",
   "TypeScript",
+  "Next.js",
+  "GraphQL",
+  "MongoDB",
   ".NET",
+  "Express",
+  "Apollo",
   "AI-assisted SDLC",
+  "Scrum",
 ];
-const previewProjects = projects.filter((project) => project.featured).slice(0, 3);
 
 export function Hero() {
   const prefersReducedMotion = useReducedMotion();
   const { scrollYProgress } = useScroll();
-  const scanOpacity = useTransform(
-    scrollYProgress,
-    [0, 0.35],
-    prefersReducedMotion ? [0.18, 0.18] : [0.26, 0.08],
-  );
+
+  const titleY = useTransform(scrollYProgress, [0, 0.2], ["0%", "-30%"]);
+  const titleOpacity = useTransform(scrollYProgress, [0, 0.18], [1, 0.4]);
+
+  const mouseX = useMotionValue(50);
+  const mouseY = useMotionValue(40);
+  const glowX = useSpring(mouseX, { stiffness: 60, damping: 18 });
+  const glowY = useSpring(mouseY, { stiffness: 60, damping: 18 });
+  const glowBg = useMotionTemplate`radial-gradient(circle at ${glowX}% ${glowY}%, rgba(255,58,69,0.30), transparent 55%)`;
+
+  useEffect(() => {
+    if (prefersReducedMotion) return;
+    const onMove = (event: PointerEvent) => {
+      mouseX.set((event.clientX / window.innerWidth) * 100);
+      mouseY.set((event.clientY / window.innerHeight) * 100);
+    };
+    window.addEventListener("pointermove", onMove, { passive: true });
+    return () => window.removeEventListener("pointermove", onMove);
+  }, [mouseX, mouseY, prefersReducedMotion]);
 
   return (
-    <section className="relative isolate overflow-hidden border-b border-white/10 bg-[#050202]">
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-[radial-gradient(circle_at_78%_28%,rgba(239,68,68,0.14),transparent_30%),radial-gradient(circle_at_88%_72%,rgba(185,28,28,0.08),transparent_28%),linear-gradient(90deg,#050202_0%,rgba(5,2,2,0.96)_48%,rgba(5,2,2,0.86)_100%)]"
-      />
+    <section className="relative isolate min-h-[100svh] overflow-hidden">
+      {/* mouse-follow glow */}
       <motion.div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:70px_70px]"
-        style={{ opacity: scanOpacity }}
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10"
+        style={prefersReducedMotion ? undefined : { background: glowBg }}
       />
+      {/* corner brackets */}
       <div
-        aria-hidden="true"
-        className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-red-500/50 to-transparent sm:left-8 lg:left-12"
-      />
+        aria-hidden
+        className="pointer-events-none absolute inset-x-5 top-24 flex justify-between text-white/30 sm:inset-x-10 lg:inset-x-14"
+      >
+        <span className="mono text-[0.7rem] uppercase tracking-[0.4em]">
+          [ 01 / Index ]
+        </span>
+        <span className="mono hidden text-[0.7rem] uppercase tracking-[0.4em] sm:inline">
+          {siteConfig.location} \\ Available for work
+        </span>
+      </div>
 
-      <Container className="relative flex min-h-[calc(92svh-5rem)] flex-col justify-between py-14 sm:py-16 lg:py-18">
-        <div className="max-w-5xl pt-5 lg:pt-12">
-          <motion.p
-            initial={prefersReducedMotion ? false : { opacity: 0, y: 24 }}
+      <div className="relative mx-auto flex min-h-[100svh] w-full max-w-[1480px] flex-col justify-end px-5 pb-28 pt-40 sm:px-10 sm:pt-44 lg:px-14 lg:pb-36">
+        {/* status pill */}
+        <motion.div
+          initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
+          animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="mb-10 inline-flex w-fit items-center gap-3 rounded-full border border-white/15 bg-white/[0.04] px-4 py-2 backdrop-blur"
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inset-0 animate-ping rounded-full bg-emerald-400/70" />
+            <span className="relative h-2 w-2 rounded-full bg-emerald-400" />
+          </span>
+          <span className="mono text-[0.7rem] uppercase tracking-[0.32em] text-white/70">
+            Senior MERN / PERN / Team Lead / CSM
+          </span>
+        </motion.div>
+
+        <motion.h1
+          style={
+            prefersReducedMotion
+              ? undefined
+              : { y: titleY, opacity: titleOpacity }
+          }
+          className="display text-[clamp(3.5rem,12vw,12rem)] text-white"
+        >
+          <motion.span
+            className="block"
+            initial={prefersReducedMotion ? false : { opacity: 0, y: 60 }}
             animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-xs font-semibold uppercase tracking-[0.38em] text-red-200/85"
+            transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
           >
-            Senior MERN/PERN engineer / Team Lead / CSM
+            Zarrar
+          </motion.span>
+          <motion.span
+            className="block text-gradient-red"
+            initial={prefersReducedMotion ? false : { opacity: 0, y: 60 }}
+            animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
+            transition={{ duration: 1.1, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
+          >
+            Palekar<span className="text-[var(--accent)]">.</span>
+          </motion.span>
+        </motion.h1>
+
+        <div className="mt-12 grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-end">
+          <motion.p
+            initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
+            animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.34 }}
+            className="max-w-2xl text-lg leading-[1.6] text-white/65 sm:text-xl"
+          >
+            Senior full-stack engineer building production-grade web software in{" "}
+            <span className="text-white">React, Node.js, PostgreSQL</span>, and{" "}
+            <span className="text-white">.NET</span>. I lead remote product
+            teams, stay close to the code, and ship with AI-assisted,
+            human-reviewed discipline.
           </motion.p>
 
-          <motion.h1
-            initial={prefersReducedMotion ? false : { opacity: 0, y: 34 }}
-            animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.08 }}
-            className="mt-5 max-w-[12ch] text-6xl font-semibold leading-[0.92] text-white sm:text-8xl lg:text-[7.4rem] xl:text-[8.6rem]"
-          >
-            {siteConfig.name}
-          </motion.h1>
-
           <motion.div
-            initial={prefersReducedMotion ? false : { opacity: 0, y: 24 }}
+            initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
             animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.14 }}
-            className="mt-6 flex max-w-3xl flex-wrap gap-2"
+            transition={{ duration: 0.9, delay: 0.42 }}
+            className="flex flex-col items-start gap-4 sm:flex-row lg:justify-end"
           >
-            {heroStack.map((item, index) => (
-              <span
-                key={item}
-                className={`rounded-full border px-3.5 py-2 text-xs font-medium uppercase tracking-[0.18em] ${
-                  index % 3 === 0
-                    ? "border-red-300/24 bg-red-300/10 text-red-100"
-                    : index % 3 === 1
-                      ? "border-red-500/24 bg-red-500/10 text-red-200"
-                      : "border-red-800/24 bg-red-950/45 text-red-300"
-                }`}
+            <Magnetic strength={0.35}>
+              <Link
+                href="/#projects"
+                className="group relative inline-flex h-14 items-center justify-center overflow-hidden rounded-full bg-[var(--accent)] px-7 text-sm font-semibold uppercase tracking-[0.22em] text-white shadow-[0_24px_60px_-20px_rgba(255,58,69,0.7)] transition hover:bg-[#ff525d]"
               >
-                {item}
-              </span>
-            ))}
-          </motion.div>
-
-          <motion.p
-            initial={prefersReducedMotion ? false : { opacity: 0, y: 30 }}
-            animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.2 }}
-            className="mt-7 max-w-3xl text-lg leading-8 text-white/72 sm:text-xl"
-          >
-            {siteConfig.title} in {siteConfig.location}, with 9+ years across
-            SaaS, CRM, CMS, and enterprise systems. I lead remote teams, stay
-            hands-on with React, Node.js, PostgreSQL, GraphQL, and .NET, and use
-            AI-assisted SDLC tools with human review.
-          </motion.p>
-
-          <motion.div
-            initial={prefersReducedMotion ? false : { opacity: 0, y: 28 }}
-            animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.28 }}
-            className="mt-9 flex flex-col gap-3 sm:flex-row"
-          >
-            <Link
-              href="/#projects"
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-red-600 px-7 text-sm font-semibold text-white shadow-[0_0_28px_rgba(239,68,68,0.18)] transition hover:bg-red-500 hover:text-white"
-            >
-              Explore selected work
-            </Link>
-            <CalendlyButton className="inline-flex min-h-12 items-center justify-center rounded-full border border-red-500/22 bg-black/45 px-7 text-sm font-semibold text-red-200 backdrop-blur transition hover:border-red-500/55 hover:bg-red-500/10">
-              Book a strategy call
-            </CalendlyButton>
+                <span className="relative z-10">Selected work →</span>
+                <span className="absolute inset-0 -z-0 translate-y-full bg-white/15 transition group-hover:translate-y-0" />
+              </Link>
+            </Magnetic>
+            <Magnetic strength={0.35}>
+              <CalendlyButton className="inline-flex h-14 items-center justify-center rounded-full border border-white/20 bg-white/[0.03] px-7 text-sm font-semibold uppercase tracking-[0.22em] text-white/85 backdrop-blur transition hover:border-white/50 hover:bg-white/[0.07]">
+                Book a call
+              </CalendlyButton>
+            </Magnetic>
           </motion.div>
         </div>
 
+        {/* meta row */}
         <motion.div
-          initial={prefersReducedMotion ? false : { opacity: 0, y: 34 }}
+          initial={prefersReducedMotion ? false : { opacity: 0, y: 16 }}
           animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.36 }}
-          className="mt-12 grid gap-4 lg:grid-cols-[1fr_1.1fr]"
+          transition={{ duration: 0.9, delay: 0.55 }}
+          className="mt-16 grid gap-6 border-t border-white/10 pt-6 text-white/55 md:grid-cols-4"
         >
-          <div className="grid gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 sm:grid-cols-3">
-            {heroStats.map((stat) => (
-              <div
-                key={stat.label}
-                className="bg-[#100506]/86 p-5 backdrop-blur-md transition hover:bg-red-500/10"
-              >
-                <p className="text-3xl font-semibold text-white">{stat.value}</p>
-                <p className="mt-2 text-sm leading-6 text-white/60">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-[0.82fr_1.18fr]">
-            <div className="flex flex-wrap content-start gap-2 rounded-lg border border-white/10 bg-black/35 p-4 backdrop-blur-md">
-              {socialLinks.map((link) => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex min-h-10 items-center gap-2 rounded-full border border-red-500/15 bg-black/30 px-3.5 py-2 text-sm text-white/72 transition hover:border-red-500/45 hover:bg-red-500/10 hover:text-red-200"
-                >
-                  <SocialIcon name={link.label} className="size-5 shrink-0" />
-                  {link.label}
-                </Link>
-              ))}
+          {[
+            ["Role", "Senior SWE · Team Lead"],
+            ["Years", "9+ across MERN / PERN / .NET"],
+            ["Team", "Leading 9 developers + 3 QA"],
+            ["Cert", "Certified Scrum Master"],
+          ].map(([label, value]) => (
+            <div key={label} className="flex flex-col gap-1.5">
+              <span className="mono text-[0.65rem] uppercase tracking-[0.32em] text-white/35">
+                {label}
+              </span>
+              <span className="text-sm text-white/85">{value}</span>
             </div>
+          ))}
+        </motion.div>
+      </div>
 
-            <div className="overflow-hidden rounded-lg border border-white/10 bg-black/35 p-3 backdrop-blur-md">
-              <div className="flex gap-3">
-                {previewProjects.map((project) => (
-                  <Link
-                    key={project.slug}
-                    href={project.liveUrl ?? project.repoUrl ?? "/projects"}
-                    target={project.liveUrl ?? project.repoUrl ? "_blank" : undefined}
-                    rel={project.liveUrl ?? project.repoUrl ? "noreferrer" : undefined}
-                    className="group relative min-h-28 flex-1 overflow-hidden rounded-md border border-white/10"
-                  >
-                    <Image
-                      src={project.image}
-                      alt={project.name}
-                      fill
-                      sizes="(max-width: 768px) 30vw, 180px"
-                      className="object-cover transition duration-700 group-hover:scale-105"
-                    />
-                    <span className="absolute inset-0 bg-gradient-to-t from-black/84 via-black/20 to-transparent" />
-                    <span className="absolute bottom-3 left-3 right-3 text-xs font-medium uppercase tracking-[0.16em] text-white/86">
-                      {project.name}
-                    </span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-          </motion.div>
-      </Container>
+      {/* scroll indicator */}
+      <div className="absolute bottom-24 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 text-white/35 lg:flex">
+        <span className="mono text-[0.65rem] uppercase tracking-[0.4em]">
+          Scroll
+        </span>
+        <span className="relative block h-10 w-px overflow-hidden bg-white/15">
+          <motion.span
+            className="absolute inset-x-0 top-0 block h-3 bg-[var(--accent)]"
+            initial={{ y: "-100%" }}
+            animate={prefersReducedMotion ? {} : { y: "300%" }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+          />
+        </span>
+      </div>
+
+      {/* bottom marquee */}
+      <div className="absolute inset-x-0 bottom-0 border-y border-white/10 bg-black/40 backdrop-blur-md">
+        <Marquee duration={48}>
+          {marqueeStack.map((item, index) => (
+            <span
+              key={`${item}-${index}`}
+              className="mono flex items-center gap-6 px-6 py-4 text-sm uppercase tracking-[0.32em] text-white/55"
+            >
+              {item}
+              <span className="text-[var(--accent)]">●</span>
+            </span>
+          ))}
+        </Marquee>
+      </div>
     </section>
   );
 }

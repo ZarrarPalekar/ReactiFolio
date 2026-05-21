@@ -5,6 +5,8 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { WhatsAppFab } from "@/components/layout/whatsapp-fab";
 import { CalendlyProvider } from "@/components/ui/calendly-provider";
+import { Cursor } from "@/components/ui/cursor";
+import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { siteConfig } from "@/data/portfolio";
 
 import "./globals.css";
@@ -197,17 +199,11 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         <CalendlyProvider>
-          <div className="relative min-h-screen overflow-x-hidden bg-[#050202]">
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,_rgba(239,68,68,0.09),_transparent_30%),linear-gradient(245deg,_rgba(255,67,87,0.1),_transparent_35%),linear-gradient(to_bottom,_rgba(255,255,255,0.035),_transparent_24%)]"
-            />
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-x-0 top-20 h-px bg-gradient-to-r from-transparent via-red-500/40 to-transparent"
-            />
+          <ScrollProgress />
+          <Cursor />
+          <div className="relative min-h-screen">
             <SiteHeader />
-            <main className="relative pt-20">{children}</main>
+            <main className="relative">{children}</main>
             <SiteFooter />
             <WhatsAppFab />
           </div>

@@ -46,7 +46,7 @@ export const navigation: NavigationItem[] = [
 export const heroStats: HeroStat[] = [
   { value: "9+", label: "Years across MERN, PERN, .NET, CRM, CMS, and SaaS" },
   {
-    value: "9+3",
+    value: "9 developers + 3 QA",
     label: "Developers and QA engineers led in a remote product team",
   },
   {

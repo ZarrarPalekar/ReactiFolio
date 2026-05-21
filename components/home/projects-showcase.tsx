@@ -2,148 +2,176 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 import { projects } from "@/data/portfolio";
-import { Container } from "@/components/ui/container";
+import { Magnetic } from "@/components/ui/magnetic";
+import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 
 const featuredProjects = projects.filter((project) => project.featured);
-const accents = [
-  "border-red-500/26 bg-red-500/10 text-red-200",
-  "border-red-800/26 bg-red-950/45 text-red-300",
-  "border-red-200/26 bg-red-300/10 text-red-100",
-];
-const projectHighlights = [
-  { label: "Frontend", value: "React UI" },
-  { label: "Backend", value: "APIs + data" },
-  { label: "Delivery", value: "Responsive UX" },
-];
 
-export default function ProjectsShowcase() {
+function ProjectCard({
+  project,
+  index,
+  total,
+}: {
+  project: (typeof projects)[number];
+  index: number;
+  total: number;
+}) {
   const prefersReducedMotion = useReducedMotion();
+  const ref = useRef<HTMLDivElement | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const imageY = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
+  const scale = useTransform(
+    scrollYProgress,
+    [0, 0.5, 1],
+    [0.96, 1, 0.96],
+  );
 
   return (
-    <section id="projects" className="border-b border-white/10 py-18 sm:py-24">
-      <Container>
-        <div className="grid gap-8 lg:grid-cols-[0.82fr_0.18fr] lg:items-end">
-          <SectionHeading
-            eyebrow="Projects"
-            title="Selected builds from the full-stack foundation."
-            description="Earlier MERN and frontend projects that show the hands-on base behind the current SaaS, CRM, CMS, and enterprise work."
+    <motion.article
+      ref={ref}
+      style={prefersReducedMotion ? undefined : { scale }}
+      className="sticky top-28 grid overflow-hidden border border-white/10 bg-[#080404]/95 backdrop-blur lg:grid-cols-[1.1fr_0.9fr]"
+    >
+      <div
+        className={`relative aspect-video overflow-hidden lg:aspect-auto lg:min-h-[34rem] ${
+          index % 2 === 1 ? "lg:order-2" : ""
+        }`}
+      >
+        <motion.div
+          style={prefersReducedMotion ? undefined : { y: imageY, scale: 1.15 }}
+          className="absolute inset-0"
+        >
+          <Image
+            src={project.image}
+            alt={project.name}
+            fill
+            sizes="(max-width: 1024px) 100vw, 60vw"
+            priority={index === 0}
+            className="object-cover"
           />
-          <Link
-            href="/projects"
-            className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/12 px-6 text-sm font-semibold text-white transition hover:border-red-500/50 hover:text-red-200 lg:justify-self-end"
-          >
-            Full archive
-          </Link>
+        </motion.div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+        <div className="absolute left-6 top-6 flex items-center gap-2">
+          <span className="mono inline-flex items-center rounded-full border border-white/20 bg-black/50 px-3 py-1 text-[0.65rem] uppercase tracking-[0.28em] text-white/75 backdrop-blur">
+            {project.date}
+          </span>
+        </div>
+        <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between text-white/55">
+          <span className="mono text-[0.65rem] uppercase tracking-[0.32em]">
+            Build / {String(index + 1).padStart(2, "0")}
+          </span>
+          <span className="mono text-[0.65rem] uppercase tracking-[0.32em]">
+            {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
+          </span>
+        </div>
+      </div>
+
+      <div className="flex flex-col justify-between gap-10 p-8 sm:p-12 lg:p-14">
+        <div>
+          <span className="mono text-[0.65rem] uppercase tracking-[0.32em] text-[var(--accent-soft)]/85">
+            Featured work
+          </span>
+          <h3 className="display mt-5 text-4xl text-white sm:text-5xl">
+            {project.name}
+          </h3>
+          <p className="mt-6 text-base leading-[1.7] text-white/60 sm:text-lg">
+            {project.description}
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-2">
+            {project.stack.map((item) => (
+              <span
+                key={item}
+                className="mono inline-flex items-center border border-white/15 bg-white/[0.03] px-3 py-1.5 text-[0.65rem] uppercase tracking-[0.22em] text-white/65"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
 
-        <div className="mt-12 grid gap-5">
-          {featuredProjects.map((project, index) => (
-            <motion.article
-              key={project.slug}
-              initial={prefersReducedMotion ? false : { opacity: 0, y: 40 }}
-              whileInView={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.22 }}
-              transition={{ duration: 0.8, delay: index * 0.08 }}
-              className="group overflow-hidden rounded-lg border border-white/10 bg-white/[0.045]"
+        <div className="flex flex-wrap gap-3 border-t border-white/10 pt-8">
+          {project.liveUrl ? (
+            <Magnetic strength={0.25}>
+              <Link
+                href={project.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex h-12 items-center justify-center rounded-full bg-white px-6 text-sm font-semibold uppercase tracking-[0.2em] text-black transition hover:bg-white/85"
+              >
+                Live ↗
+              </Link>
+            </Magnetic>
+          ) : null}
+          {project.repoUrl ? (
+            <Magnetic strength={0.25}>
+              <Link
+                href={project.repoUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex h-12 items-center justify-center rounded-full border border-white/20 px-6 text-sm font-semibold uppercase tracking-[0.2em] text-white/85 transition hover:border-white/50"
+              >
+                Source ↗
+              </Link>
+            </Magnetic>
+          ) : null}
+        </div>
+      </div>
+    </motion.article>
+  );
+}
+
+export default function ProjectsShowcase() {
+  return (
+    <section
+      id="projects"
+      className="relative border-t border-white/10 py-32 sm:py-40"
+    >
+      <div className="mx-auto w-full max-w-[1480px] px-5 sm:px-10 lg:px-14">
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+          <Reveal className="flex-1">
+            <SectionHeading
+              index="06"
+              eyebrow="Projects"
+              title={
+                <>
+                  <span className="block">Selected</span>
+                  <span className="block text-gradient-red">builds.</span>
+                </>
+              }
+              description="Earlier MERN and frontend projects that show the hands-on foundation behind the current SaaS, CRM, CMS, and enterprise work."
+            />
+          </Reveal>
+          <Reveal delay={0.1}>
+            <Link
+              href="/projects"
+              className="group inline-flex h-12 items-center gap-3 rounded-full border border-white/20 px-6 text-sm font-semibold uppercase tracking-[0.2em] text-white/85 transition hover:border-white/50"
             >
-              <div className="grid lg:grid-cols-[1.04fr_0.96fr]">
-                <div
-                  className={`relative min-h-[20rem] overflow-hidden ${
-                    index % 2 === 1 ? "lg:order-2" : ""
-                  }`}
-                >
-                  <Image
-                    src={project.image}
-                    alt={project.name}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 52vw"
-                    priority={index === 0}
-                    className="object-cover transition duration-700 group-hover:scale-[1.035]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/86 via-black/16 to-transparent" />
-                  <div className="absolute left-5 top-5 flex flex-wrap gap-2">
-                    <span
-                      className={`rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] ${accents[index % accents.length]}`}
-                    >
-                      Featured
-                    </span>
-                    <span className="rounded-full border border-white/12 bg-black/45 px-3 py-1.5 text-xs uppercase tracking-[0.18em] text-white/70 backdrop-blur">
-                      {project.date}
-                    </span>
-                  </div>
-                </div>
+              <span>Full archive</span>
+              <span className="transition group-hover:translate-x-1">→</span>
+            </Link>
+          </Reveal>
+        </div>
 
-                <div className="flex flex-col justify-between p-6 sm:p-8 lg:p-10">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.32em] text-white/38">
-                      Build 0{index + 1}
-                    </p>
-                    <h3 className="mt-4 text-4xl font-semibold leading-tight text-white">
-                      {project.name}
-                    </h3>
-                    <p className="mt-4 text-lg leading-8 text-white/68">
-                      {project.summary}
-                    </p>
-
-                    <div className="mt-7 grid gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 sm:grid-cols-3">
-                      {projectHighlights.map((item) => (
-                        <div key={item.value} className="bg-black/[0.34] p-4">
-                          <p className="text-xs uppercase tracking-[0.2em] text-white/38">
-                            {item.label}
-                          </p>
-                          <p className="mt-2 text-sm font-semibold text-white/78">
-                            {item.value}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="mt-8">
-                    <div className="flex flex-wrap gap-2">
-                      {project.stack.map((item) => (
-                        <span
-                          key={item}
-                          className="rounded-full border border-white/10 bg-black/[0.24] px-3 py-1.5 text-xs uppercase tracking-[0.16em] text-white/62"
-                        >
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-
-                    <div className="mt-7 flex flex-wrap gap-3">
-                      {project.liveUrl ? (
-                        <Link
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="inline-flex min-h-11 items-center justify-center rounded-full bg-red-600 px-5 text-sm font-semibold text-white shadow-[0_0_24px_rgba(239,68,68,0.14)] transition hover:bg-red-500 hover:text-white"
-                        >
-                          Visit live project
-                        </Link>
-                      ) : null}
-                      {project.repoUrl ? (
-                        <Link
-                          href={project.repoUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/12 px-5 text-sm font-semibold text-white transition hover:border-red-500/50 hover:text-red-200"
-                        >
-                          View repository
-                        </Link>
-                      ) : null}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.article>
+        <div className="mt-20 flex flex-col gap-6">
+          {featuredProjects.map((project, index) => (
+            <ProjectCard
+              key={project.slug}
+              project={project}
+              index={index}
+              total={featuredProjects.length}
+            />
           ))}
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

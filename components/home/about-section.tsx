@@ -1,143 +1,176 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+import { useRef } from "react";
 
 import { siteConfig } from "@/data/portfolio";
 import { getExperienceYears } from "@/lib/date";
-import { Container } from "@/components/ui/container";
-import { Reveal } from "@/components/ui/reveal";
+import { Reveal, WordsReveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 
+const principles = [
+  {
+    n: "01",
+    label: "Lead",
+    body: "Translate requirements into user stories, estimates, and a delivery plan the team can trust.",
+  },
+  {
+    n: "02",
+    label: "Build",
+    body: "React, Node, PostgreSQL, MongoDB, and .NET treated as one product surface, not silos.",
+  },
+  {
+    n: "03",
+    label: "Ship",
+    body: "AI-assisted, human-reviewed work — security-aware, pragmatic, and production-ready.",
+  },
+];
+
 export function AboutSection() {
-  const experienceYears = getExperienceYears("2017-03-01");
-  const operatingPrinciples = [
-    "Business requirements become user stories, estimates, and delivery plans.",
-    "React, Node.js, PostgreSQL, MongoDB, and .NET are handled as one product surface.",
-    "AI-assisted work stays human-reviewed, security-aware, and practical.",
-  ];
+  const years = getExperienceYears("2017-03-01");
+  const prefersReducedMotion = useReducedMotion();
+  const ref = useRef<HTMLDivElement | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const imgY = useTransform(scrollYProgress, [0, 1], ["-10%", "12%"]);
+  const imgScale = useTransform(scrollYProgress, [0, 1], [1.1, 1]);
 
   return (
     <section
       id="about"
-      className="border-b border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.025),transparent)] py-18 sm:py-24"
+      ref={ref}
+      className="relative border-t border-white/10 py-32 sm:py-40"
     >
-      <Container>
+      <div className="mx-auto w-full max-w-[1480px] px-5 sm:px-10 lg:px-14">
         <Reveal>
           <SectionHeading
+            index="02"
             eyebrow="About"
-            title="Hands-on engineering with team-lead ownership."
-            description="I work across architecture, API design, code reviews, sprint planning, client communication, and release execution so product work keeps moving clearly."
+            title={
+              <>
+                <WordsReveal text="Senior engineer." className="block" />
+                <WordsReveal
+                  text="Hands-on lead."
+                  className="block text-gradient-red"
+                  delay={0.15}
+                />
+              </>
+            }
+            description="I work across architecture, API design, code review, sprint planning, and client communication — so product work keeps moving without losing engineering quality."
           />
         </Reveal>
 
-        <div className="mt-12 grid gap-5 lg:grid-cols-[0.88fr_1.12fr]">
-          <Reveal className="relative min-h-[34rem] overflow-hidden rounded-lg border border-white/10 bg-black/30">
-            <Image
-              src="/images/profile/pro-pic-1.webp"
-              alt={siteConfig.name}
-              fill
-              sizes="(max-width: 1024px) 100vw, 44vw"
-              className="object-cover object-[22%_top]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/18 to-transparent" />
-            <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
-              <p className="text-xs font-semibold uppercase tracking-[0.32em] text-red-200/85">
-                {siteConfig.location}
-              </p>
-              <h3 className="mt-3 text-4xl font-semibold leading-tight text-white sm:text-5xl">
-                {experienceYears} years of product delivery.
-              </h3>
-              <p className="mt-4 max-w-md text-base leading-7 text-white/68">
-                From requirement calls to production releases, I stay close to
-                the code, the team, and the decisions that shape the outcome.
-              </p>
+        <div className="mt-24 grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
+          <Reveal className="relative">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-white/10">
+              <motion.div
+                style={
+                  prefersReducedMotion
+                    ? undefined
+                    : { y: imgY, scale: imgScale }
+                }
+                className="absolute inset-0"
+              >
+                <Image
+                  src="/images/profile/pro-pic-1.webp"
+                  alt={siteConfig.name}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 44vw"
+                  className="object-cover object-[22%_top]"
+                  priority
+                />
+              </motion.div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-white/5" />
+
+              <div className="absolute inset-x-6 bottom-6 flex items-end justify-between text-white">
+                <div>
+                  <p className="mono text-[0.65rem] uppercase tracking-[0.32em] text-white/55">
+                    {siteConfig.location} \\ Remote
+                  </p>
+                  <p className="display mt-3 text-3xl">{siteConfig.name}</p>
+                </div>
+                <span className="mono text-[0.65rem] uppercase tracking-[0.32em] text-white/45">
+                  PORTRAIT / 01
+                </span>
+              </div>
+            </div>
+
+            <div className="mt-6 grid grid-cols-2 gap-px overflow-hidden border border-white/10 bg-white/[0.06]">
+              <div className="bg-[#080404] p-6">
+                <p className="mono text-[0.65rem] uppercase tracking-[0.32em] text-white/45">
+                  Years
+                </p>
+                <p className="display mt-3 text-5xl text-white tabular">
+                  {years}
+                </p>
+              </div>
+              <div className="bg-[#080404] p-6">
+                <p className="mono text-[0.65rem] uppercase tracking-[0.32em] text-white/45">
+                  Team Size
+                </p>
+                <p className="display mt-3 text-5xl text-white tabular">
+                  9 devs<span className="text-[var(--accent)]"> + </span>3 QA
+                </p>
+              </div>
             </div>
           </Reveal>
 
-          <div className="grid gap-5">
-            <Reveal
-              delay={0.06}
-              className="rounded-lg border border-white/10 bg-white/[0.045] p-6 sm:p-8"
-            >
-              <p className="text-xs font-semibold uppercase tracking-[0.32em] text-red-100/80">
-                Operating mode
+          <div className="flex flex-col gap-10 lg:pt-12">
+            <Reveal delay={0.1}>
+              <p className="display text-3xl leading-[1.15] text-white sm:text-4xl lg:text-5xl">
+                I build like the senior engineer in the codebase and communicate
+                like the Scrum Master responsible for delivery.
               </p>
-              <p className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-white sm:text-4xl">
-                I build like the senior engineer in the codebase and
-                communicate like the Scrum Master responsible for delivery.
-              </p>
-              <p className="mt-5 max-w-3xl text-base leading-8 text-white/64">
-                My resume thread is consistent: MERN/PERN product work, .NET
+            </Reveal>
+
+            <Reveal delay={0.2}>
+              <p className="text-base leading-[1.8] text-white/55 sm:text-lg">
+                The resume thread is consistent — MERN/PERN product work, .NET
                 CRM/CMS depth, remote team leadership, direct stakeholder
                 alignment, and AI-assisted development used with engineering
                 judgment instead of blind automation.
               </p>
             </Reveal>
 
-            <div className="grid gap-5 md:grid-cols-3">
-              {operatingPrinciples.map((item, index) => (
+            <div className="grid gap-px overflow-hidden border border-white/10 bg-white/[0.06] md:grid-cols-3">
+              {principles.map((item, index) => (
                 <Reveal
-                  key={item}
-                  delay={0.1 + index * 0.05}
-                  className="rounded-lg border border-white/10 bg-black/35 p-5"
+                  key={item.n}
+                  delay={0.1 + index * 0.06}
+                  className="bg-[#080404] p-6"
                 >
-                  <p
-                    className={`text-xs font-semibold uppercase tracking-[0.28em] ${
-                      index === 0
-                        ? "text-red-200/80"
-                        : index === 1
-                          ? "text-red-300/75"
-                          : "text-red-100/76"
-                    }`}
-                  >
-                    0{index + 1}
+                  <div className="flex items-baseline justify-between">
+                    <span className="mono text-[0.65rem] uppercase tracking-[0.32em] text-[var(--accent-soft)]/80">
+                      {item.n}
+                    </span>
+                    <span className="mono text-[0.65rem] uppercase tracking-[0.32em] text-white/30">
+                      /03
+                    </span>
+                  </div>
+                  <p className="display mt-6 text-2xl text-white">
+                    {item.label}
                   </p>
-                  <p className="mt-5 text-base leading-7 text-white/70">
-                    {item}
+                  <p className="mt-3 text-sm leading-[1.65] text-white/55">
+                    {item.body}
                   </p>
                 </Reveal>
               ))}
             </div>
 
-            <Reveal delay={0.18} className="grid gap-5 md:grid-cols-3">
-              <div className="rounded-lg border border-white/10 bg-red-500/10 p-5">
-                <p className="text-xs uppercase tracking-[0.28em] text-red-200/72">
-                  Focus
-                </p>
-                <p className="mt-3 text-xl font-semibold text-white">
-                  MERN/PERN Delivery
-                </p>
-                <p className="mt-2 text-sm leading-6 text-white/58">
-                  React UI, Node APIs, PostgreSQL, MongoDB, and release ownership.
-                </p>
-              </div>
-              <div className="rounded-lg border border-white/10 bg-red-950/45 p-5">
-                <p className="text-xs uppercase tracking-[0.28em] text-red-300/72">
-                  Strength
-                </p>
-                <p className="mt-3 text-xl font-semibold text-white">
-                  Remote Team Leadership
-                </p>
-                <p className="mt-2 text-sm leading-6 text-white/58">
-                  Sprint planning, backlog refinement, QA coordination, and reviews.
-                </p>
-              </div>
-              <div className="rounded-lg border border-white/10 bg-red-300/10 p-5">
-                <p className="text-xs uppercase tracking-[0.28em] text-red-100/64">
-                  Style
-                </p>
-                <p className="mt-3 text-xl font-semibold text-white">
-                  AI-Assisted SDLC
-                </p>
-                <p className="mt-2 text-sm leading-6 text-white/58">
-                  Codebase analysis, debugging, docs, and test ideation with review.
-                </p>
-              </div>
-            </Reveal>
-
-            <Reveal delay={0.24} className="flex flex-wrap gap-3">
+            <Reveal delay={0.3} className="flex flex-wrap items-center gap-3">
               <Link
                 href="/#contact"
-                className="inline-flex min-h-12 items-center justify-center rounded-full bg-red-600 px-6 text-sm font-semibold text-white shadow-[0_0_28px_rgba(239,68,68,0.16)] transition hover:bg-red-500 hover:text-white"
+                className="inline-flex h-12 items-center justify-center rounded-full bg-white px-6 text-sm font-semibold uppercase tracking-[0.2em] text-black transition hover:bg-white/85"
               >
                 Start a conversation
               </Link>
@@ -145,14 +178,14 @@ export function AboutSection() {
                 href={siteConfig.resumeUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/12 px-6 text-sm font-semibold text-white transition hover:border-red-500/50 hover:text-red-200"
+                className="inline-flex h-12 items-center justify-center rounded-full border border-white/20 px-6 text-sm font-semibold uppercase tracking-[0.2em] text-white/85 transition hover:border-white/50"
               >
-                View resume
+                View resume ↗
               </Link>
             </Reveal>
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }
