@@ -262,7 +262,6 @@ export const projects: ProjectItem[] = [
     name: "3D Portfolio Website",
     image: "/images/projects/3d-portfolio.webp",
     date: "May 2026",
-    summary: "A modern 3D portfolio website showcasing my work and skills.",
     description:
       "Brand-forward single-page experiment built to sharpen marketing layout and front-end fundamentals.",
     stack: ["Three.js", "react-three/drei", "react-three/fiber"],
@@ -274,8 +273,6 @@ export const projects: ProjectItem[] = [
     name: "E-Shop App",
     image: "/images/projects/eshopapp.webp",
     date: "March 2021",
-    summary:
-      "A MERN e-commerce experience with payments, Redux state, and responsive UX.",
     description:
       "Full-stack commerce app with sandbox PayPal checkout, product discovery, and an admin-friendly workflow.",
     stack: ["React", "Node.js", "Express", "MongoDB", "Redux", "JWT"],
@@ -286,8 +283,6 @@ export const projects: ProjectItem[] = [
     name: "Dev Social App",
     image: "/images/projects/1DevConnApp.webp",
     date: "November 2020",
-    summary:
-      "A social platform for developers with rich interaction flows and profile management.",
     description:
       "Developer-focused social product that combines community features, profiles, and state-heavy frontend flows.",
     stack: ["React", "Node.js", "Express", "MongoDB", "Redux", "JWT"],
@@ -298,8 +293,6 @@ export const projects: ProjectItem[] = [
     name: "Shopping List App",
     image: "/images/projects/7MernShopList.webp",
     date: "October 2020",
-    summary:
-      "A simple but polished list-management experience backed by the MERN stack.",
     description:
       "Productivity-focused shopping list application designed to keep CRUD workflows fast and intuitive.",
     stack: ["React", "Node.js", "Express", "MongoDB", "Redux", "JWT"],
@@ -309,7 +302,6 @@ export const projects: ProjectItem[] = [
     name: "EJS Todo App",
     image: "/images/projects/2ToDoApp.webp",
     date: "September 2020",
-    summary: "Custom list management with dynamic route-based list creation.",
     description:
       "Todo application built around EJS templates and flexible custom lists generated from the URL.",
     stack: ["Node.js", "Express", "MongoDB", "EJS"],
@@ -319,8 +311,6 @@ export const projects: ProjectItem[] = [
     name: "My Blogs",
     image: "/images/projects/5Blogs.webp",
     date: "September 2020",
-    summary:
-      "A blog platform with an editorial workflow and admin publishing controls.",
     description:
       "Personal publishing platform that supports article discovery, long-form content, and admin writing flows.",
     stack: ["HTML", "CSS", "Bootstrap", "EJS", "MongoDB"],
@@ -330,7 +320,6 @@ export const projects: ProjectItem[] = [
     name: "My Newsletter",
     image: "/images/projects/4SignUpNewsLetter.webp",
     date: "September 2020",
-    summary: "Mailchimp-powered signup flow with user onboarding automation.",
     description:
       "Newsletter registration experience connected to Mailchimp for audience capture and welcome automation.",
     stack: ["Node.js", "Express", "EJS", "Mailchimp API"],
@@ -340,7 +329,6 @@ export const projects: ProjectItem[] = [
     name: "Secrets App",
     image: "/images/projects/3Secrets.webp",
     date: "August 2020",
-    summary: "Anonymized posting experience with Google OAuth authentication.",
     description:
       "A lightweight social product for anonymous sharing, supported by OAuth-based sign-in and feed rendering.",
     stack: ["HTML", "CSS", "React", "MongoDB", "Google OAuth"],
@@ -350,8 +338,6 @@ export const projects: ProjectItem[] = [
     name: "Portfolio Website",
     image: "/images/projects/pzjportfolio.webp",
     date: "July 2020",
-    summary:
-      "The previous portfolio iteration that established the personal brand online.",
     description:
       "React-based portfolio site with styled-components, GitHub Pages deployment, and WhatsApp contact hooks.",
     stack: ["React", "Styled Components", "GitHub Pages", "WhatsApp"],
@@ -362,7 +348,6 @@ export const projects: ProjectItem[] = [
     name: "Tindog",
     image: "/images/projects/6TinDog.webp",
     date: "June 2020",
-    summary: "A playful landing-page build inspired by Tinder, but for dogs.",
     description:
       "Brand-forward single-page experiment built to sharpen marketing layout and front-end fundamentals.",
     stack: ["HTML", "CSS", "Bootstrap"],
@@ -374,7 +359,6 @@ export const projects: ProjectItem[] = [
     name: "My First Website",
     image: "/images/projects/8OldCV.webp",
     date: "June 2020",
-    summary: "The original online CV that kicked off the portfolio journey.",
     description:
       "Early portfolio and resume site that laid the groundwork for later frontend and personal-brand iterations.",
     stack: ["HTML", "CSS", "Bootstrap"],

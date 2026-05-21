@@ -35,10 +35,6 @@ export function SiteFooter() {
             <p className="display text-5xl text-white sm:text-6xl">
               {siteConfig.name}<span className="text-[var(--accent)]">.</span>
             </p>
-            <p className="mt-6 max-w-md text-sm leading-[1.7] text-white/55">
-              Built for speed, motion, clarity, and a sharper first impression.
-              Always open to good engineering conversations.
-            </p>
           </div>
 
           <div>

@@ -16,21 +16,9 @@ import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 
 const principles = [
-  {
-    n: "01",
-    label: "Lead",
-    body: "Translate requirements into user stories, estimates, and a delivery plan the team can trust.",
-  },
-  {
-    n: "02",
-    label: "Build",
-    body: "React, Node, PostgreSQL, MongoDB, and .NET treated as one product surface, not silos.",
-  },
-  {
-    n: "03",
-    label: "Ship",
-    body: "AI-assisted, human-reviewed work — security-aware, pragmatic, and production-ready.",
-  },
+  { n: "01", label: "Lead", body: "Plans the team trusts." },
+  { n: "02", label: "Build", body: "One product surface, no silos." },
+  { n: "03", label: "Ship", body: "AI-assisted, human-reviewed." },
 ];
 
 export function AboutSection() {
@@ -65,7 +53,7 @@ export function AboutSection() {
                 </span>
               </>
             }
-            description="I work across architecture, API design, code review, sprint planning, and client communication — so product work keeps moving without losing engineering quality."
+            description={undefined}
           />
         </Reveal>
 
@@ -130,15 +118,6 @@ export function AboutSection() {
               <p className="display text-3xl leading-[1.15] text-white sm:text-4xl lg:text-5xl">
                 I build like the senior engineer in the codebase and communicate
                 like the Scrum Master responsible for delivery.
-              </p>
-            </Reveal>
-
-            <Reveal delay={0.2}>
-              <p className="text-base leading-[1.8] text-white/55 sm:text-lg">
-                The resume thread is consistent — MERN/PERN product work, .NET
-                CRM/CMS depth, remote team leadership, direct stakeholder
-                alignment, and AI-assisted development used with engineering
-                judgment instead of blind automation.
               </p>
             </Reveal>
 

@@ -74,18 +74,6 @@ export function ExperienceSection() {
                   team of 9 developers + 3 QA, in-house PERN product, US-based
                   clients.
                 </p>
-                <div className="mt-8 grid grid-cols-3 gap-px overflow-hidden border border-white/10 bg-white/[0.06]">
-                  {["Plan", "Build", "Ship"].map((label, index) => (
-                    <div key={label} className="bg-[#080404] p-3 text-center">
-                      <span className="mono text-[0.6rem] uppercase tracking-[0.28em] text-white/35">
-                        0{index + 1}
-                      </span>
-                      <p className="mt-2 text-sm font-medium text-white/85">
-                        {label}
-                      </p>
-                    </div>
-                  ))}
-                </div>
               </div>
             </Reveal>
           </div>
