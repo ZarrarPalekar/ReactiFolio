@@ -124,12 +124,6 @@ body::after {
   font-feature-settings: "liga", "dlig";
 }
 
-/* Outlined display variant — for the brutalist accents */
-.display-outline {
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
-  color: transparent;
-}
-
 /* Marquee */
 @keyframes marquee {
   to {
@@ -217,29 +211,7 @@ body::after {
   }
 }
 
-/* Soft floating noise */
-@keyframes drift {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-  50% {
-    transform: translate3d(-2%, -3%, 0);
-  }
-}
-
-.float-slow {
-  animation: drift 18s ease-in-out infinite;
-}
-
 /* Gradient text */
-.text-gradient {
-  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.55) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
 .text-gradient-red {
   background: linear-gradient(135deg, #ffffff 0%, #ffb4b8 45%, #ff3a45 100%);
   -webkit-background-clip: text;
