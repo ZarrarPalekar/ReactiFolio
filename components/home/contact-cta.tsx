@@ -5,7 +5,7 @@ import Link from "next/link";
 import { siteConfig, socialLinks } from "@/data/portfolio";
 import { CalendlyButton } from "@/components/ui/calendly-button";
 import { Magnetic } from "@/components/ui/magnetic";
-import { Reveal, WordsReveal } from "@/components/ui/reveal";
+import { Reveal } from "@/components/ui/reveal";
 import { SocialIcon } from "@/components/ui/social-icon";
 
 const contactCards = [
@@ -50,17 +50,14 @@ export function ContactCta() {
             </div>
           </Reveal>
 
-          <h2 className="display mt-8 text-[clamp(3rem,10vw,9.5rem)] leading-[0.92] text-white">
-            <WordsReveal text="Let's build" className="block" />
-            <span className="block text-gradient-red">
-              <WordsReveal
-                text="something"
-                className="serif font-normal"
-                delay={0.2}
-              />{" "}
-              <WordsReveal text="serious." delay={0.32} />
-            </span>
-          </h2>
+          <Reveal>
+            <h2 className="display mt-8 text-[clamp(3rem,10vw,9.5rem)] leading-[0.92] text-white">
+              <span className="block">Let&apos;s build</span>
+              <span className="block text-gradient-red">
+                <span className="serif font-normal">something</span> serious.
+              </span>
+            </h2>
+          </Reveal>
 
           <Reveal delay={0.4}>
             <p className="mt-8 max-w-2xl text-base leading-[1.7] text-white/55 sm:text-lg">
