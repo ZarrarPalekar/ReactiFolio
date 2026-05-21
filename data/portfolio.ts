@@ -258,6 +258,18 @@ export const testimonials: TestimonialItem[] = [
 
 export const projects: ProjectItem[] = [
   {
+    slug: "3d-portfolio-website",
+    name: "3D Portfolio Website",
+    image: "/images/projects/3d-portfolio.webp",
+    date: "May 2026",
+    summary: "A modern 3D portfolio website showcasing my work and skills.",
+    description:
+      "Brand-forward single-page experiment built to sharpen marketing layout and front-end fundamentals.",
+    stack: ["Three.js", "react-three/drei", "react-three/fiber"],
+    liveUrl: "https://3d-portfolio-website-opal.vercel.app/",
+    featured: true,
+  },
+  {
     slug: "e-shop-app",
     name: "E-Shop App",
     image: "/images/projects/eshopapp.webp",
