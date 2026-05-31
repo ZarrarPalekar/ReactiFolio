@@ -66,7 +66,7 @@ export function SiteHeader() {
               Zarrar Palekar
             </span>
             <span className="mt-1.5 mono text-[0.6rem] uppercase tracking-[0.32em] text-white/30">
-              ©︎ {new Date().getFullYear()} \\ Mumbai
+              Full Stack Developer
             </span>
           </span>
         </Link>
