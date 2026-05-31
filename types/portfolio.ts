@@ -51,7 +51,6 @@ export type ProjectItem = {
   name: string;
   image: string;
   date: string;
-  summary: string;
   description: string;
   stack: string[];
   liveUrl?: string;
