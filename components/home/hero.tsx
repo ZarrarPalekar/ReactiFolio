@@ -138,7 +138,7 @@ export function Hero() {
           delay: CURTAIN_PANEL_DELAY,
           ease: [0.16, 1, 0.3, 1],
         }}
-        className="relative mx-auto flex min-h-[100svh] w-full max-w-[1480px] flex-col justify-end px-5 pb-28 pt-40 sm:px-10 sm:pt-44 lg:px-14 lg:pb-36"
+        className="relative mx-auto flex min-h-[100svh] w-full max-w-[1480px] flex-col justify-end px-5 pb-28 pt-40 sm:px-10 sm:pt-44 lg:px-14 lg:pb-44"
         style={{ transformOrigin: "50% 65%" }}
       >
         {/* status pill */}
@@ -257,12 +257,12 @@ export function Hero() {
         initial={prefersReducedMotion ? false : { opacity: 0 }}
         animate={prefersReducedMotion ? {} : { opacity: 1 }}
         transition={{ duration: 0.6, delay: heroDelay(0.7) }}
-        className="absolute bottom-24 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 text-white/35 lg:flex"
+        className="absolute bottom-16 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-white/35 lg:flex"
       >
         <span className="mono text-[0.65rem] uppercase tracking-[0.4em]">
           Scroll
         </span>
-        <span className="relative block h-10 w-px overflow-hidden bg-white/15">
+        <span className="relative block h-8 w-px overflow-hidden bg-white/15">
           <motion.span
             className="absolute inset-x-0 top-0 block h-3 bg-[var(--accent)]"
             initial={{ y: "-100%" }}
