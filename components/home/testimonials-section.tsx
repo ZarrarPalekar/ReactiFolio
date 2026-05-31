@@ -100,7 +100,7 @@ export function TestimonialsSection() {
             <figure className="relative overflow-hidden border border-white/10 bg-[#080404]/85 p-8 sm:p-12 lg:p-14">
               <span
                 aria-hidden
-                className="serif pointer-events-none absolute -top-10 left-5 select-none text-[12rem] leading-none text-[var(--accent)]/12 sm:left-9"
+                className="serif pointer-events-none absolute left-6 top-4 select-none text-[9rem] leading-none text-[var(--accent)]/12 sm:left-10"
               >
                 &ldquo;
               </span>
