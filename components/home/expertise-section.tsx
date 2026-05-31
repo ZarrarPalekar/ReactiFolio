@@ -99,33 +99,33 @@ export function ExpertiseSection() {
             </motion.div>
           ))}
         </div>
+      </div>
 
-        {/* skills marquee */}
-        <div className="mt-16 -mx-5 border-y border-white/10 bg-black/40 backdrop-blur sm:-mx-10 lg:-mx-14">
-          <Marquee duration={56}>
-            {allSkills.map((skill, index) => (
+      {/* skills marquee — full-bleed to the viewport edges */}
+      <div className="mt-16 border-y border-white/10 bg-black/40 backdrop-blur">
+        <Marquee duration={56}>
+          {allSkills.map((skill, index) => (
+            <span
+              key={`${skill.name}-${index}`}
+              className="flex items-center gap-4 px-6 py-5"
+            >
               <span
-                key={`${skill.name}-${index}`}
-                className="flex items-center gap-4 px-6 py-5"
+                className={`relative inline-block h-6 w-6 ${skill.iconWrapperClassName ?? ""}`}
               >
-                <span
-                  className={`relative inline-block h-6 w-6 ${skill.iconWrapperClassName ?? ""}`}
-                >
-                  <Image
-                    src={skill.icon}
-                    alt=""
-                    fill
-                    sizes="24px"
-                    className={`object-contain ${skill.iconClassName ?? ""}`}
-                  />
-                </span>
-                <span className="mono text-xs uppercase tracking-[0.32em] text-white/50">
-                  {skill.name}
-                </span>
+                <Image
+                  src={skill.icon}
+                  alt=""
+                  fill
+                  sizes="24px"
+                  className={`object-contain ${skill.iconClassName ?? ""}`}
+                />
               </span>
-            ))}
-          </Marquee>
-        </div>
+              <span className="mono text-xs uppercase tracking-[0.32em] text-white/50">
+                {skill.name}
+              </span>
+            </span>
+          ))}
+        </Marquee>
       </div>
     </section>
   );
