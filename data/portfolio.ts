@@ -36,17 +36,17 @@ export const siteConfig = {
 export const navigation: NavigationItem[] = [
   { href: "/", label: "Home" },
   { href: "/#about", label: "About" },
-  { href: "/#expertise", label: "Expertise" },
+  { href: "/#expertise", label: "Skills" },
   { href: "/#experience", label: "Experience" },
-  { href: "/#testimonials", label: "Testimonials" },
-  { href: "/#projects", label: "Projects" },
+  { href: "/#workflow", label: "Workflow" },
+  { href: "/#projects", label: "Work" },
   { href: "/#contact", label: "Contact" },
 ];
 
 export const heroStats: HeroStat[] = [
   { value: "9+", label: "Years across MERN, PERN, .NET, CRM, CMS, and SaaS" },
   {
-    value: "9+3",
+    value: "12",
     label: "Developers and QA engineers led in a remote product team",
   },
   {

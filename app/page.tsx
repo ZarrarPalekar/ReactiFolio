@@ -1,32 +1,23 @@
-import dynamic from "next/dynamic";
-
-import { AboutSection } from "@/components/home/about-section";
-import { ContactCta } from "@/components/home/contact-cta";
-import { ExperienceSection } from "@/components/home/experience-section";
-import { ExpertiseSection } from "@/components/home/expertise-section";
-import { Hero } from "@/components/home/hero";
-import { TestimonialsSection } from "@/components/home/testimonials-section";
-
-const ProjectsShowcase = dynamic(() => import("@/components/home/projects-showcase"), {
-  loading: () => (
-    <section id="projects" className="border-b border-white/10 py-20 sm:py-28">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
-        <div className="h-72 animate-pulse rounded-lg border border-white/10 bg-white/[0.03]" />
-      </div>
-    </section>
-  ),
-});
+import { AboutSection } from "@/components/sections/about";
+import { ContactSection } from "@/components/sections/contact";
+import { ExperienceSection } from "@/components/sections/experience";
+import { HeroSection } from "@/components/sections/hero";
+import { ProjectsSection } from "@/components/sections/projects";
+import { SkillsSection } from "@/components/sections/skills";
+import { TestimonialsSection } from "@/components/sections/testimonials";
+import { WorkflowSection } from "@/components/sections/workflow";
 
 export default function HomePage() {
   return (
     <>
-      <Hero />
+      <HeroSection />
       <AboutSection />
-      <ExpertiseSection />
+      <SkillsSection />
       <ExperienceSection />
+      <WorkflowSection />
+      <ProjectsSection />
       <TestimonialsSection />
-      <ProjectsShowcase />
-      <ContactCta />
+      <ContactSection />
     </>
   );
 }

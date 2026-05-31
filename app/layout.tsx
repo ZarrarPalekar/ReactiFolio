@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 
-import { SiteFooter } from "@/components/layout/site-footer";
-import { SiteHeader } from "@/components/layout/site-header";
+import { Footer } from "@/components/layout/footer";
+import { Navbar } from "@/components/layout/navbar";
 import { WhatsAppFab } from "@/components/layout/whatsapp-fab";
+import { Preloader } from "@/components/animations/preloader";
+import { SmoothScroll } from "@/components/animations/smooth-scroll";
 import { CalendlyProvider } from "@/components/ui/calendly-provider";
 import { siteConfig } from "@/data/portfolio";
 
@@ -184,8 +186,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className="bg-black text-white antialiased">
+    <html lang="en">
+      <body className="bg-[#050608] text-white antialiased">
         <Script
           id="person-jsonld"
           type="application/ld+json"
@@ -197,18 +199,20 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         <CalendlyProvider>
-          <div className="relative min-h-screen overflow-x-hidden bg-[#050202]">
+          <SmoothScroll />
+          <Preloader />
+          <div className="relative min-h-screen overflow-x-hidden bg-[#050608]">
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,_rgba(239,68,68,0.09),_transparent_30%),linear-gradient(245deg,_rgba(255,67,87,0.1),_transparent_35%),linear-gradient(to_bottom,_rgba(255,255,255,0.035),_transparent_24%)]"
+              className="pointer-events-none fixed inset-0 z-0 bg-[linear-gradient(120deg,rgba(255,77,95,0.1),transparent_32%),linear-gradient(245deg,rgba(142,240,223,0.08),transparent_38%),linear-gradient(to_bottom,rgba(255,255,255,0.035),transparent_24%)]"
             />
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute inset-x-0 top-20 h-px bg-gradient-to-r from-transparent via-red-500/40 to-transparent"
+              className="pointer-events-none fixed inset-x-0 top-20 z-0 h-px bg-gradient-to-r from-transparent via-[#8ef0df]/35 to-transparent"
             />
-            <SiteHeader />
+            <Navbar />
             <main className="relative pt-20">{children}</main>
-            <SiteFooter />
+            <Footer />
             <WhatsAppFab />
           </div>
         </CalendlyProvider>
