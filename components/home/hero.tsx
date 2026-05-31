@@ -117,24 +117,24 @@ export function Hero() {
           delay: heroDelay(0.2),
           ease: [0.16, 1, 0.3, 1],
         }}
-        className="pointer-events-none absolute right-0 top-[17svh] bottom-auto -z-[1] h-[44svh] w-[66vw] max-w-[260px] opacity-60 sm:top-[15svh] sm:max-w-[330px] sm:opacity-70 md:right-[5vw] md:max-w-[400px] lg:inset-y-0 lg:h-auto lg:right-[8vw] lg:w-[42vw] lg:max-w-[600px] lg:opacity-100"
+        className="pointer-events-none absolute right-0 top-[17svh] bottom-auto -z-[1] h-[44svh] w-[66vw] max-w-[260px] opacity-50 sm:top-[15svh] sm:max-w-[330px] sm:opacity-60 md:right-[5vw] md:max-w-[400px] lg:inset-y-0 lg:h-auto lg:right-[8vw] lg:w-[42vw] lg:max-w-[600px] lg:opacity-85"
         style={{
           transformOrigin: "70% 80%",
           maskImage:
-            "linear-gradient(to right, transparent, #000 34%), linear-gradient(to top, transparent 3%, #000 20%)",
+            "linear-gradient(to right, transparent, #000 40%), linear-gradient(to left, transparent, #000 14%), linear-gradient(to bottom, transparent, #000 16%), linear-gradient(to top, transparent 2%, #000 18%)",
           WebkitMaskImage:
-            "linear-gradient(to right, transparent, #000 34%), linear-gradient(to top, transparent 3%, #000 20%)",
-          maskComposite: "intersect",
-          WebkitMaskComposite: "source-in",
+            "linear-gradient(to right, transparent, #000 40%), linear-gradient(to left, transparent, #000 14%), linear-gradient(to bottom, transparent, #000 16%), linear-gradient(to top, transparent 2%, #000 18%)",
+          maskComposite: "intersect, intersect, intersect",
+          WebkitMaskComposite: "source-in, source-in, source-in",
         }}
       >
         <Image
-          src="/images/profile/casual-cutout.webp"
+          src="/images/profile/img-red.jpeg"
           alt={siteConfig.name}
           fill
           priority
           sizes="46vw"
-          className="object-contain object-top-right lg:object-[100%_40%]"
+          className="object-cover object-top lg:object-[60%_22%]"
         />
       </motion.div>
 
