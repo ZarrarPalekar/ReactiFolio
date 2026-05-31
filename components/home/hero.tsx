@@ -157,7 +157,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: heroDelay(0.5) }}
           className="mono hidden text-[0.7rem] uppercase tracking-[0.4em] sm:inline"
         >
-          {siteConfig.location} \\ Available for work
+          {siteConfig.location}
         </motion.span>
       </div>
 
@@ -173,22 +173,6 @@ export function Hero() {
         className="relative mx-auto flex min-h-[100svh] w-full max-w-[1480px] flex-col justify-end px-5 pb-28 pt-40 sm:px-10 sm:pt-44 lg:px-14 lg:pb-44"
         style={{ transformOrigin: "50% 65%" }}
       >
-        {/* status pill */}
-        <motion.div
-          initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
-          animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: heroDelay(0) }}
-          className="mb-10 inline-flex w-fit items-center gap-3 rounded-full border border-white/15 bg-white/[0.04] px-4 py-2 backdrop-blur"
-        >
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inset-0 animate-ping rounded-full bg-emerald-400/70" />
-            <span className="relative h-2 w-2 rounded-full bg-emerald-400" />
-          </span>
-          <span className="mono text-[0.7rem] uppercase tracking-[0.32em] text-white/70">
-            Senior MERN / PERN / Team Lead / CSM
-          </span>
-        </motion.div>
-
         <motion.h1
           style={
             prefersReducedMotion
