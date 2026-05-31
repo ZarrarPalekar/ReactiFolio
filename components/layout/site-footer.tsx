@@ -33,7 +33,8 @@ export function SiteFooter() {
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <p className="display text-5xl text-white sm:text-6xl">
-              {siteConfig.name}<span className="text-[var(--accent)]">.</span>
+              {siteConfig.name}
+              <span className="text-[var(--accent)]">.</span>
             </p>
           </div>
 
@@ -70,12 +71,18 @@ export function SiteFooter() {
             </ul>
             <ul className="mt-6 flex flex-col gap-3 text-white/45 text-sm">
               <li>
-                <Link href="/full-stack-developer-india" className="hover:text-white">
+                <Link
+                  href="/full-stack-developer-india"
+                  className="hover:text-white"
+                >
                   Full Stack Developer in India ↗
                 </Link>
               </li>
               <li>
-                <Link href="/react-developer-mumbai" className="hover:text-white">
+                <Link
+                  href="/react-developer-mumbai"
+                  className="hover:text-white"
+                >
                   React Developer in Mumbai ↗
                 </Link>
               </li>
@@ -122,7 +129,8 @@ export function SiteFooter() {
 
         <div className="flex flex-col gap-4 border-t border-white/10 pt-8 text-white/40 sm:flex-row sm:items-center sm:justify-between">
           <p className="mono text-[0.65rem] uppercase tracking-[0.32em]">
-            © {new Date().getFullYear()} {siteConfig.name} \\ All rights reserved
+            © {new Date().getFullYear()} · {siteConfig.name} · All rights
+            reserved
           </p>
           <p className="mono text-[0.65rem] uppercase tracking-[0.32em]">
             Built with Next.js · React · Tailwind · Framer Motion
