@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import {
   AnimatePresence,
@@ -106,6 +107,37 @@ export function Hero() {
         className="pointer-events-none absolute inset-0 -z-10"
         style={prefersReducedMotion ? undefined : { background: glowBg }}
       />
+      {/* portrait — right side, behind the title for depth */}
+      <motion.div
+        aria-hidden
+        initial={prefersReducedMotion ? false : { opacity: 0, scale: 1.06 }}
+        animate={prefersReducedMotion ? {} : { opacity: 1, scale: 1 }}
+        transition={{
+          duration: 1.3,
+          delay: heroDelay(0.2),
+          ease: [0.16, 1, 0.3, 1],
+        }}
+        className="pointer-events-none absolute right-0 top-[17svh] bottom-auto -z-[1] h-[44svh] w-[66vw] max-w-[260px] opacity-60 sm:top-[15svh] sm:max-w-[330px] sm:opacity-70 md:right-[5vw] md:max-w-[400px] lg:right-[8vw] lg:top-auto lg:bottom-[10vh] lg:h-[90svh] lg:w-[42vw] lg:max-w-[600px] lg:opacity-100"
+        style={{
+          transformOrigin: "70% 80%",
+          maskImage:
+            "linear-gradient(to right, transparent, #000 34%), linear-gradient(to top, transparent 3%, #000 20%)",
+          WebkitMaskImage:
+            "linear-gradient(to right, transparent, #000 34%), linear-gradient(to top, transparent 3%, #000 20%)",
+          maskComposite: "intersect",
+          WebkitMaskComposite: "source-in",
+        }}
+      >
+        <Image
+          src="/images/profile/casual-cutout.webp"
+          alt={siteConfig.name}
+          fill
+          priority
+          sizes="46vw"
+          className="object-contain object-top-right lg:object-right"
+        />
+      </motion.div>
+
       {/* corner brackets */}
       <div
         aria-hidden
