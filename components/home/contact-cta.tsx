@@ -1,10 +1,11 @@
+"use client";
+
 import Link from "next/link";
 
-import { siteConfig } from "@/data/portfolio";
-import { Container } from "@/components/ui/container";
+import { siteConfig, socialLinks } from "@/data/portfolio";
 import { CalendlyButton } from "@/components/ui/calendly-button";
+import { Magnetic } from "@/components/ui/magnetic";
 import { Reveal } from "@/components/ui/reveal";
-import { SectionHeading } from "@/components/ui/section-heading";
 import { SocialIcon } from "@/components/ui/social-icon";
 
 const contactCards = [
@@ -28,110 +29,109 @@ export function ContactCta() {
   return (
     <section
       id="contact"
-      className="bg-[linear-gradient(180deg,transparent,rgba(239,68,68,0.055)_42%,rgba(255,67,87,0.055)_100%)] py-18 sm:py-24"
+      className="relative isolate overflow-hidden border-t border-white/10 py-32 sm:py-40"
     >
-      <Container>
-        <Reveal>
-          <SectionHeading
-            eyebrow="Contact"
-            title="Need a senior full-stack lead who can still get into the code?"
-            description="Available for MERN/PERN product work, AI-assisted SDLC workflows, codebase cleanup, and delivery leadership."
-            align="center"
-          />
-        </Reveal>
+      <div
+        aria-hidden
+        className="absolute inset-x-0 top-0 -z-10 h-full bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(255,58,69,0.18),transparent_70%)]"
+      />
 
-        <div className="mt-12 grid gap-5 lg:grid-cols-[1.12fr_0.88fr]">
-          <Reveal className="rounded-lg border border-white/10 bg-white/[0.045] p-6 sm:p-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-red-200/85">
-              Collaboration path
-            </p>
-            <div className="mt-8 grid gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 sm:grid-cols-3">
-              {[
-                [
-                  "01",
-                  "Clarify",
-                  "Turn product needs into user stories, estimates, and technical direction.",
-                ],
-                [
-                  "02",
-                  "Build",
-                  "Ship React, Node.js, API, database, and integration work with review discipline.",
-                ],
-                [
-                  "03",
-                  "Lead",
-                  "Coordinate QA, stakeholders, handover, and release follow-through.",
-                ],
-              ].map(([step, label, copy], index) => (
-                <div key={step} className="bg-[#100506] p-5">
-                  <p
-                    className={`text-xs font-semibold uppercase tracking-[0.24em] ${
-                      index === 0
-                        ? "text-red-200/80"
-                        : index === 1
-                          ? "text-red-300/75"
-                          : "text-red-100/72"
-                    }`}
-                  >
-                    {step}
-                  </p>
-                  <p className="mt-8 text-2xl font-semibold text-white">
-                    {label}
-                  </p>
-                  <p className="mt-3 text-sm leading-6 text-white/60">{copy}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <CalendlyButton className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-red-600 px-7 text-sm font-semibold text-white shadow-[0_0_28px_rgba(239,68,68,0.16)] transition hover:bg-red-500 hover:text-white">
-                <SocialIcon name="Calendly" className="size-5 shrink-0" />
-                Schedule on Calendly
-              </CalendlyButton>
-              <Link
-                href={siteConfig.linkedinUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/12 px-7 text-sm font-semibold text-white transition hover:border-red-500/50 hover:text-red-200"
-              >
-                <SocialIcon name="LinkedIn" className="size-5 shrink-0" />
-                Connect on LinkedIn
-              </Link>
+      <div className="mx-auto w-full max-w-[1480px] px-5 sm:px-10 lg:px-14">
+        <div className="flex flex-col items-center text-center">
+          <Reveal>
+            <div className="flex items-center justify-center gap-4">
+              <span className="mono text-[0.7rem] uppercase tracking-[0.4em] text-white/35">
+                07
+              </span>
+              <span className="h-px w-12 bg-white/15" />
+              <span className="mono text-[0.7rem] uppercase tracking-[0.4em] text-[var(--accent-soft)]/85">
+                Contact
+              </span>
             </div>
           </Reveal>
 
-          <Reveal delay={0.08} className="grid gap-5">
-            {contactCards.map((item, index) => {
-              const content = (
-                <div className="rounded-lg border border-white/10 bg-black/35 p-5 transition hover:border-red-500/35">
-                  <p
-                    className={`text-xs font-semibold uppercase tracking-[0.28em] ${
-                      index === 0
-                        ? "text-red-200/78"
-                        : index === 1
-                          ? "text-red-300/75"
-                          : "text-red-100/70"
-                    }`}
-                  >
-                    {item.label}
-                  </p>
-                  <p className="mt-4 break-words text-xl font-semibold text-white">
-                    {item.value}
-                  </p>
-                </div>
-              );
+          <Reveal>
+            <h2 className="display mt-8 text-[clamp(3rem,10vw,9.5rem)] leading-[0.92] text-white">
+              <span className="block">Let&apos;s build</span>
+              <span className="block text-gradient-red">
+                <span className="serif font-normal">something</span> serious.
+              </span>
+            </h2>
+          </Reveal>
 
-              return item.href ? (
-                <Link key={item.label} href={item.href}>
-                  {content}
-                </Link>
-              ) : (
-                <div key={item.label}>{content}</div>
-              );
-            })}
+          <Reveal delay={0.4}>
+            <p className="mt-8 max-w-2xl text-base leading-[1.7] text-white/55 sm:text-lg">
+              Available for MERN/PERN product work, AI-assisted SDLC workflows,
+              codebase cleanup, and delivery leadership.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.5} className="mt-12 flex flex-wrap items-center justify-center gap-4">
+            <Magnetic strength={0.35}>
+              <CalendlyButton className="inline-flex h-14 items-center justify-center gap-3 rounded-full bg-[var(--accent)] px-8 text-sm font-semibold uppercase tracking-[0.22em] text-white shadow-[0_24px_60px_-20px_rgba(255,58,69,0.7)] transition hover:bg-[#ff525d]">
+                <SocialIcon name="Calendly" className="size-5 shrink-0" />
+                Schedule a call
+              </CalendlyButton>
+            </Magnetic>
+            <Magnetic strength={0.35}>
+              <Link
+                href={`mailto:${siteConfig.email}`}
+                className="inline-flex h-14 items-center justify-center rounded-full border border-white/20 bg-white/[0.03] px-8 text-sm font-semibold uppercase tracking-[0.22em] text-white/85 backdrop-blur transition hover:border-white/50 hover:bg-white/[0.07]"
+              >
+                Email me ↗
+              </Link>
+            </Magnetic>
           </Reveal>
         </div>
-      </Container>
+
+        <div className="mt-24 grid gap-px overflow-hidden border border-white/10 bg-white/[0.06] md:grid-cols-3">
+          {contactCards.map((item, index) => {
+            const inner = (
+              <div className="group h-full bg-[#080404] p-8 transition hover:bg-[#0c0606]">
+                <div className="flex items-baseline justify-between">
+                  <span className="mono text-[0.65rem] uppercase tracking-[0.32em] text-[var(--accent-soft)]/80">
+                    {item.label}
+                  </span>
+                  <span className="mono text-[0.65rem] uppercase tracking-[0.32em] text-white/30">
+                    0{index + 1}
+                  </span>
+                </div>
+                <p className="display mt-6 break-words text-2xl text-white sm:text-3xl">
+                  {item.value}
+                </p>
+                {item.href ? (
+                  <p className="mono mt-6 text-[0.65rem] uppercase tracking-[0.32em] text-white/45 transition group-hover:text-[var(--accent-soft)]">
+                    Open →
+                  </p>
+                ) : null}
+              </div>
+            );
+
+            return item.href ? (
+              <Link key={item.label} href={item.href}>
+                {inner}
+              </Link>
+            ) : (
+              <div key={item.label}>{inner}</div>
+            );
+          })}
+        </div>
+
+        <Reveal delay={0.1} className="mt-12 flex flex-wrap justify-center gap-3">
+          {socialLinks.map((link) => (
+            <Link
+              key={link.label}
+              href={link.href}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex h-11 items-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-4 text-sm text-white/75 transition hover:border-white/40 hover:bg-white/[0.08] hover:text-white"
+            >
+              <SocialIcon name={link.label} className="size-5 shrink-0" />
+              {link.label}
+            </Link>
+          ))}
+        </Reveal>
+      </div>
     </section>
   );
 }

@@ -5,22 +5,16 @@ import Link from "next/link";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
-import { projects } from "@/data/portfolio";
 import { Magnetic } from "@/components/ui/magnetic";
-import { Reveal } from "@/components/ui/reveal";
-import { SectionHeading } from "@/components/ui/section-heading";
+import type { ProjectItem } from "@/types/portfolio";
 
-const featuredProjects = projects.filter((project) => project.featured);
-
-function ProjectCard({
-  project,
-  index,
-  total,
-}: {
-  project: (typeof projects)[number];
+type ArchiveCardProps = {
+  project: ProjectItem;
   index: number;
   total: number;
-}) {
+};
+
+export function ArchiveCard({ project, index, total }: ArchiveCardProps) {
   const prefersReducedMotion = useReducedMotion();
   const ref = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
@@ -74,7 +68,7 @@ function ProjectCard({
       <div className="flex flex-col justify-between gap-10 p-8 sm:p-12 lg:p-14">
         <div>
           <span className="mono text-[0.65rem] uppercase tracking-[0.32em] text-[var(--accent-soft)]/85">
-            Featured work
+            {project.featured ? "Featured work" : "Archive"}
           </span>
           <h3 className="display mt-5 text-4xl text-white sm:text-5xl">
             <span className="serif font-normal">{project.name}</span>
@@ -123,56 +117,5 @@ function ProjectCard({
         </div>
       </div>
     </motion.article>
-  );
-}
-
-export default function ProjectsShowcase() {
-  const total = featuredProjects.length;
-
-  return (
-    <section
-      id="projects"
-      className="relative border-t border-white/10 py-32 sm:py-40"
-    >
-      <div className="mx-auto w-full max-w-[1480px] px-5 sm:px-10 lg:px-14">
-        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-          <Reveal className="flex-1">
-            <SectionHeading
-              index="06"
-              eyebrow="Projects"
-              title={
-                <>
-                  <span className="block">
-                    <span className="serif font-normal">Selected</span>
-                  </span>
-                  <span className="block text-gradient-red">builds.</span>
-                </>
-              }
-              description="Earlier MERN and frontend projects that show the hands-on foundation behind the current SaaS, CRM, CMS, and enterprise work."
-            />
-          </Reveal>
-          <Reveal delay={0.1}>
-            <Link
-              href="/projects"
-              className="group inline-flex h-12 items-center gap-3 rounded-full border border-white/20 px-6 text-sm font-semibold uppercase tracking-[0.2em] text-white/85 transition hover:border-white/50"
-            >
-              <span>Full archive</span>
-              <span className="transition group-hover:translate-x-1">→</span>
-            </Link>
-          </Reveal>
-        </div>
-
-        <div className="mt-20 flex flex-col gap-6">
-          {featuredProjects.map((project, index) => (
-            <ProjectCard
-              key={project.slug}
-              project={project}
-              index={index}
-              total={total}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
   );
 }

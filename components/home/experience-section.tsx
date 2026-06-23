@@ -1,17 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion, useReducedMotion, useScroll, useSpring } from "framer-motion";
+import { useRef } from "react";
 
 import { experience } from "@/data/portfolio";
 import { getDurationLabel } from "@/lib/date";
-import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
-
-const accents = [
-  "border-red-500/30 bg-red-500/10 text-red-200",
-  "border-red-800/30 bg-red-950/45 text-red-300",
-  "border-red-200/30 bg-red-300/10 text-red-100",
-];
 
 function formatDate(date: string) {
   return new Date(date).toLocaleDateString("en-US", {
@@ -21,63 +18,108 @@ function formatDate(date: string) {
 }
 
 export function ExperienceSection() {
+  const prefersReducedMotion = useReducedMotion();
+  const ref = useRef<HTMLDivElement | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start 80%", "end 20%"],
+  });
+  const lineScale = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 30,
+    mass: 0.4,
+  });
+
   return (
     <section
       id="experience"
-      className="border-b border-white/10 bg-black/15 py-18 sm:py-24"
+      className="relative border-t border-white/10 py-32 sm:py-40"
     >
-      <Container>
-        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-          <div className="lg:sticky lg:top-28 lg:self-start">
-            <Reveal>
-              <SectionHeading
-                eyebrow="Experience"
-                title="Nine years across SaaS, CRM, CMS, and enterprise delivery."
-                description="From .NET CRM/CMS systems to MERN/PERN SaaS products, the work has stayed hands-on while adding team leadership, Scrum practice, and client communication."
-              />
-            </Reveal>
+      <div className="mx-auto w-full max-w-[1480px] px-5 sm:px-10 lg:px-14">
+        <Reveal>
+          <SectionHeading
+            index="04"
+            eyebrow="Experience"
+            title={
+              <>
+                <span className="block">
+                  Nine <span className="serif font-normal">years.</span>
+                </span>
+                <span className="block text-gradient-red">
+                  Four <span className="serif font-normal">chapters.</span>
+                </span>
+              </>
+            }
+            description="From .NET CRM/CMS systems to MERN/PERN SaaS products — hands-on work that grew into team leadership, Scrum practice, and direct client ownership."
+          />
+        </Reveal>
 
-            <Reveal delay={0.1} className="mt-8 overflow-hidden rounded-lg border border-white/10 bg-white/[0.04]">
-              <div className="grid grid-cols-3 gap-px bg-white/10">
-                {["Plan", "Build", "Ship"].map((item, index) => (
-                  <div key={item} className="bg-[#100506] p-4">
-                    <p className="text-xs uppercase tracking-[0.24em] text-white/36">
-                      0{index + 1}
-                    </p>
-                    <p className="mt-3 font-semibold text-white">{item}</p>
-                  </div>
-                ))}
+        <div
+          ref={ref}
+          className="mt-24 grid gap-10 lg:grid-cols-[0.34fr_0.66fr] lg:gap-20"
+        >
+          {/* sticky meta */}
+          <div className="lg:sticky lg:top-32 lg:self-start">
+            <Reveal>
+              <div className="border border-white/10 bg-[#080404]/80 p-6">
+                <p className="mono text-[0.65rem] uppercase tracking-[0.32em] text-[var(--accent-soft)]/85">
+                  Timeline
+                </p>
+                <p className="display mt-6 text-5xl text-white tabular">
+                  2017<span className="text-white/30">—</span>
+                  <span className="text-[var(--accent)]">∞</span>
+                </p>
+                <p className="mt-6 text-sm leading-[1.7] text-white/55">
+                  Currently leading product engineering at Azul Arc — remote
+                  team of 9 developers + 3 QA, in-house PERN product, US-based
+                  clients.
+                </p>
               </div>
             </Reveal>
           </div>
 
+          {/* timeline */}
           <div className="relative">
             <div
-              aria-hidden="true"
-              className="absolute bottom-0 left-5 top-0 w-px bg-gradient-to-b from-red-500/55 via-white/16 to-red-950/55 sm:left-8"
+              aria-hidden
+              className="absolute left-4 top-0 h-full w-px bg-white/8 sm:left-6"
+            />
+            <motion.div
+              aria-hidden
+              style={
+                prefersReducedMotion
+                  ? undefined
+                  : { scaleY: lineScale, transformOrigin: "top" }
+              }
+              className="absolute left-4 top-0 h-full w-px bg-gradient-to-b from-[var(--accent)] via-[var(--accent-soft)] to-transparent sm:left-6"
             />
 
-            <div className="space-y-5">
+            <div className="flex flex-col gap-10">
               {experience.map((item, index) => (
-                <Reveal
+                <motion.article
                   key={`${item.company}-${item.start}`}
-                  delay={index * 0.07}
+                  initial={prefersReducedMotion ? false : { opacity: 0, y: 50 }}
+                  whileInView={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{
+                    duration: 0.9,
+                    delay: index * 0.06,
+                    ease: [0.16, 1, 0.3, 1],
+                  }}
                   className="relative pl-14 sm:pl-20"
                 >
-                  <span
-                    className={`absolute left-0 top-7 z-10 flex h-10 w-10 items-center justify-center rounded-full border text-xs font-semibold sm:left-3 ${accents[index % accents.length]}`}
-                  >
-                    0{index + 1}
+                  <span className="absolute left-0 top-7 flex h-8 w-8 items-center justify-center rounded-full border border-[var(--accent)]/40 bg-[#080404] sm:left-2 sm:h-8 sm:w-8">
+                    <span className="h-2 w-2 rounded-full bg-[var(--accent)] shadow-[0_0_18px_rgba(255,58,69,0.85)]" />
                   </span>
 
-                  <article className="rounded-lg border border-white/10 bg-white/[0.045] p-5 transition hover:border-white/18 sm:p-6">
-                    <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
+                  <div className="group border border-white/10 bg-[#080404]/85 transition hover:border-white/25">
+                    <div className="flex flex-col gap-5 border-b border-white/10 p-6 sm:flex-row sm:items-start sm:justify-between sm:p-8">
                       <div className="flex items-start gap-4">
                         <Link
                           href={item.companyUrl}
                           target="_blank"
                           rel="noreferrer"
-                          className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white"
+                          className="relative flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-white/10 bg-white"
                         >
                           <span className="relative h-9 w-9">
                             <Image
@@ -89,67 +131,61 @@ export function ExperienceSection() {
                             />
                           </span>
                         </Link>
-
                         <div>
-                          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/42">
+                          <p className="mono text-[0.65rem] uppercase tracking-[0.32em] text-white/40">
                             {item.company}
                           </p>
-                          <h3 className="mt-2 text-2xl font-semibold leading-tight text-white">
+                          <h3 className="display mt-2 text-2xl text-white">
                             {item.role}
                           </h3>
-                          <p className="mt-1 text-sm text-white/56">
+                          <p className="mt-1 text-sm text-white/55">
                             {item.track}
                           </p>
                         </div>
                       </div>
 
-                      <div className="shrink-0 rounded-full border border-white/10 bg-black/30 px-4 py-2 text-sm text-white/66">
-                        {getDurationLabel(item.start, item.end) || "Ongoing"}
-                      </div>
-                    </div>
-
-                    <div className="mt-6 grid gap-3 md:grid-cols-[0.8fr_1.2fr]">
-                      <div className="border border-white/8 bg-black/25 p-4">
-                        <p className="text-xs uppercase tracking-[0.24em] text-white/34">
-                          Stack
-                        </p>
-                        <p className="mt-2 text-sm leading-6 text-white/74">
-                          {item.stack}
-                        </p>
-                      </div>
-                      <div className="border border-white/8 bg-black/25 p-4">
-                        <p className="text-xs uppercase tracking-[0.24em] text-white/34">
-                          Timeline
-                        </p>
-                        <p className="mt-2 text-sm leading-6 text-white/74">
-                          {formatDate(item.start)} -{" "}
+                      <div className="flex flex-col items-start gap-2 sm:items-end">
+                        <span className="mono inline-flex items-center rounded-full border border-white/15 px-3 py-1 text-[0.65rem] uppercase tracking-[0.28em] text-white/60">
+                          {getDurationLabel(item.start, item.end) || "Ongoing"}
+                        </span>
+                        <span className="mono text-[0.65rem] uppercase tracking-[0.28em] text-white/35">
+                          {formatDate(item.start)} —{" "}
                           {item.end ? formatDate(item.end) : "Present"}
-                        </p>
+                        </span>
                       </div>
                     </div>
 
-                    <div className="mt-5 grid gap-3">
-                      {item.summary.map((point, pointIndex) => (
-                        <div
-                          key={point}
-                          className="grid gap-3 border-l border-white/10 bg-black/[0.22] px-4 py-3 sm:grid-cols-[3rem_1fr]"
-                        >
-                          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-red-200/72">
-                            H{pointIndex + 1}
-                          </span>
-                          <p className="text-sm leading-7 text-white/66">
-                            {point}
-                          </p>
-                        </div>
-                      ))}
+                    <div className="p-6 sm:p-8">
+                      <p className="mono text-[0.65rem] uppercase tracking-[0.32em] text-[var(--accent-soft)]/85">
+                        Stack
+                      </p>
+                      <p className="mt-3 text-sm leading-[1.7] text-white/70">
+                        {item.stack}
+                      </p>
+
+                      <ul className="mt-7 flex flex-col gap-4">
+                        {item.summary.map((point, pointIndex) => (
+                          <li
+                            key={point}
+                            className="grid gap-3 border-l border-white/15 pl-5 sm:grid-cols-[2.5rem_1fr]"
+                          >
+                            <span className="mono text-[0.65rem] uppercase tracking-[0.28em] text-[var(--accent-soft)]/70">
+                              H{pointIndex + 1}
+                            </span>
+                            <p className="text-sm leading-[1.7] text-white/65">
+                              {point}
+                            </p>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                  </article>
-                </Reveal>
+                  </div>
+                </motion.article>
               ))}
             </div>
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

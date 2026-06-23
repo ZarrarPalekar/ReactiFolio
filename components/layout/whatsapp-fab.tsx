@@ -13,13 +13,11 @@ export function WhatsAppFab() {
         target="_blank"
         rel="noreferrer"
         aria-label="Chat on WhatsApp"
-        className="inline-flex h-15 w-15 items-center justify-center rounded-full border border-white/12 bg-[#25D366] text-black shadow-[0_0_0_10px_rgba(37,211,102,0.1),0_0_32px_rgba(37,211,102,0.28)] transition hover:scale-[1.03] hover:bg-[#1fbc59]"
-        style={{
-          animation: "whatsappPulse 1.8s ease-in-out infinite",
-        }}
+        className="group relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-white/15 bg-[#25D366] text-black shadow-[0_0_0_10px_rgba(37,211,102,0.08),0_18px_50px_-12px_rgba(37,211,102,0.45)] transition hover:scale-[1.05]"
+        style={{ animation: "whatsappPulse 1.8s ease-in-out infinite" }}
       >
         <svg
-          aria-hidden="true"
+          aria-hidden
           viewBox="0 0 24 24"
           className="h-7 w-7 fill-current"
         >
