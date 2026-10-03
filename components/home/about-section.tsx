@@ -32,11 +32,11 @@ export function AboutSection() {
           <Reveal>
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-white/10">
               <Image
-                src="/images/profile/pro-pic-1.webp"
+                src="/images/profile/about-portrait.webp"
                 alt={siteConfig.name}
                 fill
-                sizes="(max-width: 1024px) 100vw, 36vw"
-                className="object-cover object-[22%_top]"
+                sizes="(max-width: 1024px) 100vw, 560px"
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
               <p className="mono absolute inset-x-6 bottom-6 text-[0.7rem] uppercase tracking-[0.28em] text-white/70">
