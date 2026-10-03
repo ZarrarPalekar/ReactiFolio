@@ -74,7 +74,6 @@ export function AboutSection() {
                   fill
                   sizes="(max-width: 1024px) 100vw, 44vw"
                   className="object-cover object-[22%_top]"
-                  priority
                 />
               </motion.div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />

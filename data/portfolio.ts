@@ -30,7 +30,7 @@ export const siteConfig = {
   linkedinUrl: "https://www.linkedin.com/in/zarrarpalekar/",
   instagramUrl: "https://www.instagram.com/palekarzarrar",
   siteUrl: "https://www.zarrarpalekar.com/",
-  ogImage: "/images/profile/profile.webp",
+  ogImage: "/images/profile/hero.webp",
 };
 
 export const navigation: NavigationItem[] = [

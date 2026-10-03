@@ -1,125 +1,31 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import {
-  AnimatePresence,
-  motion,
-  useMotionTemplate,
-  useMotionValue,
-  useReducedMotion,
-  useScroll,
-  useSpring,
-  useTransform,
-} from "framer-motion";
-import { useEffect, useState } from "react";
 
-import { siteConfig } from "@/data/portfolio";
 import { CalendlyButton } from "@/components/ui/calendly-button";
-import { Magnetic } from "@/components/ui/magnetic";
-import { Marquee } from "@/components/ui/marquee";
+import { siteConfig } from "@/data/portfolio";
+import { getExperienceYears } from "@/lib/date";
 
-const marqueeStack = [
-  "React",
-  "Node.js",
-  "PostgreSQL",
-  "TypeScript",
-  "Next.js",
-  "GraphQL",
-  "MongoDB",
-  ".NET",
-  "Express",
-  "Apollo",
-  "AI-assisted SDLC",
-  "Scrum",
-];
-
-// Tunables for the curtain reveal
-const CURTAIN_PANEL_DURATION = 1.15;
-const CURTAIN_PANEL_DELAY = 0.25;
-const CURTAIN_TOTAL_MS =
-  (CURTAIN_PANEL_DELAY + CURTAIN_PANEL_DURATION) * 1000 + 60;
-// Hero elements start emerging shortly after curtains begin splitting
-const HERO_BASE_DELAY = 0.55;
-const CURTAIN_EASE: [number, number, number, number] = [0.85, 0, 0.15, 1];
+const primaryBtn =
+  "inline-flex h-14 items-center justify-center gap-2 rounded-full bg-[var(--accent)] px-7 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-[0_24px_60px_-20px_rgba(255,58,69,0.7)] transition hover:bg-[#ff525d]";
+const secondaryBtn =
+  "inline-flex h-14 items-center justify-center gap-2 rounded-full border border-white/25 bg-white/[0.03] px-7 text-sm font-semibold uppercase tracking-[0.2em] text-white/90 backdrop-blur transition hover:border-white/55 hover:bg-white/[0.08]";
 
 export function Hero() {
-  const prefersReducedMotion = useReducedMotion();
-  const { scrollYProgress } = useScroll();
+  const years = getExperienceYears("2017-03-01");
 
-  const titleY = useTransform(scrollYProgress, [0, 0.2], ["0%", "-30%"]);
-  const titleOpacity = useTransform(scrollYProgress, [0, 0.18], [1, 0.4]);
-
-  const mouseX = useMotionValue(50);
-  const mouseY = useMotionValue(40);
-  const glowX = useSpring(mouseX, { stiffness: 60, damping: 18 });
-  const glowY = useSpring(mouseY, { stiffness: 60, damping: 18 });
-  const glowBg = useMotionTemplate`radial-gradient(circle at ${glowX}% ${glowY}%, rgba(255,58,69,0.30), transparent 55%)`;
-
-  useEffect(() => {
-    if (prefersReducedMotion) return;
-    const onMove = (event: PointerEvent) => {
-      mouseX.set((event.clientX / window.innerWidth) * 100);
-      mouseY.set((event.clientY / window.innerHeight) * 100);
-    };
-    window.addEventListener("pointermove", onMove, { passive: true });
-    return () => window.removeEventListener("pointermove", onMove);
-  }, [mouseX, mouseY, prefersReducedMotion]);
-
-  // Curtain state — open when reveal animation finishes (or immediately on reduced motion)
-  const [curtainOpen, setCurtainOpen] = useState(prefersReducedMotion ?? false);
-
-  useEffect(() => {
-    if (prefersReducedMotion) {
-      setCurtainOpen(true);
-      return;
-    }
-
-    // Lock body scroll while the curtain plays
-    const html = document.documentElement;
-    const body = document.body;
-    const prevHtmlOverflow = html.style.overflow;
-    const prevBodyOverflow = body.style.overflow;
-    html.style.overflow = "hidden";
-    body.style.overflow = "hidden";
-
-    const timer = window.setTimeout(() => {
-      setCurtainOpen(true);
-      html.style.overflow = prevHtmlOverflow;
-      body.style.overflow = prevBodyOverflow;
-    }, CURTAIN_TOTAL_MS);
-
-    return () => {
-      window.clearTimeout(timer);
-      html.style.overflow = prevHtmlOverflow;
-      body.style.overflow = prevBodyOverflow;
-    };
-  }, [prefersReducedMotion]);
-
-  const heroDelay = (extra: number) =>
-    prefersReducedMotion ? 0 : HERO_BASE_DELAY + extra;
+  const proof = [
+    [years, "years shipping"],
+    ["9 + 3", "devs & QA led"],
+    ["CSM", "certified"],
+  ];
 
   return (
-    <section className="relative isolate min-h-[100svh] overflow-hidden">
-      {/* mouse-follow glow */}
-      <motion.div
+    <section className="relative isolate overflow-hidden">
+      {/* portrait — fades into the page, behind the copy */}
+      <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10"
-        style={prefersReducedMotion ? undefined : { background: glowBg }}
-      />
-      {/* portrait — right side, behind the title for depth */}
-      <motion.div
-        aria-hidden
-        initial={prefersReducedMotion ? false : { opacity: 0, scale: 1.06 }}
-        animate={prefersReducedMotion ? {} : { opacity: 1, scale: 1 }}
-        transition={{
-          duration: 1.3,
-          delay: heroDelay(0.2),
-          ease: [0.16, 1, 0.3, 1],
-        }}
-        className="pointer-events-none absolute right-0 top-[17svh] bottom-auto -z-[1] h-[44svh] w-[66vw] max-w-[260px] opacity-50 sm:top-[15svh] sm:max-w-[330px] sm:opacity-60 md:right-[5vw] md:max-w-[400px] lg:inset-y-0 lg:h-auto lg:right-[8vw] lg:w-[42vw] lg:max-w-[600px] lg:opacity-85"
+        className="rise pointer-events-none absolute right-0 top-[14svh] -z-[1] h-[46svh] w-[68vw] max-w-[280px] opacity-55 sm:max-w-[340px] md:right-[5vw] md:max-w-[400px] lg:inset-y-0 lg:h-auto lg:right-[6vw] lg:w-[40vw] lg:max-w-[560px] lg:opacity-90"
         style={{
-          transformOrigin: "70% 80%",
           maskImage:
             "linear-gradient(to right, transparent, #000 40%), linear-gradient(to left, transparent, #000 14%), linear-gradient(to bottom, transparent, #000 16%), linear-gradient(to top, transparent 2%, #000 18%)",
           WebkitMaskImage:
@@ -129,262 +35,92 @@ export function Hero() {
         }}
       >
         <Image
-          src="/images/profile/img-red.jpeg"
-          alt={siteConfig.name}
+          src="/images/profile/hero.webp"
+          alt=""
           fill
           priority
-          sizes="46vw"
+          sizes="(max-width: 1024px) 70vw, 40vw"
           className="object-cover object-top lg:object-[60%_22%]"
         />
-      </motion.div>
-
-      {/* corner brackets */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-5 top-24 flex justify-between text-white/30 sm:inset-x-10 lg:inset-x-14"
-      >
-        <motion.span
-          initial={prefersReducedMotion ? false : { opacity: 0 }}
-          animate={prefersReducedMotion ? {} : { opacity: 1 }}
-          transition={{ duration: 0.6, delay: heroDelay(0.5) }}
-          className="mono text-[0.7rem] uppercase tracking-[0.4em]"
-        >
-          [ 01 / Index ]
-        </motion.span>
-        <motion.span
-          initial={prefersReducedMotion ? false : { opacity: 0 }}
-          animate={prefersReducedMotion ? {} : { opacity: 1 }}
-          transition={{ duration: 0.6, delay: heroDelay(0.5) }}
-          className="mono hidden text-[0.7rem] uppercase tracking-[0.4em] sm:inline"
-        >
-          {siteConfig.location}
-        </motion.span>
       </div>
 
-      {/* Hero content — subtle scale settle as curtains open */}
-      <motion.div
-        initial={prefersReducedMotion ? false : { scale: 1.04 }}
-        animate={prefersReducedMotion ? {} : { scale: 1 }}
-        transition={{
-          duration: CURTAIN_PANEL_DURATION + 0.1,
-          delay: CURTAIN_PANEL_DELAY,
-          ease: [0.16, 1, 0.3, 1],
-        }}
-        className="relative mx-auto flex min-h-[100svh] w-full max-w-[1480px] flex-col justify-end px-5 pb-28 pt-40 sm:px-10 sm:pt-44 lg:px-14 lg:pb-44"
-        style={{ transformOrigin: "50% 65%" }}
-      >
-        <motion.h1
-          style={
-            prefersReducedMotion
-              ? undefined
-              : { y: titleY, opacity: titleOpacity }
-          }
-          className="display text-[clamp(3.5rem,12vw,12rem)] text-white"
-        >
-          <motion.span
-            className="block"
-            initial={prefersReducedMotion ? false : { opacity: 0, y: 80 }}
-            animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
-            transition={{
-              duration: 1.1,
-              delay: heroDelay(0.05),
-              ease: [0.16, 1, 0.3, 1],
-            }}
-          >
-            Zarrar
-          </motion.span>
-          <motion.span
-            className="block text-gradient-red"
-            initial={prefersReducedMotion ? false : { opacity: 0, y: 80 }}
-            animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
-            transition={{
-              duration: 1.1,
-              delay: heroDelay(0.15),
-              ease: [0.16, 1, 0.3, 1],
-            }}
-          >
+      <div className="mx-auto flex min-h-[100svh] w-full max-w-[1480px] flex-col justify-center px-5 pb-16 pt-32 sm:px-10 lg:px-14">
+        <p className="mono text-[0.72rem] uppercase tracking-[0.32em] text-white/60">
+          {siteConfig.location} · Remote-friendly
+        </p>
+
+        <h1 className="display mt-6 text-[clamp(3.25rem,10vw,9rem)] text-white">
+          Zarrar
+          <br />
+          <span className="text-gradient-red">
             <span className="serif font-normal">Palekar</span>
-            <span className="text-[var(--accent)]">.</span>
-          </motion.span>
-        </motion.h1>
+          </span>
+          <span className="text-[var(--accent)]">.</span>
+        </h1>
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-end">
-          <motion.p
-            initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
-            animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: heroDelay(0.3) }}
-            className="max-w-2xl text-lg leading-[1.6] text-white/65 sm:text-xl"
-          >
-            Senior full-stack engineer building production-grade web software in{" "}
-            <span className="text-white">React, Node.js, PostgreSQL</span>, and{" "}
-            <span className="text-white">.NET</span>. I lead remote product
-            teams, stay close to the code, and ship with AI-assisted,
-            human-reviewed discipline.
-          </motion.p>
+        <p className="mt-8 max-w-xl text-xl leading-[1.5] text-white/85 sm:text-2xl">
+          Senior full-stack engineer &amp; team lead. I build React, Node.js,
+          PostgreSQL and .NET products, and lead the remote team that ships
+          them.
+        </p>
 
-          <motion.div
-            initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
-            animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: heroDelay(0.4) }}
-            className="flex flex-col items-start gap-4 sm:flex-row lg:justify-end"
-          >
-            <Magnetic strength={0.35}>
-              <Link
-                href="/#projects"
-                className="group relative inline-flex h-14 items-center justify-center overflow-hidden rounded-full bg-[var(--accent)] px-7 text-sm font-semibold uppercase tracking-[0.22em] text-white shadow-[0_24px_60px_-20px_rgba(255,58,69,0.7)] transition hover:bg-[#ff525d]"
-              >
-                <span className="relative z-10">Selected work →</span>
-                <span className="absolute inset-0 -z-0 translate-y-full bg-white/15 transition group-hover:translate-y-0" />
-              </Link>
-            </Magnetic>
-            <Magnetic strength={0.35}>
-              <CalendlyButton className="inline-flex h-14 items-center justify-center rounded-full border border-white/20 bg-white/[0.03] px-7 text-sm font-semibold uppercase tracking-[0.22em] text-white/85 backdrop-blur transition hover:border-white/50 hover:bg-white/[0.07]">
-                Book a call
-              </CalendlyButton>
-            </Magnetic>
-          </motion.div>
-        </div>
-
-        {/* meta row */}
-        <motion.div
-          initial={prefersReducedMotion ? false : { opacity: 0, y: 16 }}
-          animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: heroDelay(0.5) }}
-          className="mt-16 grid gap-6 border-t border-white/10 pt-6 text-white/55 md:grid-cols-4"
-        >
-          {[
-            ["Role", "Senior SWE · Team Lead"],
-            ["Years", "9+ across MERN / PERN / .NET"],
-            ["Team", "Leading 9 developers + 3 QA"],
-            ["Cert", "Certified Scrum Master"],
-          ].map(([label, value]) => (
-            <div key={label} className="flex flex-col gap-1.5">
-              <span className="mono text-[0.65rem] uppercase tracking-[0.32em] text-white/35">
+        <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-4">
+          {proof.map(([value, label]) => (
+            <div key={label} className="flex items-baseline gap-3">
+              <dt className="display text-3xl text-white tabular sm:text-4xl">
+                {value}
+              </dt>
+              <dd className="mono text-[0.7rem] uppercase tracking-[0.24em] text-white/60">
                 {label}
-              </span>
-              <span className="text-sm text-white/85">{value}</span>
+              </dd>
             </div>
           ))}
-        </motion.div>
-      </motion.div>
+        </dl>
 
-      {/* scroll indicator */}
-      <motion.div
-        initial={prefersReducedMotion ? false : { opacity: 0 }}
-        animate={prefersReducedMotion ? {} : { opacity: 1 }}
-        transition={{ duration: 0.6, delay: heroDelay(0.7) }}
-        className="absolute bottom-16 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-white/35 lg:flex"
-      >
-        <span className="mono text-[0.65rem] uppercase tracking-[0.4em]">
-          Scroll
-        </span>
-        <span className="relative block h-8 w-px overflow-hidden bg-white/15">
-          <motion.span
-            className="absolute inset-x-0 top-0 block h-3 bg-[var(--accent)]"
-            initial={{ y: "-100%" }}
-            animate={prefersReducedMotion ? {} : { y: "300%" }}
-            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-          />
-        </span>
-      </motion.div>
-
-      {/* bottom marquee */}
-      <motion.div
-        initial={prefersReducedMotion ? false : { y: "100%" }}
-        animate={prefersReducedMotion ? {} : { y: 0 }}
-        transition={{
-          duration: 0.9,
-          delay: heroDelay(0.55),
-          ease: [0.16, 1, 0.3, 1],
-        }}
-        className="absolute inset-x-0 bottom-0 border-y border-white/10 bg-black/40 backdrop-blur-md"
-      >
-        <Marquee duration={48}>
-          {marqueeStack.map((item, index) => (
-            <span
-              key={`${item}-${index}`}
-              className="mono flex items-center gap-6 px-6 py-4 text-sm uppercase tracking-[0.32em] text-white/55"
-            >
-              {item}
-              <span className="text-[var(--accent)]">●</span>
-            </span>
-          ))}
-        </Marquee>
-      </motion.div>
-
-      {/* CURTAIN — two black panels split apart from a thin red seam */}
-      <AnimatePresence>
-        {!curtainOpen ? (
-          <motion.div
-            key="curtain"
-            className="pointer-events-none absolute inset-0 z-40"
-            initial={{ opacity: 1 }}
-            exit={{ opacity: 1 }}
+        <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <Link href={`mailto:${siteConfig.email}`} className={primaryBtn}>
+            Email me
+          </Link>
+          <Link
+            href={siteConfig.whatsappUrl}
+            target="_blank"
+            rel="noreferrer"
+            className={secondaryBtn}
           >
-            {/* left panel */}
-            <motion.div
-              initial={{ x: 0 }}
-              animate={{ x: "-100%" }}
-              transition={{
-                duration: CURTAIN_PANEL_DURATION,
-                delay: CURTAIN_PANEL_DELAY,
-                ease: CURTAIN_EASE,
-              }}
-              className="absolute left-0 top-0 h-full w-1/2 origin-right bg-[#020101]"
-              style={{
-                backgroundImage:
-                  "repeating-linear-gradient(90deg, rgba(255,255,255,0.018) 0 1px, transparent 1px 38px), radial-gradient(ellipse 80% 60% at 100% 50%, rgba(255,58,69,0.08), transparent 70%)",
-              }}
-            />
-            {/* right panel */}
-            <motion.div
-              initial={{ x: 0 }}
-              animate={{ x: "100%" }}
-              transition={{
-                duration: CURTAIN_PANEL_DURATION,
-                delay: CURTAIN_PANEL_DELAY,
-                ease: CURTAIN_EASE,
-              }}
-              className="absolute right-0 top-0 h-full w-1/2 origin-left bg-[#020101]"
-              style={{
-                backgroundImage:
-                  "repeating-linear-gradient(90deg, rgba(255,255,255,0.018) 0 1px, transparent 1px 38px), radial-gradient(ellipse 80% 60% at 0% 50%, rgba(255,58,69,0.08), transparent 70%)",
-              }}
-            />
+            WhatsApp
+          </Link>
+          <CalendlyButton className={secondaryBtn}>Book a call</CalendlyButton>
+        </div>
 
-            {/* center red seam — visible briefly before split, fades during open */}
-            <motion.div
-              aria-hidden
-              initial={{ scaleY: 0, opacity: 0 }}
-              animate={{
-                scaleY: [0, 1, 1, 0],
-                opacity: [0, 1, 1, 0],
-              }}
-              transition={{
-                duration: CURTAIN_PANEL_DELAY + CURTAIN_PANEL_DURATION,
-                times: [0, 0.16, 0.42, 1],
-                ease: "easeInOut",
-              }}
-              style={{ transformOrigin: "50% 50%" }}
-              className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-[var(--accent)] shadow-[0_0_28px_rgba(255,58,69,0.85)]"
-            />
+        <p className="mt-5 text-sm text-white/60">
+          {siteConfig.email}
+          <span className="mx-3 text-white/25">/</span>
+          {siteConfig.phone}
+        </p>
 
-            {/* tiny loading word during the early curtain moment */}
-            <motion.span
-              initial={{ opacity: 0 }}
-              animate={{ opacity: [0, 0.85, 0] }}
-              transition={{
-                duration: CURTAIN_PANEL_DELAY + 0.55,
-                times: [0, 0.4, 1],
-                ease: "easeOut",
-              }}
-              className="mono absolute bottom-12 left-1/2 -translate-x-1/2 text-[0.65rem] uppercase tracking-[0.4em] text-white/60"
+        <nav
+          aria-label="Profiles"
+          className="mono mt-8 flex flex-wrap gap-x-6 gap-y-2 text-[0.72rem] uppercase tracking-[0.24em] text-white/60"
+        >
+          {[
+            ["LinkedIn", siteConfig.linkedinUrl],
+            ["GitHub", siteConfig.githubUrl],
+            ["Resume", siteConfig.resumeUrl],
+            ["Projects", "/#projects"],
+          ].map(([label, href]) => (
+            <Link
+              key={label}
+              href={href}
+              {...(href.startsWith("http")
+                ? { target: "_blank", rel: "noreferrer" }
+                : {})}
+              className="transition hover:text-white"
             >
-              Zarrar Palekar — Portfolio &apos;26
-            </motion.span>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
+              {label} {href.startsWith("http") ? "↗" : "↓"}
+            </Link>
+          ))}
+        </nav>
+      </div>
     </section>
   );
 }

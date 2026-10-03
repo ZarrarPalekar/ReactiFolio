@@ -2,13 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import {
-  motion,
-  useMotionValueEvent,
-  useScroll,
-  AnimatePresence,
-} from "framer-motion";
-import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 import { navigation, siteConfig } from "@/data/portfolio";
 import { CalendlyButton } from "@/components/ui/calendly-button";
@@ -16,32 +11,20 @@ import { SocialIcon } from "@/components/ui/social-icon";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
-  const [hidden, setHidden] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { scrollY } = useScroll();
 
-  useMotionValueEvent(scrollY, "change", (current) => {
-    const prev = scrollY.getPrevious() ?? 0;
-    setScrolled(current > 24);
-    if (open) {
-      setHidden(false);
-      return;
-    }
-    if (current > prev && current > 160) {
-      setHidden(true);
-    } else {
-      setHidden(false);
-    }
-  });
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <motion.header
-      initial={{ y: 0 }}
-      animate={{ y: hidden ? "-110%" : 0 }}
-      transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+    <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors ${
-        scrolled
-          ? "border-b border-white/10 bg-[#050202]/80 backdrop-blur-xl"
+        scrolled || open
+          ? "border-b border-white/10 bg-[#050202]/85 backdrop-blur-xl"
           : "border-b border-transparent"
       }`}
     >
@@ -53,7 +36,7 @@ export function SiteHeader() {
         >
           <span className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-white/15 bg-white/[0.04] backdrop-blur transition group-hover:border-[var(--accent)]/50">
             <Image
-              src="/images/profile/ZP-logo.svg"
+              src="/images/profile/zp-mark.webp"
               alt={`${siteConfig.name} logo`}
               fill
               sizes="40px"
@@ -84,17 +67,32 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <span className="hidden items-center gap-2 mono text-[0.65rem] uppercase tracking-[0.28em] text-emerald-300 xl:inline-flex">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inset-0 animate-ping rounded-full bg-emerald-400/70" />
-              <span className="relative h-2 w-2 rounded-full bg-emerald-400" />
-            </span>
-            Available
-          </span>
-          <CalendlyButton className="mono inline-flex h-11 items-center justify-center gap-2 rounded-full bg-white px-5 text-[0.7rem] uppercase tracking-[0.24em] text-black transition hover:bg-white/85">
-            Strategy call →
+          <Link
+            href={`mailto:${siteConfig.email}`}
+            className="mono text-[0.7rem] uppercase tracking-[0.24em] text-white/70 transition hover:text-white"
+          >
+            {siteConfig.email}
+          </Link>
+          <Link
+            href={siteConfig.whatsappUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="mono text-[0.7rem] uppercase tracking-[0.24em] text-white/70 transition hover:text-white"
+          >
+            WhatsApp
+          </Link>
+          <CalendlyButton className="mono inline-flex h-11 items-center justify-center gap-2 rounded-full bg-[var(--accent)] px-5 text-[0.7rem] uppercase tracking-[0.24em] text-white transition hover:bg-[#ff525d]">
+            Book a call →
           </CalendlyButton>
         </div>
+
+        <div className="ml-auto flex items-center gap-2 lg:hidden">
+          <Link
+            href={`mailto:${siteConfig.email}`}
+            className="mono inline-flex h-11 items-center rounded-full bg-[var(--accent)] px-4 text-[0.7rem] uppercase tracking-[0.2em] text-white"
+          >
+            Email
+          </Link>
 
         <button
           type="button"
@@ -116,6 +114,7 @@ export function SiteHeader() {
             />
           </span>
         </button>
+        </div>
       </div>
 
       <AnimatePresence>
@@ -143,17 +142,26 @@ export function SiteHeader() {
                   </span>
                 </Link>
               ))}
+              <Link
+                href={siteConfig.whatsappUrl}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => setOpen(false)}
+                className="mt-6 inline-flex h-12 items-center justify-center rounded-full border border-white/25 px-5 text-sm font-semibold uppercase tracking-[0.22em] text-white/90"
+              >
+                WhatsApp
+              </Link>
               <CalendlyButton
                 onClick={() => setOpen(false)}
-                className="mt-6 inline-flex h-12 items-center justify-center rounded-full bg-[var(--accent)] px-5 text-sm font-semibold uppercase tracking-[0.22em] text-white transition hover:bg-[#ff525d]"
+                className="mt-3 inline-flex h-12 items-center justify-center rounded-full bg-[var(--accent)] px-5 text-sm font-semibold uppercase tracking-[0.22em] text-white transition hover:bg-[#ff525d]"
               >
                 <SocialIcon name="Calendly" className="size-5 shrink-0" />
-                <span className="ml-2">Strategy call</span>
+                <span className="ml-2">Book a call</span>
               </CalendlyButton>
             </div>
           </motion.div>
         ) : null}
       </AnimatePresence>
-    </motion.header>
+    </header>
   );
 }
