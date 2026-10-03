@@ -1,15 +1,22 @@
 @import "tailwindcss";
 
+/* Colour tokens */
 :root {
   color-scheme: dark;
   --background: #050202;
+  --bg-top: #060303;
+  --bg-mid: #0a0405;
+  --panel: #080404;
+  --panel-hover: #0c0606;
   --foreground: #f6f3ef;
-  --muted: rgba(246, 243, 239, 0.58);
-  --line: rgba(255, 255, 255, 0.1);
-  --card: rgba(255, 255, 255, 0.04);
   --accent: #ff3a45;
+  --accent-hover: #ff525d;
   --accent-soft: #ffb4b8;
-  --accent-deep: #5b0f15;
+  --glow: 16%;
+  --glow-2: rgba(127, 16, 22, 0.18);
+  --grad-1: #ffffff;
+  --grad-2: #ffb4b8;
+  --grad-3: #ff3a45;
   --grid: rgba(255, 255, 255, 0.045);
   --font-display:
     var(--font-sans-loaded, "Space Grotesk"), "Satoshi", "Inter Tight",
@@ -45,9 +52,9 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   background:
-    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(255, 58, 69, 0.16), transparent 60%),
-    radial-gradient(ellipse 60% 50% at 100% 0%, rgba(127, 16, 22, 0.18), transparent 55%),
-    linear-gradient(180deg, #060303 0%, #0a0405 50%, #050202 100%);
+    radial-gradient(ellipse 80% 50% at 50% -10%, color-mix(in srgb, var(--accent) var(--glow), transparent), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 100% 0%, var(--glow-2), transparent 55%),
+    linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 50%, var(--background) 100%);
   overflow-x: hidden;
 }
 
@@ -73,11 +80,11 @@ section {
 }
 
 ::selection {
-  background: rgba(255, 58, 69, 0.32);
+  background: color-mix(in srgb, var(--accent) 32%, transparent);
   color: #fff;
 }
 
-/* Layered backdrop: subtle grid + film grain */
+/* Layered backdrop: subtle grid */
 body::before {
   position: fixed;
   inset: 0;
@@ -89,19 +96,6 @@ body::before {
     linear-gradient(90deg, var(--grid) 1px, transparent 1px);
   background-size: 80px 80px;
   mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 30%, transparent 90%);
-}
-
-body::after {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  content: "";
-  opacity: 0.18;
-  background-image:
-    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.18) 0 1px, transparent 1px 6px),
-    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 11px);
-  mix-blend-mode: soft-light;
 }
 
 /* Display headings — tighter optical sizing */
@@ -126,110 +120,48 @@ body::after {
   font-feature-settings: "liga", "dlig";
 }
 
-/* Marquee */
-@keyframes marquee {
-  to {
-    transform: translateX(-50%);
+/* Hero entrance — short, never gates text */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
   }
 }
 
-.marquee-track {
-  animation: marquee var(--marquee-duration, 38s) linear infinite;
-  will-change: transform;
-}
-
-.marquee-track.reverse {
-  animation-direction: reverse;
-}
-
-.marquee-pause:hover .marquee-track {
-  animation-play-state: paused;
+.rise {
+  animation: rise 0.7s var(--ease-out-expo) both;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .marquee-track {
+  .rise {
     animation: none;
   }
 }
 
-/* Custom cursor */
-.cursor-dot,
-.cursor-ring {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 90;
-  border-radius: 9999px;
-  will-change: transform;
-  mix-blend-mode: difference;
-}
-
-.cursor-dot {
-  width: 6px;
-  height: 6px;
-  background: #ffffff;
-  transform: translate3d(-50%, -50%, 0);
-}
-
-.cursor-ring {
-  width: 38px;
-  height: 38px;
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  transform: translate3d(-50%, -50%, 0) scale(1);
-  transition:
-    width 240ms var(--ease-out-expo),
-    height 240ms var(--ease-out-expo),
-    border-color 240ms var(--ease-out-expo),
-    background-color 240ms var(--ease-out-expo);
-}
-
-.cursor-ring.is-hover {
-  width: 64px;
-  height: 64px;
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.85);
-}
-
-@media (hover: none), (pointer: coarse) {
-  .cursor-dot,
-  .cursor-ring {
-    display: none;
+/* Scroll reveal — progressive enhancement, no JS */
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
   }
 }
 
-/* WhatsApp pulse retained */
-@keyframes whatsappPulse {
-  0%,
-  100% {
-    box-shadow:
-      0 0 0 6px rgba(37, 211, 102, 0.04),
-      0 0 14px rgba(37, 211, 102, 0.1);
-  }
-  50% {
-    box-shadow:
-      0 0 0 16px rgba(37, 211, 102, 0.16),
-      0 0 42px rgba(37, 211, 102, 0.42);
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 35%;
+    }
   }
 }
 
 /* Gradient text */
 .text-gradient-red {
-  background: linear-gradient(135deg, #ffffff 0%, #ffb4b8 45%, #ff3a45 100%);
+  background: linear-gradient(135deg, var(--grad-1) 0%, var(--grad-2) 45%, var(--grad-3) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-}
-
-/* Scroll progress bar */
-.scroll-progress {
-  position: fixed;
-  inset: 0 0 auto 0;
-  height: 2px;
-  z-index: 60;
-  transform-origin: 0% 50%;
-  background: linear-gradient(90deg, #ff3a45, #ffb4b8);
-  box-shadow: 0 0 18px rgba(255, 58, 69, 0.55);
 }
 
 /* Utility: tabular numerals */

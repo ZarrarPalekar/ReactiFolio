@@ -1,3 +1,6 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
+
 import { ImageResponse } from "next/og";
 
 import { siteConfig } from "@/data/portfolio";
@@ -9,8 +12,13 @@ export const size = {
 
 export const contentType = "image/png";
 
-export default function OpenGraphImage() {
-  const subtitle = `9+ years across MERN, PERN, .NET, SaaS, CRM/CMS, team leadership, and AI-assisted SDLC by ${siteConfig.name}.`;
+export default async function OpenGraphImage() {
+  const portrait = await readFile(
+    join(process.cwd(), "public/images/profile/og-portrait.jpg"),
+  );
+  const portraitSrc = `data:image/jpeg;base64,${portrait.toString("base64")}`;
+
+  const subtitle = "9+ years shipping React, Node.js, PostgreSQL and .NET products, and leading the remote team behind them.";
 
   return new ImageResponse(
     <div
@@ -21,12 +29,32 @@ export default function OpenGraphImage() {
         flexDirection: "column",
         justifyContent: "space-between",
         background:
-          "radial-gradient(circle at top, rgba(220,38,38,0.45), rgba(5,5,5,1) 48%), linear-gradient(180deg, #140707 0%, #050505 100%)",
+          "radial-gradient(circle 560px at 0% 0%, rgba(220,38,38,0.42), rgba(7,3,3,0)), #070303",
         color: "white",
         padding: "64px",
         fontFamily: "sans-serif",
+        position: "relative",
       }}
     >
+      {/* portrait, right side, fading into the card */}
+      <img
+        src={portraitSrc}
+        alt=""
+        width={560}
+        height={630}
+        style={{ position: "absolute", right: 0, top: 0, width: 560, height: 630 }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          right: 0,
+          top: 0,
+          width: 560,
+          height: 630,
+          background:
+            "linear-gradient(90deg, #070303 0%, rgba(7,3,3,0.55) 38%, rgba(7,3,3,0) 80%)",
+        }}
+      />
       <div
         style={{
           display: "flex",
@@ -43,13 +71,13 @@ export default function OpenGraphImage() {
       </div>
 
       <div
-        style={{ display: "flex", flexDirection: "column", maxWidth: "900px" }}
+        style={{ display: "flex", flexDirection: "column", maxWidth: "700px" }}
       >
         <div
           style={{
             display: "flex",
             flexDirection: "column",
-            fontSize: 84,
+            fontSize: 70,
             lineHeight: 1.02,
             fontWeight: 700,
             letterSpacing: "-0.06em",
@@ -62,10 +90,10 @@ export default function OpenGraphImage() {
         <div
           style={{
             marginTop: 28,
-            fontSize: 30,
+            fontSize: 26,
             lineHeight: 1.4,
             color: "rgba(255,255,255,0.72)",
-            maxWidth: "860px",
+            maxWidth: "640px",
           }}
         >
           {subtitle}

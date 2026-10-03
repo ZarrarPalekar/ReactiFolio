@@ -1,6 +1,5 @@
 import type {
   ExperienceItem,
-  HeroStat,
   NavigationItem,
   ProjectItem,
   SkillCategory,
@@ -30,29 +29,16 @@ export const siteConfig = {
   linkedinUrl: "https://www.linkedin.com/in/zarrarpalekar/",
   instagramUrl: "https://www.instagram.com/palekarzarrar",
   siteUrl: "https://www.zarrarpalekar.com/",
-  ogImage: "/images/profile/profile.webp",
+  ogImage: "/images/profile/hero.webp",
 };
 
 export const navigation: NavigationItem[] = [
   { href: "/", label: "Home" },
   { href: "/#about", label: "About" },
-  { href: "/#expertise", label: "Expertise" },
   { href: "/#experience", label: "Experience" },
   { href: "/#testimonials", label: "Testimonials" },
   { href: "/#projects", label: "Projects" },
   { href: "/#contact", label: "Contact" },
-];
-
-export const heroStats: HeroStat[] = [
-  { value: "9+", label: "Years across MERN, PERN, .NET, CRM, CMS, and SaaS" },
-  {
-    value: "9 developers + 3 QA",
-    label: "Developers and QA engineers led in a remote product team",
-  },
-  {
-    value: "CSM",
-    label: "Certified Scrum Master with client-facing delivery ownership",
-  },
 ];
 
 export const socialLinks: SocialLink[] = [
@@ -118,14 +104,10 @@ export const skillCategories: SkillCategory[] = [
     description:
       "Certified Scrum Master leadership across sprint planning, backlog refinement, client communication, code reviews, QA coordination, and AI-assisted developer workflows.",
     skills: [
+      { name: "Claude Code" },
+      { name: "Codex" },
+      { name: "ChatGPT" },
       { name: "ClickUp", icon: "/images/skills/clickup.svg" },
-      { name: "Google Docs", icon: "/images/skills/google-docs.svg" },
-      { name: "Google Sheets", icon: "/images/skills/google-sheets.svg" },
-      { name: "Google Slides", icon: "/images/skills/google-slides.svg" },
-      { name: "Gmail", icon: "/images/skills/gmail.svg" },
-      { name: "Webex", icon: "/images/skills/webex.svg" },
-      { name: "Google Chat", icon: "/images/skills/google-chat.svg" },
-      { name: "Zoom", icon: "/images/skills/zoom.svg" },
     ],
   },
 ];

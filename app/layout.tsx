@@ -4,10 +4,7 @@ import Script from "next/script";
 
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
-import { WhatsAppFab } from "@/components/layout/whatsapp-fab";
 import { CalendlyProvider } from "@/components/ui/calendly-provider";
-import { Cursor } from "@/components/ui/cursor";
-import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { siteConfig } from "@/data/portfolio";
 
 import "./globals.css";
@@ -78,11 +75,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
       "max-video-preview": -1,
     },
-  },
-  icons: {
-    icon: [{ url: "/images/profile/ZP-logo.svg", type: "image/png" }],
-    shortcut: "/images/profile/ZP-logo.svg",
-    apple: "/images/profile/ZP-logo.svg",
   },
   formatDetection: {
     email: false,
@@ -206,7 +198,7 @@ export default function RootLayout({
       lang="en"
       className={`scroll-smooth ${sansFont.variable} ${serifFont.variable}`}
     >
-      <body className="bg-black text-white antialiased">
+      <body className="bg-[var(--background)] text-white antialiased">
         <Script
           id="person-jsonld"
           type="application/ld+json"
@@ -218,13 +210,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         <CalendlyProvider>
-          <ScrollProgress />
-          <Cursor />
           <div className="relative min-h-screen">
             <SiteHeader />
             <main className="relative">{children}</main>
             <SiteFooter />
-            <WhatsAppFab />
           </div>
         </CalendlyProvider>
       </body>

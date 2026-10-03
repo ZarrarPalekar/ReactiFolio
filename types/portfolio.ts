@@ -3,11 +3,6 @@ export type NavigationItem = {
   label: string;
 };
 
-export type HeroStat = {
-  label: string;
-  value: string;
-};
-
 export type SocialLink = {
   href: string;
   label: "GitHub" | "LinkedIn" | "Instagram" | "Resume";
@@ -28,7 +23,7 @@ export type SkillCategory = {
   description: string;
   skills: Array<{
     name: string;
-    icon: string;
+    icon?: string;
     iconClassName?: string;
     iconWrapperClassName?: string;
   }>;
