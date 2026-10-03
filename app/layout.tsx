@@ -5,7 +5,6 @@ import Script from "next/script";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { CalendlyProvider } from "@/components/ui/calendly-provider";
-import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { siteConfig } from "@/data/portfolio";
 
 import "./globals.css";
@@ -211,7 +210,6 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         <CalendlyProvider>
-          <ScrollProgress />
           <div className="relative min-h-screen">
             <SiteHeader />
             <main className="relative">{children}</main>

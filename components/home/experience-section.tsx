@@ -1,9 +1,5 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useReducedMotion, useScroll, useSpring } from "framer-motion";
-import { useRef } from "react";
 
 import { experience } from "@/data/portfolio";
 import { getDurationLabel } from "@/lib/date";
@@ -18,27 +14,14 @@ function formatDate(date: string) {
 }
 
 export function ExperienceSection() {
-  const prefersReducedMotion = useReducedMotion();
-  const ref = useRef<HTMLDivElement | null>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start 80%", "end 20%"],
-  });
-  const lineScale = useSpring(scrollYProgress, {
-    stiffness: 120,
-    damping: 30,
-    mass: 0.4,
-  });
-
   return (
     <section
       id="experience"
-      className="relative border-t border-white/10 py-32 sm:py-40"
+      className="relative border-t border-white/10 py-24 sm:py-32"
     >
       <div className="mx-auto w-full max-w-[1480px] px-5 sm:px-10 lg:px-14">
         <Reveal>
           <SectionHeading
-            index="04"
             eyebrow="Experience"
             title={
               <>
@@ -54,10 +37,7 @@ export function ExperienceSection() {
           />
         </Reveal>
 
-        <div
-          ref={ref}
-          className="mt-24 grid gap-10 lg:grid-cols-[0.34fr_0.66fr] lg:gap-20"
-        >
+        <div className="mt-16 grid gap-10 lg:grid-cols-[0.34fr_0.66fr] lg:gap-20">
           {/* sticky meta */}
           <div className="lg:sticky lg:top-32 lg:self-start">
             <Reveal>
@@ -84,28 +64,15 @@ export function ExperienceSection() {
               aria-hidden
               className="absolute left-4 top-0 h-full w-px bg-white/8 sm:left-6"
             />
-            <motion.div
+            <div
               aria-hidden
-              style={
-                prefersReducedMotion
-                  ? undefined
-                  : { scaleY: lineScale, transformOrigin: "top" }
-              }
-              className="absolute left-4 top-0 h-full w-px bg-gradient-to-b from-[var(--accent)] via-[var(--accent-soft)] to-transparent sm:left-6"
+              className="absolute left-4 top-0 h-full w-px bg-gradient-to-b from-[var(--accent)] via-[var(--accent-soft)]/40 to-transparent sm:left-6"
             />
 
             <div className="flex flex-col gap-10">
-              {experience.map((item, index) => (
-                <motion.article
+              {experience.map((item) => (
+                <article
                   key={`${item.company}-${item.start}`}
-                  initial={prefersReducedMotion ? false : { opacity: 0, y: 50 }}
-                  whileInView={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{
-                    duration: 0.9,
-                    delay: index * 0.06,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
                   className="relative pl-14 sm:pl-20"
                 >
                   <span className="absolute left-0 top-7 flex h-8 w-8 items-center justify-center rounded-full border border-[var(--accent)]/40 bg-[#080404] sm:left-2 sm:h-8 sm:w-8">
@@ -180,7 +147,7 @@ export function ExperienceSection() {
                       </ul>
                     </div>
                   </div>
-                </motion.article>
+                </article>
               ))}
             </div>
           </div>

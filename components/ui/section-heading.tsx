@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 
 type SectionHeadingProps = {
-  index?: string;
   eyebrow: string;
   title: ReactNode;
   description?: ReactNode;
@@ -10,7 +9,6 @@ type SectionHeadingProps = {
 };
 
 export function SectionHeading({
-  index,
   eyebrow,
   title,
   description,
@@ -27,11 +25,6 @@ export function SectionHeading({
           align === "center" ? "justify-center" : ""
         }`}
       >
-        {index ? (
-          <span className="mono text-[0.7rem] uppercase tracking-[0.4em] text-white/35">
-            {index}
-          </span>
-        ) : null}
         <span className="h-px flex-1 max-w-16 bg-white/15" />
         <span className="mono text-[0.7rem] uppercase tracking-[0.4em] text-[var(--accent-soft)]/85">
           {eyebrow}

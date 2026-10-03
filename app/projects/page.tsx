@@ -51,7 +51,6 @@ export default function ProjectsPage() {
         <div className="mx-auto w-full max-w-[1480px] px-5 sm:px-10 lg:px-14">
           <Reveal>
             <SectionHeading
-              index="∞"
               eyebrow="Archive"
               title={
                 <>
@@ -71,7 +70,6 @@ export default function ProjectsPage() {
                 key={project.slug}
                 project={project}
                 index={index}
-                total={projects.length}
               />
             ))}
           </div>

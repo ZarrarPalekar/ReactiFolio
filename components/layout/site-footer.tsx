@@ -1,34 +1,11 @@
 import Link from "next/link";
 
 import { siteConfig, socialLinks } from "@/data/portfolio";
-import { Marquee } from "@/components/ui/marquee";
 import { SocialIcon } from "@/components/ui/social-icon";
-
-const tagline = [
-  "Senior Full-Stack Engineer",
-  "MERN / PERN / .NET",
-  "Team Lead",
-  "Certified Scrum Master",
-  "Mumbai \\ Remote",
-];
 
 export function SiteFooter() {
   return (
     <footer className="relative isolate overflow-hidden border-t border-white/10 bg-[#050202]">
-      <div className="border-b border-white/10 bg-black/40">
-        <Marquee duration={50}>
-          {tagline.map((label, index) => (
-            <span
-              key={`${label}-${index}`}
-              className="display flex items-center gap-10 px-8 py-6 text-3xl text-white/85 sm:text-4xl"
-            >
-              {label}
-              <span className="text-[var(--accent)]">●</span>
-            </span>
-          ))}
-        </Marquee>
-      </div>
-
       <div className="mx-auto flex w-full max-w-[1480px] flex-col gap-12 px-5 py-16 sm:px-10 lg:px-14">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr]">
           <div>
@@ -46,11 +23,6 @@ export function SiteFooter() {
               <li>
                 <Link href="/#about" className="hover:text-white">
                   About
-                </Link>
-              </li>
-              <li>
-                <Link href="/#expertise" className="hover:text-white">
-                  Expertise
                 </Link>
               </li>
               <li>

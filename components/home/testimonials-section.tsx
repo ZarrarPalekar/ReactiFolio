@@ -75,12 +75,11 @@ export function TestimonialsSection() {
   return (
     <section
       id="testimonials"
-      className="relative border-t border-white/10 py-32 sm:py-40"
+      className="relative border-t border-white/10 py-24 sm:py-32"
     >
       <div className="mx-auto w-full max-w-[1480px] px-5 sm:px-10 lg:px-14">
         <Reveal>
           <SectionHeading
-            index="05"
             eyebrow="Testimonials"
             title={
               <>
@@ -94,7 +93,7 @@ export function TestimonialsSection() {
           />
         </Reveal>
 
-        <Reveal delay={0.1} className="mt-16 sm:mt-20">
+        <Reveal className="mt-16 sm:mt-20">
           <div className="grid gap-8 lg:grid-cols-[1.55fr_1fr] lg:items-start lg:gap-14">
             {/* Featured quote */}
             <figure className="relative overflow-hidden border border-white/10 bg-[#080404]/85 p-8 sm:p-12 lg:p-14">
