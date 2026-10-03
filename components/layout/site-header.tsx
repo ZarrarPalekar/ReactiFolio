@@ -24,7 +24,7 @@ export function SiteHeader() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors ${
         scrolled || open
-          ? "border-b border-white/10 bg-[#050202]/85 backdrop-blur-xl"
+          ? "border-b border-white/10 bg-[var(--background)]/85 backdrop-blur-xl"
           : "border-b border-transparent"
       }`}
     >
@@ -81,7 +81,7 @@ export function SiteHeader() {
           >
             WhatsApp
           </Link>
-          <CalendlyButton className="mono inline-flex h-11 items-center justify-center gap-2 rounded-full bg-[var(--accent)] px-5 text-[0.7rem] uppercase tracking-[0.24em] text-white transition hover:bg-[#ff525d]">
+          <CalendlyButton className="mono inline-flex h-11 items-center justify-center gap-2 rounded-full bg-[var(--accent)] px-5 text-[0.7rem] uppercase tracking-[0.24em] text-white transition hover:bg-[var(--accent-hover)]">
             Book a call →
           </CalendlyButton>
         </div>
@@ -124,7 +124,7 @@ export function SiteHeader() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="overflow-hidden border-t border-white/10 bg-[#050202]/96 backdrop-blur-2xl lg:hidden"
+            className="overflow-hidden border-t border-white/10 bg-[var(--background)]/96 backdrop-blur-2xl lg:hidden"
           >
             <div className="mx-auto flex w-full max-w-[1480px] flex-col px-5 py-6 sm:px-10">
               {navigation.slice(1).map((item, index) => (
@@ -153,7 +153,7 @@ export function SiteHeader() {
               </Link>
               <CalendlyButton
                 onClick={() => setOpen(false)}
-                className="mt-3 inline-flex h-12 items-center justify-center rounded-full bg-[var(--accent)] px-5 text-sm font-semibold uppercase tracking-[0.22em] text-white transition hover:bg-[#ff525d]"
+                className="mt-3 inline-flex h-12 items-center justify-center rounded-full bg-[var(--accent)] px-5 text-sm font-semibold uppercase tracking-[0.22em] text-white transition hover:bg-[var(--accent-hover)]"
               >
                 <SocialIcon name="Calendly" className="size-5 shrink-0" />
                 <span className="ml-2">Book a call</span>

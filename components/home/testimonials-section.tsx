@@ -96,7 +96,7 @@ export function TestimonialsSection() {
         <Reveal className="mt-16 sm:mt-20">
           <div className="grid gap-8 lg:grid-cols-[1.55fr_1fr] lg:items-start lg:gap-14">
             {/* Featured quote */}
-            <figure className="relative overflow-hidden border border-white/10 bg-[#080404]/85 p-8 sm:p-12 lg:p-14">
+            <figure className="relative overflow-hidden border border-white/10 bg-[var(--panel)]/85 p-8 sm:p-12 lg:p-14">
               <span
                 aria-hidden
                 className="serif pointer-events-none absolute left-6 top-4 select-none text-[9rem] leading-none text-[var(--accent)]/12 sm:left-10"

@@ -1,15 +1,22 @@
 @import "tailwindcss";
 
+/* Colour tokens */
 :root {
   color-scheme: dark;
   --background: #050202;
+  --bg-top: #060303;
+  --bg-mid: #0a0405;
+  --panel: #080404;
+  --panel-hover: #0c0606;
   --foreground: #f6f3ef;
-  --muted: rgba(246, 243, 239, 0.58);
-  --line: rgba(255, 255, 255, 0.1);
-  --card: rgba(255, 255, 255, 0.04);
   --accent: #ff3a45;
+  --accent-hover: #ff525d;
   --accent-soft: #ffb4b8;
-  --accent-deep: #5b0f15;
+  --glow: 16%;
+  --glow-2: rgba(127, 16, 22, 0.18);
+  --grad-1: #ffffff;
+  --grad-2: #ffb4b8;
+  --grad-3: #ff3a45;
   --grid: rgba(255, 255, 255, 0.045);
   --font-display:
     var(--font-sans-loaded, "Space Grotesk"), "Satoshi", "Inter Tight",
@@ -45,9 +52,9 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   background:
-    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(255, 58, 69, 0.16), transparent 60%),
-    radial-gradient(ellipse 60% 50% at 100% 0%, rgba(127, 16, 22, 0.18), transparent 55%),
-    linear-gradient(180deg, #060303 0%, #0a0405 50%, #050202 100%);
+    radial-gradient(ellipse 80% 50% at 50% -10%, color-mix(in srgb, var(--accent) var(--glow), transparent), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 100% 0%, var(--glow-2), transparent 55%),
+    linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 50%, var(--background) 100%);
   overflow-x: hidden;
 }
 
@@ -73,7 +80,7 @@ section {
 }
 
 ::selection {
-  background: rgba(255, 58, 69, 0.32);
+  background: color-mix(in srgb, var(--accent) 32%, transparent);
   color: #fff;
 }
 
@@ -151,7 +158,7 @@ body::before {
 
 /* Gradient text */
 .text-gradient-red {
-  background: linear-gradient(135deg, #ffffff 0%, #ffb4b8 45%, #ff3a45 100%);
+  background: linear-gradient(135deg, var(--grad-1) 0%, var(--grad-2) 45%, var(--grad-3) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

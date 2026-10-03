@@ -6,7 +6,7 @@ import { siteConfig } from "@/data/portfolio";
 import { getExperienceYears } from "@/lib/date";
 
 const primaryBtn =
-  "inline-flex h-14 items-center justify-center gap-2 rounded-full bg-[var(--accent)] px-7 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-[0_24px_60px_-20px_rgba(255,58,69,0.7)] transition hover:bg-[#ff525d]";
+  "inline-flex h-14 items-center justify-center gap-2 rounded-full bg-[var(--accent)] px-7 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-[0_24px_60px_-20px_color-mix(in_srgb,var(--accent)_70%,transparent)] transition hover:bg-[var(--accent-hover)]";
 const secondaryBtn =
   "inline-flex h-14 items-center justify-center gap-2 rounded-full border border-white/25 bg-white/[0.03] px-7 text-sm font-semibold uppercase tracking-[0.2em] text-white/90 backdrop-blur transition hover:border-white/55 hover:bg-white/[0.08]";
 

@@ -31,7 +31,7 @@ export function ContactCta() {
     >
       <div
         aria-hidden
-        className="absolute inset-x-0 top-0 -z-10 h-full bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(255,58,69,0.18),transparent_70%)]"
+        className="absolute inset-x-0 top-0 -z-10 h-full bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,color-mix(in_srgb,var(--accent)_18%,transparent),transparent_70%)]"
       />
 
       <div className="mx-auto w-full max-w-[1480px] px-5 sm:px-10 lg:px-14">
@@ -62,7 +62,7 @@ export function ContactCta() {
           </Reveal>
 
           <Reveal className="mt-12 flex flex-wrap items-center justify-center gap-4">
-              <CalendlyButton className="inline-flex h-14 items-center justify-center gap-3 rounded-full bg-[var(--accent)] px-8 text-sm font-semibold uppercase tracking-[0.22em] text-white shadow-[0_24px_60px_-20px_rgba(255,58,69,0.7)] transition hover:bg-[#ff525d]">
+              <CalendlyButton className="inline-flex h-14 items-center justify-center gap-3 rounded-full bg-[var(--accent)] px-8 text-sm font-semibold uppercase tracking-[0.22em] text-white shadow-[0_24px_60px_-20px_color-mix(in_srgb,var(--accent)_70%,transparent)] transition hover:bg-[var(--accent-hover)]">
                 <SocialIcon name="Calendly" className="size-5 shrink-0" />
                 Schedule a call
               </CalendlyButton>
@@ -78,7 +78,7 @@ export function ContactCta() {
         <div className="mt-24 grid gap-px overflow-hidden border border-white/10 bg-white/[0.06] md:grid-cols-3">
           {contactCards.map((item) => {
             const inner = (
-              <div className="group h-full bg-[#080404] p-8 transition hover:bg-[#0c0606]">
+              <div className="group h-full bg-[var(--panel)] p-8 transition hover:bg-[var(--panel-hover)]">
                 <div className="flex items-baseline justify-between">
                   <span className="mono text-[0.65rem] uppercase tracking-[0.32em] text-[var(--accent-soft)]/80">
                     {item.label}

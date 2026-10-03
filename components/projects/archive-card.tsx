@@ -10,7 +10,7 @@ type ArchiveCardProps = {
 
 export function ArchiveCard({ project, index }: ArchiveCardProps) {
   return (
-    <article className="grid overflow-hidden border border-white/10 bg-[#080404]/95 lg:grid-cols-[1.1fr_0.9fr]"
+    <article className="grid overflow-hidden border border-white/10 bg-[var(--panel)]/95 lg:grid-cols-[1.1fr_0.9fr]"
     >
       <div
         className={`relative aspect-video overflow-hidden lg:aspect-auto lg:min-h-[28rem] ${

@@ -198,7 +198,7 @@ export default function RootLayout({
       lang="en"
       className={`scroll-smooth ${sansFont.variable} ${serifFont.variable}`}
     >
-      <body className="bg-black text-white antialiased">
+      <body className="bg-[var(--background)] text-white antialiased">
         <Script
           id="person-jsonld"
           type="application/ld+json"

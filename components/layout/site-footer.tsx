@@ -5,7 +5,7 @@ import { SocialIcon } from "@/components/ui/social-icon";
 
 export function SiteFooter() {
   return (
-    <footer className="relative isolate overflow-hidden border-t border-white/10 bg-[#050202]">
+    <footer className="relative isolate overflow-hidden border-t border-white/10 bg-[var(--background)]">
       <div className="mx-auto flex w-full max-w-[1480px] flex-col gap-12 px-5 py-16 sm:px-10 lg:px-14">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr]">
           <div>

@@ -41,7 +41,7 @@ export function ExperienceSection() {
           {/* sticky meta */}
           <div className="lg:sticky lg:top-32 lg:self-start">
             <Reveal>
-              <div className="border border-white/10 bg-[#080404]/80 p-6">
+              <div className="border border-white/10 bg-[var(--panel)]/80 p-6">
                 <p className="mono text-[0.65rem] uppercase tracking-[0.32em] text-[var(--accent-soft)]/85">
                   Timeline
                 </p>
@@ -75,11 +75,11 @@ export function ExperienceSection() {
                   key={`${item.company}-${item.start}`}
                   className="relative pl-14 sm:pl-20"
                 >
-                  <span className="absolute left-0 top-7 flex h-8 w-8 items-center justify-center rounded-full border border-[var(--accent)]/40 bg-[#080404] sm:left-2 sm:h-8 sm:w-8">
-                    <span className="h-2 w-2 rounded-full bg-[var(--accent)] shadow-[0_0_18px_rgba(255,58,69,0.85)]" />
+                  <span className="absolute left-0 top-7 flex h-8 w-8 items-center justify-center rounded-full border border-[var(--accent)]/40 bg-[var(--panel)] sm:left-2 sm:h-8 sm:w-8">
+                    <span className="h-2 w-2 rounded-full bg-[var(--accent)] shadow-[0_0_18px_color-mix(in_srgb,var(--accent)_85%,transparent)]" />
                   </span>
 
-                  <div className="group border border-white/10 bg-[#080404]/85 transition hover:border-white/25">
+                  <div className="group border border-white/10 bg-[var(--panel)]/85 transition hover:border-white/25">
                     <div className="flex flex-col gap-5 border-b border-white/10 p-6 sm:flex-row sm:items-start sm:justify-between sm:p-8">
                       <div className="flex items-start gap-4">
                         <Link
